@@ -1,0 +1,48 @@
+﻿
+.banner {
+    height: 50vh;
+    background: linear-gradient( rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.90) ),url('/Images/transportationBanner.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box-input {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.focus-text-box-input {
+    color: #0f80ff !important;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(25, 100, 200, 0.28) !important;
+    border-color: rgba(25, 100, 200, 0.32) !important;
+    border-width: 1px;
+}
+
+.text-box-input td {
+    padding: 6px 3px 4px 3px !important;
+}
+
+    .text-box-input td > textarea {
+        padding: 0 !important;
+    }
+
+.date-edit-padding td {
+    padding: 4px 4px 4px 5px !important;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/***************************ERROR INPUT FIELDS*************************************/
+.focus-text-box-input-error {
+    color: #0f80ff !important;
+    box-shadow: 0 4px 8px 0 rgba(255, 5, 5, 0.5), 0 6px 20px 0 rgba(255, 10, 20, 0.88) !important;
+    border-color: rgba(255, 10, 20, 0.82) !important;
+    border-width: 1px;
+}

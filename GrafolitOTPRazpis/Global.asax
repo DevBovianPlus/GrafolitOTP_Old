@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="GrafolitOTPRazpis.Global_asax" Language="C#" %>

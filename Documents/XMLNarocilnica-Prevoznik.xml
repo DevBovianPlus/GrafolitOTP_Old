@@ -1,0 +1,16 @@
+<Recall>
+	<DocType>0240</DocType> <!-- document type const -->
+	<Supplier>INTEREUROPA d.d.</Supplier> <!-- Suplier name varchar(500) -->
+	<OrderDate>2019-03-06 00:00:00</OrderDate> <!-- order date datetime.Now -->
+	<Route>(IT) 32035 BELLUNO - (HR) 10 000 ZAGREB</Route> <!-- route name if needed varchar(1000) -->
+	<LoadDate>2019-03-06 00:00:00</LoadDate> <!-- load date -->	
+	<ExportFileName>Order12112019-120052.pdf</ExportFileName>	<!-- name of exported PDF -->
+	<Products>
+		<Product>
+			<Ident>PRE</Ident> 		<!-- product ident (Prevoz) -->
+			<Name>PREVOZ</Name>		<!-- product name  -->
+			<Qty>1</Qty>			<!-- Quantity -->
+			<Price>640.000</Qty>	<!-- Price for ident, from OTP -->
+		</Product>
+	</Products>
+</Recall>

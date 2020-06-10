@@ -1,0 +1,20 @@
+29. 10. 2019 14:30:26  -------- System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at GrafolitOTPRazpis.SubmitToTender.CallbackPanel_Callback(Object sender, CallbackEventArgsBase e) in D:\Projekti\GrafolitOTP\GrafolitOTPRazpis\SubmitToTender.aspx.cs:line 48
+29. 10. 2019 14:47:52 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:00:15 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:00:51 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:07:49 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:14:44 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:14:50 Napačna zahteva! Query string vrednost ne vsebuje potrebnih parametrov (';').
+29. 10. 2019 15:15:35 Napačna zahteva! Predvideni query string ne obstaja!
+29. 10. 2019 15:44:30 Rok za vpis cene je potekel.
+29. 10. 2019 15:44:56 Rok za vpis cene je potekel.
+29. 10. 2019 15:47:50 Rok za vpis cene je potekel.
+29. 10. 2019 15:48:18 Rok za vpis cene je potekel.
+29. 10. 2019 15:57:55 Rok za vpis cene je potekel.
+9. 12. 2019 21:12:15 Napačna zahteva! Predvideni query string ne obstaja!
+9. 12. 2019 21:16:19 Napačna zahteva! Predvideni query string ne obstaja!
+9. 12. 2019 21:16:33 Napačna zahteva! Query string vrednost ne vsebuje potrebnih parametrov (';').
+9. 12. 2019 21:16:54 Napačna zahteva! Query string vrednost ne vsebuje potrebnih parametrov (';').
+9. 12. 2019 21:54:03 Napaka! Seja je prazna
+9. 12. 2019 21:54:41 Napaka! Seja je prazna

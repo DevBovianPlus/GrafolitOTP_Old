@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D55CDC50-C032-446F-B016-71EA736B1108}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OptimizacijaTransprotov</RootNamespace>
+    <AssemblyName>OptimizacijaTransprotov</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatabaseWebService">
+      <HintPath>..\..\AnalizaProdaje\DatabaseWebService\bin\DatabaseWebService.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Web, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>..\packages\DotNetZip.1.13.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\addHover.png" />
+    <Content Include="Images\addNewMenu.png" />
+    <Content Include="Images\addPopUp.png" />
+    <Content Include="Images\adminPage.png" />
+    <Content Include="Images\approvedRecalls.png" />
+    <Content Include="Images\bovian_logo.png" />
+    <Content Include="Images\cancelHover.png" />
+    <Content Include="Images\cancelPopUp.png" />
+    <Content Include="Images\carriersPrice.png" />
+    <Content Include="Images\confirm.png" />
+    <Content Include="Images\confirmHover.png" />
+    <Content Include="Images\createOrder.png" />
+    <Content Include="Images\createOrderHover.png" />
+    <Content Include="Images\dashboard.png" />
+    <Content Include="Images\defaultPerson.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\editHover.png" />
+    <Content Include="Images\editPopup.png" />
+    <Content Include="Images\export_excel.png" />
+    <Content Include="Images\HelpIcon.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\homeHover.png" />
+    <Content Include="Images\inspect.png" />
+    <Content Include="Images\lock.png" />
+    <Content Include="Images\lockHover.png" />
+    <Content Include="Images\logoGrafoLit.png" />
+    <Content Include="Images\magnifier.png" />
+    <Content Include="Images\needApprovalRecalls.png" />
+    <Content Include="Images\odpokliciPodatki.png" />
+    <Content Include="Images\prevzem.png" />
+    <Content Include="Images\prevzemHover.png" />
+    <Content Include="Images\quickAdd.png" />
+    <Content Include="Images\quickAddHover.png" />
+    <Content Include="Images\recall_Dashboard.png" />
+    <Content Include="Images\reject.png" />
+    <Content Include="Images\rejectedRecalls.png" />
+    <Content Include="Images\rejectHover.png" />
+    <Content Include="Images\sendMailToCarriers.png" />
+    <Content Include="Images\sendMailToCarriersHover.png" />
+    <Content Include="Images\signOut.png" />
+    <Content Include="Images\signOutHover.png" />
+    <Content Include="Images\takeOverInspect.png" />
+    <Content Include="Images\tender.png" />
+    <Content Include="Images\transportType.png" />
+    <Content Include="Images\trash.png" />
+    <Content Include="Images\trashHover.png" />
+    <Content Include="Navigation\MainMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Pages\Admin\AdminOverview.aspx" />
+    <Content Include="Pages\BasicCodeList\Route\Route.aspx" />
+    <Content Include="Pages\BasicCodeList\Route\Route_popup.aspx" />
+    <Content Include="Pages\BasicCodeList\TransportType\TransportType.aspx" />
+    <Content Include="Pages\BasicCodeList\TransportType\TransportType_popup.aspx" />
+    <Content Include="Pages\Client\Client.aspx" />
+    <Content Include="Pages\Client\ClientForm.aspx" />
+    <Content Include="Pages\Client\ContactPerson_popup.aspx" />
+    <Content Include="Pages\Recall\CreateOrder_popup.aspx" />
+    <Content Include="Pages\Recall\Order.aspx" />
+    <Content Include="Pages\Recall\CarriersInquirySummary_popup.aspx" />
+    <Content Include="Pages\Recall\OrderPos_popup.aspx" />
+    <Content Include="Pages\Recall\RecallTakeOverOnly.aspx" />
+    <Content Include="Pages\Recall\Recall.aspx" />
+    <Content Include="Pages\Recall\RecallForm.aspx" />
+    <Content Include="Pages\Statistic\CarrierAndRoutesPricing.aspx" />
+    <Content Include="Pages\Statistic\RoutesDetail_popup.aspx" />
+    <Content Include="Pages\Statistic\RoutesTransportersRecalls.aspx" />
+    <Content Include="Pages\Tender\SendTender.aspx" />
+    <Content Include="Pages\Tender\Tender.aspx" />
+    <Content Include="Pages\Tender\Tender_popup.aspx" />
+    <Content Include="Pages\TicketSystem\Tickets.aspx" />
+    <Content Include="Reports\ReportPreview.aspx" />
+    <Content Include="Scripts\CommonJS.js" />
+    <Content Include="Styles\Common.css" />
+    <Content Include="Styles\Content.css" />
+    <Content Include="Styles\DevExpressCustom.css" />
+    <Content Include="Styles\MasterPage.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Main.Master" />
+    <Content Include="Greetings.Master" />
+    <Content Include="Popup.Master" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\GrafolitOTPDeploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommonMethods.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\ExcelException.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Greetings.Master.cs">
+      <DependentUpon>Greetings.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Greetings.Master.designer.cs">
+      <DependentUpon>Greetings.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\ClientDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\OrderDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\RecallDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\CarriersInquiryProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\RouteDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataProviders\TenderDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\FileToDownload.cs" />
+    <Compile Include="Helpers\InfrastructureHelper.cs" />
+    <Compile Include="Helpers\Models\DownloadTenderDataModel.cs" />
+    <Compile Include="Helpers\Models\ExcelDataModel.cs" />
+    <Compile Include="Helpers\Models\GridViewTenderPosValues.cs" />
+    <Compile Include="Helpers\PrincipalHelper.cs" />
+    <Compile Include="Helpers\PropertyCopyHelper.cs" />
+    <Compile Include="Helpers\QueryStringBuilder.cs" />
+    <Compile Include="Helpers\WebServiceHelper.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Authentication.cs" />
+    <Compile Include="Infrastructure\DatabaseConnection.cs" />
+    <Compile Include="Infrastructure\ServerMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\UserPrincipal.cs" />
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminOverview.aspx.cs">
+      <DependentUpon>AdminOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminOverview.aspx.designer.cs">
+      <DependentUpon>AdminOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Route\Route.aspx.cs">
+      <DependentUpon>Route.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Route\Route.aspx.designer.cs">
+      <DependentUpon>Route.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Route\Route_popup.aspx.cs">
+      <DependentUpon>Route_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Route\Route_popup.aspx.designer.cs">
+      <DependentUpon>Route_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\TransportType\TransportType.aspx.cs">
+      <DependentUpon>TransportType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\TransportType\TransportType.aspx.designer.cs">
+      <DependentUpon>TransportType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\TransportType\TransportType_popup.aspx.cs">
+      <DependentUpon>TransportType_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\TransportType\TransportType_popup.aspx.designer.cs">
+      <DependentUpon>TransportType_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Client\Client.aspx.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Client\Client.aspx.designer.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Client\ClientForm.aspx.cs">
+      <DependentUpon>ClientForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Client\ClientForm.aspx.designer.cs">
+      <DependentUpon>ClientForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Client\ContactPerson_popup.aspx.cs">
+      <DependentUpon>ContactPerson_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Client\ContactPerson_popup.aspx.designer.cs">
+      <DependentUpon>ContactPerson_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\CreateOrder_popup.aspx.cs">
+      <DependentUpon>CreateOrder_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\CreateOrder_popup.aspx.designer.cs">
+      <DependentUpon>CreateOrder_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\CarriersInquirySummary_popup.aspx.cs">
+      <DependentUpon>CarriersInquirySummary_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\CarriersInquirySummary_popup.aspx.designer.cs">
+      <DependentUpon>CarriersInquirySummary_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\OrderPos_popup.aspx.cs">
+      <DependentUpon>OrderPos_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\OrderPos_popup.aspx.designer.cs">
+      <DependentUpon>OrderPos_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallTakeOverOnly.aspx.cs">
+      <DependentUpon>RecallTakeOverOnly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallTakeOverOnly.aspx.designer.cs">
+      <DependentUpon>RecallTakeOverOnly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\Recall.aspx.cs">
+      <DependentUpon>Recall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\Recall.aspx.designer.cs">
+      <DependentUpon>Recall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallForm.aspx.cs">
+      <DependentUpon>RecallForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallForm.aspx.designer.cs">
+      <DependentUpon>RecallForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Statistic\CarrierAndRoutesPricing.aspx.cs">
+      <DependentUpon>CarrierAndRoutesPricing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Statistic\CarrierAndRoutesPricing.aspx.designer.cs">
+      <DependentUpon>CarrierAndRoutesPricing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Statistic\RoutesDetail_popup.aspx.cs">
+      <DependentUpon>RoutesDetail_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Statistic\RoutesDetail_popup.aspx.designer.cs">
+      <DependentUpon>RoutesDetail_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Statistic\RoutesTransportersRecalls.aspx.cs">
+      <DependentUpon>RoutesTransportersRecalls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Statistic\RoutesTransportersRecalls.aspx.designer.cs">
+      <DependentUpon>RoutesTransportersRecalls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tender\SendTender.aspx.cs">
+      <DependentUpon>SendTender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tender\SendTender.aspx.designer.cs">
+      <DependentUpon>SendTender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tender\Tender.aspx.cs">
+      <DependentUpon>Tender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tender\Tender.aspx.designer.cs">
+      <DependentUpon>Tender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tender\Tender_popup.aspx.cs">
+      <DependentUpon>Tender_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tender\Tender_popup.aspx.designer.cs">
+      <DependentUpon>Tender_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TicketSystem\Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TicketSystem\Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.Master.cs">
+      <DependentUpon>Popup.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup.Master.designer.cs">
+      <DependentUpon>Popup.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Recall.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportPreview.aspx.cs">
+      <DependentUpon>ReportPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportPreview.aspx.designer.cs">
+      <DependentUpon>ReportPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\HandledException.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandledException.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\Recall.resx">
+      <DependentUpon>Recall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\HandledException.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HandledException.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31694</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:31695/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

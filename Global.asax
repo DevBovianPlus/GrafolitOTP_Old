@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="OptimizacijaTransprotov.Global_asax" Language="C#" %>

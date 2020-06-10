@@ -1,0 +1,28 @@
+<Recall>
+	<DocType>0250</DocType> <!-- document type const -->
+	<Supplier>R.D.M. OVARO S.P.A.</Supplier> <!-- Suplier name varchar(500) -->
+	<OrderDate>2019-03-06 00:00:00</OrderDate> <!-- order date datetime.Now -->	
+	<Route></Route> <!-- route name if needed varchar(1000) -->
+	<LoadDate></LoadDate> <!-- load date -->	
+	<ExportFileName>Order12112019-120052.pdf</ExportFileName>	<!-- name of exported PDF -->
+	<Products>
+		<Product>
+			<Ident>0718141231045</Ident> 					<!-- product ident-->
+			<Name>NIVIS NEXT MATT 150G 45X85 SB</Name>		<!-- product name  -->
+			<Qty>5968.000</Qty>								<!-- Quantity -->
+			<Price>640.000</Qty>							<!-- Price for ident, from pantheon -->
+		</Product>
+		<Product>
+			<Ident>2033140000001</Ident> 					<!-- product ident-->
+			<Name>ŠKATLA KARTON SIR BLOK - 101192</Name>		<!-- product name  -->
+			<Qty>2120.000</Qty>								<!-- Quantity -->
+			<Price>640.000</Qty>							<!-- Price for ident, from pantheon -->
+		</Product>
+		<Product>
+			<Ident>1313000000147</Ident> 					<!-- product ident-->
+			<Name>KARTON A4 ROYAL WHITE - BEL</Name>		<!-- product name  -->
+			<Qty>14960.000</Qty>							<!-- Quantity -->
+			<Price>640.000</Qty>							<!-- Price for ident, from pantheon -->
+		</Product>
+	</Products>
+</Recall>
