@@ -1,5 +1,6 @@
 ﻿using DatabaseWebService.ModelsOTP;
 using DatabaseWebService.ModelsOTP.Client;
+using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsOTP.Tender;
 using OptimizacijaTransprotov.Common;
@@ -102,6 +103,18 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN;
         }
 
+        //Order position number10
+        public void SetOrder10Positions(List<OrderPositionModelNew> list)
+        {
+            AddValueToSession(Enums.RecallSession.Order10Position, list);
+        }
+
+        public List<OrderPositionModelNew> GetOrder10Positions()
+        {
+            if (SessionHasValue(Enums.RecallSession.Order10Position))
+                return (List<OrderPositionModelNew>)GetValueFromSession(Enums.RecallSession.Order10Position);
+            return null;
+        }
 
         //Recall type
         public void SetRecallTypes(List<RecallType> list)

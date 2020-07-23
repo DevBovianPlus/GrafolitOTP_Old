@@ -71,7 +71,8 @@ namespace OptimizacijaTransprotov.Common
             TransportTypes,
             RecallPosOptimalStockOverflow,
             InquirySummaryRecallID,
-            InquirySummaries
+            InquirySummaries,
+            Order10Position
         }
 
         public enum TenderSession

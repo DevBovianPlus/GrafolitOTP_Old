@@ -113,6 +113,17 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceOrderURL + "GetListOfOpenedOrderPositionsBySupplier?supplier=" + supplier + "&clientID=" + clientID;
         }
+
+        public static string GetListOfOrderNumber10()
+        {
+            return WebServiceOrderURL + "GetListOfOrderNumber10";
+        }
+
+        public static string GetCategoryList()
+        {
+            return WebServiceOrderURL + "GetCategoryList";
+        }
+
         #endregion
 
         #region Recall

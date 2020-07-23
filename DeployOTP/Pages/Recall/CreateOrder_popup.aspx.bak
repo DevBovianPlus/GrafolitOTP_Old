@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Popup.Master" AutoEventWireup="true" CodeBehind="CreateOrder_popup.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.CreateOrder_popup" %>
 
-<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
 
 <%@ MasterType VirtualPath="~/Popup.Master" %>
 

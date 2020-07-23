@@ -54,7 +54,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
-            Response.Redirect("Order.aspx");
+            Response.Redirect("OrderNOZPDO.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)

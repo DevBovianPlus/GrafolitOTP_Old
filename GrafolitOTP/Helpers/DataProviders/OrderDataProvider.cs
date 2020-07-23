@@ -23,6 +23,8 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return null;
         }
 
+       
+
         public void SetSelectedOrderPositions(List<OrderPositionModelNew> positions)
         {
             AddValueToSession(Enums.OrderSession.SelectedOrderPositions, positions);

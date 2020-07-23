@@ -6,6 +6,7 @@ using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.ModelsOTP.Tender;
+using DatabaseWebService.ModelsPDO.Inquiry;
 using Newtonsoft.Json;
 using OptimizacijaTransprotov.Helpers;
 using System;
@@ -116,6 +117,36 @@ namespace OptimizacijaTransprotov.Infrastructure
 
             return dt;
         }
+
+        public WebResponseContentModel<List<OrderPositionModelNew>> GetListOfOrderNumber10()
+        {
+            WebResponseContentModel<List<OrderPositionModelNew>> dt = new WebResponseContentModel<List<OrderPositionModelNew>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<OrderPositionModelNew>>>(WebServiceHelper.GetListOfOrderNumber10(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+        public WebResponseContentModel<List<ProductCategory>> GetCategoryList()
+        {
+            WebResponseContentModel<List<ProductCategory>> client = new WebResponseContentModel<List<ProductCategory>>();
+            try
+            {
+                client = GetResponseFromWebRequest<WebResponseContentModel<List<ProductCategory>>>(WebServiceHelper.GetCategoryList(), "get");
+            }
+            catch (Exception ex)
+            {
+                client.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return client;
+        }
+
         #endregion
 
         #region Recall

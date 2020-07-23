@@ -8,7 +8,8 @@
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallTakeOverOnly.aspx" Text="Prevzeti odpoklici" ImageUrl="~/Images/takeOverInspect.png" />
-      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic - Stara Verzija" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
@@ -35,7 +36,8 @@
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallTakeOverOnly.aspx" Text="Prevzeti odpoklici" ImageUrl="~/Images/takeOverInspect.png" />
-      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
+      <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
@@ -58,7 +60,8 @@
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallTakeOverOnly.aspx" Text="Prevzeti odpoklici" ImageUrl="~/Images/takeOverInspect.png" />
-      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
+      <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
@@ -81,7 +84,8 @@
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallTakeOverOnly.aspx" Text="Prevzeti odpoklici" ImageUrl="~/Images/takeOverInspect.png" />
-      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
+      <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
@@ -100,7 +104,8 @@
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallTakeOverOnly.aspx" Text="Prevzeti odpoklici" ImageUrl="~/Images/takeOverInspect.png" />
-      <Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
+      <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
+      <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />

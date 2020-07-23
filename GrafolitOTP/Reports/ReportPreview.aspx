@@ -2,7 +2,7 @@
 
 <%@ MasterType VirtualPath="~/Main.Master" %>
 
-<%@ Register Assembly="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentHolder" runat="server">
     <script type="text/javascript">

@@ -18,6 +18,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
     public partial class Order : ServerMasterPage
     {
         List<OrderPositionModelNew> model = null;
+        
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated) RedirectHome();
@@ -31,11 +32,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (!IsPostBack)
             {
                 //Initialize();
-                
+
                 /*if (model != null)
                 {
                     GetOrderDataProvider().SetOrderPositions(model);
                 }*/
+                ASPxGridLookupDobavitelj.DataBind();
             }
             else
             {
@@ -155,6 +157,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             
             supplier = supplier.Replace("&", "|");
             model = CheckModelValidation(GetDatabaseConnectionInstance().GetOrderPositionsBySupplier(supplier, strankaSkladisceID));
+            
             GetOrderDataProvider().SetOrderPositions(model);
         }
 
