@@ -122,11 +122,15 @@ namespace OptimizacijaTransprotov.Pages.Admin
             {
                 byte[] bytes = CheckModelValidation(GetDatabaseConnectionInstance().GetWebServiceLogFile());
                 byte[] UtilityServbytes = CheckModelValidation(GetDatabaseConnectionInstance().GetUtilityServiceLogFile());
+                byte[] applicationBytes = null;
                 CommonMethods.LogThis("Začni prenos LOG datotek");
                 string applicationLogFile = AppDomain.CurrentDomain.BaseDirectory + "log.txt";
-                byte[] applicationBytes = System.IO.File.ReadAllBytes(applicationLogFile);
+                if (System.IO.File.Exists(applicationLogFile))
+                {
+                    applicationBytes = System.IO.File.ReadAllBytes(applicationLogFile);
+                }
 
-                CommonMethods.LogThis("File" + applicationLogFile);
+                CommonMethods.LogThis("File: " + applicationLogFile);
 
                 List<FileToDownload> list = new List<FileToDownload>();
 
