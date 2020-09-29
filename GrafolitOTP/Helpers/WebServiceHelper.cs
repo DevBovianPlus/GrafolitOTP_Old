@@ -95,6 +95,8 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceSignInURL + "GetUtilityServiceLogFile";
         }
 
+       
+
         #region Order
         public static string GetAllOrders()
         {
@@ -456,6 +458,7 @@ namespace OptimizacijaTransprotov.Helpers
 
         #endregion
 
+
         #region Tender
 
         public static string GetTenderList()
@@ -494,7 +497,7 @@ namespace OptimizacijaTransprotov.Helpers
 
         public static string SaveTenderAndTenderPosition()
         {
-            return WebServiceTenderURL + "SaveTenderAndTenderPosition";
+            return WebServiceTenderURL + "SaveTenderAndUploadPosition";
         }
 
         public static string DeleteTenderPosition(int tenderPositionID)
@@ -525,6 +528,11 @@ namespace OptimizacijaTransprotov.Helpers
         public static string GetTenderListByRouteIDAndRecallID(int routeID, int recallID)
         {
             return WebServiceTenderURL + "GetTenderListByRouteIDAndRecallID?routeID=" + routeID + "&recallID=" + recallID;
+        }
+
+        public static string GetTenderDownloadFile(int iIDTender)
+        {
+            return WebServiceTenderURL + "GetTenderDownloadFile?TenderID=" + iIDTender;
         }
         #endregion
 

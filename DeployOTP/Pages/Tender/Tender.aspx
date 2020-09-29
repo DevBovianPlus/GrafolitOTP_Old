@@ -131,7 +131,7 @@
         <PanelCollection>
             <dx:PanelContent>
                 <dx:ASPxGridView ID="ASPxGridViewTender" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTender"
-                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding"
+                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding" OnSelectionChanged="ASPxGridViewTender_SelectionChanged"
                     KeyFieldName="RazpisID">
                     <Paddings Padding="0" />
                     <Settings ShowVerticalScrollBar="True"
@@ -176,7 +176,7 @@
                                     <dx:ASPxGridView ID="ASPxGridViewTenderPosition" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTenderPosition"
                                         Width="100%" EnablePagingGestures="False" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTenderPosition_DataBinding"
                                         KeyFieldName="RazpisPozicijaID" OnBeforePerformDataSelect="ASPxGridViewTenderPosition_BeforePerformDataSelect"
-                                        OnHtmlRowPrepared="ASPxGridViewTenderPosition_HtmlRowPrepared" OnBatchUpdate="ASPxGridViewTenderPosition_BatchUpdate">
+                                        OnHtmlRowPrepared="ASPxGridViewTenderPosition_HtmlRowPrepared" OnBatchUpdate="ASPxGridViewTenderPosition_BatchUpdate" >
                                         <ClientSideEvents SelectionChanged="gridTenderPosition_SelectionChanged" />
                                         <Paddings Padding="0" />
                                         <Settings ShowVerticalScrollBar="True"
@@ -224,7 +224,7 @@
                                 <div class="col-xs-4">
                                     <dx:ASPxFormLayout ID="FormLayout" runat="server" Width="100%" ColCount="2" UseDefaultPaddings="false">
                                         <Items>
-                                            <dx:LayoutGroup ShowCaption="False" GroupBoxDecoration="None" Width="100%" UseDefaultPaddings="false">
+                                            <dx:LayoutGroup ShowCaption="False"  GroupBoxDecoration="None" Width="100%" UseDefaultPaddings="false">
                                                 <Items>
                                                     <dx:LayoutGroup Caption="Dokumenti">
                                                         <Items>
@@ -288,6 +288,12 @@
                                                                         Height="25" Width="50" ClientInstanceName="clientBtnDeleteSelected" ClientEnabled="false">
                                                                         <Paddings PaddingLeft="10" PaddingRight="10" />
                                                                         <ClientSideEvents Click="btnDeleteSelected_Click" />
+                                                                    </dx:ASPxButton>
+                                                                </span>
+                                                                 <span class="AddEditButtons">
+                                                                    <dx:ASPxButton ID="btnDownloadTender" runat="server" Text="Prenos razpisa" AutoPostBack="false"
+                                                                        Height="25" Width="50" ClientInstanceName="clientBtnDownloadTender" ClientEnabled="true" OnClick="btnDownloadTender_Click">
+                                                                        <Paddings PaddingLeft="10" PaddingRight="10" />                                                                        
                                                                     </dx:ASPxButton>
                                                                 </span>
                                                             </dx:LayoutItemNestedControlContainer>

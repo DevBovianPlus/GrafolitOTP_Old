@@ -57,6 +57,9 @@ namespace OptimizacijaTransprotov.Infrastructure
         }
 
 
+      
+
+
         #region Order
         public WebResponseContentModel<List<OrderModel>> GetOrders()
         {
@@ -1424,6 +1427,20 @@ namespace OptimizacijaTransprotov.Infrastructure
             return model;
         }
 
+        public WebResponseContentModel<byte[]> GetTenderDownloadFile(int iIDTender)
+        {
+            WebResponseContentModel<byte[]> user = new WebResponseContentModel<byte[]>();
+            try
+            {
+                user = GetResponseFromWebRequest<WebResponseContentModel<byte[]>>(WebServiceHelper.GetTenderDownloadFile(iIDTender), "get");
+            }
+            catch (Exception ex)
+            {
+                user.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+            return user;
+        }
+
         public WebResponseContentModel<decimal> GetLowestAndMostRecentPriceByRouteID(int routeID)
         {
             WebResponseContentModel<decimal> dt = new WebResponseContentModel<decimal>();
@@ -1547,8 +1564,18 @@ namespace OptimizacijaTransprotov.Infrastructure
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.Method = requestMethod.ToUpper();
             request.ContentType = "application/json; charset=utf-8";
+            request.Timeout = 99999999;             //Increase timeout for testing
 
-            using (var sw = new StreamWriter(request.GetRequestStream()))
+            //using (var sw = new StreamWriter(request.GetRequestStream()))
+            //{
+            //    string clientData = JsonConvert.SerializeObject(objectToSerialize);
+            //    sw.Write(clientData);                
+            //    sw.Flush();
+            //    sw.Close();
+            //}
+            //string path = @"D:\Example.txt";
+
+            using (var sw = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.UTF8))
             {
                 string clientData = JsonConvert.SerializeObject(objectToSerialize);
                 sw.Write(clientData);
@@ -1557,8 +1584,22 @@ namespace OptimizacijaTransprotov.Infrastructure
             }
 
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream stream = response.GetResponseStream();
+            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            HttpWebResponse httpResponse;
+            try
+            {
+                httpResponse = (HttpWebResponse)request.GetResponse();
+            }
+            catch (WebException ex)
+            {
+                //
+                string message = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+                httpResponse = (HttpWebResponse)ex.Response;
+            }
+
+
+            Stream stream = httpResponse.GetResponseStream();
             StreamReader reader = new StreamReader(stream);
             string streamString = reader.ReadToEnd();
 

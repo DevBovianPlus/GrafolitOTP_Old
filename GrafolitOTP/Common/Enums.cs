@@ -68,6 +68,7 @@ namespace OptimizacijaTransprotov.Common
             RecallStatus,
             RecallTypes,
             ArgumentsOfApproval,
+            ArgumentsOfApprovalToDB,
             TransportTypes,
             RecallPosOptimalStockOverflow,
             InquirySummaryRecallID,

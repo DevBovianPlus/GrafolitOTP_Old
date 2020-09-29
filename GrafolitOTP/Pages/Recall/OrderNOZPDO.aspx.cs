@@ -56,9 +56,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         private RecallFullModel SetSelectedQnt(RecallFullModel recall)
         {
-            
 
-            decimal dSumPDO = CommonMethods.ParseDecimal( hfCurrentSumPDO["CurrenSumPDO"].ToString());
+
+            decimal dSumPDO = CommonMethods.ParseDecimal(hfCurrentSumPDO["CurrenSumPDO"].ToString());
             decimal dSumNOZ = CommonMethods.ParseDecimal(hfCurrentSumNOZ["CurrenSumNOZ"].ToString());
 
             decimal dSumPDONOZ = dSumNOZ + dSumPDO;
@@ -86,7 +86,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     supplier = GetRecallDataProvider().GetSuppliersList().Where(su => su.Dobavitelj == ASPxGridLookupDobavitelj.Value.ToString()).FirstOrDefault();
                     if (supplier != null)
                     {
-                        
+
                         recall.DobaviteljNaziv = supplier.Dobavitelj.Trim();
                         recall.DobaviteljNaslov = supplier.Naslov.Trim();
                         recall.DobaviteljPosta = supplier.Posta.Trim();
@@ -113,9 +113,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
                         else
                             maxRecallQuantity = obj.Razlika - izbranaKolicina;
 
+                        maxRecallQuantity = maxRecallQuantity == 0 ? obj.Razlika : maxRecallQuantity;
+
                         recall.OdpoklicPozicija.Add(new RecallPositionModel
                         {
-                            Kolicina = maxRecallQuantity < 0 ? 0 : maxRecallQuantity,//nastavimo trenutno odpoklicano količino razliko med količino iz naročila in prevzeto količino
+                            Kolicina = maxRecallQuantity < 0 ? (obj.Razlika < 0 ? 0 : obj.Razlika) : maxRecallQuantity,//nastavimo trenutno odpoklicano količino razliko med količino iz naročila in prevzeto količino
                             KolicinaIzNarocila = obj.Naroceno,
                             Material = obj.Artikel,
                             NarociloID = obj.Narocilnica,
@@ -145,7 +147,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 }
 
                 ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
-                GetRecallDataProvider().SetRecallFullModel(recall);                
+                GetRecallDataProvider().SetRecallFullModel(recall);
                 ASPxWebControl.RedirectOnCallback(GenerateURI("RecallForm.aspx", (int)Enums.UserAction.Add, -1));
             }
         }
@@ -198,8 +200,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             // where in 
             model = model.Where(e => catg.Any(ee => ee == e.Kategorija)).ToList();
-            
-            
+
+
 
             return model;
         }
@@ -221,11 +223,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
             modelOrder10 = GetRecallDataProvider().GetOrder10Positions();
             if (selCategory.Length > 0)
             {
-                model = FilterOrderPositionsByCategory(model,  selCategory);
+                model = FilterOrderPositionsByCategory(model, selCategory);
                 modelOrder10 = FilterOrderPositionsByCategory(modelOrder10, selCategory);
             }
             //if (model != null) model = model.Where(opm => opm.TipAplikacije == "PDO" || opm.TipAplikacije == "NOZ").ToList();
-            
+
             if ((supplier != null) && (supplier.Length > 0))
             {
                 if (modelOrder10 != null) modelOrder10 = modelOrder10.Where(opm => opm.Dobavitelj == supplier).ToList();

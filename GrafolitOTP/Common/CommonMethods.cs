@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Web;
+using System.Web.UI;
 
 namespace OptimizacijaTransprotov.Common
 {
@@ -252,6 +253,56 @@ namespace OptimizacijaTransprotov.Common
                 }
 
                 return ms.ToArray();
+            }
+        }
+
+        public static void WriteDocumentToResponse(Page pCurrentPage, byte[] documentData, string format, bool isInline, string fileName)
+        {
+            try
+            {
+                string contentType = "application/pdf";
+
+                if (format == "png")
+                    contentType = "image/png";
+                else if (format == "jpg" || format == "jpeg")
+                    contentType = "image/jpeg";
+                else if (format == "xls")
+                    contentType = "application/xls";
+                else if (format == "zip")
+                    contentType = "application/zip";
+                else
+                    contentType = "application/octet-stream";
+
+                string disposition = (isInline) ? "inline" : "attachment";
+
+                CommonMethods.LogThis("Before dowload");
+                pCurrentPage.Response.Clear();
+                pCurrentPage.Response.ContentType = contentType;
+
+                pCurrentPage.Response.ClearHeaders();
+
+                CommonMethods.LogThis("Before Add header");
+                pCurrentPage.Response.AddHeader("Content-Disposition", String.Format("{0}; filename={1}", disposition, fileName));
+                pCurrentPage.Response.AddHeader("Content-Length", documentData.Length.ToString());
+
+                pCurrentPage.Response.Clear(); // dodal boris - 21.02.2019       
+                pCurrentPage.Response.BufferOutput = false;
+                pCurrentPage.Response.ClearContent();
+
+                CommonMethods.LogThis("Before Binnarywrite");
+                pCurrentPage.Response.BinaryWrite(documentData);
+
+                pCurrentPage.Response.Flush();
+
+                //Response.Close();
+                //Response.End();
+
+                pCurrentPage.Response.SuppressContent = true;
+            }
+            catch (Exception ex)
+            {
+                CommonMethods.LogThis(ex.Message + "\r\n" + ex.Source + "\r\n" + ex.StackTrace);
+
             }
         }
     }

@@ -86,7 +86,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
             }
             else if (e.Parameter.Contains("DeleteSelected;"))
             {
-                string [] split = e.Parameter.Split(';');
+                string[] split = e.Parameter.Split(';');
                 List<int> deletedID = split[1].Split(',').ToList().ConvertAll(int.Parse);
                 CheckModelValidation(GetDatabaseConnectionInstance().DeleteTenderPos(deletedID));
                 ASPxGridViewTender.DataBind();
@@ -113,6 +113,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 (sender as ASPxGridView).DataSource = tenderPosList;
                 (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
             }
+
         }
 
         protected void ASPxGridViewTenderPosition_BeforePerformDataSelect(object sender, EventArgs e)
@@ -304,6 +305,39 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 model.RazpisPozicija = tenderPosList;
             }
             e.Handled = true;
+        }
+
+    
+        protected void ASPxGridViewTender_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void btnDownloadTender_Click(object sender, EventArgs e)
+        {
+            //ASPxButton btn = sender as ASPxButton;
+            //GridViewDetailRowTemplateContainer container = btn.NamingContainer.NamingContainer as GridViewDetailRowTemplateContainer;
+            //int ind = ((GridViewDetailRowTemplateContainer)btn.NamingContainer.NamingContainer).VisibleIndex;
+            //ASPxFormLayout f1 = ASPxGridViewTender.FindDetailRowTemplateControl(ind, "FormLayout") as ASPxFormLayout;
+
+            List<TenderFullModel> tenderList = (List<TenderFullModel>)Session["TenderList"];
+            if (selectedTenderID > 0)
+            {
+                TenderFullModel tenderF = tenderList.Where(t => t.RazpisID == selectedTenderID).FirstOrDefault();
+                if (tenderF != null && tenderF.PotRazpisa != null && tenderF.PotRazpisa.Length>0)
+                {
+                    string sExtension = tenderF.PotRazpisa.Substring(tenderF.PotRazpisa.IndexOf(".")+1,3);
+
+                    string[] split = tenderF.PotRazpisa.Split('\\');
+                    string sFileName = split[split.Length - 1];
+                    byte[] bytes = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderDownloadFile(tenderF.RazpisID));
+                    if (bytes != null)
+                    {
+                        CommonMethods.WriteDocumentToResponse(this, bytes, sExtension, false, sFileName);
+                    }
+                }
+            }
+
         }
     }
 }

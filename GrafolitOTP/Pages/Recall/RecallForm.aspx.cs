@@ -287,10 +287,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.TipPrevozaID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
 
-            if (SessionHasValue(Enums.RecallSession.ArgumentsOfApproval))
+            if (SessionHasValue(Enums.RecallSession.ArgumentsOfApprovalToDB))
             {
-                model.RazlogOdobritveSistem = GetValueFromSession(Enums.RecallSession.ArgumentsOfApproval).ToString();
-                RemoveSession(Enums.RecallSession.ArgumentsOfApproval);
+                model.RazlogOdobritveSistem = GetValueFromSession(Enums.RecallSession.ArgumentsOfApprovalToDB).ToString();
+                RemoveSession(Enums.RecallSession.ArgumentsOfApprovalToDB);
             }
 
             model.LastnoSkladisceID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupSkladisce));
@@ -560,7 +560,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             else
                 redirectString = GenerateURI("Recall.aspx", queryStrings);
 
-            if (bIsRejectOrAccept)
+            if (bIsRejectOrAccept && PrincipalHelper.IsUserLeader())                
             {
                 redirectString = "Recall.aspx?filter=3";
             }
@@ -899,12 +899,17 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         private void CheckRecallForAnomalies(bool isSupplierArrangesTransport = false, bool isBuyerArrangesTransport = false)
         {
-            decimal kolicinaVsota = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            //decimal kolicinaVsota = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
+            string sArgumentOfApproval = "";
 
+            CommonMethods.LogThis("Log CheckRecallForAnomalies 1 - ŠT :" + model.OdpoklicStevilka.ToString());
             string memKomentarOdobritve = "";
 
             if (kolicinaVsota > GetMaxQuantityForRecall())
             {
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 2 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                 CallbackPanelUserInput.JSProperties["cpError"] = "Previsoka količina";
                 btnRecall.ClientEnabled = false;
 
@@ -921,6 +926,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (GetRecallDataProvider().HasTenderListValues() && !isBuyerArrangesTransport)
             {
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 3 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                 string errorMessage = "";
                 EnableUserControls();
                 decimal newPrice = CommonMethods.ParseDecimal(txtNovaCena.Text);
@@ -935,14 +942,18 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (isNewPriceHigherFromTender())
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 4 - ŠT :" + model.OdpoklicStevilka.ToString());
+                    sArgumentOfApproval += "Cena je višja od zadnjega razpisa izbranega prevoznika. | ";
                     bool optimalStockOverFlow = CheckForOptimalStockOverflow(model.OdpoklicPozicija);//preverimo če je cena napačna in preverimo še če je optimalna zaloga prekoračena.
                     needToConfirmRecall = true;
-                    memKomentarOdobritve = "Cena je višja od zadnjega razpisa izbranega prevoznika." + (optimalStockOverFlow ? "\r\n Preseg optimalne količine." : " (" + GetLatestPrice().ToString("N2") + ")") + "";
+                    memKomentarOdobritve += "Cena je višja od zadnjega razpisa izbranega prevoznika." + (optimalStockOverFlow ? "\r\n Preseg optimalne količine. |" : " (" + GetLatestPrice().ToString("N2") + ")") + " |";
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Cena je višja od zadnjega razpisa izbranega prevoznika. (" + GetLatestPrice().ToString("N2") + ")");
                 }
 
                 if (CheckForOptimalStockOverflow(model.OdpoklicPozicija))//ob vnosu cene še preverimo če je preseg optimalne količine
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 5 - ŠT :" + model.OdpoklicStevilka.ToString());
+                    sArgumentOfApproval += "Odpoklicana količina je višja od optimalne. | ";
                     needToConfirmRecall = true;
                     memKomentarOdobritve += "Odpoklicana količina je višja od optimalne." + " | ";
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
@@ -950,6 +961,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 }
                 if (!isTransportType15Valid(model.OdpoklicPozicija))//preverimo če smo prekoračili optimalno zalogo za transport 15
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 6 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                     needToConfirmRecall = true;
                     memKomentarOdobritve += "Odpoklicana količina je višja od optimalne (tip transporta 15)." + " | ";
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
@@ -957,6 +970,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (CheckForOptimalStockOverflowFromPrevRecalls(model.OdpoklicPozicija, GetMaterialValues(), out errorMessage))//preverimi če smo prekoračili optimalno zalogo na podlagi prejšnjih odpoklicev
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 7 - ŠT :" + model.OdpoklicStevilka.ToString());
+                    sArgumentOfApproval += "Prekoračena optimalna količina. V prejšnjih odpoklicih | ";
                     needToConfirmRecall = true;
                     memKomentarOdobritve += "Prekoračena optimalna količina." + " | ";
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
@@ -964,6 +979,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (!needToConfirmRecall)
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 8 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                     btnRecall.ForeColor = Color.Green;
                     memoKomentar.ClientVisible = false;
                     btnRecall.Text = "Odpokliči";
@@ -1006,6 +1023,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (needToConfirmRecall)
                 {
+                    CommonMethods.LogThis("Log CheckRecallForAnomalies 9 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                     memoKomentar.ClientVisible = true;
                     btnRecall.Text = "V odobritev";
                     btnRecall.ForeColor = Color.Tomato;
@@ -1018,15 +1037,21 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (isSupplierArrangesTransport)
             {
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 10 - ŠT :" + model.OdpoklicStevilka.ToString());
+                btnRecall.Text = "Odpokliči";
                 EnableUserControls(false);
                 btnRecall.ClientEnabled = true;
                 btnRecall.ForeColor = Color.Green;
+                sArgumentOfApproval = "";
             }
             else if (isBuyerArrangesTransport)
             {
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 11 - ŠT :" + model.OdpoklicStevilka.ToString());
+                btnRecall.Text = "Odpokliči";
                 EnableUserControls(false, true);
                 btnRecall.ClientEnabled = true;
                 btnRecall.ForeColor = Color.Green;
+                sArgumentOfApproval = "";
                 GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN);//nastavimo status nazaj na neznano če je slučajno prišlo vmes do spreminjnja checkbox-a (dobavitelj ali kupec priskrbi prevoz)
             }
 
@@ -1036,7 +1061,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 24500)) && String.IsNullOrEmpty(memoKomentar.Text) &&
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))
             {
-                memKomentarOdobritve = "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.";
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 12 - ŠT :" + model.OdpoklicStevilka.ToString());
+                memKomentarOdobritve += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.";
+                sArgumentOfApproval += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg. | ";
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.");
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
@@ -1044,8 +1071,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV);
             }
 
+            CommonMethods.LogThis("Log CheckRecallForAnomalies 13 - ŠT :" + model.OdpoklicStevilka.ToString());
 
             AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, memKomentarOdobritve);
+            AddValueToSession(Enums.RecallSession.ArgumentsOfApprovalToDB, sArgumentOfApproval);
             memKomentarOdobritve += " Vpiši komentar";
             memoKomentar.NullText = memKomentarOdobritve;
             memoKomentar.Text = "";
@@ -1078,18 +1107,21 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //odpoklic pozicij preverjamo smo če imajo transport tipa 15
             if (CheckForOptimalStockOverflow(model.OdpoklicPozicija))
             {
+                CommonMethods.LogThis("Log 1 - ŠT :" + model.OdpoklicStevilka.ToString());
                 ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 isValid = false;
             }
             else if (!isTransportType15Valid(model.OdpoklicPozicija))
             {
+                CommonMethods.LogThis("Log 2 - ŠT :" + model.OdpoklicStevilka.ToString());
                 ShowClientWarningPopUp("Odpoklicana količina presega optimalno zaradi tipa transporta (15).");
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 isValid = false;
             }
             else if (ASPxGridLookupStranke.Text.Split(';').Length > 1)//če je izbrano več prevoznikov potem ne dovolimo odpoklica odpoklicati
             {
+                CommonMethods.LogThis("Log 3 - ŠT :" + model.OdpoklicStevilka.ToString());
                 ShowClientWarningPopUp("Ni možno odpoklicati odpoklica zaradi prevoznikov!");
                 return;
             }
@@ -1097,6 +1129,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je vnsenea cena večja kot tista iz razpisa
             if (isNewPriceHigherFromTender() && (GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN && HasSessionModelStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA)))
             {
+                CommonMethods.LogThis("Log 4 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
                 btnRecall.ForeColor = Color.Tomato;
@@ -1106,6 +1140,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }
             else if (!isValid && (GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN && HasSessionModelStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA)))
             {
+                CommonMethods.LogThis("Log 5 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
                 btnRecall.ForeColor = Color.Tomato;
@@ -1118,6 +1154,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
                GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN && !String.IsNullOrEmpty(model.RazlogOdobritveSistem)) && //ta del pogoja zajema primer, ko uporabnik da odpoklic v odobritev in ga potem nazaj odpre
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))//če je delovna verzija in če ima razlog odobritev sistem polje vrednost potem moremo priti v ta if
             {
+                CommonMethods.LogThis("Log 6 - ŠT :" + model.OdpoklicStevilka.ToString());
+
                 memoKomentar.NullText = "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg. Zapiši komentar!";
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.");
                 memoKomentar.ClientVisible = true;
@@ -1127,11 +1165,18 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }
             else
             {
+                CommonMethods.LogThis("Log 7 - ŠT :" + model.OdpoklicStevilka.ToString());
                 //TODO : Status se ni spremenil v času vpisovanja nove cene zato ima status privzeto vrednost
                 if (GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN)
+                {
+                    CommonMethods.LogThis("Log 7.1 - ŠT :" + model.OdpoklicStevilka.ToString());
                     GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POTRJEN);
+                }
                 else if (GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV)
+                {
+                    CommonMethods.LogThis("Log 7.2 - ŠT :" + model.OdpoklicStevilka.ToString());
                     recallStatusChanged = true;
+                }
 
                 ProcessUserAction();
             }
@@ -1251,12 +1296,20 @@ namespace OptimizacijaTransprotov.Pages.Recall
                         decimal maxRecallQuantity = 0;
                         decimal izbranaKolicina = recallPosModel.KolicinaPrevzeta <= 0 ? recallPosModel.KolicinaOTPPozicijaNarocilnice : recallPosModel.KolicinaPrevzeta;
 
+                        // 28.07.2020 - popravek
+                        //if (recallPosModel.Proizvedeno > 0)
+                        //{
+                        //    maxRecallQuantity = (recallPosModel.Proizvedeno - izbranaKolicina);
+                        //}
+                        //else
+                        //    maxRecallQuantity = (recallPosModel.KolicinaRazlika - izbranaKolicina);
+
                         if (recallPosModel.Proizvedeno > 0)
                         {
-                            maxRecallQuantity = (recallPosModel.Proizvedeno - izbranaKolicina);
+                            maxRecallQuantity = recallPosModel.Proizvedeno;
                         }
                         else
-                            maxRecallQuantity = (recallPosModel.KolicinaRazlika - izbranaKolicina);
+                            maxRecallQuantity = izbranaKolicina;
 
                         //Če je odpoklicana količina previsoka uporabnika obvestimo in dodamo to pozicijo v seznam s keterim označimo pozicijo v gridview-u rdeče
                         if (maxRecallQuantity < CommonMethods.ParseDecimal(kolicinaValue))

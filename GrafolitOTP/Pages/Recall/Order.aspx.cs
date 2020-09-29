@@ -87,7 +87,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                         recall.OdpoklicPozicija.Add(new RecallPositionModel
                         {
-                            Kolicina = maxRecallQuantity < 0 ? 0 : maxRecallQuantity,//nastavimo trenutno odpoklicano količino razliko med količino iz naročila in prevzeto količino
+                            Kolicina = maxRecallQuantity < 0 ? (obj.Razlika<0 ? 0 : obj.Razlika) : maxRecallQuantity,//nastavimo trenutno odpoklicano količino razliko med količino iz naročila in prevzeto količino
                             KolicinaIzNarocila = obj.Naroceno,
                             Material = obj.Artikel,
                             NarociloID = obj.Narocilnica,

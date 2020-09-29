@@ -5308,3 +5308,795 @@ http://localhost:31695/Pages/Recall/RecallForm.aspx?action=2&recordId=3551
 20. 07. 2020 10:52:08 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid object name dbo.SeznamPozicijNarocilnic10ZaOdpoklic.
 20. 07. 2020 10:52:08 An error occurred while executing the command definition. See the inner exception for details.Invalid object name dbo.GetCategoryListOTP.
 22. 07. 2020 17:12:14 Client with specific ID does not exist
+23. 07. 2020 15:14:53 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 23. julij 2020 ob 15:14:50 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.AddOrEditEntityObject(Boolean add) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 272
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.ProcessUserAction() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 534
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.btnRecall_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1136
+   at DevExpress.Web.ASPxButton.OnClick(EventArgs e)
+   at DevExpress.Web.ASPxButton.RaisePostBackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_3a4ujz5w.4.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.AddOrEditEntityObject(Boolean add) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 272
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.ProcessUserAction() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 534
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.btnRecall_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1136
+   at DevExpress.Web.ASPxButton.OnClick(EventArgs e)
+   at DevExpress.Web.ASPxButton.RaisePostBackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.AddOrEditEntityObject(Boolean add) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 272
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.ProcessUserAction() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 534
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.btnRecall_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1136
+   at DevExpress.Web.ASPxButton.OnClick(EventArgs e)
+   at DevExpress.Web.ASPxButton.RaisePostBackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_3a4ujz5w.4.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.AddOrEditEntityObject(Boolean add) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 272
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.ProcessUserAction() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 534
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.btnRecall_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1136
+   at DevExpress.Web.ASPxButton.OnClick(EventArgs e)
+   at DevExpress.Web.ASPxButton.RaisePostBackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/RecallForm.aspx?action=1&recordId=-1
+
+
+24. 07. 2020 13:36:58 Client with specific ID does not exist
+24. 07. 2020 13:39:12 Client with specific ID does not exist
+24. 07. 2020 13:41:00 The operation has timed out System
+27. 07. 2020 09:56:32 Deleting client failed. Client with specific id does not exist
+27. 07. 2020 11:35:20 Client with specific ID does not exist
+27. 07. 2020 11:35:32 Client with specific ID does not exist
+28. 07. 2020 10:43:52 Client with specific ID does not exist
+30. 07. 2020 11:06:31 1
+30. 07. 2020 11:07:00 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+30. 07. 2020 11:09:07 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+30. 07. 2020 11:10:13 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+30. 07. 2020 11:10:18 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+30. 07. 2020 11:12:47 The request was aborted: The operation has timed out. System
+30. 07. 2020 11:15:18 The request was aborted: The operation has timed out. System
+30. 07. 2020 11:21:05 1
+12. 08. 2020 13:46:46 Dashboard repository errorThe underlying provider failed on Open.A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)The network path was not found
+12. 08. 2020 13:46:48 Dashboard repository errorThe underlying provider failed on Open.A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)The network path was not found
+12. 08. 2020 13:46:48 Dashboard repository errorThe underlying provider failed on Open.A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)The network path was not found
+12. 08. 2020 13:50:27 zipFileName: Razpisi_12_08_2020_01_50_27.zip
+12. 08. 2020 13:50:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-08-2020\SAMO_URDIH_doo_637328370311880677_Razpis.xls
+12. 08. 2020 13:50:37 Before dowload
+12. 08. 2020 13:50:37 Before Add header
+12. 08. 2020 13:50:37 Before Binnarywrite
+12. 08. 2020 14:18:08 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:22:15 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:27:47 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:28:16 No model was found for saving
+12. 08. 2020 14:33:05 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:34:09 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:37:48 The remote server returned an error: (500) Internal Server Error. System
+12. 08. 2020 14:38:20 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 10:31:51 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 10:40:41 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 10:47:25 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 10:50:27 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 10:52:41 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 11:25:36 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 11:27:53 No model was found for saving
+14. 08. 2020 11:31:17 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 11:34:13 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 11:38:01 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 11:48:57 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:12:16 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:17:32 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:24:19 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:30:05 The operation has timed out System
+14. 08. 2020 14:35:24 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:50:33 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 14:51:04 zipFileName: Razpisi_14_08_2020_02_51_04.zip
+14. 08. 2020 14:51:06 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\OMAHEN-TRANSPORT_doo_637330134659892702_Razpis.xls
+14. 08. 2020 14:51:13 Before dowload
+14. 08. 2020 14:51:13 Before Add header
+14. 08. 2020 14:51:13 Before Binnarywrite
+14. 08. 2020 14:58:18 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 15:03:18 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 15:14:05 zipFileName: Razpisi_14_08_2020_03_14_05.zip
+14. 08. 2020 15:14:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\INTEREUROPA_dd_637330148454321772_Razpis.xls
+14. 08. 2020 15:14:11 Before dowload
+14. 08. 2020 15:14:11 Before Add header
+14. 08. 2020 15:14:11 Before Binnarywrite
+14. 08. 2020 15:19:06 The remote server returned an error: (500) Internal Server Error. System
+14. 08. 2020 15:19:10 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 236
+14. 08. 2020 15:25:05 zipFileName: Razpisi_14_08_2020_03_25_05.zip
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\OMAHEN-TRANSPORT_doo_637330155054648233_Razpis.xls
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\ROLLING_TONS_637330155055818238_Razpis.xls
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\FRIKUS_doo_637330155056658247_Razpis.xls
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\INTEREUROPA_dd_637330155057358287_Razpis.xls
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\RCM_doo_637330155058208228_Razpis.xls
+14. 08. 2020 15:25:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-08-2020\MAJCEN_EUROTERMINAL_doo_637330155058908230_Razpis.xls
+14. 08. 2020 15:26:48 Before dowload
+14. 08. 2020 15:26:48 Before Add header
+14. 08. 2020 15:26:48 Before Binnarywrite
+17. 08. 2020 08:41:09 zipFileName: Razpisi_17_08_2020_08_41_09.zip
+17. 08. 2020 08:41:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_17-08-2020\OMAHEN-TRANSPORT_doo_637332504696079898_Razpis.xls
+17. 08. 2020 08:41:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_17-08-2020\ROLLING_TONS_637332504696840544_Razpis.xls
+17. 08. 2020 08:41:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_17-08-2020\FRIKUS_doo_637332504697550146_Razpis.xls
+17. 08. 2020 08:41:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_17-08-2020\INTEREUROPA_dd_637332504698179893_Razpis.xls
+17. 08. 2020 08:43:49 Before dowload
+17. 08. 2020 08:43:49 Before Add header
+17. 08. 2020 08:43:49 Before Binnarywrite
+17. 08. 2020 09:26:55 Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. SystemAn existing connection was forcibly closed by the remote host System
+17. 08. 2020 09:42:30 The remote server returned an error: (500) Internal Server Error. System
+17. 08. 2020 09:50:59 
+17. 08. 2020 09:52:58 No model was found for saving
+17. 08. 2020 22:20:16 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 17. avgust 2020 ob 22:20:13 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Infrastructure.ServerMasterPage.CheckModelValidation[T](WebResponseContentModel`1 instance) in D:\GitHub\GrafolitOTP\GrafolitOTP\Infrastructure\ServerMasterPage.cs:line 487
+   at OptimizacijaTransprotov.Pages.Tender.Tender.CallbackPanelTender_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 76
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+17. 08. 2020 22:40:02 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 17. avgust 2020 ob 22:40:00 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Infrastructure.ServerMasterPage.CheckModelValidation[T](WebResponseContentModel`1 instance) in D:\GitHub\GrafolitOTP\GrafolitOTP\Infrastructure\ServerMasterPage.cs:line 487
+   at OptimizacijaTransprotov.Pages.Tender.Tender.CallbackPanelTender_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 76
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+17. 08. 2020 22:52:34 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 17. avgust 2020 ob 22:52:32 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Infrastructure.ServerMasterPage.CheckModelValidation[T](WebResponseContentModel`1 instance) in D:\GitHub\GrafolitOTP\GrafolitOTP\Infrastructure\ServerMasterPage.cs:line 487
+   at OptimizacijaTransprotov.Pages.Tender.Tender.CallbackPanelTender_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 76
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+17. 08. 2020 23:23:54 Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. SystemAn existing connection was forcibly closed by the remote host System
+28. 08. 2020 15:05:38 Log CheckRecallForAnomalies 1 - ŠT :0
+28. 08. 2020 15:05:38 Log CheckRecallForAnomalies 3 - ŠT :0
+28. 08. 2020 15:05:43 Log CheckRecallForAnomalies 8 - ŠT :0
+28. 08. 2020 15:05:47 Log CheckRecallForAnomalies 13 - ŠT :0
+28. 08. 2020 15:06:03 Log CheckRecallForAnomalies 1 - ŠT :0
+28. 08. 2020 15:06:03 Log CheckRecallForAnomalies 3 - ŠT :0
+28. 08. 2020 15:06:05 Log CheckRecallForAnomalies 8 - ŠT :0
+28. 08. 2020 15:06:07 Log CheckRecallForAnomalies 10 - ŠT :0
+28. 08. 2020 15:06:07 Log CheckRecallForAnomalies 13 - ŠT :0
+28. 08. 2020 15:06:32 Log 7 - ŠT :0
+28. 08. 2020 15:06:34 Log 7.1 - ŠT :0
+1. 09. 2020 14:18:58 zipFileName: Razpisi_01_09_2020_02_18_57.zip
+1. 09. 2020 14:19:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\OMAHEN-TRANSPORT_doo_637345667638256923_Razpis.xls
+1. 09. 2020 14:19:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\ROLLING_TONS_637345667653377140_Razpis.xls
+1. 09. 2020 14:20:30 Before dowload
+1. 09. 2020 14:20:30 Before Add header
+1. 09. 2020 14:20:30 Before Binnarywrite
+1. 09. 2020 14:20:57 zipFileName: Razpisi_01_09_2020_02_20_56.zip
+1. 09. 2020 14:20:59 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\MAJCEN_EUROTERMINAL_doo_637345668599828716_Razpis.xls
+1. 09. 2020 14:21:05 Before dowload
+1. 09. 2020 14:21:05 Before Add header
+1. 09. 2020 14:21:05 Before Binnarywrite
+1. 09. 2020 14:22:19 zipFileName: Razpisi_01_09_2020_02_22_19.zip
+1. 09. 2020 14:22:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\OMAHEN-TRANSPORT_doo_637345669399267759_Razpis.xls
+1. 09. 2020 14:22:23 Before dowload
+1. 09. 2020 14:22:23 Before Add header
+1. 09. 2020 14:22:23 Before Binnarywrite
+1. 09. 2020 14:25:32 zipFileName: Razpisi_01_09_2020_02_25_32.zip
+1. 09. 2020 14:25:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\ROLLING_TONS_637345671327369994_Razpis.xls
+1. 09. 2020 14:25:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\FRIKUS_doo_637345671327699990_Razpis.xls
+1. 09. 2020 14:43:46 Before dowload
+1. 09. 2020 14:43:46 Before Add header
+1. 09. 2020 14:43:46 Before Binnarywrite
+1. 09. 2020 14:44:37 zipFileName: Razpisi_01_09_2020_02_44_28.zip
+1. 09. 2020 15:03:22 zipFileName: Razpisi_01_09_2020_03_03_22.zip
+1. 09. 2020 15:03:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\OMAHEN-TRANSPORT_doo_637345694092025950_Razpis.xls
+1. 09. 2020 15:20:41 zipFileName: Razpisi_01_09_2020_03_20_41.zip
+1. 09. 2020 15:20:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-09-2020\INTEREUROPA_dd_637345704457794719_Razpis.xls
+1. 09. 2020 15:20:56 Before dowload
+1. 09. 2020 15:20:56 Before Add header
+1. 09. 2020 15:20:56 Before Binnarywrite
+1. 09. 2020 15:46:17 The operation has timed out System
+5. 09. 2020 05:18:53 Log CheckRecallForAnomalies 1 - ŠT :4143
+5. 09. 2020 05:18:53 Log CheckRecallForAnomalies 13 - ŠT :4143
+5. 09. 2020 05:19:18 Log CheckRecallForAnomalies 1 - ŠT :4143
+5. 09. 2020 05:19:18 Log CheckRecallForAnomalies 10 - ŠT :4143
+5. 09. 2020 05:19:18 Log CheckRecallForAnomalies 13 - ŠT :4143
+5. 09. 2020 05:19:25 Log CheckRecallForAnomalies 1 - ŠT :4143
+5. 09. 2020 05:19:25 Log CheckRecallForAnomalies 10 - ŠT :4143
+5. 09. 2020 05:19:25 Log CheckRecallForAnomalies 13 - ŠT :4143
+5. 09. 2020 05:19:43 Log 1 - ŠT :4143
+5. 09. 2020 05:19:53 Log 5 - ŠT :4143
+5. 09. 2020 05:22:36 Log CheckRecallForAnomalies 1 - ŠT :4143
+5. 09. 2020 05:22:36 Log CheckRecallForAnomalies 10 - ŠT :4143
+5. 09. 2020 05:22:36 Log CheckRecallForAnomalies 13 - ŠT :4143
+7. 09. 2020 15:07:01 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:07:01 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:07:01 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:07:01 Log CheckRecallForAnomalies 13 - ŠT :0
+7. 09. 2020 15:07:04 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:07:04 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:07:04 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:07:10 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:07:10 Log CheckRecallForAnomalies 10 - ŠT :0
+7. 09. 2020 15:07:10 Log CheckRecallForAnomalies 13 - ŠT :0
+7. 09. 2020 15:08:29 Log 1 - ŠT :0
+7. 09. 2020 15:08:49 Log 7 - ŠT :0
+7. 09. 2020 15:08:54 Log 7.1 - ŠT :0
+7. 09. 2020 15:16:50 Deleting client failed. Client with specific id does not exist
+7. 09. 2020 15:16:53 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:16:53 Log CheckRecallForAnomalies 2 - ŠT :0
+7. 09. 2020 15:17:23 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:17:23 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:17:23 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:17:23 Log CheckRecallForAnomalies 2 - ŠT :0
+7. 09. 2020 15:17:23 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:17:23 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:17:23 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:45 Deleting client failed. Client with specific id does not exist
+7. 09. 2020 15:18:45 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:45 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:45 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:47 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:18:47 Log CheckRecallForAnomalies 2 - ŠT :0
+7. 09. 2020 15:18:47 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:47 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:18:47 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:22:29 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:22:29 Log CheckRecallForAnomalies 13 - ŠT :0
+7. 09. 2020 15:26:20 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:26:20 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:26:20 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:26:20 Log CheckRecallForAnomalies 13 - ŠT :0
+7. 09. 2020 15:26:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:26:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:26:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+7. 09. 2020 15:26:25 Log CheckRecallForAnomalies 1 - ŠT :0
+7. 09. 2020 15:26:25 Log CheckRecallForAnomalies 10 - ŠT :0
+7. 09. 2020 15:26:25 Log CheckRecallForAnomalies 13 - ŠT :0
+7. 09. 2020 15:26:41 Log 1 - ŠT :0
+7. 09. 2020 15:27:27 Log 7 - ŠT :0
+7. 09. 2020 15:29:55 Log 7.1 - ŠT :0
+8. 09. 2020 08:51:54 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 08:51:54 Log CheckRecallForAnomalies 12 - ŠT :0
+8. 09. 2020 08:52:06 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 08:53:46 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 08:57:03 Log CheckRecallForAnomalies 12 - ŠT :0
+8. 09. 2020 08:57:16 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 08:58:47 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 08:58:47 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 08:58:56 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 08:58:56 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 09:48:25 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:28 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:28 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:28 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:29 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:29 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:48:29 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:52:43 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:52:43 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:52:46 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 09:55:34 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 09:55:43 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:55:43 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:55:44 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 09:56:07 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 09:56:48 Log CheckRecallForAnomalies 10 - ŠT :0
+8. 09. 2020 09:56:48 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 09:58:11 Log 7 - ŠT :0
+8. 09. 2020 09:58:14 Log 7.1 - ŠT :0
+8. 09. 2020 09:58:37 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:40 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:40 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:41 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:05:41 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:05:44 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:44 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:44 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:05:58 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:05:58 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:06:16 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:06:18 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:06:23 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:07:17 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:07:27 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:27 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:27 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:45 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:45 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:46 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:07:46 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:07:46 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:47 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:07:47 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:03 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:03 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:04 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:08:04 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:08:07 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:07 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:07 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:20 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:20 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:20 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 10:08:20 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 10:08:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 10:08:21 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:33 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:33 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:34 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:13:34 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 11:13:35 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:35 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:35 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:41 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:13:41 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 11:13:51 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:51 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:51 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:13:51 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 11:13:53 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:53 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:13:53 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:15:58 Repository failed to retrieve dataRepository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name PotRazpisa.
+8. 09. 2020 11:16:03 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:16:03 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 09. 2020 11:16:15 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:16:15 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 09. 2020 11:16:43 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 09. 2020 11:16:45 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 09. 2020 11:20:58 Log CheckRecallForAnomalies 8 - ŠT :0
+8. 09. 2020 11:21:31 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 09. 2020 19:35:05 The request was aborted: The operation has timed out. System
+8. 09. 2020 19:36:46 The request was aborted: The operation has timed out. System
+8. 09. 2020 19:38:26 The request was aborted: The operation has timed out. System
+9. 09. 2020 11:19:38 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 11:19:38 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 11:19:41 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 11:19:42 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 11:19:53 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 11:19:53 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 11:19:56 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 11:19:57 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 11:20:08 Log 7 - ŠT :0
+9. 09. 2020 11:20:08 Log 7.1 - ŠT :0
+9. 09. 2020 11:46:23 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 11:46:23 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 11:46:25 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 11:46:25 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 11:46:26 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 11:46:26 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 12:00:09 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 12:00:21 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 12:03:11 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 12:04:35 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 12:04:55 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 12:18:05 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 12:18:08 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 12:18:12 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 12:18:12 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 12:18:18 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 12:18:21 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 12:18:44 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 12:18:54 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 12:18:56 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 12:18:56 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 12:18:59 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 12:19:00 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 12:19:17 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 12:19:18 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 12:19:22 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 12:19:26 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 12:19:33 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 12:19:37 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 12:22:24 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:00:27 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:00:28 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:00:31 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:00:31 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:00:33 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:00:34 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:00:55 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:00:55 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:00:57 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:00:57 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:00:59 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:01:00 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:01:13 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:01:13 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:01:15 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:01:15 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:01:15 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:01:17 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:01:18 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:01:39 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:01:40 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:01:41 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:01:41 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:01:42 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:01:46 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:01:49 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:03:55 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:03:55 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:03:57 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:03:57 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:03:57 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:03:59 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:03:59 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:06:44 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:06:45 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:06:48 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:06:48 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:06:48 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:06:50 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:06:50 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:07:47 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:07:48 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:07:50 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:07:50 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:07:50 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:07:51 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:07:51 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:11:10 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:11:12 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:11:15 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:11:15 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:11:15 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:11:16 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:11:17 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:12:20 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:12:21 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:12:22 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:12:22 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:12:22 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:12:23 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:12:24 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:12:38 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:12:39 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:12:40 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:12:40 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:12:41 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:12:42 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:13:00 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:13:01 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:13:02 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:13:02 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:13:03 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:13:04 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:13:04 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:18:57 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:18:57 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:19:12 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:19:12 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:19:13 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:19:14 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:19:36 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:19:55 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:20:03 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:20:03 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:20:04 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:20:05 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:20:24 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:20:24 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:20:25 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:20:26 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:20:26 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:20:26 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:20:34 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:20:34 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:20:35 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:20:36 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:20:36 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:20:36 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:20:43 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:20:43 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:20:44 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:20:44 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:20:44 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:20:44 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:20:44 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:22:14 Log 1 - ŠT :0
+9. 09. 2020 14:22:15 Log 7 - ŠT :0
+9. 09. 2020 14:22:15 Log 7.2 - ŠT :0
+9. 09. 2020 14:22:15 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+9. 09. 2020 14:25:43 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:25:43 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:25:45 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:25:46 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:25:50 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:25:51 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:26:41 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:26:42 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:26:44 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:26:44 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:26:46 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:26:48 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:27:05 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:27:06 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:27:07 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:27:07 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:27:07 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:27:08 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:27:09 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:31:43 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:31:47 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:31:49 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:31:50 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:31:52 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:31:53 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:32:30 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:32:31 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:32:33 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:32:33 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:32:35 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:32:35 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:32:54 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:32:54 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:32:56 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:32:56 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:32:56 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:32:57 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:32:58 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:35:24 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:35:25 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:35:27 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:35:27 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:35:27 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:35:28 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:35:29 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:38:05 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:38:06 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:38:08 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:38:08 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:38:08 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:38:10 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:38:11 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:41:48 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:41:48 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:41:50 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:41:50 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:41:50 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:41:51 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:41:51 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:45:42 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:45:44 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:45:47 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:48:54 Log CheckRecallForAnomalies 5 - ŠT :0
+9. 09. 2020 14:49:40 Log CheckRecallForAnomalies 7 - ŠT :0
+9. 09. 2020 14:49:44 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:49:52 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:53:33 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:53:34 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:53:36 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 14:53:37 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:53:38 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:53:47 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:53:48 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:53:51 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 14:53:52 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:53:52 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:54:02 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:54:02 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:54:04 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:54:07 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:54:08 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:54:08 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:54:32 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:54:35 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:54:39 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:55:11 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:55:14 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:55:57 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:56:15 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:56:15 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:56:18 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 14:56:19 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:56:20 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:56:47 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:56:48 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:56:50 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 14:56:51 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:56:52 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:57:05 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:57:06 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:57:08 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 14:57:09 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:57:10 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 14:57:31 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 14:57:31 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 14:57:33 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 14:57:37 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 14:57:37 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 14:57:38 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:03:59 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:04:00 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:04:04 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 15:04:05 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:04:17 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:04:17 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:04:21 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 15:04:22 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:04:41 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:04:42 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:04:45 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 15:04:50 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 15:04:50 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:05:52 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:05:52 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:05:56 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 15:05:57 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 15:05:58 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:06:14 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:06:15 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:06:19 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 15:06:20 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 15:06:21 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:06:38 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:06:39 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 15:06:40 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 15:06:44 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 15:06:45 Log CheckRecallForAnomalies 12 - ŠT :0
+9. 09. 2020 15:06:46 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 15:08:09 Log 7 - ŠT :0
+9. 09. 2020 15:08:09 Log 7.2 - ŠT :0
+9. 09. 2020 15:38:48 Deleting client failed. Client with specific id does not exist
+9. 09. 2020 15:38:50 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:38:50 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:39:55 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:39:55 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:40:35 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:40:35 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:40:43 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:40:43 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:42:51 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:42:51 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:43:31 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 15:49:40 Log CheckRecallForAnomalies 2 - ŠT :0
+9. 09. 2020 15:50:06 Deleting client failed. Client with specific id does not exist
+9. 09. 2020 15:50:53 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:03:21 Deleting client failed. Client with specific id does not exist
+9. 09. 2020 16:03:24 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:03:36 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 16:08:05 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:08:08 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 16:16:33 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 16:16:34 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 16:16:56 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:16:56 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 16:16:57 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 16:16:58 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 16:16:58 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 16:19:12 Log 7 - ŠT :0
+9. 09. 2020 16:19:21 Log 7.2 - ŠT :0
+9. 09. 2020 16:25:52 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:25:56 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 16:26:01 Log CheckRecallForAnomalies 8 - ŠT :0
+9. 09. 2020 16:26:03 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 16:26:21 Log CheckRecallForAnomalies 1 - ŠT :0
+9. 09. 2020 16:26:22 Log CheckRecallForAnomalies 3 - ŠT :0
+9. 09. 2020 16:26:25 Log CheckRecallForAnomalies 4 - ŠT :0
+9. 09. 2020 16:26:29 Log CheckRecallForAnomalies 9 - ŠT :0
+9. 09. 2020 16:26:30 Log CheckRecallForAnomalies 13 - ŠT :0
+9. 09. 2020 16:26:46 Log 7 - ŠT :0
+9. 09. 2020 16:26:46 Log 7.2 - ŠT :0
+9. 09. 2020 16:27:40 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 09. september 2020 ob 16:27:38 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/Recall.aspx?
+
+
+10. 09. 2020 10:02:10 Začni prenos LOG datotek
+10. 09. 2020 10:02:10 FileD:\GitHub\GrafolitOTP\GrafolitOTP\log.txt
+10. 09. 2020 10:02:11  -------- System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at OptimizacijaTransprotov.Pages.Admin.AdminOverview.btnGetLogs_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Admin\AdminOverview.aspx.cs:line 133
+10. 09. 2020 10:03:21 Začni prenos LOG datotek
+10. 09. 2020 10:03:23 FileD:\GitHub\GrafolitOTP\GrafolitOTP\log.txt
+10. 09. 2020 11:07:34 The request was aborted: The operation has timed out. System
+10. 09. 2020 11:07:34 Začni prenos LOG datotek
+10. 09. 2020 11:08:15 FileD:\GitHub\GrafolitOTP\GrafolitOTP\log.txt
+10. 09. 2020 11:29:15 The operation has timed out System
+10. 09. 2020 11:31:53 Začni prenos LOG datotek
+10. 09. 2020 11:31:55 FileD:\GitHub\GrafolitOTP\GrafolitOTP\log.txt
+10. 09. 2020 11:32:15  -------- System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at OptimizacijaTransprotov.Pages.Admin.AdminOverview.btnGetLogs_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Admin\AdminOverview.aspx.cs:line 157
+14. 09. 2020 11:07:33 zipFileName: Razpisi_14_09_2020_11_07_10.zip
+14. 09. 2020 11:07:42 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\OMAHEN-TRANSPORT_doo_637356784626388803_Razpis.xls
+14. 09. 2020 11:07:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\ROLLING_TONS_637356784647088839_Razpis.xls
+14. 09. 2020 11:07:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\FRIKUS_doo_637356784647418771_Razpis.xls
+14. 09. 2020 11:08:14 Before dowload
+14. 09. 2020 11:08:14 Before Add header
+14. 09. 2020 11:08:14 Before Binnarywrite
+14. 09. 2020 11:30:50 zipFileName: Razpisi_14_09_2020_11_30_50.zip
+14. 09. 2020 11:30:51 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\MAJCEN_EUROTERMINAL_doo_637356798510301794_Razpis.xls
+14. 09. 2020 11:30:51 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\LKW_WALTER_637356798512871730_Razpis.xls
+14. 09. 2020 11:31:27 Before dowload
+14. 09. 2020 11:31:27 Before Add header
+14. 09. 2020 11:31:27 Before Binnarywrite
+14. 09. 2020 15:47:20 zipFileName: Razpisi_14_09_2020_03_47_20.zip
+14. 09. 2020 15:47:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\OMAHEN-TRANSPORT_doo_637356952422819308_Razpis.xls
+14. 09. 2020 15:47:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_14-09-2020\ROLLING_TONS_637356952428579268_Razpis.xls
+14. 09. 2020 15:47:50 Before dowload
+14. 09. 2020 15:47:51 Before Add header
+14. 09. 2020 15:47:53 Before Binnarywrite
+14. 09. 2020 15:58:00 The remote server returned an error: (404) Not Found. System
+14. 09. 2020 16:01:06 The remote server returned an error: (404) Not Found. System
+14. 09. 2020 16:05:04 Before dowload
+14. 09. 2020 16:05:05 Before Add header
+14. 09. 2020 16:05:06 Before Binnarywrite
+14. 09. 2020 16:06:28 Before dowload
+14. 09. 2020 16:06:28 Before Add header
+14. 09. 2020 16:06:28 Before Binnarywrite
+14. 09. 2020 16:32:04 Log 7 - ŠT :4223
+14. 09. 2020 16:32:04 Log 7.1 - ŠT :4223
+14. 09. 2020 16:32:59 Log 6 - ŠT :4226
+14. 09. 2020 16:33:09 Log 7 - ŠT :4226
+14. 09. 2020 16:33:09 Log 7.2 - ŠT :4226
+16. 09. 2020 15:19:30 Log 7 - ŠT :4242
+16. 09. 2020 15:19:30 Log 7.1 - ŠT :4242
+16. 09. 2020 15:24:26 Log 7 - ŠT :4242
+16. 09. 2020 15:24:26 Log 7.1 - ŠT :4242

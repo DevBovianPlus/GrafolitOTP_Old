@@ -67,8 +67,8 @@ namespace OptimizacijaTransprotov.Pages.Admin
         }
 
         protected void btnCheckPDFExist_Click(object sender, EventArgs e)
-        {            
-            lblRezultat.Text = GetDatabaseConnectionInstance().GetOrderPDFFile( Convert.ToInt32( txtPath.Text));
+        {
+            lblRezultat.Text = GetDatabaseConnectionInstance().GetOrderPDFFile(Convert.ToInt32(txtPath.Text));
         }
 
         protected void btnNoRecall_Click(object sender, EventArgs e)
@@ -106,27 +106,64 @@ namespace OptimizacijaTransprotov.Pages.Admin
             CheckModelValidation(GetDatabaseConnectionInstance().ChangeConfigValue(txtConfigName.Text, txtConfigValue.Text));
         }
 
+        private FileToDownload GetFileForList(string fsFName, byte[] content, string sExtension)
+        {
+            FileToDownload fFile = new FileToDownload();
+            fFile.Name = fsFName;
+            fFile.Content = content;
+            fFile.Extension = sExtension;
+
+            return fFile;
+        }
+
         protected void btnGetLogs_Click(object sender, EventArgs e)
         {
-            byte[] bytes = CheckModelValidation(GetDatabaseConnectionInstance().GetWebServiceLogFile());
-            byte[] UtilityServbytes = CheckModelValidation(GetDatabaseConnectionInstance().GetUtilityServiceLogFile());
+            try
+            {
+                byte[] bytes = CheckModelValidation(GetDatabaseConnectionInstance().GetWebServiceLogFile());
+                byte[] UtilityServbytes = CheckModelValidation(GetDatabaseConnectionInstance().GetUtilityServiceLogFile());
+                CommonMethods.LogThis("Začni prenos LOG datotek");
+                string applicationLogFile = AppDomain.CurrentDomain.BaseDirectory + "log.txt";
+                byte[] applicationBytes = System.IO.File.ReadAllBytes(applicationLogFile);
 
-            string applicationLogFile = AppDomain.CurrentDomain.BaseDirectory + "log.txt";
-            byte[] applicationBytes = System.IO.File.ReadAllBytes(applicationLogFile);
+                CommonMethods.LogThis("File" + applicationLogFile);
 
-            List<FileToDownload> list = new List<FileToDownload> { new FileToDownload { Name = "WebServiceLog.txt", Content = bytes, Extension=".txt" },
-                new FileToDownload { Name = "ApplicationLog", Content = applicationBytes, Extension=".txt" }, new FileToDownload { Name = "UtilityServiceLog.txt", Content = UtilityServbytes, Extension=".txt" } };
+                List<FileToDownload> list = new List<FileToDownload>();
 
-            byte[] zip = CommonMethods.GetZipMemmoryStream(list);
+                if (bytes != null)
+                {
+                    list.Add(GetFileForList("WebServiceLog.txt", bytes, ".txt"));
+                }
 
-            Response.Clear();
-            Response.ContentType = "application/zip";
-            Response.AddHeader("content-disposition", "attachment;filename=Logs.zip");
-            Response.Buffer = true;
-            Response.BinaryWrite(zip);
+                if (applicationBytes != null)
+                {
+                    list.Add(GetFileForList("ApplicationLog.txt", bytes, ".txt"));
+                }
 
-            Response.Flush();
-            Response.End();
+                if (UtilityServbytes != null)
+                {
+                    list.Add(GetFileForList("UtilityServiceLog.txt", bytes, ".txt"));
+                }
+
+                byte[] zip = CommonMethods.GetZipMemmoryStream(list);
+
+                Response.Clear();
+                Response.ContentType = "application/zip";
+                Response.AddHeader("content-disposition", "attachment;filename=Logs.zip");
+                Response.Buffer = true;
+                Response.BinaryWrite(zip);
+
+                Response.Flush();
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                string error = "";
+                CommonMethods.getError(ex, ref error);
+                CommonMethods.LogThis(error);
+                throw ex;
+            }
+
         }
     }
 }

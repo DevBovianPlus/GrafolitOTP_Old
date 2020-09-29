@@ -1132,13 +1132,13 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="row2 align-item-centerV-endH">
-                            <div class="col-xs-0 big-margin-r no-padding-right">
+                        <div class="row2 align-item-centerV-startH">
+                            <div class="col-xs-0 big-margin-r no-padding-left" style="margin-right: 20px;">
                                 <dx:ASPxLabel ID="lblRazlogOdobritveSistem" runat="server" Text="RAZLOG ZA ODOBRITEV SISTEM : " ClientVisible="false"></dx:ASPxLabel>
                             </div>
-                            <div class="col-xs-7 no-padding-left">
+                            <div class="col-xs-12 no-padding-left">
                                 <dx:ASPxTextBox runat="server" ID="txtRazlogOdobritveSistem" ClientInstanceName="clientTxtRazlogOdobritveSistem"
-                                    CssClass="text-box-input" Font-Size="14px" Width="100%" MaxLength="500" AutoCompleteType="Disabled"
+                                    CssClass="text-box-input" Font-Size="14px" Width="100%" MaxLength="1500" AutoCompleteType="Disabled" TextMode="MultiLine"
                                     BackColor="LightGray" Enabled="false" ClientVisible="false" Font-Bold="true" ForeColor="Tomato">
                                     <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
                                 </dx:ASPxTextBox>

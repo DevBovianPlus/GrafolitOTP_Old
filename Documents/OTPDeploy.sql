@@ -1,0 +1,1 @@
+alter table Odpoklic alter column RazlogOdobritveSistem varchar(4000);

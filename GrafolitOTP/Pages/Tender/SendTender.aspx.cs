@@ -1,5 +1,6 @@
 ﻿using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Spreadsheet;
+using DevExpress.Spreadsheet.Drawings;
 using DevExpress.Web;
 using Ionic.Zip;
 using OptimizacijaTransprotov.Common;
@@ -126,7 +127,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 zip.Save();
 
                 byte[] byteFile = File.ReadAllBytes(path + zipFileName);
-                WriteDocumentToResponse(byteFile, "zip", false, zipFileName);
+                CommonMethods.WriteDocumentToResponse(this, byteFile, "zip", false, zipFileName);
             }
 
             tender.RazpisPozicija = tenderPositionsToSave;
@@ -139,55 +140,55 @@ namespace OptimizacijaTransprotov.Pages.Tender
 
         }
 
-        private void WriteDocumentToResponse(byte[] documentData, string format, bool isInline, string fileName)
-        {
-            try
-            {
-                string contentType = "application/pdf";
+        //private void WriteDocumentToResponse( Page pCurrentPage,  byte[] documentData, string format, bool isInline, string fileName)
+        //{
+        //    try
+        //    {
+        //        string contentType = "application/pdf";
 
-                if (format == "png")
-                    contentType = "image/png";
-                else if (format == "jpg" || format == "jpeg")
-                    contentType = "image/jpeg";
-                else if (format == "xls")
-                    contentType = "application/xls";
-                else if (format == "zip")
-                    contentType = "application/zip";
-                else
-                    contentType = "application/octet-stream";
+        //        if (format == "png")
+        //            contentType = "image/png";
+        //        else if (format == "jpg" || format == "jpeg")
+        //            contentType = "image/jpeg";
+        //        else if (format == "xls")
+        //            contentType = "application/xls";
+        //        else if (format == "zip")
+        //            contentType = "application/zip";
+        //        else
+        //            contentType = "application/octet-stream";
 
-                string disposition = (isInline) ? "inline" : "attachment";
+        //        string disposition = (isInline) ? "inline" : "attachment";
 
-                CommonMethods.LogThis("Before dowload");
-                Response.Clear();
-                Response.ContentType = contentType;
+        //        CommonMethods.LogThis("Before dowload");
+        //        Response.Clear();
+        //        Response.ContentType = contentType;
 
-                Response.ClearHeaders();
+        //        Response.ClearHeaders();
 
-                CommonMethods.LogThis("Before Add header");
-                Response.AddHeader("Content-Disposition", String.Format("{0}; filename={1}", disposition, fileName));
-                Response.AddHeader("Content-Length", documentData.Length.ToString());
+        //        CommonMethods.LogThis("Before Add header");
+        //        Response.AddHeader("Content-Disposition", String.Format("{0}; filename={1}", disposition, fileName));
+        //        Response.AddHeader("Content-Length", documentData.Length.ToString());
 
-                Response.Clear(); // dodal boris - 21.02.2019       
-                Response.BufferOutput = false;
-                Response.ClearContent();
+        //        Response.Clear(); // dodal boris - 21.02.2019       
+        //        Response.BufferOutput = false;
+        //        Response.ClearContent();
 
-                CommonMethods.LogThis("Before Binnarywrite");
-                Response.BinaryWrite(documentData);
+        //        CommonMethods.LogThis("Before Binnarywrite");
+        //        Response.BinaryWrite(documentData);
 
-                Response.Flush();
+        //        Response.Flush();
 
-                //Response.Close();
-                //Response.End();
+        //        //Response.Close();
+        //        //Response.End();
 
-                Response.SuppressContent = true;
-            }
-            catch (Exception ex)
-            {
-                CommonMethods.LogThis(ex.Message + "\r\n" + ex.Source + "\r\n" + ex.StackTrace);
+        //        Response.SuppressContent = true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        CommonMethods.LogThis(ex.Message + "\r\n" + ex.Source + "\r\n" + ex.StackTrace);
 
-            }
-        }
+        //    }
+        //}
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -255,9 +256,10 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 razpisiPath = Server.MapPath("~/Razpisi/Razpisi_" + DateTime.Now.ToString("dd-MM-yyyy") + "/");
 
                 //uporabimi če se bo generiral samo en razpis potem ne rabimo prenašat zip datoteke k uporabniku ampak samo xlsx 
-                string currentFullFileName = "";
+                string currentFullFileName = "";                
                 string currentFileName = "";
                 string zipFileName = "Razpisi_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss") + ".zip";
+                string sFileLocation = razpisiPath + zipFileName;
                 CommonMethods.LogThis("zipFileName: " + zipFileName);
                 using (ZipFile zip = new ZipFile(razpisiPath + zipFileName))
                 {
@@ -343,6 +345,9 @@ namespace OptimizacijaTransprotov.Pages.Tender
                         tdm.FileName = zipFileName;
                         tdm.IsInline = false;
                     }
+                    tender.RazpisKreiran = true;
+                    tender.PotRazpisa = sFileLocation;
+                    var objTender2 = CheckModelValidation(GetDatabaseConnectionInstance().SaveTender(tender));
 
                     AddValueToSession(Enums.TenderSession.DownloadTenderData, tdm);
 
@@ -403,7 +408,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
             {
                 DownloadTenderDataModel tdm = (DownloadTenderDataModel)GetValueFromSession(Enums.TenderSession.DownloadTenderData);
 
-                WriteDocumentToResponse(tdm.ByteData, tdm.FileExtension, tdm.IsInline, tdm.FileName);
+                CommonMethods.WriteDocumentToResponse(this, tdm.ByteData, tdm.FileExtension, tdm.IsInline, tdm.FileName);
 
                 RemoveSession(Enums.TenderSession.DownloadTenderData);
             }
