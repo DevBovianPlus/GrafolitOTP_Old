@@ -141,12 +141,12 @@ namespace OptimizacijaTransprotov.Pages.Admin
 
                 if (applicationBytes != null)
                 {
-                    list.Add(GetFileForList("ApplicationLog.txt", bytes, ".txt"));
+                    list.Add(GetFileForList("ApplicationLog.txt", applicationBytes, ".txt"));
                 }
 
                 if (UtilityServbytes != null)
                 {
-                    list.Add(GetFileForList("UtilityServiceLog.txt", bytes, ".txt"));
+                    list.Add(GetFileForList("UtilityServiceLog.txt", UtilityServbytes, ".txt"));
                 }
 
                 byte[] zip = CommonMethods.GetZipMemmoryStream(list);

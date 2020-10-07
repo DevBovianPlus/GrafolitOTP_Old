@@ -227,6 +227,7 @@ namespace OptimizacijaTransprotov.Pages.Client
             ComboBoxSkrbnik.SelectedIndex = ComboBoxSkrbnik.Items.IndexOfValue(PrincipalHelper.GetUserPrincipal().ID.ToString());
             ComboBoxTip.SelectedIndex = ComboBoxTip.Items.IndexOfValue("-1");
             ComboBoxJezik.SelectedIndex = ComboBoxJezik.Items.IndexOfValue("-1");
+            chkAktivnostMy.Checked = true;
         }
         #endregion
 
