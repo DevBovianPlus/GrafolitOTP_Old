@@ -347,7 +347,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 if (CheckForOptimalStockOverflowFromPrevRecalls(model.OdpoklicPozicija, materials, out errorMessage))
                     ShowClientWarningPopUp(errorMessage);
                 else if (CheckForOptimalStockOverflow(model.OdpoklicPozicija, false))
-                    ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
+                     ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
                 else if (!isTransportType15Valid(model.OdpoklicPozicija))
                     ShowClientWarningPopUp("Odpoklicana količina presega optimalno zaradi tipa transporta (15) ");
 
@@ -902,6 +902,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //decimal kolicinaVsota = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             string sArgumentOfApproval = "";
+            bool bOptimalnaPrekoracena = false;
 
             CommonMethods.LogThis("Log CheckRecallForAnomalies 1 - ŠT :" + model.OdpoklicStevilka.ToString());
             string memKomentarOdobritve = "";
@@ -938,6 +939,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 }
 
                 bool needToConfirmRecall = false;
+                bOptimalnaPrekoracena = false;
+
                 //odpoklic pozicij preverjamo smo če imajo transport tipa 15
 
                 if (isNewPriceHigherFromTender())
@@ -965,6 +968,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                     needToConfirmRecall = true;
                     memKomentarOdobritve += "Odpoklicana količina je višja od optimalne (tip transporta 15)." + " | ";
+                    bOptimalnaPrekoracena = true;
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 }
 
@@ -974,6 +978,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     sArgumentOfApproval += "Prekoračena optimalna količina. V prejšnjih odpoklicih | ";
                     needToConfirmRecall = true;
                     memKomentarOdobritve += "Prekoračena optimalna količina." + " | ";
+                    bOptimalnaPrekoracena = true;
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 }
 
@@ -1038,20 +1043,20 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (isSupplierArrangesTransport)
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 10 - ŠT :" + model.OdpoklicStevilka.ToString());
-                btnRecall.Text = "Odpokliči";
+                btnRecall.Text = bOptimalnaPrekoracena == true ? "V odobritev" : "Odpokliči";
                 EnableUserControls(false);
                 btnRecall.ClientEnabled = true;
-                btnRecall.ForeColor = Color.Green;
-                sArgumentOfApproval = "";
+                btnRecall.ForeColor = bOptimalnaPrekoracena == true ? Color.Red  : Color.Green;
+                sArgumentOfApproval += "";
             }
             else if (isBuyerArrangesTransport)
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 11 - ŠT :" + model.OdpoklicStevilka.ToString());
-                btnRecall.Text = "Odpokliči";
+                btnRecall.Text = bOptimalnaPrekoracena == true ? "V odobritev" : "Odpokliči";
                 EnableUserControls(false, true);
                 btnRecall.ClientEnabled = true;
-                btnRecall.ForeColor = Color.Green;
-                sArgumentOfApproval = "";
+                btnRecall.ForeColor = bOptimalnaPrekoracena == true ? Color.Red : Color.Green;
+                sArgumentOfApproval += "";
                 GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN);//nastavimo status nazaj na neznano če je slučajno prišlo vmes do spreminjnja checkbox-a (dobavitelj ali kupec priskrbi prevoz)
             }
 
@@ -1248,7 +1253,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void ASPxGridViewSelectedPositions_BatchUpdate(object sender, DevExpress.Web.Data.ASPxDataBatchUpdateEventArgs e)
         {
-            bool isError = false;
+                bool isError = false;
             List<object> optimalStockOverflowIds = GetRecallDataProvider().GetRecallPosIDOptimalStockOverflow();
             model = GetRecallDataProvider().GetRecallFullModel();
             if (model == null) return;

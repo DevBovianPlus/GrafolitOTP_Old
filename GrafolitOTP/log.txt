@@ -6274,3 +6274,238 @@ http://localhost:31695/Pages/Client/Client.aspx
 
 7. 10. 2020 10:46:20 1
 7. 10. 2020 10:46:33 0
+15. 10. 2020 11:21:52 Deleting client failed. Client with specific id does not exist
+15. 10. 2020 11:21:55 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 11:21:58 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 10. 2020 11:21:59 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 11:22:09 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 11:22:11 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 11:22:12 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 11:22:13 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 11:22:13 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 11:22:14 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 10. 2020 11:22:15 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 11:22:26 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 11:22:27 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 11:22:29 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 11:22:29 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 11:22:30 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 11:22:30 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 10. 2020 11:22:31 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 11:23:02 Log 1 - ŠT :0
+15. 10. 2020 11:23:19 Log 7 - ŠT :0
+15. 10. 2020 11:23:23 Log 7.2 - ŠT :0
+15. 10. 2020 11:24:09 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+15. 10. 2020 11:24:27 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+15. 10. 2020 11:30:56 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+15. 10. 2020 11:36:32 Repository failed to save dataValidation failed for one or more entities. See EntityValidationErrors property for more details.
+15. 10. 2020 11:42:22 Log 1 - ŠT :4472
+15. 10. 2020 11:42:23 Log 5 - ŠT :4472
+15. 10. 2020 11:42:35 Log 1 - ŠT :4472
+15. 10. 2020 11:42:37 Log 7 - ŠT :4472
+15. 10. 2020 11:42:37 Log 7.2 - ŠT :4472
+15. 10. 2020 11:49:15 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 11:49:17 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 11:49:19 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 11:49:19 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 11:49:20 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 11:49:20 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 11:49:28 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 11:49:29 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 11:49:31 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 11:49:31 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 11:49:32 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 11:49:34 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 12:15:20 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 12:15:22 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 12:15:24 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 12:15:24 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 12:15:24 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 12:15:25 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 12:15:33 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 12:15:34 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 12:15:35 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 12:15:36 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 12:15:36 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 12:15:37 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 12:16:00 Log 1 - ŠT :0
+15. 10. 2020 12:16:02 Log 7 - ŠT :0
+15. 10. 2020 12:16:02 Log 7.2 - ŠT :0
+15. 10. 2020 13:48:32 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 13:48:35 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 13:48:37 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 13:48:37 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 13:48:39 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 13:48:40 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 13:48:49 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 13:48:51 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 13:48:53 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 13:48:53 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 13:48:55 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 13:48:55 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 13:50:43 Log 1 - ŠT :0
+15. 10. 2020 13:50:44 Log 7 - ŠT :0
+15. 10. 2020 13:50:44 Log 7.2 - ŠT :0
+15. 10. 2020 14:04:48 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 14:04:54 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 14:04:58 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 14:04:58 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 14:04:59 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 14:05:00 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 10. 2020 14:05:00 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 14:05:14 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 10. 2020 14:05:14 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 10. 2020 14:05:16 Log CheckRecallForAnomalies 5 - ŠT :0
+15. 10. 2020 14:05:16 Log CheckRecallForAnomalies 7 - ŠT :0
+15. 10. 2020 14:05:17 Log CheckRecallForAnomalies 9 - ŠT :0
+15. 10. 2020 14:05:17 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 10. 2020 14:05:18 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 10. 2020 14:07:15 Log CheckRecallForAnomalies 1 - ŠT :4475
+15. 10. 2020 14:07:15 Log CheckRecallForAnomalies 2 - ŠT :4475
+15. 10. 2020 14:08:37 Log CheckRecallForAnomalies 1 - ŠT :4475
+15. 10. 2020 14:08:39 Log CheckRecallForAnomalies 3 - ŠT :4475
+15. 10. 2020 14:08:41 Log CheckRecallForAnomalies 5 - ŠT :4475
+15. 10. 2020 14:08:41 Log CheckRecallForAnomalies 7 - ŠT :4475
+15. 10. 2020 14:08:42 Log CheckRecallForAnomalies 9 - ŠT :4475
+15. 10. 2020 14:08:43 Log CheckRecallForAnomalies 12 - ŠT :4475
+15. 10. 2020 14:08:44 Log CheckRecallForAnomalies 13 - ŠT :4475
+15. 10. 2020 14:08:52 Log CheckRecallForAnomalies 1 - ŠT :4475
+15. 10. 2020 14:08:53 Log CheckRecallForAnomalies 3 - ŠT :4475
+15. 10. 2020 14:08:55 Log CheckRecallForAnomalies 5 - ŠT :4475
+15. 10. 2020 14:08:55 Log CheckRecallForAnomalies 7 - ŠT :4475
+15. 10. 2020 14:09:20 Log CheckRecallForAnomalies 9 - ŠT :4475
+15. 10. 2020 14:09:23 Log CheckRecallForAnomalies 12 - ŠT :4475
+15. 10. 2020 14:09:24 Log CheckRecallForAnomalies 13 - ŠT :4475
+15. 10. 2020 14:09:49 Log 1 - ŠT :4475
+15. 10. 2020 14:09:51 Log 7 - ŠT :4475
+15. 10. 2020 14:09:51 Log 7.2 - ŠT :4475
+15. 10. 2020 14:17:42 Log CheckRecallForAnomalies 1 - ŠT :4452
+15. 10. 2020 14:17:44 Log CheckRecallForAnomalies 3 - ŠT :4452
+15. 10. 2020 14:17:47 Log CheckRecallForAnomalies 8 - ŠT :4452
+15. 10. 2020 14:17:50 Log CheckRecallForAnomalies 13 - ŠT :4452
+15. 10. 2020 14:18:10 Log 7 - ŠT :4452
+15. 10. 2020 14:18:10 Log 7.1 - ŠT :4452
+19. 10. 2020 08:35:41 zipFileName: Razpisi_19_10_2020_08_35_41.zip
+19. 10. 2020 08:35:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-10-2020\MAJCEN_EUROTERMINAL_doo_637386933457557774_Razpis.xls
+19. 10. 2020 08:45:45 The operation has timed out System
+19. 10. 2020 12:03:00 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 10. 2020 12:03:04 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 10. 2020 12:03:06 Log CheckRecallForAnomalies 5 - ŠT :0
+19. 10. 2020 12:03:06 Log CheckRecallForAnomalies 7 - ŠT :0
+19. 10. 2020 12:03:07 Log CheckRecallForAnomalies 9 - ŠT :0
+19. 10. 2020 12:03:08 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 10. 2020 12:08:33 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 10. 2020 12:08:35 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 10. 2020 12:08:36 Log CheckRecallForAnomalies 5 - ŠT :0
+19. 10. 2020 12:08:36 Log CheckRecallForAnomalies 7 - ŠT :0
+19. 10. 2020 12:08:37 Log CheckRecallForAnomalies 9 - ŠT :0
+19. 10. 2020 12:08:38 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 10. 2020 12:09:21 Log 1 - ŠT :0
+19. 10. 2020 12:09:22 Log 7 - ŠT :0
+19. 10. 2020 12:09:22 Log 7.2 - ŠT :0
+20. 10. 2020 15:26:57 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:27:00 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:27:02 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:27:03 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:27:03 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:27:04 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:27:09 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:27:10 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:27:11 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:27:11 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:27:12 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:27:13 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 15:27:13 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:27:38 Log 1 - ŠT :0
+20. 10. 2020 15:27:39 Log 7 - ŠT :0
+20. 10. 2020 15:27:39 Log 7.2 - ŠT :0
+20. 10. 2020 15:35:13 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:35:15 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:35:18 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:35:19 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:35:19 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:35:20 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:35:25 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:35:26 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:35:27 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:35:28 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:35:28 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:35:29 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 15:35:29 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:35:48 Log 1 - ŠT :0
+20. 10. 2020 15:35:48 Log 7 - ŠT :0
+20. 10. 2020 15:35:48 Log 7.2 - ŠT :0
+20. 10. 2020 15:41:51 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:41:57 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:42:07 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:42:19 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:42:23 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:42:29 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:42:46 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:42:50 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:42:53 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 15:43:03 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 15:43:09 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 15:43:30 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 15:59:09 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:59:12 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:59:32 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 15:59:41 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 15:59:56 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 15:59:57 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 15:59:59 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 16:00:01 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:00:10 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:00:11 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:00:13 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 16:00:20 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 16:00:25 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:00:41 Log 7 - ŠT :0
+20. 10. 2020 16:00:41 Log 7.1 - ŠT :0
+20. 10. 2020 16:01:52 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:01:57 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:02:00 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 16:02:02 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 16:02:06 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 16:02:09 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:02:28 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:02:28 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:02:29 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 16:02:32 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 16:02:33 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 16:02:37 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 16:02:51 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:03:10 Log 1 - ŠT :0
+20. 10. 2020 16:03:10 Log 7 - ŠT :0
+20. 10. 2020 16:03:10 Log 7.2 - ŠT :0
+20. 10. 2020 16:07:23 Client with specific ID does not exist
+20. 10. 2020 16:08:04 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:08:05 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:08:07 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 16:08:08 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:08:24 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:08:24 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:08:26 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 16:08:28 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:08:40 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:08:40 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:08:43 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 10. 2020 16:08:44 Log CheckRecallForAnomalies 10 - ŠT :0
+20. 10. 2020 16:08:44 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:09:56 Log 7 - ŠT :0
+20. 10. 2020 16:09:56 Log 7.1 - ŠT :0
+20. 10. 2020 16:10:57 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:11:00 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:11:03 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 16:11:06 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 16:11:06 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 16:11:08 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:11:26 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 10. 2020 16:11:27 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 10. 2020 16:11:29 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 10. 2020 16:11:30 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 10. 2020 16:11:31 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 10. 2020 16:11:32 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 10. 2020 16:12:07 Log 1 - ŠT :0
+20. 10. 2020 16:12:08 Log 7 - ŠT :0
+20. 10. 2020 16:12:08 Log 7.2 - ŠT :0
