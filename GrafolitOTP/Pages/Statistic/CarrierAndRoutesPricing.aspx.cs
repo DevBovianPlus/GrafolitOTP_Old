@@ -32,11 +32,13 @@ namespace OptimizacijaTransprotov.Pages.Statistic
             if (!IsPostBack)
             {
                 //Initialize();
-                
+
                 /*if (model != null)
                 {
                     GetOrderDataProvider().SetOrderPositions(model);
                 }*/
+
+                ASPxGridLookupPrevoznik.DataBind();
             }
             else
             {

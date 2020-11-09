@@ -63,6 +63,7 @@
         }
     </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="clientLoadingPanel" Modal="true"></dx:ASPxLoadingPanel>
     <dx:ASPxCallbackPanel ID="CallbackPanelSendTenders" runat="server" Width="100%" ClientInstanceName="clientCallbackPanelSendTenders"
@@ -93,7 +94,7 @@
                                 <Header Paddings-PaddingTop="5" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="true"></Header>
                                 <FocusedRow BackColor="#d1e6fe" Font-Bold="true" ForeColor="#606060"></FocusedRow>
                             </Styles>
-                            <SettingsText EmptyDataRow="Trenutno ni podatka o relacijah." />
+                            <SettingsText EmptyDataRow="Trenutno ni podatka o prevoznikih." />
                             <Columns>
                                 <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="60px" SelectAllCheckboxMode="AllPages" ShowClearFilterButton="true" />
                                 <dx:GridViewDataTextColumn Caption="ID" FieldName="RelacijaID" Width="80px"

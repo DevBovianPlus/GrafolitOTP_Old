@@ -36,6 +36,19 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return null;
         }
 
+        public void SetRouteTransportPrices(List<RouteTransporterPricesModel> model)
+        {
+            AddValueToSession(Enums.RouteSession.RouteTransportPriceModel, model);
+        }
+
+        public List<RouteTransporterPricesModel> GetRouteTransportPrices()
+        {
+            if (SessionHasValue(Enums.RouteSession.RouteTransportPriceModel))
+                return (List<RouteTransporterPricesModel>)GetValueFromSession(Enums.RouteSession.RouteTransportPriceModel);
+
+            return null;
+        }
+
         public void SetRoutesByCarrierIDAndRouteID(List<RouteModel> model)
         {
             AddValueToSession(Enums.RouteSession.RouteDetailList, model);

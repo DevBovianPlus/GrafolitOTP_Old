@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OptimizacijaTransprotov {
-    
-    
-    public partial class Main {
-        
+namespace OptimizacijaTransprotov
+{
+
+
+    public partial class Main
+    {
+
         /// <summary>
         /// HeadContentHolder control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContentHolder;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// masterHeader control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl masterHeader;
-        
+
         /// <summary>
         /// PageHeadline control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxHeadline PageHeadline;
-        
+
         /// <summary>
         /// SignedInHelloLabel control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel SignedInHelloLabel;
-        
+
         /// <summary>
         /// UsernameLabel control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel UsernameLabel;
-        
+
         /// <summary>
         /// headerProfileImage control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage headerProfileImage;
-        
+
         /// <summary>
         /// SignedInAsLabel control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel SignedInAsLabel;
-        
+
         /// <summary>
         /// UserRoleLabel control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel UserRoleLabel;
-        
+
         /// <summary>
         /// MainMenuPanel control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPanel MainMenuPanel;
-        
+
         /// <summary>
         /// panelContent control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent panelContent;
-        
+
         /// <summary>
         /// mainImageLogo control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage mainImageLogo;
-        
+
         /// <summary>
         /// MainMenuDataSource control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.XmlDataSource MainMenuDataSource;
-        
+
         /// <summary>
         /// NavBarMainMenu control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxNavBar NavBarMainMenu;
-        
+
         /// <summary>
         /// btnSignOut control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnSignOut;
-        
+
         /// <summary>
         /// btnHome control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnHome;
-        
+
         /// <summary>
         /// btnHelp control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnHelp;
-        
+
         /// <summary>
         /// MainContentPlaceHolder control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContentPlaceHolder;
-        
+
         /// <summary>
         /// LoadingPanel control.
         /// </summary>
@@ -182,5 +184,14 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+
+        /// <summary>
+        /// lblVerzija control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblVerzija;
     }
 }

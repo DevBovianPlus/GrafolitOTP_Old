@@ -431,6 +431,10 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceRouteURL + "GetAllRoutes";
         }
+        public static string GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        {
+            return WebServiceRouteURL + "GetAllRoutesTransportPricesByViewType?iViewType=" + iViewType + "&iWeightType=" + iWeightType;
+        }
         public static string GetRouteByID(int routeID)
         {
             return WebServiceRouteURL + "GetRouteByID?routeID=" + routeID;
@@ -483,6 +487,11 @@ namespace OptimizacijaTransprotov.Helpers
         public static string GetTenderListByRouteID(int routeID)
         {
             return WebServiceTenderURL + "GetTenderListByRouteID?routeID=" + routeID;
+        }
+
+        public static string GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate)
+        {
+            return WebServiceTenderURL + "GetTenderListByRouteIDAndTenderDate?routeID=" + routeID+ "&TenderDate=" + TenderDate;
         }
 
         public static string SaveTenders()

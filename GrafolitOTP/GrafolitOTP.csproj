@@ -200,6 +200,7 @@
     <Content Include="Images\magnifier.png" />
     <Content Include="Images\needApprovalRecalls.png" />
     <Content Include="Images\odpokliciPodatki.png" />
+    <Content Include="Images\pdf-export.png" />
     <Content Include="Images\prevzem.png" />
     <Content Include="Images\prevzemHover.png" />
     <Content Include="Images\quickAdd.png" />
@@ -238,10 +239,12 @@
     <Content Include="Pages\Recall\Recall.aspx" />
     <Content Include="Pages\Recall\RecallForm.aspx" />
     <Content Include="Pages\Statistic\CarrierAndRoutesPricing.aspx" />
+    <Content Include="Pages\Statistic\ViewRoutePrices.aspx" />
     <Content Include="Pages\Statistic\RoutesDetail_popup.aspx" />
     <Content Include="Pages\Statistic\RoutesTransportersRecalls.aspx" />
     <Content Include="Pages\Tender\SendTender.aspx" />
     <Content Include="Pages\Tender\Tender.aspx" />
+    <Content Include="Pages\Tender\TenderPrice.aspx" />
     <Content Include="Pages\Tender\Tender_popup.aspx" />
     <Content Include="Pages\TicketSystem\Tickets.aspx" />
     <Content Include="Reports\ReportPreview.aspx" />
@@ -272,6 +275,7 @@
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Common\ExcelException.cs" />
     <Compile Include="Common\PredicateBuilder.cs" />
+    <Compile Include="Common\ReportHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -455,6 +459,13 @@
     <Compile Include="Pages\Statistic\CarrierAndRoutesPricing.aspx.designer.cs">
       <DependentUpon>CarrierAndRoutesPricing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Statistic\ViewRoutePrices.aspx.cs">
+      <DependentUpon>ViewRoutePrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Statistic\ViewRoutePrices.aspx.designer.cs">
+      <DependentUpon>ViewRoutePrices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Statistic\RoutesDetail_popup.aspx.cs">
       <DependentUpon>RoutesDetail_popup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -482,6 +493,13 @@
     </Compile>
     <Compile Include="Pages\Tender\Tender.aspx.designer.cs">
       <DependentUpon>Tender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tender\TenderPrice.aspx.cs">
+      <DependentUpon>TenderPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tender\TenderPrice.aspx.designer.cs">
+      <DependentUpon>TenderPrice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tender\Tender_popup.aspx.cs">
       <DependentUpon>Tender_popup.aspx</DependentUpon>

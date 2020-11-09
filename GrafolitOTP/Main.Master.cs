@@ -3,6 +3,7 @@ using OptimizacijaTransprotov.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -52,6 +53,15 @@ namespace OptimizacijaTransprotov
                 Session.RemoveAll();
             }
 
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            var buildDate = new DateTime(2000, 1, 1).AddDays(version.Build).AddSeconds(version.Revision * 2);
+
+            var displayableVersion = $"{version} ({buildDate})";
+
+            Console.WriteLine("Current version (inc. build date) = " + displayableVersion);
+
+            lblVerzija.Text = "Ver.: " + displayableVersion;
 
             NavBarMainMenu.DataBind();
         }

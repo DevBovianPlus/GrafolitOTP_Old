@@ -1147,6 +1147,21 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+        public WebResponseContentModel<List<RouteTransporterPricesModel>> GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        {
+            WebResponseContentModel<List<RouteTransporterPricesModel>> dt = new WebResponseContentModel<List<RouteTransporterPricesModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<RouteTransporterPricesModel>>>(WebServiceHelper.GetAllRoutesTransportPricesByViewType(iViewType, iWeightType), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
         public WebResponseContentModel<RouteModel> GetRouteByID(int routeID)
         {
             WebResponseContentModel<RouteModel> dt = new WebResponseContentModel<RouteModel>();
@@ -1300,6 +1315,21 @@ namespace OptimizacijaTransprotov.Infrastructure
             try
             {
                 dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionModel>>>(WebServiceHelper.GetTenderListByRouteID(routeID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+        public WebResponseContentModel<List<TenderPositionModel>> GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate)
+        {
+            WebResponseContentModel<List<TenderPositionModel>> dt = new WebResponseContentModel<List<TenderPositionModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionModel>>>(WebServiceHelper.GetTenderListByRouteIDAndTenderDate(routeID, TenderDate), "get");
             }
             catch (Exception ex)
             {

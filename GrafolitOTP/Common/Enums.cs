@@ -51,7 +51,7 @@ namespace OptimizacijaTransprotov.Common
         }
 
         public enum OrderSession
-        { 
+        {
             OrdersPositionsList,
             SelectedOrderPositions,
             SupplierID,
@@ -77,7 +77,7 @@ namespace OptimizacijaTransprotov.Common
         }
 
         public enum TenderSession
-        { 
+        {
             TenderFullModel,
             TenderID,
             DownloadTenderData
@@ -102,11 +102,14 @@ namespace OptimizacijaTransprotov.Common
             CarrierIDPopup,
             RouteIDPopup,
             RouteNamePopup,
-            CarrierNamePopup
+            CarrierNamePopup,
+            CarrierListModel,
+            RouteTransportPriceModel
+
         }
 
         public enum PreviousPage
-        { 
+        {
             Orders,
             Recalls,
             Tender,
@@ -126,19 +129,19 @@ namespace OptimizacijaTransprotov.Common
         }
 
         public enum CustomDisplayText
-        { 
+        {
             DA,
             NE
         }
 
         public enum UnitsFromOrder
-        { 
+        {
             KOS,
             KG
         }
 
         public enum TicketSession
-        { 
+        {
             TicketModel
         }
 

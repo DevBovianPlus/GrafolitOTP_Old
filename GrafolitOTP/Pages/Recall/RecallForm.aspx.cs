@@ -6,6 +6,7 @@ using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Web;
 using DevExpress.Web.Data;
+using DevExpress.XtraReports.UI;
 using Newtonsoft.Json;
 using OptimizacijaTransprotov.Common;
 using OptimizacijaTransprotov.Helpers;
@@ -347,7 +348,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 if (CheckForOptimalStockOverflowFromPrevRecalls(model.OdpoklicPozicija, materials, out errorMessage))
                     ShowClientWarningPopUp(errorMessage);
                 else if (CheckForOptimalStockOverflow(model.OdpoklicPozicija, false))
-                     ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
+                    ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
                 else if (!isTransportType15Valid(model.OdpoklicPozicija))
                     ShowClientWarningPopUp("Odpoklicana količina presega optimalno zaradi tipa transporta (15) ");
 
@@ -379,10 +380,19 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected object GetTotalSummaryValue()
         {
+            object sum =null;
             ASPxSummaryItem summaryItem = ASPxGridViewSelectedPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
-
-            object sum = CommonMethods.ParseDecimal(ASPxGridViewSelectedPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
-            //hfCurrentSum["CurrenSum"] = sum;
+            if (hfCurrentSum.Contains("CurrenSum"))
+            {
+                decimal sumHidden = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+                sum = CommonMethods.ParseDecimal(ASPxGridViewSelectedPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+                decimal tSum = CommonMethods.ParseDecimal(sum);
+                if (tSum > sumHidden)
+                    sum = sumHidden;
+            }
+            else
+                sum = CommonMethods.ParseDecimal(ASPxGridViewSelectedPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            // = sum;
             return sum;
         }
 
@@ -560,7 +570,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             else
                 redirectString = GenerateURI("Recall.aspx", queryStrings);
 
-            if (bIsRejectOrAccept && PrincipalHelper.IsUserLeader())                
+            if (bIsRejectOrAccept && PrincipalHelper.IsUserLeader())
             {
                 redirectString = "Recall.aspx?filter=3";
             }
@@ -925,7 +935,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (model == null) return;
 
-            if (GetRecallDataProvider().HasTenderListValues() && !isBuyerArrangesTransport)
+            if (GetRecallDataProvider().HasTenderListValues())
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 3 - ŠT :" + model.OdpoklicStevilka.ToString());
 
@@ -1046,7 +1056,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 btnRecall.Text = bOptimalnaPrekoracena == true ? "V odobritev" : "Odpokliči";
                 EnableUserControls(false);
                 btnRecall.ClientEnabled = true;
-                btnRecall.ForeColor = bOptimalnaPrekoracena == true ? Color.Red  : Color.Green;
+                btnRecall.ForeColor = bOptimalnaPrekoracena == true ? Color.Red : Color.Green;
                 sArgumentOfApproval += "";
             }
             else if (isBuyerArrangesTransport)
@@ -1253,7 +1263,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void ASPxGridViewSelectedPositions_BatchUpdate(object sender, DevExpress.Web.Data.ASPxDataBatchUpdateEventArgs e)
         {
-                bool isError = false;
+            bool isError = false;
             List<object> optimalStockOverflowIds = GetRecallDataProvider().GetRecallPosIDOptimalStockOverflow();
             model = GetRecallDataProvider().GetRecallFullModel();
             if (model == null) return;

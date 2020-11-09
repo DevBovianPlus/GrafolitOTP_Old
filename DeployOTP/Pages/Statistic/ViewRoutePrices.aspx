@@ -1,0 +1,127 @@
+﻿<%@ Page Title="Relacije" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="ViewRoutePrices.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices" %>
+
+<%@ MasterType VirtualPath="~/Main.Master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContentHolder" runat="server">
+    <script>
+        function RadioButtonList_ValueChanged(s, e) {
+            LoadingPanel.Show();
+            clientCallbackPanelRoute.PerformCallback(s.GetValue());
+        }
+
+        function CallbackPanelRoute_EndCallback(s, e) {
+            LoadingPanel.Hide();
+        }
+
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <dx:ASPxCallbackPanel ID="CallbackPanelRoute" ClientInstanceName="clientCallbackPanelRoute" runat="server" Width="100%" OnCallback="CallbackPanelRoute_Callback">
+        <SettingsLoadingPanel Enabled="false" />
+        <ClientSideEvents EndCallback="CallbackPanelRoute_EndCallback" />
+        <PanelCollection>
+            <dx:PanelContent>
+                <div class="row m-0 pb-3 justify-content-end">
+                    <div class="col-lg-6 mb-2 mb-lg-0">
+                        <dx:ASPxRadioButtonList ID="RadioButtonList" runat="server" ValueType="System.String" RepeatColumns="4" RepeatLayout="Flow" CssClass="float-right">
+                            <CaptionSettings Position="Top" />
+                            <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
+                            <Items>
+                                <dx:ListEditItem Text="Vse relacije" Value="AllValues" Selected="true" />
+                                <dx:ListEditItem Text="Samo lastni prevoz" Value="LastniPrevoz" />
+                                <dx:ListEditItem Text="Ostalo" Value="OstaliPrevoz" />
+                            </Items>
+                        </dx:ASPxRadioButtonList>
+                    </div>
+                    <div class="row m-0 pb-3">
+                        <div class="col-lg-6 mb-2 mb-lg-0">
+                            <dx:ASPxRadioButtonList ID="RadioButtonTeza" runat="server" ValueType="System.String" RepeatColumns="4" RepeatLayout="Flow" CssClass="float-right">
+                                <CaptionSettings Position="Top" />
+                                <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
+                                <Items>
+                                    <dx:ListEditItem Text="Odpoklici nad 20t" Value="1" Selected="true" />
+                                    <dx:ListEditItem Text="Odpoklici pod 20t" Value="2" />
+                                </Items>
+                            </dx:ASPxRadioButtonList>
+                        </div>
+                    </div>
+                </div>
+
+                <dx:ASPxButton ID="btnExportTransportPricesCompare" runat="server" RenderMode="Link" ClientEnabled="true" OnClick="btnExportTransportPricesCompare_Click"
+                    AutoPostBack="false" UseSubmitBehavior="false" ClientInstanceName="clientbtnExportTransportPricesCompare" ToolTip="Izvozi v PDF">
+                    <DisabledStyle CssClass="icon-disabled" />
+                    <HoverStyle CssClass="icon-hover" />
+                    <Image Url="../../Images/pdf-export.png" Width="30px" />
+                </dx:ASPxButton>
+                <dx:ASPxGridViewExporter ID="ASPxGridViewExporterTransportPricesCompare" GridViewID="ASPxGridViewRouteTransportPricesCompare" runat="server"></dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="ASPxGridViewRouteTransportPricesCompare" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRoute"
+                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRouteTransportPricesCompare_DataBinding"
+                    KeyFieldName="RelacijaID" CssClass="gridview-no-header-padding">
+
+                    <Paddings Padding="0" />
+                    <Settings ShowVerticalScrollBar="True"
+                        ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="600"
+                        ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
+                    <SettingsPager PageSize="100" ShowNumericButtons="false" AlwaysShowPager="true">
+                        <PageSizeItemSettings Visible="true" Items="100, 200, 300" Caption="Zapisi na stran : " AllItemText="Vsi">
+                        </PageSizeItemSettings>
+                        <Summary Visible="true" Text="Vseh zapisov : {2}" EmptyText="Ni zapisov" />
+                    </SettingsPager>
+                    <SettingsBehavior AllowFocusedRow="true" />
+                    <Styles Header-Wrap="True">
+                        <Header Paddings-PaddingTop="5" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="true"></Header>
+                        <FocusedRow BackColor="#d1e6fe" Font-Bold="true" ForeColor="#606060"></FocusedRow>
+                    </Styles>
+                    <SettingsText EmptyDataRow="Trenutno ni podatka o relacijah. Dodaj novo." />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="ID" FieldName="TempID" Width="80px"
+                            ReadOnly="true" Visible="false" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+
+                        <dx:GridViewDataTextColumn Caption="Št. odpoklicov / leto" FieldName="RecallCount" Width="5%"
+                            ReadOnly="true" ShowInCustomizationForm="True" Visible="true">
+                        </dx:GridViewDataTextColumn>
+
+                        <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Relacija" Width="30%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+
+                        <dx:GridViewDataTextColumn Caption="Prevoznik 1" FieldName="Prevoznik_1" Width="10%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_1_Cena" Width="5%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                            <PropertiesTextEdit DisplayFormatString="n2" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Prevoznik 2" FieldName="Prevoznik_2" Width="10%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_2_Cena" Width="5%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                            <PropertiesTextEdit DisplayFormatString="n2" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Prevoznik 3" FieldName="Prevoznik_3" Width="10%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_3_Cena" Width="5%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                            <PropertiesTextEdit DisplayFormatString="n2" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Prevoznik 4" FieldName="Prevoznik_4" Width="10%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_4_Cena" Width="5%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                            <PropertiesTextEdit DisplayFormatString="n2" />
+                        </dx:GridViewDataTextColumn>
+
+
+
+                    </Columns>
+                </dx:ASPxGridView>
+
+
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxCallbackPanel>
+</asp:Content>

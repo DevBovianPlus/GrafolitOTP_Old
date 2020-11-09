@@ -13,8 +13,13 @@
     </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
-      <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
+      <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />      
     </Group>
+    <Group Text="PREGLED CEN" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
+      <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
+    <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+    </Group>  
     <Group Text="ŠIFRANTI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
@@ -23,7 +28,7 @@
 
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
-      <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+      
       <!--<Link NavigateUrl="~/Pages/TicketSystem/Tickets.aspx" Text="Oddaj težavo" ImageUrl="~/Images/inspect.png" />-->
       <Link NavigateUrl="~/Pages/Admin/AdminOverview.aspx" Text="Admin" ImageUrl="~/Images/adminPage.png" />
     </Group>
@@ -42,7 +47,13 @@
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
     </Group>
+     <Group Text="PREGLED CEN" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
+      <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
+    <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+    </Group>  
     <Group Text="ŠIFRANTI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
@@ -66,7 +77,13 @@
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
     </Group>
+     <Group Text="PREGLED CEN" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
+      <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
+    <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+    </Group>  
     <Group Text="ŠIFRANTI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
@@ -90,7 +107,13 @@
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
     </Group>
+     <Group Text="PREGLED CEN" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
+      <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
+    <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+    </Group>  
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
@@ -110,7 +133,13 @@
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
     </Group>
+     <Group Text="PREGLED CEN" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
+      <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
+    <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
+    </Group>  
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />

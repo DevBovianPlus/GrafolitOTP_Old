@@ -190,6 +190,12 @@
 
         <footer class="container-fluid main-footer">
             &copy; BOVIANPLUS
+            <div class="row no-margin">
+                <div>
+                    <dx:ASPxLabel ID="lblVerzija" runat="server" Text="Ver:" Font-Size="Smaller"  ForeColor="#ECF0F5">
+                    </dx:ASPxLabel>
+                </div>
+            </div>
         </footer>
     </form>
     <script type="text/javascript">
