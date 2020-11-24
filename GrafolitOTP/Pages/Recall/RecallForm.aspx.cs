@@ -53,6 +53,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             ASPxGridViewSelectedPositions.Settings.GridLines = GridLines.Both;
             ASPxGridLookupSkladisce.GridView.Settings.GridLines = GridLines.Both;
             ASPxGridLookupTipPrevoza.GridView.Settings.GridLines = GridLines.Both;
+            ASPxGridLookupZbirnikTon.GridView.Settings.GridLines = GridLines.Both;
             ASPxGridViewSelectedPositions.SettingsDataSecurity.AllowReadUnlistedFieldsFromClientApi = DevExpress.Utils.DefaultBoolean.True;
 
             //maxKolicina = GetMaxQuantityForRecall();
@@ -123,6 +124,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             hfCurrentSum["CurrenSum"] = model.KolicinaSkupno;
             hfCurrentSumPalete["CurrenSumPalete"] = model.PaleteSkupaj;
+            
+          
 
             ASPxMemoOpombe.Text = model.Opis;
             txtSofer.Text = model.SoferNaziv;
@@ -185,8 +188,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
             txtRazlogOdobritveSistem.Text = model.RazlogOdobritveSistem;
 
             ASPxGridLookupTipPrevoza.Value = model.TipPrevozaID > 0 ? model.TipPrevozaID : -1;
+            ASPxGridLookupZbirnikTon.Value = model.ZbrirnikTonID > 0 ? model.ZbrirnikTonID : -1;
 
             ASPxGridLookupSkladisce.Value = model.LastnoSkladisceID > 0 ? model.LastnoSkladisceID : -1;
+
+            // nastavimo zbirnik ton
+            SetZbirnikTonByODpoklicValue();
 
 
             //Ko odpremo odpoklic je potrebno prevertiti če je dobavitelj Skladišče. Če je res potem je potrebno poiskati ID dobavitelja (tabela Stranke_OTP)
@@ -287,6 +294,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             model.LastenPrevoz = CheckBoxLastenPrevoz.Checked;
 
             model.TipPrevozaID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
+            model.ZbrirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
 
             if (SessionHasValue(Enums.RecallSession.ArgumentsOfApprovalToDB))
             {
@@ -362,6 +370,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 ASPxGridLookupStranke.DataBind();
 
             ASPxGridLookupTipPrevoza.DataBind();
+            ASPxGridLookupZbirnikTon.DataBind();
             ASPxGridLookupSkladisce.DataBind();
             GetRecallDataProvider().SetRecallStatuses(CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses()));
         }
@@ -380,7 +389,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected object GetTotalSummaryValue()
         {
-            object sum =null;
+            object sum = null;
             ASPxSummaryItem summaryItem = ASPxGridViewSelectedPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
             if (hfCurrentSum.Contains("CurrenSum"))
             {
@@ -408,9 +417,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             ASPxGridLookupStranke.Value = -1;
             ASPxGridLookupRealacija.Value = -1;
+            ASPxGridLookupZbirnikTon.Value = -1;
 
             string truck = DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString();
             ASPxGridLookupTipPrevoza.Value = GetRecallDataProvider().GetTransportTypes().Where(tt => tt.Koda == truck).FirstOrDefault().TipPrevozaID;
+
 
 
             ASPxGridLookupSkladisce.Value = -1;
@@ -431,7 +442,25 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 txtStatus.Text = naziv;
             }
 
+            decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
             hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
+
+            // calculate with current recall values, preverimo kaka je celotna vrednost teže in najdemo ter predlagamo pravi zbirnik
+            //ASPxGridLookupZbirnikTon.Value = GetRecallDataProvider().GetZbirnikTon().Where(tt => tt.Koda == truck).FirstOrDefault().ZbirnikTonID;
+            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+
+        }
+
+        private int ReturnZbirnikTonIDByOdpoklicValue(decimal dWeightValue)
+        {
+            List<ZbirnikTonModel> lZbirnikTon = GetRecallDataProvider().GetZbirnikTon();
+
+            if (lZbirnikTon != null)
+            {
+                return lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault().ZbirnikTonID;
+            }
+
+            return 10;
         }
         #endregion
 
@@ -462,15 +491,22 @@ namespace OptimizacijaTransprotov.Pages.Recall
             DataTable dt = new DataTable();
             object id = null;
 
+            object id2 = null;
+
             if (ASPxGridLookupRealacija.Value != null)
                 id = ASPxGridLookupRealacija.Value;
             else if (model != null && model.RelacijaID > 0)
                 id = model.RelacijaID;
+            if (ASPxGridLookupZbirnikTon.Value != null)
+            {
+                id2 = ASPxGridLookupZbirnikTon.Value;
+            }
 
             if (id != null)
             {
                 int idRoute = CommonMethods.ParseInt(id);
-                List<TenderPositionModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderListByRouteID(idRoute));
+                int idZbirnikTon = CommonMethods.ParseInt(id2);
+                List<TenderPositionModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderListByRouteIDandZbirnikTon(idRoute, idZbirnikTon));
 
                 if (list == null)
                     list = new List<TenderPositionModel>();
@@ -522,6 +558,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             List<ClientTransportType> types = CheckModelValidation(GetDatabaseConnectionInstance().GetAllTransportTypes());
             GetRecallDataProvider().SetTransportTypes(types);
             (sender as ASPxGridLookup).DataSource = SerializeToDataTable(types, "TipPrevozaID", "Naziv");
+        }
+
+        protected void ASPxGridLookupZbirnikTon_DataBinding(object sender, EventArgs e)
+        {
+            List<ZbirnikTonModel> zbirnikTon = CheckModelValidation(GetDatabaseConnectionInstance().GetAllZbirnikTon());
+            GetRecallDataProvider().SetZbirnikTon(zbirnikTon);
+            (sender as ASPxGridLookup).DataSource = SerializeToDataTable(zbirnikTon);
         }
 
         #endregion
@@ -650,7 +693,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 selectedTenderPos = tenderList.Where(t => t.RazpisPozicijaID == tenderPosID).FirstOrDefault();*/
 
             int routeValueID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
-            decimal lowestPrice = CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID));
+            int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
+
+            decimal lowestPrice = CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
 
             return lowestPrice;
 
@@ -748,6 +793,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             BuyerArrangesTransportCheckBox2.ClientEnabled = enabled;
             CheckBoxLastenPrevoz.ClientEnabled = enabled;
             ASPxGridLookupTipPrevoza.ClientEnabled = enabled;
+            ASPxGridLookupZbirnikTon.ClientEnabled = enabled;
             ASPxGridLookupSkladisce.ClientEnabled = enabled;
             //txtRegistracija.ClientEnabled = enabled;
             //txtSofer.ClientEnabled = enabled;
@@ -1087,7 +1133,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }
 
             CommonMethods.LogThis("Log CheckRecallForAnomalies 13 - ŠT :" + model.OdpoklicStevilka.ToString());
-
+            SetZbirnikTonByODpoklicValue();
             AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, memKomentarOdobritve);
             AddValueToSession(Enums.RecallSession.ArgumentsOfApprovalToDB, sArgumentOfApproval);
             memKomentarOdobritve += " Vpiši komentar";
@@ -1454,7 +1500,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 if (ASPxGridLookupRealacija.Value != null && (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))
                 {
                     int routeValueID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
-                    decimal lowestPrice = CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID));
+                    int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
+                    
+                    decimal lowestPrice = (ZbirnikTonID == 0) ?  CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
                     txtNovaCena.Text = lowestPrice.ToString("N2");
                     ASPxGridLookupStranke.DataBind();
                 }
@@ -1552,6 +1600,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 model = GetRecallDataProvider().GetRecallFullModel();
                 model.TipPrevozaID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
+                model.ZbrirnikTonID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
                 GetRecallDataProvider().SetRecallFullModel(model);
 
                 ASPxPopupControlOrderPos.ShowOnPageLoad = true;
@@ -1561,6 +1610,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 int odpoklicPozicijaID = CommonMethods.ParseInt(ASPxGridViewSelectedPositions.GetRowValues(ASPxGridViewSelectedPositions.FocusedRowIndex, "OdpoklicPozicijaID"));
                 if (odpoklicPozicijaID > 0)
                 {
+
+                    SetZbirnikTonByODpoklicValue();
+
                     CheckModelValidation(GetDatabaseConnectionInstance().DeleteRecallPosition(odpoklicPozicijaID));
                     var recallPos = model.OdpoklicPozicija.Where(op => op.OdpoklicPozicijaID == odpoklicPozicijaID).FirstOrDefault();
                     if (recallPos != null)
@@ -1643,6 +1695,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     splitRecallPos.Split = true;
                     item.Split = true;
                     model.OdpoklicPozicija.Add(splitRecallPos);
+                    SetZbirnikTonByODpoklicValue();
                     CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
                 }
             }
@@ -1660,7 +1713,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }
         }
 
-
+        private void SetZbirnikTonByODpoklicValue()
+        {
+            hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
+            decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+        }
 
         protected void ASPxPopupControlOrderPos_WindowCallback(object source, PopupWindowCallbackArgs e)
         {

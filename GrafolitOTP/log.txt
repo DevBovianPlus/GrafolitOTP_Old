@@ -7267,3 +7267,1119 @@ http://localhost:31695/Home.aspx
 7. 11. 2020 11:46:02 The remote server returned an error: (404) Not Found. System
 7. 11. 2020 11:57:07 The operation has timed out System
 7. 11. 2020 12:08:52 The request was aborted: The operation has timed out. System
+11. 11. 2020 11:09:54 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 11. 2020 11:09:55 Log CheckRecallForAnomalies 10 - ŠT :0
+11. 11. 2020 11:09:55 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 11. 2020 11:10:38 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 11. 2020 11:10:39 Log CheckRecallForAnomalies 3 - ŠT :0
+11. 11. 2020 11:10:41 Log CheckRecallForAnomalies 5 - ŠT :0
+11. 11. 2020 11:10:42 Log CheckRecallForAnomalies 7 - ŠT :0
+11. 11. 2020 11:10:43 Log CheckRecallForAnomalies 9 - ŠT :0
+11. 11. 2020 11:10:44 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 11. 2020 11:10:54 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 11. 2020 11:10:55 Log CheckRecallForAnomalies 3 - ŠT :0
+11. 11. 2020 11:10:56 Log CheckRecallForAnomalies 5 - ŠT :0
+11. 11. 2020 11:10:56 Log CheckRecallForAnomalies 7 - ŠT :0
+11. 11. 2020 11:10:57 Log CheckRecallForAnomalies 9 - ŠT :0
+11. 11. 2020 11:10:58 Log CheckRecallForAnomalies 10 - ŠT :0
+11. 11. 2020 11:10:58 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 11. 2020 11:11:15 Log 1 - ŠT :0
+11. 11. 2020 11:11:15 Log 7 - ŠT :0
+11. 11. 2020 11:11:15 Log 7.2 - ŠT :0
+11. 11. 2020 11:49:56 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 11. november 2020 ob 11:49:54 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx(79): error CS1061: 'ASP.pages_tender_sendtender_aspx' does not contain a definition for 'ASPxGridViewTons_DataBinding' and no extension method 'ASPxGridViewTons_DataBinding' accepting a first argument of type 'ASP.pages_tender_sendtender_aspx' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx(79): error CS1061: 'ASP.pages_tender_sendtender_aspx' does not contain a definition for 'ASPxGridViewTons_DataBinding' and no extension method 'ASPxGridViewTons_DataBinding' accepting a first argument of type 'ASP.pages_tender_sendtender_aspx' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx
+
+
+11. 11. 2020 14:40:58 zipFileName: Razpisi_11_11_2020_02_40_50.zip
+11. 11. 2020 14:50:00 zipFileName: Razpisi_11_11_2020_02_50_00.zip
+11. 11. 2020 14:50:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\ROLLING_TONS_637407030326736830_Razpis.xls
+11. 11. 2020 14:50:37 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\FRIKUS_doo_637407030375120917_Razpis.xls
+11. 11. 2020 14:50:49 Before dowload
+11. 11. 2020 14:50:49 Before Add header
+11. 11. 2020 14:50:49 Before Binnarywrite
+11. 11. 2020 14:52:48 zipFileName: Razpisi_11_11_2020_02_52_48.zip
+11. 11. 2020 14:55:08 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\FRIKUS_doo_637407033087489772_Razpis.xls
+11. 11. 2020 14:55:11 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\INTEREUROPA_dd_637407033119058609_Razpis.xls
+11. 11. 2020 14:55:21 Before dowload
+11. 11. 2020 14:55:21 Before Add header
+11. 11. 2020 14:55:21 Before Binnarywrite
+11. 11. 2020 14:59:23 zipFileName: Razpisi_11_11_2020_02_59_23.zip
+11. 11. 2020 14:59:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\INTEREUROPA_dd_637407035688273988_Razpis.xls
+11. 11. 2020 14:59:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\RCM_doo_637407035719910637_Razpis.xls
+11. 11. 2020 14:59:40 Before dowload
+11. 11. 2020 14:59:40 Before Add header
+11. 11. 2020 14:59:40 Before Binnarywrite
+11. 11. 2020 15:46:20 zipFileName: Razpisi_11_11_2020_03_46_20.zip
+11. 11. 2020 15:46:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\LKW_WALTER_637407063929804400_Razpis.xls
+11. 11. 2020 15:46:38 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\Joebstl_doo_637407063986842396_Razpis.xls
+11. 11. 2020 15:46:49 Before dowload
+11. 11. 2020 15:46:49 Before Add header
+11. 11. 2020 15:46:49 Before Binnarywrite
+11. 11. 2020 16:17:50 zipFileName: Razpisi_11_11_2020_04_17_50.zip
+11. 11. 2020 16:18:00 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\Joebstl_doo_637407082808744452_Razpis.xls
+11. 11. 2020 16:18:11 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\NERI_TRANSTRGPODUZEČE_637407082910426153_Razpis.xls
+11. 11. 2020 16:18:15 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\VIES_LTD_DOO_637407082956781497_Razpis.xls
+11. 11. 2020 16:21:53 zipFileName: Razpisi_11_11_2020_04_21_53.zip
+11. 11. 2020 16:22:00 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\MAJCEN_EUROTERMINAL_doo_637407085204014802_Razpis.xls
+11. 11. 2020 16:22:04 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\LKW_WALTER_637407085240124418_Razpis.xls
+11. 11. 2020 16:22:21 Before dowload
+11. 11. 2020 16:22:21 Before Add header
+11. 11. 2020 16:22:21 Before Binnarywrite
+11. 11. 2020 16:42:58 zipFileName: Razpisi_11_11_2020_04_42_58.zip
+11. 11. 2020 16:43:08 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\INTEREUROPA_dd_637407097880450952_Razpis.xls
+11. 11. 2020 16:43:12 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\RCM_doo_637407097921699248_Razpis.xls
+11. 11. 2020 16:43:19 Before dowload
+11. 11. 2020 16:43:19 Before Add header
+11. 11. 2020 16:43:19 Before Binnarywrite
+11. 11. 2020 16:55:57 zipFileName: Razpisi_11_11_2020_04_55_57.zip
+11. 11. 2020 16:56:16 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\RCM_doo_637407105767567980_Razpis.xls
+11. 11. 2020 16:56:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\MAJCEN_EUROTERMINAL_doo_637407105796304950_Razpis.xls
+11. 11. 2020 16:56:21 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\LKW_WALTER_637407105812736347_Razpis.xls
+11. 11. 2020 16:56:29 Before dowload
+11. 11. 2020 16:56:29 Before Add header
+11. 11. 2020 16:56:29 Before Binnarywrite
+11. 11. 2020 17:06:28 zipFileName: Razpisi_11_11_2020_05_06_28.zip
+11. 11. 2020 17:06:36 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\INTEREUROPA_dd_637407111963281463_Razpis.xls
+11. 11. 2020 17:06:40 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\RCM_doo_637407112004761414_Razpis.xls
+11. 11. 2020 17:06:48 Before dowload
+11. 11. 2020 17:06:48 Before Add header
+11. 11. 2020 17:06:48 Before Binnarywrite
+11. 11. 2020 17:08:59 zipFileName: Razpisi_11_11_2020_05_08_59.zip
+11. 11. 2020 17:09:01 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\Joebstl_doo_637407113412825192_Razpis.xls
+11. 11. 2020 17:09:02 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\NERI_TRANSTRGPODUZEČE_637407113428745184_Razpis.xls
+11. 11. 2020 17:09:04 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\VIES_LTD_DOO_637407113446095430_Razpis.xls
+11. 11. 2020 17:09:10 Before dowload
+11. 11. 2020 17:09:10 Before Add header
+11. 11. 2020 17:09:10 Before Binnarywrite
+11. 11. 2020 19:14:50 zipFileName: Razpisi_11_11_2020_07_14_50.zip
+11. 11. 2020 19:14:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\OMAHEN-TRANSPORT_doo_637407188936534272_Razpis.xls
+11. 11. 2020 19:14:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\ROLLING_TONS_637407188951744269_Razpis.xls
+11. 11. 2020 19:14:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_11-11-2020\FRIKUS_doo_637407188963767239_Razpis.xls
+11. 11. 2020 19:15:16 Before dowload
+11. 11. 2020 19:15:16 Before Add header
+11. 11. 2020 19:15:16 Before Binnarywrite
+11. 11. 2020 19:24:58 The operation has timed out System
+12. 11. 2020 10:23:52 zipFileName: Razpisi_12_11_2020_10_23_52.zip
+12. 11. 2020 10:23:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\FRIKUS_doo_637407734355295957_Razpis.xls
+12. 11. 2020 10:23:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\INTEREUROPA_dd_637407734368785989_Razpis.xls
+12. 11. 2020 10:23:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\RCM_doo_637407734375745988_Razpis.xls
+12. 11. 2020 10:24:02 Before dowload
+12. 11. 2020 10:24:02 Before Add header
+12. 11. 2020 10:24:02 Before Binnarywrite
+12. 11. 2020 10:29:45 zipFileName: Razpisi_12_11_2020_10_29_44.zip
+12. 11. 2020 10:32:37 zipFileName: Razpisi_12_11_2020_10_32_37.zip
+12. 11. 2020 10:34:53 zipFileName: Razpisi_12_11_2020_10_34_53.zip
+12. 11. 2020 10:40:42 zipFileName: Razpisi_12_11_2020_10_40_42.zip
+12. 11. 2020 10:40:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\FRIKUS_doo_637407744532875394_Razpis.xls
+12. 11. 2020 10:40:58 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\INTEREUROPA_dd_637407744582971883_Razpis.xls
+12. 11. 2020 10:40:59 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_12-11-2020\MAJCEN_EUROTERMINAL_doo_637407744590541554_Razpis.xls
+12. 11. 2020 10:41:24 Before dowload
+12. 11. 2020 10:41:24 Before Add header
+12. 11. 2020 10:41:24 Before Binnarywrite
+12. 11. 2020 10:46:01 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 12. november 2020 ob 10:45:59 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 227
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+12. 11. 2020 10:48:34 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 12. november 2020 ob 10:48:32 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 227
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+12. 11. 2020 11:17:10 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 12. november 2020 ob 11:17:09 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.ExportDataFromExcel(Worksheet sheet, String& excelError)
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+12. 11. 2020 11:38:52 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 12. november 2020 ob 11:38:51 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 245
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+13. 11. 2020 10:40:08 The request was aborted: The operation has timed out. System
+13. 11. 2020 18:12:22 Log CheckRecallForAnomalies 1 - ŠT :0
+13. 11. 2020 18:12:22 Log CheckRecallForAnomalies 3 - ŠT :0
+13. 11. 2020 18:12:29 Log CheckRecallForAnomalies 5 - ŠT :0
+13. 11. 2020 18:12:29 Log CheckRecallForAnomalies 7 - ŠT :0
+13. 11. 2020 18:12:30 Log CheckRecallForAnomalies 9 - ŠT :0
+13. 11. 2020 18:12:31 Log CheckRecallForAnomalies 13 - ŠT :0
+13. 11. 2020 18:29:41 Log CheckRecallForAnomalies 1 - ŠT :0
+13. 11. 2020 18:29:41 Log CheckRecallForAnomalies 10 - ŠT :0
+13. 11. 2020 18:29:41 Log CheckRecallForAnomalies 13 - ŠT :0
+13. 11. 2020 18:29:46 Log CheckRecallForAnomalies 1 - ŠT :0
+13. 11. 2020 18:29:46 Log CheckRecallForAnomalies 10 - ŠT :0
+13. 11. 2020 18:29:46 Log CheckRecallForAnomalies 13 - ŠT :0
+13. 11. 2020 18:29:48 Log CheckRecallForAnomalies 1 - ŠT :0
+13. 11. 2020 18:29:48 Log CheckRecallForAnomalies 11 - ŠT :0
+13. 11. 2020 18:29:48 Log CheckRecallForAnomalies 13 - ŠT :0
+13. 11. 2020 18:29:51 Log CheckRecallForAnomalies 1 - ŠT :0
+13. 11. 2020 18:29:51 Log CheckRecallForAnomalies 10 - ŠT :0
+13. 11. 2020 18:29:51 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 11. 2020 17:27:55 zipFileName: Razpisi_15_11_2020_05_27_55.zip
+15. 11. 2020 17:29:37 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 299
+15. 11. 2020 17:29:54 zipFileName: Razpisi_15_11_2020_05_29_54.zip
+15. 11. 2020 17:29:56 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 299
+15. 11. 2020 17:31:45 zipFileName: Razpisi_15_11_2020_05_31_45.zip
+15. 11. 2020 17:31:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410583065219050_Razpis.xls
+15. 11. 2020 17:31:47 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410583073528392_Razpis.xls
+15. 11. 2020 17:50:54 zipFileName: Razpisi_15_11_2020_05_50_54.zip
+15. 11. 2020 17:50:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410594552645825_Razpis.xls
+15. 11. 2020 17:50:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410594561185833_Razpis.xls
+15. 11. 2020 17:50:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\RCM_doo_637410594569106028_Razpis.xls
+15. 11. 2020 18:28:22 zipFileName: Razpisi_15_11_2020_06_28_22.zip
+15. 11. 2020 18:28:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\OMAHEN-TRANSPORT_doo_637410617030357986_Razpis.xls
+15. 11. 2020 18:28:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ROLLING_TONS_637410617037418099_Razpis.xls
+15. 11. 2020 18:28:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410617044148072_Razpis.xls
+15. 11. 2020 18:28:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410617051048400_Razpis.xls
+15. 11. 2020 18:28:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\RCM_doo_637410617058319769_Razpis.xls
+15. 11. 2020 18:28:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ŠPEDICIJA_GOJA_DOO_637410617065687772_Razpis.xls
+15. 11. 2020 18:41:50 zipFileName: Razpisi_15_11_2020_06_41_50.zip
+15. 11. 2020 18:41:51 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\OMAHEN-TRANSPORT_doo_637410625115315144_Razpis.xls
+15. 11. 2020 18:41:52 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ROLLING_TONS_637410625123375970_Razpis.xls
+15. 11. 2020 18:41:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410625130956616_Razpis.xls
+15. 11. 2020 18:41:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410625139326623_Razpis.xls
+15. 11. 2020 18:41:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ŠPEDICIJA_GOJA_DOO_637410625146936728_Razpis.xls
+15. 11. 2020 19:22:17 Repository failed to delete dataObject reference not set to an instance of an object.
+15. 11. 2020 19:22:18 zipFileName: Razpisi_15_11_2020_07_22_18.zip
+15. 11. 2020 19:22:26 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 299
+15. 11. 2020 19:24:32 Repository failed to delete dataObject reference not set to an instance of an object.
+15. 11. 2020 19:24:33 zipFileName: Razpisi_15_11_2020_07_24_33.zip
+15. 11. 2020 19:24:36 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 299
+15. 11. 2020 19:25:53 Repository failed to delete dataObject reference not set to an instance of an object.
+15. 11. 2020 19:25:54 zipFileName: Razpisi_15_11_2020_07_25_54.zip
+15. 11. 2020 19:25:57 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 299
+15. 11. 2020 19:30:22 zipFileName: Razpisi_15_11_2020_07_30_22.zip
+15. 11. 2020 19:30:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\OMAHEN-TRANSPORT_doo_637410654232996068_Razpis.xls
+15. 11. 2020 19:30:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ROLLING_TONS_637410654240495907_Razpis.xls
+15. 11. 2020 19:30:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410654247925868_Razpis.xls
+15. 11. 2020 19:30:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410654255136418_Razpis.xls
+15. 11. 2020 19:30:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\RCM_doo_637410654263080571_Razpis.xls
+15. 11. 2020 19:30:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\MAJCEN_EUROTERMINAL_doo_637410654270270556_Razpis.xls
+15. 11. 2020 19:30:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\NERI_TRANSTRGPODUZEČE_637410654277790562_Razpis.xls
+15. 11. 2020 19:30:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\VIES_LTD_DOO_637410654285220555_Razpis.xls
+15. 11. 2020 19:30:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\PRIGO,_doo,_Brezovica_637410654292871202_Razpis.xls
+15. 11. 2020 19:30:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ŠPEDICIJA_GOJA_DOO_637410654299829592_Razpis.xls
+15. 11. 2020 19:41:47 zipFileName: Razpisi_15_11_2020_07_41_47.zip
+15. 11. 2020 19:41:48 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\OMAHEN-TRANSPORT_doo_637410661089108532_Razpis.xls
+15. 11. 2020 19:41:49 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ROLLING_TONS_637410661099668533_Razpis.xls
+15. 11. 2020 19:41:51 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410661110928535_Razpis.xls
+15. 11. 2020 19:41:52 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410661123698556_Razpis.xls
+15. 11. 2020 19:41:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\RCM_doo_637410661136803766_Razpis.xls
+15. 11. 2020 19:41:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\MAJCEN_EUROTERMINAL_doo_637410661148163669_Razpis.xls
+15. 11. 2020 19:41:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\LKW_WALTER_637410661161243674_Razpis.xls
+15. 11. 2020 19:41:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ŠPEDICIJA_GOJA_DOO_637410661177273665_Razpis.xls
+15. 11. 2020 19:41:59 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\B_MAKOVEC_TRANSPORT_doo_637410661192163671_Razpis.xls
+15. 11. 2020 19:42:00 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\KLEMEN_TRANSPORT_637410661208823667_Razpis.xls
+15. 11. 2020 19:42:02 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FENIKSŠPED_doo_,_Brnik__637410661221723657_Razpis.xls
+15. 11. 2020 19:46:17 zipFileName: Razpisi_15_11_2020_07_46_17.zip
+15. 11. 2020 19:46:18 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\OMAHEN-TRANSPORT_doo_637410663782959079_Razpis.xls
+15. 11. 2020 19:46:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ROLLING_TONS_637410663790859078_Razpis.xls
+15. 11. 2020 19:46:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\FRIKUS_doo_637410663799109247_Razpis.xls
+15. 11. 2020 19:46:20 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\INTEREUROPA_dd_637410663806989088_Razpis.xls
+15. 11. 2020 19:46:21 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\RCM_doo_637410663815699352_Razpis.xls
+15. 11. 2020 19:46:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\MAJCEN_EUROTERMINAL_doo_637410663823709335_Razpis.xls
+15. 11. 2020 19:46:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\LKW_WALTER_637410663831839351_Razpis.xls
+15. 11. 2020 19:46:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\Joebstl_doo_637410663839999327_Razpis.xls
+15. 11. 2020 19:46:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\PRIGO,_doo,_Brezovica_637410663847979085_Razpis.xls
+15. 11. 2020 19:46:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\ŠPEDICIJA_GOJA_DOO_637410663856419103_Razpis.xls
+15. 11. 2020 19:46:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\KLEMEN_TRANSPORT_637410663864439336_Razpis.xls
+15. 11. 2020 19:46:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_15-11-2020\Gebrüder_Weiss_doo_637410663872279373_Razpis.xls
+16. 11. 2020 21:05:51 zipFileName: Razpisi_16_11_2020_09_05_51.zip
+16. 11. 2020 21:05:52 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\FRIKUS_doo_637411575521926474_Razpis.xls
+16. 11. 2020 21:05:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411575531686251_Razpis.xls
+16. 11. 2020 21:05:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJCEN_EUROTERMINAL_doo_637411575540656370_Razpis.xls
+16. 11. 2020 21:05:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411575548906566_Razpis.xls
+16. 11. 2020 21:05:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411575556996232_Razpis.xls
+16. 11. 2020 21:05:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\JANČIČ_doo_Celje_637411575565436224_Razpis.xls
+16. 11. 2020 21:05:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJEC,_doo_637411575574681377_Razpis.xls
+16. 11. 2020 21:05:58 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411575583072662_Razpis.xls
+16. 11. 2020 21:06:11 Before dowload
+16. 11. 2020 21:06:11 Before Add header
+16. 11. 2020 21:06:11 Before Binnarywrite
+16. 11. 2020 21:11:27 zipFileName: Razpisi_16_11_2020_09_11_27.zip
+16. 11. 2020 21:11:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411578886415965_Razpis.xls
+16. 11. 2020 21:11:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411578894905956_Razpis.xls
+16. 11. 2020 21:11:30 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411578902945869_Razpis.xls
+16. 11. 2020 21:11:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411578911276029_Razpis.xls
+16. 11. 2020 21:13:39 The operation has timed out System
+16. 11. 2020 21:19:16 zipFileName: Razpisi_16_11_2020_09_19_16.zip
+16. 11. 2020 21:19:17 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\FRIKUS_doo_637411583573214837_Razpis.xls
+16. 11. 2020 21:19:18 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411583582434839_Razpis.xls
+16. 11. 2020 21:19:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJCEN_EUROTERMINAL_doo_637411583592624853_Razpis.xls
+16. 11. 2020 21:19:20 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411583603035031_Razpis.xls
+16. 11. 2020 21:19:21 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411583612474874_Razpis.xls
+16. 11. 2020 21:19:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411583621244865_Razpis.xls
+16. 11. 2020 21:25:20 zipFileName: Razpisi_16_11_2020_09_25_20.zip
+16. 11. 2020 21:25:21 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411587217863535_Razpis.xls
+16. 11. 2020 21:25:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJCEN_EUROTERMINAL_doo_637411587226563806_Razpis.xls
+16. 11. 2020 21:25:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411587236013846_Razpis.xls
+16. 11. 2020 21:25:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411587244503572_Razpis.xls
+16. 11. 2020 21:30:46 zipFileName: Razpisi_16_11_2020_09_30_46.zip
+16. 11. 2020 21:30:47 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411590476680707_Razpis.xls
+16. 11. 2020 21:30:48 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJCEN_EUROTERMINAL_doo_637411590484140696_Razpis.xls
+16. 11. 2020 21:30:49 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411590494400704_Razpis.xls
+16. 11. 2020 21:30:50 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411590501520698_Razpis.xls
+16. 11. 2020 21:30:50 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411590509700691_Razpis.xls
+16. 11. 2020 21:45:17 zipFileName: Razpisi_16_11_2020_09_45_17.zip
+16. 11. 2020 21:45:17 Unable to cast object of type 'DatabaseWebService.ModelsOTP.Tender.TransporterSimpleModel' to type 'System.Collections.IList'.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 302
+16. 11. 2020 21:46:34 zipFileName: Razpisi_16_11_2020_09_46_32.zip
+16. 11. 2020 21:57:12 zipFileName: Razpisi_16_11_2020_09_57_10.zip
+16. 11. 2020 21:59:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\FRIKUS_doo_637411607424354536_Razpis.xls
+16. 11. 2020 22:00:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411608227168361_Razpis.xls
+16. 11. 2020 22:01:01 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411608617414170_Razpis.xls
+16. 11. 2020 22:01:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411608824779984_Razpis.xls
+16. 11. 2020 22:01:30 Before dowload
+16. 11. 2020 22:01:30 Before Add header
+16. 11. 2020 22:01:30 Before Binnarywrite
+16. 11. 2020 22:07:39 zipFileName: Razpisi_16_11_2020_10_07_37.zip
+16. 11. 2020 22:07:40 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\FRIKUS_doo_637411612608386934_Razpis.xls
+16. 11. 2020 22:07:42 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411612623350198_Razpis.xls
+16. 11. 2020 22:07:43 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411612637739572_Razpis.xls
+16. 11. 2020 22:07:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411612651504941_Razpis.xls
+16. 11. 2020 22:07:50 Before dowload
+16. 11. 2020 22:07:50 Before Add header
+16. 11. 2020 22:07:50 Before Binnarywrite
+16. 11. 2020 22:11:08 zipFileName: Razpisi_16_11_2020_10_11_03.zip
+16. 11. 2020 22:11:10 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\LKW_WALTER_637411614700608388_Razpis.xls
+16. 11. 2020 22:11:11 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\VIES_LTD_DOO_637411614714516282_Razpis.xls
+16. 11. 2020 22:11:12 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411614728378651_Razpis.xls
+16. 11. 2020 22:11:14 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411614741815429_Razpis.xls
+16. 11. 2020 22:11:15 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\KLEMEN_TRANSPORT_637411614755260648_Razpis.xls
+16. 11. 2020 22:11:16 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\AVTOPREVOZNIŠTVO_SAŠO_VOH_sp_637411614768183855_Razpis.xls
+16. 11. 2020 22:11:21 Before dowload
+16. 11. 2020 22:11:21 Before Add header
+16. 11. 2020 22:11:21 Before Binnarywrite
+16. 11. 2020 22:16:47 zipFileName: Razpisi_16_11_2020_10_16_47.zip
+16. 11. 2020 22:16:50 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411618109142515_Razpis.xls
+16. 11. 2020 22:16:52 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411618122614366_Razpis.xls
+16. 11. 2020 22:16:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411618135678446_Razpis.xls
+16. 11. 2020 22:16:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\AVTOPREVOZNIŠTVO_SAŠO_VOH_sp_637411618148299103_Razpis.xls
+16. 11. 2020 22:16:59 Before dowload
+16. 11. 2020 22:16:59 Before Add header
+16. 11. 2020 22:16:59 Before Binnarywrite
+16. 11. 2020 22:40:14 zipFileName: Razpisi_16_11_2020_10_40_12.zip
+16. 11. 2020 22:40:18 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ROLLING_TONS_637411632188802364_Razpis.xls
+16. 11. 2020 22:40:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\FRIKUS_doo_637411632229244722_Razpis.xls
+16. 11. 2020 22:40:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411632279415133_Razpis.xls
+16. 11. 2020 22:40:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\PRIGO,_doo,_Brezovica_637411632314793639_Razpis.xls
+16. 11. 2020 22:40:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\ŠPEDICIJA_GOJA_DOO_637411632324223666_Razpis.xls
+16. 11. 2020 22:40:37 Before dowload
+16. 11. 2020 22:40:37 Before Add header
+16. 11. 2020 22:40:37 Before Binnarywrite
+16. 11. 2020 22:54:44 zipFileName: Razpisi_16_11_2020_10_54_43.zip
+16. 11. 2020 22:54:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\SAMO_URDIH_doo_637411640942900176_Razpis.xls
+16. 11. 2020 22:54:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJEC,_doo_637411640952340187_Razpis.xls
+16. 11. 2020 22:54:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\NUNNER_LOGISTIKA_DOO_637411640961140185_Razpis.xls
+16. 11. 2020 22:54:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\HART_LOGISTICS_DOO_637411640969090192_Razpis.xls
+16. 11. 2020 22:54:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\AMIGOS_TRANSPORT_DOO_637411640977680170_Razpis.xls
+16. 11. 2020 22:55:02 Before dowload
+16. 11. 2020 22:55:02 Before Add header
+16. 11. 2020 22:55:02 Before Binnarywrite
+16. 11. 2020 22:59:01 zipFileName: Razpisi_16_11_2020_10_59_00.zip
+16. 11. 2020 22:59:02 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\SAMO_URDIH_doo_637411643421067326_Razpis.xls
+16. 11. 2020 22:59:03 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJEC,_doo_637411643430497241_Razpis.xls
+16. 11. 2020 22:59:03 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\NUNNER_LOGISTIKA_DOO_637411643438707253_Razpis.xls
+16. 11. 2020 22:59:04 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\HART_LOGISTICS_DOO_637411643447947367_Razpis.xls
+16. 11. 2020 22:59:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\AMIGOS_TRANSPORT_DOO_637411643455847547_Razpis.xls
+16. 11. 2020 22:59:10 Before dowload
+16. 11. 2020 22:59:10 Before Add header
+16. 11. 2020 22:59:10 Before Binnarywrite
+16. 11. 2020 23:06:28 zipFileName: Razpisi_16_11_2020_11_06_21.zip
+16. 11. 2020 23:06:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\INTEREUROPA_dd_637411647898281138_Razpis.xls
+16. 11. 2020 23:06:30 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\RCM_doo_637411647908031079_Razpis.xls
+16. 11. 2020 23:06:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\MAJCEN_EUROTERMINAL_doo_637411647916801139_Razpis.xls
+16. 11. 2020 23:06:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\LKW_WALTER_637411647926011142_Razpis.xls
+16. 11. 2020 23:06:33 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\Joebstl_doo_637411647934831056_Razpis.xls
+16. 11. 2020 23:06:38 Before dowload
+16. 11. 2020 23:06:38 Before Add header
+16. 11. 2020 23:06:38 Before Binnarywrite
+16. 11. 2020 23:10:31 zipFileName: Razpisi_16_11_2020_11_10_31.zip
+16. 11. 2020 23:10:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\RCM_doo_637411650325929504_Razpis.xls
+16. 11. 2020 23:10:33 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\NERI_TRANSTRGPODUZEČE_637411650335384903_Razpis.xls
+16. 11. 2020 23:10:34 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_16-11-2020\VIES_LTD_DOO_637411650344405069_Razpis.xls
+16. 11. 2020 23:10:39 Before dowload
+16. 11. 2020 23:10:39 Before Add header
+16. 11. 2020 23:10:39 Before Binnarywrite
+16. 11. 2020 23:15:05 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 16. november 2020 ob 23:15:03 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 245
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+16. 11. 2020 23:16:23 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 16. november 2020 ob 23:16:22 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.DocumentsUploadControl_FileUploadComplete(Object sender, FileUploadCompleteEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 245
+   at DevExpress.Web.ASPxUploadControl.OnFileUploadComplete(FileUploadCompleteEventArgs e)
+   at DevExpress.Web.ASPxUploadControl.RaiseFileUploadComplete(UploadedFile uploadedFile, String& errorText, String& callbackData)
+   at DevExpress.Web.ASPxUploadControl.Validate()
+ 
+DevExpress.Web.ASPxUploadControl
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+17. 11. 2020 00:17:04 Log CheckRecallForAnomalies 1 - ŠT :0
+17. 11. 2020 00:17:04 Log CheckRecallForAnomalies 3 - ŠT :0
+17. 11. 2020 00:17:06 Log CheckRecallForAnomalies 5 - ŠT :0
+17. 11. 2020 00:17:06 Log CheckRecallForAnomalies 7 - ŠT :0
+17. 11. 2020 00:17:06 Log CheckRecallForAnomalies 9 - ŠT :0
+17. 11. 2020 00:17:06 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 14:12:06 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 14:12:06 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 14:12:09 Log CheckRecallForAnomalies 5 - ŠT :0
+18. 11. 2020 14:12:09 Log CheckRecallForAnomalies 7 - ŠT :0
+18. 11. 2020 14:12:09 Log CheckRecallForAnomalies 9 - ŠT :0
+18. 11. 2020 14:12:09 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 14:13:08 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.Invalid column name ZbrirnikTonID.
+18. 11. 2020 14:16:21 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.Invalid column name ZbrirnikTonID.
+18. 11. 2020 14:34:55 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 14:34:55 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 14:34:56 Log CheckRecallForAnomalies 8 - ŠT :0
+18. 11. 2020 14:34:56 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 15:17:35 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 18. november 2020 ob 15:17:33 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx(760): error CS1061: 'ASP.pages_recall_recallform_aspx' does not contain a definition for 'ASPxGridLookupZbirnikTon_DataBinding' and no extension method 'ASPxGridLookupZbirnikTon_DataBinding' accepting a first argument of type 'ASP.pages_recall_recallform_aspx' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx(760): error CS1061: 'ASP.pages_recall_recallform_aspx' does not contain a definition for 'ASPxGridLookupZbirnikTon_DataBinding' and no extension method 'ASPxGridLookupZbirnikTon_DataBinding' accepting a first argument of type 'ASP.pages_recall_recallform_aspx' could be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/OrderNOZPDO.aspx
+
+
+18. 11. 2020 15:38:38 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 18. november 2020 ob 15:38:36 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_yqee3dgi.6.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_yqee3dgi.6.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/OrderNOZPDO.aspx
+
+
+18. 11. 2020 15:42:52 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 18. november 2020 ob 15:42:51 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_sjq5sojo.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallform_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_sjq5sojo.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Data.Helpers.BaseListDataControllerHelper.GetRowValue(Int32 listSourceRow, DataColumnInfo columnInfo, OperationCompleted completed)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetValueFromListDataSource(Int32 index, String fieldName, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.<>c__DisplayClass100_0.<GetKeyValueFromListDataSource>b__0(String key)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeyValueFromListDataSource(Int32 index, Boolean getValueInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetKeysExistingInDataSourceCore(List`1 keysToCheck, Boolean validateInFilteredDataSource)
+   at DevExpress.Web.Data.WebDataControllerProvider.IsValidKey(Object serializedKey)
+   at DevExpress.Web.Data.WebDataSelectionBase.SetSelectionCore(Object keyValue, Boolean selected, Boolean isValidateKey)
+   at DevExpress.Web.Internal.SingleSelectionStrategy.set_Value(Object value)
+   at DevExpress.Web.ASPxGridLookup.set_Value(Object value)
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.SetFormDefaultValues() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 444
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 88
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/OrderNOZPDO.aspx
+
+
+18. 11. 2020 16:49:26 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 16:49:26 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 16:49:29 Log CheckRecallForAnomalies 5 - ŠT :0
+18. 11. 2020 16:49:29 Log CheckRecallForAnomalies 7 - ŠT :0
+18. 11. 2020 16:49:29 Log CheckRecallForAnomalies 9 - ŠT :0
+18. 11. 2020 16:49:29 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 20:56:02 zipFileName: Razpisi_18_11_2020_08_56_02.zip
+18. 11. 2020 20:56:08 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_18-11-2020\FRIKUS_doo_637413297683297203_Razpis.xls
+18. 11. 2020 20:56:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_18-11-2020\INTEREUROPA_dd_637413297698458429_Razpis.xls
+18. 11. 2020 20:56:10 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_18-11-2020\RCM_doo_637413297708198377_Razpis.xls
+18. 11. 2020 20:56:11 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_18-11-2020\LKW_WALTER_637413297716618210_Razpis.xls
+18. 11. 2020 20:56:12 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_18-11-2020\Joebstl_doo_637413297725388363_Razpis.xls
+18. 11. 2020 20:56:17 Before dowload
+18. 11. 2020 20:56:17 Before Add header
+18. 11. 2020 20:56:17 Before Binnarywrite
+18. 11. 2020 21:12:29 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:12:29 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:12:31 Log CheckRecallForAnomalies 8 - ŠT :0
+18. 11. 2020 21:12:31 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 21:26:23 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:26:23 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:26:26 Log CheckRecallForAnomalies 4 - ŠT :0
+18. 11. 2020 21:26:28 Log CheckRecallForAnomalies 9 - ŠT :0
+18. 11. 2020 21:26:28 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 21:27:14 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:27:14 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:27:16 Log CheckRecallForAnomalies 4 - ŠT :0
+18. 11. 2020 21:27:19 Log CheckRecallForAnomalies 9 - ŠT :0
+18. 11. 2020 21:27:19 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 21:31:40 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:31:40 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:31:40 Log CheckRecallForAnomalies 8 - ŠT :0
+18. 11. 2020 21:31:40 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 21:31:59 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:31:59 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:31:59 Log CheckRecallForAnomalies 8 - ŠT :0
+18. 11. 2020 21:31:59 Log CheckRecallForAnomalies 13 - ŠT :0
+18. 11. 2020 21:32:13 Log 7 - ŠT :0
+18. 11. 2020 21:32:13 Log 7.1 - ŠT :0
+18. 11. 2020 21:36:52 Log CheckRecallForAnomalies 1 - ŠT :0
+18. 11. 2020 21:36:52 Log CheckRecallForAnomalies 3 - ŠT :0
+18. 11. 2020 21:36:52 Log CheckRecallForAnomalies 8 - ŠT :0
+18. 11. 2020 21:36:52 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 09:14:46 Repository failed to retrieve dataObject reference not set to an instance of an object.
+19. 11. 2020 10:18:13 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:18:13 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:18:15 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:18:15 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:18:30 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:18:30 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:18:34 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:18:34 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:18:37 Log 7 - ŠT :0
+19. 11. 2020 10:18:37 Log 7.1 - ŠT :0
+19. 11. 2020 10:22:58 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:22:58 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:22:59 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:22:59 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:23:04 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:23:04 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:23:05 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:23:05 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:23:08 Log 7 - ŠT :0
+19. 11. 2020 10:23:08 Log 7.1 - ŠT :0
+19. 11. 2020 10:23:40 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:23:40 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:23:41 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:23:41 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:23:46 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 10:23:46 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 10:23:47 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 10:23:47 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 10:23:50 Log 7 - ŠT :0
+19. 11. 2020 10:23:50 Log 7.1 - ŠT :0
+19. 11. 2020 14:15:45 Object reference not set to an instance of an object. OptimizacijaTransprotov
+19. 11. 2020 14:15:49 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 19. november 2020 ob 14:15:47 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.ASPxGridViewRouteTransportPricesCompare_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 112
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 46
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_statistic_viewrouteprices_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_2tdfm1qb.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.ASPxGridViewRouteTransportPricesCompare_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 112
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 46
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.ASPxGridViewRouteTransportPricesCompare_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 112
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 46
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_statistic_viewrouteprices_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_2tdfm1qb.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.ASPxGridViewRouteTransportPricesCompare_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 112
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 46
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx
+
+
+19. 11. 2020 14:45:11 zipFileName: Razpisi_19_11_2020_02_45_11.zip
+19. 11. 2020 14:45:18 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\OMAHEN-TRANSPORT_doo_637413939181611986_Razpis.xls
+19. 11. 2020 14:45:20 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\FRIKUS_doo_637413939200011794_Razpis.xls
+19. 11. 2020 14:45:21 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\RCM_doo_637413939212571799_Razpis.xls
+19. 11. 2020 14:45:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\LKW_WALTER_637413939223141807_Razpis.xls
+19. 11. 2020 14:45:23 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\NERI_TRANSTRGPODUZEČE_637413939235121912_Razpis.xls
+19. 11. 2020 14:45:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\PRIGO,_doo,_Brezovica_637413939248581919_Razpis.xls
+19. 11. 2020 14:45:41 Before dowload
+19. 11. 2020 14:45:41 Before Add header
+19. 11. 2020 14:45:42 Before Binnarywrite
+19. 11. 2020 14:58:56 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 14:58:56 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 14:58:58 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 14:58:58 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 14:59:43 zipFileName: Razpisi_19_11_2020_02_59_43.zip
+19. 11. 2020 14:59:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\TRUPI_MIRAN_SP_637413947843572471_Razpis.xls
+19. 11. 2020 14:59:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\FORTIS_LABOR_DOO_637413947855962484_Razpis.xls
+19. 11. 2020 14:59:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\GRAFIČNI_MATERIALI_doo_637413947865742449_Razpis.xls
+19. 11. 2020 14:59:47 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\SAMO_URDIH_doo_637413947878512456_Razpis.xls
+19. 11. 2020 15:00:02 Before dowload
+19. 11. 2020 15:00:02 Before Add header
+19. 11. 2020 15:00:02 Before Binnarywrite
+19. 11. 2020 15:07:30 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:07:30 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:07:32 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:07:32 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:07:40 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:07:40 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:07:42 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:07:42 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:07:46 Log 7 - ŠT :0
+19. 11. 2020 15:07:46 Log 7.1 - ŠT :0
+19. 11. 2020 15:08:46 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:08:46 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:08:48 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:08:48 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:08:58 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:08:58 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:08:59 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:08:59 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:09:03 Log 7 - ŠT :0
+19. 11. 2020 15:09:03 Log 7.1 - ŠT :0
+19. 11. 2020 15:10:00 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:10:00 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:10:01 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:10:01 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:10:06 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:10:06 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:10:07 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:10:07 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:10:11 Log 7 - ŠT :0
+19. 11. 2020 15:10:11 Log 7.1 - ŠT :0
+19. 11. 2020 15:11:12 Deleting client failed. Client with specific id does not exist
+19. 11. 2020 15:11:13 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:11:13 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:13:53 Deleting client failed. Client with specific id does not exist
+19. 11. 2020 15:13:54 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:13:54 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:17:51 Deleting client failed. Client with specific id does not exist
+19. 11. 2020 15:17:52 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:17:52 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:18:03 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:18:03 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:18:05 Log CheckRecallForAnomalies 5 - ŠT :0
+19. 11. 2020 15:18:05 Log CheckRecallForAnomalies 7 - ŠT :0
+19. 11. 2020 15:18:05 Log CheckRecallForAnomalies 9 - ŠT :0
+19. 11. 2020 15:18:05 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:18:14 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:18:14 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:18:15 Log CheckRecallForAnomalies 5 - ŠT :0
+19. 11. 2020 15:18:15 Log CheckRecallForAnomalies 7 - ŠT :0
+19. 11. 2020 15:18:15 Log CheckRecallForAnomalies 9 - ŠT :0
+19. 11. 2020 15:18:15 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:18:26 Log 1 - ŠT :0
+19. 11. 2020 15:18:28 Log 7 - ŠT :0
+19. 11. 2020 15:18:28 Log 7.2 - ŠT :0
+19. 11. 2020 15:19:09 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:19:09 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:19:11 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:19:11 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:19:18 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:19:18 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:19:20 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:19:20 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:19:27 Log 7 - ŠT :0
+19. 11. 2020 15:19:27 Log 7.1 - ŠT :0
+19. 11. 2020 15:20:22 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:20:22 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:20:24 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:20:24 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:20:30 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:20:30 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:20:31 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:20:31 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:20:37 Log 7 - ŠT :0
+19. 11. 2020 15:20:37 Log 7.1 - ŠT :0
+19. 11. 2020 15:21:41 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:21:41 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:21:43 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:21:43 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:21:46 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:21:46 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:21:48 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:21:48 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:21:51 Log 7 - ŠT :0
+19. 11. 2020 15:21:51 Log 7.1 - ŠT :0
+19. 11. 2020 15:22:56 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:22:56 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:22:58 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:22:58 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:23:03 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:23:03 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:23:05 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:23:05 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:23:10 Log 7 - ŠT :0
+19. 11. 2020 15:23:10 Log 7.1 - ŠT :0
+19. 11. 2020 15:28:31 Deleting client failed. Client with specific id does not exist
+19. 11. 2020 15:28:32 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:28:32 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:29:13 Deleting client failed. Client with specific id does not exist
+19. 11. 2020 15:29:15 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:29:15 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:29:28 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:29:28 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:29:29 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:29:29 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:29:34 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 15:29:34 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 15:29:36 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 15:29:36 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 15:29:45 Log 7 - ŠT :0
+19. 11. 2020 15:29:45 Log 7.1 - ŠT :0
+19. 11. 2020 16:07:32 No model was found for saving
+19. 11. 2020 21:27:07 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 11. 2020 21:27:07 Log CheckRecallForAnomalies 3 - ŠT :0
+19. 11. 2020 21:27:08 Log CheckRecallForAnomalies 8 - ŠT :0
+19. 11. 2020 21:27:08 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 11. 2020 21:29:25 zipFileName: Razpisi_19_11_2020_09_29_25.zip
+19. 11. 2020 21:29:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\OMAHEN-TRANSPORT_doo_637414181693005917_Razpis.xls
+19. 11. 2020 21:29:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\ROLLING_TONS_637414181713655942_Razpis.xls
+19. 11. 2020 21:29:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\FRIKUS_doo_637414181725386119_Razpis.xls
+19. 11. 2020 21:29:33 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\RCM_doo_637414181737496026_Razpis.xls
+19. 11. 2020 21:29:35 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\MAJCEN_EUROTERMINAL_doo_637414181750525926_Razpis.xls
+19. 11. 2020 21:30:40 Before dowload
+19. 11. 2020 21:30:40 Before Add header
+19. 11. 2020 21:30:40 Before Binnarywrite
+19. 11. 2020 21:43:34 zipFileName: Razpisi_19_11_2020_09_43_33.zip
+19. 11. 2020 21:44:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\LKW_WALTER_637414190682960792_Razpis.xls
+19. 11. 2020 21:44:39 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\Joebstl_doo_637414190798900521_Razpis.xls
+19. 11. 2020 21:44:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\NERI_TRANSTRGPODUZEČE_637414190848250534_Razpis.xls
+19. 11. 2020 21:44:57 Before dowload
+19. 11. 2020 21:44:57 Before Add header
+19. 11. 2020 21:44:57 Before Binnarywrite
+19. 11. 2020 21:53:43 zipFileName: Razpisi_19_11_2020_09_53_43.zip
+19. 11. 2020 21:53:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\PRIGO,_doo,_Brezovica_637414196246410251_Razpis.xls
+19. 11. 2020 21:53:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\ŠPEDICIJA_GOJA_DOO_637414196260880247_Razpis.xls
+19. 11. 2020 21:53:47 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\B_MAKOVEC_TRANSPORT_doo_637414196274120371_Razpis.xls
+19. 11. 2020 21:53:48 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_19-11-2020\Transporti_Mihalić,_vl_Neven_637414196288800240_Razpis.xls
+19. 11. 2020 21:53:54 Before dowload
+19. 11. 2020 21:53:54 Before Add header
+19. 11. 2020 21:53:54 Before Binnarywrite
+19. 11. 2020 22:32:03 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.DateTime AddMinutes(Double) method, and this method cannot be translated into a store expression.
+19. 11. 2020 22:32:20 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 19. november 2020 ob 22:32:18 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.CallbackPanelRoute_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 153
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Statistic/ViewRoutePrices.aspx
+
+
+19. 11. 2020 22:32:55 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.DateTime AddMinutes(Double) method, and this method cannot be translated into a store expression.
+19. 11. 2020 22:33:01 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 19. november 2020 ob 22:32:59 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Statistic.ViewRoutePrices.CallbackPanelRoute_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Statistic\ViewRoutePrices.aspx.cs:line 153
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Statistic/ViewRoutePrices.aspx
+
+
+20. 11. 2020 08:15:31 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 11. 2020 08:15:31 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 11. 2020 08:15:31 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 11. 2020 08:15:31 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 11. 2020 08:38:00 Pozdravljeni! 
+ Uporabnik OTP Admin je dne petek, 20. november 2020 ob 08:37:58 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.CallbackPanelUserInput_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1592
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Recall/RecallForm.aspx?action=2&recordId=4936
+
+
+20. 11. 2020 09:05:05 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:05:05 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 09:05:41 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:05:41 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 09:19:34 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:19:34 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 09:20:38 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:20:40 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 09:25:39 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:25:39 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 09:26:08 Log CheckRecallForAnomalies 1 - ŠT :4804
+20. 11. 2020 09:26:08 Log CheckRecallForAnomalies 13 - ŠT :4804
+20. 11. 2020 10:18:17 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 11. 2020 10:18:17 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 11. 2020 10:18:18 Log CheckRecallForAnomalies 8 - ŠT :0
+20. 11. 2020 10:18:18 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 11. 2020 10:26:05 Log CheckRecallForAnomalies 1 - ŠT :0
+20. 11. 2020 10:26:05 Log CheckRecallForAnomalies 3 - ŠT :0
+20. 11. 2020 10:26:07 Log CheckRecallForAnomalies 5 - ŠT :0
+20. 11. 2020 10:26:07 Log CheckRecallForAnomalies 7 - ŠT :0
+20. 11. 2020 10:26:07 Log CheckRecallForAnomalies 9 - ŠT :0
+20. 11. 2020 10:26:07 Log CheckRecallForAnomalies 13 - ŠT :0
+20. 11. 2020 10:44:33 zipFileName: Razpisi_20_11_2020_10_44_33.zip
+20. 11. 2020 10:44:35 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\RCM_doo_637414658757897015_Razpis.xls
+20. 11. 2020 10:44:37 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\MAJCEN_EUROTERMINAL_doo_637414658771707142_Razpis.xls
+20. 11. 2020 10:44:38 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\LKW_WALTER_637414658783597192_Razpis.xls
+20. 11. 2020 13:23:12 zipFileName: Razpisi_20_11_2020_01_23_11.zip
+20. 11. 2020 13:23:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\RCM_doo_637414754355961071_Razpis.xls
+20. 11. 2020 13:24:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\MAJCEN_EUROTERMINAL_doo_637414754960825379_Razpis.xls
+20. 11. 2020 13:24:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_20-11-2020\LKW_WALTER_637414754979821072_Razpis.xls
+21. 11. 2020 02:09:23 zipFileName: Razpisi_21_11_2020_02_09_23.zip
+21. 11. 2020 02:15:19 zipFileName: Razpisi_21_11_2020_02_15_19.zip
+21. 11. 2020 02:15:38 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\FRIKUS_doo_637415217209360444_Razpis.xls
+21. 11. 2020 02:15:42 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\INTEREUROPA_dd_637415217401584533_Razpis.xls
+21. 11. 2020 02:15:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\RCM_doo_637415217441934628_Razpis.xls
+21. 11. 2020 02:15:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\MAJCEN_EUROTERMINAL_doo_637415217460844605_Razpis.xls
+21. 11. 2020 02:20:24 zipFileName: Razpisi_21_11_2020_02_20_24.zip
+21. 11. 2020 02:20:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\MAJCEN_EUROTERMINAL_doo_637415220255946561_Razpis.xls
+21. 11. 2020 02:20:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_21-11-2020\LKW_WALTER_637415220286205674_Razpis.xls
+21. 11. 2020 02:27:14 Before dowload
+21. 11. 2020 02:27:14 Before Add header
+21. 11. 2020 02:27:14 Before Binnarywrite
+23. 11. 2020 21:21:17 zipFileName: Razpisi_23_11_2020_09_21_17.zip
+23. 11. 2020 21:21:20 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\ROLLING_TONS_637417632800974818_Razpis.xls
+23. 11. 2020 21:21:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\FRIKUS_doo_637417632849294776_Razpis.xls
+23. 11. 2020 21:22:17 Object reference not set to an instance of an object.
+23. 11. 2020 21:26:40 zipFileName: Razpisi_23_11_2020_09_26_40.zip
+23. 11. 2020 21:26:42 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\RCM_doo_637417636029134873_Razpis.xls
+23. 11. 2020 21:26:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\MAJCEN_EUROTERMINAL_doo_637417636064584884_Razpis.xls
+23. 11. 2020 21:32:46 zipFileName: Razpisi_23_11_2020_09_32_46.zip
+23. 11. 2020 21:32:48 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\OMAHEN-TRANSPORT_doo_637417639684569527_Razpis.xls
+23. 11. 2020 21:32:58 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\ROLLING_TONS_637417639784324651_Razpis.xls
+23. 11. 2020 21:33:01 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\FRIKUS_doo_637417639815309763_Razpis.xls
+23. 11. 2020 21:41:48 zipFileName: Razpisi_23_11_2020_09_41_48.zip
+23. 11. 2020 21:41:50 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\MAJCEN_EUROTERMINAL_doo_637417645104090091_Razpis.xls
+23. 11. 2020 21:43:34 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_23-11-2020\LKW_WALTER_637417646140934743_Razpis.xls
+24. 11. 2020 14:37:01 zipFileName: Razpisi_24_11_2020_02_37_01.zip
+24. 11. 2020 14:37:10 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_24-11-2020\Joebstl_doo_637418254306485302_Razpis.xls
+24. 11. 2020 14:37:15 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_24-11-2020\NERI_TRANSTRGPODUZEČE_637418254356485201_Razpis.xls
+24. 11. 2020 14:37:28 Before dowload
+24. 11. 2020 14:37:28 Before Add header
+24. 11. 2020 14:37:28 Before Binnarywrite

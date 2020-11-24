@@ -457,7 +457,7 @@
         }
 
         function btnCreateOrder_Click(s, e) {
-             var process = false;
+            var process = false;
             var dateItems = [DateEditDatumRazklada];
             var lookUpItems = [lookUpStranke];
             process = InputFieldsValidation(lookUpItems, null, dateItems, null, /*comboBoxItems*/null, null);
@@ -563,7 +563,7 @@
                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
             </dx:GridViewDataTextColumn>
 
-         <%--   <dx:GridViewDataTextColumn Caption="Št. palet"
+            <%--   <dx:GridViewDataTextColumn Caption="Št. palet"
                 FieldName="StPalet" ShowInCustomizationForm="True"
                 Width="120px" AdaptivePriority="1">
                 <PropertiesTextEdit DisplayFormatString="n2" DisplayFormatInEditMode="true">
@@ -633,7 +633,7 @@
                 ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False" Visible="false">
             </dx:GridViewDataTextColumn>
         </Columns>
-        
+
         <ClientSideEvents BatchEditEndEditing="OnBatchEditEndEditing" EndCallback="EndCallback_gridSelectedPositions" />
         <TotalSummary>
             <dx:ASPxSummaryItem FieldName="Kolicina" SummaryType="Sum" />
@@ -751,7 +751,62 @@
                 </div>
 
                 <div class="row small-padding-bottom">
-                    <div class="col-md-3">
+                     <div class="col-md-2">
+                        <div class="row2 align-item-centerV-startH">
+                            <div class="col-sm-0 big-margin-r" style="padding-right:6px">
+                                <dx:ASPxLabel ID="ASPxLabel15" runat="server" Text="Zbirnik Teža : " ClientInstanceName="clientLblZbirnik" ></dx:ASPxLabel>
+                            </div>
+                            <div class="col-sm-6 no-padding-left">
+                                <dx:ASPxGridLookup ID="ASPxGridLookupZbirnikTon" runat="server" ClientInstanceName="lookUpZbirnikTon"
+                                    KeyFieldName="ZbirnikTonID" TextFormatString="{2}" CssClass="text-box-input" ClientEnabled="true"
+                                    Paddings-PaddingTop="0" Paddings-PaddingBottom="0" Width="100%" Font-Size="14px"
+                                    OnLoad="ASPxGridLookupLoad_WidthMedium" OnDataBinding="ASPxGridLookupZbirnikTon_DataBinding" IncrementalFilteringMode="Contains">
+                                    <ClearButton DisplayMode="OnHover" />
+                                    <%-- DropDown="function(s,e){s.GetGridView().GetAutoFilterEditor('Naziv').Focus();} --%>
+                                    <%--<ClientSideEvents Init="SetFocus" ValueChanged="lookUpTipPrevoza_ValueChanged" />--%>
+                                    <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
+                                    <GridViewStyles>
+                                        <Header CssClass="gridview-no-header-padding" ForeColor="Black"></Header>
+                                        <FilterBarClearButtonCell></FilterBarClearButtonCell>
+                                    </GridViewStyles>
+                                    <GridViewProperties>
+                                        <SettingsBehavior EnableRowHotTrack="True" />
+                                        <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" />
+                                        <SettingsPager ShowSeparators="True" AlwaysShowPager="false" PageSize="200">
+                                            <PageSizeItemSettings Visible="false"></PageSizeItemSettings>
+                                        </SettingsPager>
+                                        <Settings ShowFilterRow="True" ShowFilterRowMenu="True" ShowPreview="True" ShowVerticalScrollBar="True"
+                                            ShowHorizontalScrollBar="true" VerticalScrollableHeight="200" GridLines="Both"></Settings>
+                                    </GridViewProperties>
+                                    <Columns>
+                                        <dx:GridViewDataTextColumn Caption="Id" FieldName="ZbirnikTonID" Width="80px"
+                                            ReadOnly="true" Visible="false" ShowInCustomizationForm="True" VisibleIndex="0">
+                                        </dx:GridViewDataTextColumn>
+
+                                        <dx:GridViewDataTextColumn Caption="Koda" FieldName="Koda" Width="80px"
+                                            ReadOnly="true" ShowInCustomizationForm="True" VisibleIndex="0">
+                                        </dx:GridViewDataTextColumn>
+
+                                        <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="20%"
+                                            ReadOnly="true" ShowInCustomizationForm="True">
+                                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataTextColumn Caption="Teža Od" FieldName="TezaOd" Width="20%"
+                                            ReadOnly="true" ShowInCustomizationForm="True">
+                                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                        </dx:GridViewDataTextColumn>
+                                        <dx:GridViewDataTextColumn Caption="Teža Do" FieldName="TezaDo" Width="20%"
+                                            ReadOnly="true" ShowInCustomizationForm="True">
+                                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                        </dx:GridViewDataTextColumn>
+                                    
+
+                                    </Columns>
+                                </dx:ASPxGridLookup>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
                         <div class="row2 align-item-centerV-startH">
                             <div class="col-sm-0 big-margin-r">
                                 <dx:ASPxLabel ID="lblTransportType" runat="server" Text="TIP PREVOZA : " ClientInstanceName="clientLblTransportType"></dx:ASPxLabel>
@@ -803,7 +858,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                   
+                    <div class="col-md-3">
                         <div class="row2 align-item-centerV-centerH">
                             <div class="col-xs-0 big-margin-r no-padding-right" style="margin-right: 30px">
                                 <dx:ASPxLabel ID="lblSKladisce" runat="server" Text="SKLADIŠČE : "></dx:ASPxLabel>
@@ -1165,7 +1221,7 @@
 
                 <dx:ASPxPopupControl ID="ASPxPopupControlOrderPos" runat="server" ContentUrl="OrderPos_popup.aspx"
                     ClientInstanceName="clientPopUpOrderPos" Modal="True" HeaderText="POZICIJE NAROČILNIC"
-                    CloseAction="CloseButton" Width="1600px" Height="610px" PopupHorizontalAlign="WindowCenter"
+                    CloseAction="CloseButton" Width="1650px" Height="700px" PopupHorizontalAlign="WindowCenter"
                     PopupVerticalAlign="WindowCenter" PopupAnimationType="Fade" AllowDragging="true" ShowSizeGrip="true"
                     AllowResize="true" ShowShadow="true"
                     OnWindowCallback="ASPxPopupControlOrderPos_WindowCallback">

@@ -14,6 +14,12 @@
                 firstShow = false;
                 btnConfirmDownload.DoClick();
             });
+
+            $("#modal-btn-send").on("click", function () {
+                $("#warningButtonModal").modal('hide');
+                firstShow = false;
+                btnSendTender.DoClick();
+            });
         });
 
         function OnSelectionChanged(s, e) {
@@ -28,6 +34,7 @@
                 ShowErrorPopUp("Ustvarjenih je bilo " + s.cpSendTender + " novih razpisov, ki še niso dopolnjeni z cenami", 0, "Razpisi");
                 gridRoutes.UnselectRows();
                 gridCarrier.UnselectRows();
+                gridTons.UnselectRows();
                 delete (s.cpSendTender);
             }
 
@@ -40,9 +47,8 @@
             //clientCallbackPanelSendTenders.PerformCallback('');
         }
 
-        
-        function SaveTender(s, e)
-        {
+
+        function SaveTender(s, e) {
             var inputItems = [clientTxtTenderName];
             var dateEditItems = [clientDateEditTenderDate];
 
@@ -74,6 +80,43 @@
             <dx:PanelContent>
                 <div class="row2">
                     <div class="col-md-6">
+                        <h2 class="text-center">Zbirnik po tonah</h2>
+                        <hr />
+                        <dx:ASPxGridView ID="ASPxGridViewTons" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTons"
+                            Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTons_DataBinding" OnDataBound="ASPxGridViewTons_DataBound"
+                            KeyFieldName="ZbirnikTonID" CssClass="gridview-no-header-padding">
+                            <ClientSideEvents SelectionChanged="OnSelectionChanged" />
+                            <Paddings Padding="0" />
+                            <Settings ShowVerticalScrollBar="True"
+                                ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="200"
+                                ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
+                            <SettingsPager PageSize="50" ShowNumericButtons="true">
+                                <PageSizeItemSettings Visible="false" Items="10,20,30" Caption="Zapisi na stran : " AllItemText="Vsi">
+                                </PageSizeItemSettings>
+                                <Summary Visible="true" Text="Vseh zapisov : {2}" EmptyText="Ni zapisov" />
+                            </SettingsPager>
+                            <SettingsBehavior AllowFocusedRow="true" />
+                            <Styles Header-Wrap="True">
+                                <Header Paddings-PaddingTop="5" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="true"></Header>
+                                <FocusedRow BackColor="#d1e6fe" Font-Bold="true" ForeColor="#606060"></FocusedRow>
+                            </Styles>
+                            <SettingsText EmptyDataRow="Trenutno ni podatka o prevoznikih." />
+                            <Columns>
+                                <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="60px" SelectAllCheckboxMode="AllPages" ShowClearFilterButton="true" />
+                                <dx:GridViewDataTextColumn Caption="ID" FieldName="ZbirnikTonID" Width="80px"
+                                    ReadOnly="true" Visible="false">
+                                </dx:GridViewDataTextColumn>
+
+                                <dx:GridViewDataTextColumn Caption="Koda" FieldName="Koda" Width="20%">
+                                    <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                </dx:GridViewDataTextColumn>
+
+                                <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="70%">
+                                    <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                </dx:GridViewDataTextColumn>
+
+                            </Columns>
+                        </dx:ASPxGridView>
                         <h2 class="text-center">Relacije</h2>
                         <hr />
                         <dx:ASPxGridView ID="ASPxGridViewRoutes" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRoutes"
@@ -102,6 +145,7 @@
                                 </dx:GridViewDataTextColumn>
 
                                 <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="50%">
+                                    <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                 </dx:GridViewDataTextColumn>
 
                                 <dx:GridViewDataTextColumn Caption="Odpoklici v prejšnjem letu"
@@ -131,9 +175,9 @@
                             <ClientSideEvents SelectionChanged="OnSelectionChanged" />
                             <Paddings Padding="0" />
                             <Settings ShowVerticalScrollBar="True"
-                                ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="400"
+                                ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="815"
                                 ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
-                            <SettingsPager PageSize="50" ShowNumericButtons="true" NumericButtonCount="1" PageNumberFormat="1" Visible="true">
+                            <SettingsPager PageSize="100" ShowNumericButtons="true" NumericButtonCount="1" PageNumberFormat="1" Visible="true">
                                 <PageSizeItemSettings Visible="false" Items="10,20,30" Caption="Zapisi na stran : " AllItemText="Vsi">
                                 </PageSizeItemSettings>
                                 <Summary Visible="true" Text="Vseh zapisov : {2}" EmptyText="Ni zapisov" />
@@ -151,6 +195,7 @@
                                 </dx:GridViewDataTextColumn>
 
                                 <dx:GridViewDataTextColumn Caption="Naziv" FieldName="NazivPrvi">
+                                    <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                 </dx:GridViewDataTextColumn>
 
                                 <dx:GridViewDataTextColumn Caption="Naslov"
@@ -172,6 +217,11 @@
                         </dx:ASPxGridView>
                     </div>
                 </div>
+                <div class="row2">
+                    <div class="col-md-6">
+                    </div>
+
+                </div>
                 <div class="AddEditButtonsWrap medium-margin-l medium-margin-r">
                     <div class="DeleteButtonElements">
                         <span class="AddEditButtons">
@@ -183,6 +233,10 @@
                             </dx:ASPxButton>
                             <dx:ASPxButton ID="btnConfirmDownload" runat="server" Text="Prenesi" AutoPostBack="false"
                                 Height="25" Width="50" ClientInstanceName="btnConfirmDownload" ClientVisible="false" OnClick="btnConfirmDownload_Click">
+                            </dx:ASPxButton>
+
+                             <dx:ASPxButton ID="btnSendTender" runat="server" Text="Pošlji razpis" AutoPostBack="false"
+                                Height="25" Width="50" ClientInstanceName="btnSendTender" ClientVisible="false" OnClick="btnSendTender_Click">
                             </dx:ASPxButton>
                         </span>
                     </div>
@@ -226,7 +280,7 @@
                                                 <div class="col-sm-0 big-margin-r" style="margin-right: 74px;">
                                                     <dx:ASPxLabel ID="ASPxLabel18" runat="server" Font-Size="12px" Font-Bold="true" Text="NAZIV : "></dx:ASPxLabel>
                                                 </div>
-                                                <div class="col-sm-9 no-padding-left">
+                                                <div class="col-sm-9 no-padding-left" style="margin-bottom:20px">
                                                     <dx:ASPxTextBox runat="server" ID="txtTenderName" ClientInstanceName="clientTxtTenderName"
                                                         CssClass="text-box-input" Font-Size="13px" Width="100%">
                                                         <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
@@ -234,6 +288,17 @@
                                                     </dx:ASPxTextBox>
                                                 </div>
                                             </div>
+                                            <div class="row2 align-item-centerV-startH">
+                                                <div class="col-sm-0 big-margin-r" style="margin-right: 74px;">
+                                                    <dx:ASPxLabel ID="lblSupplierArrangesTransport" runat="server" Font-Bold="true" Text="Pošlji najcenejšemu prevozniku : "></dx:ASPxLabel>
+                                                </div>
+                                                <div class="col-xs-1 no-padding-left">
+                                                    <dx:ASPxCheckBox ID="chkNajcenejsiPrevoznik" runat="server">
+                                                        
+                                                    </dx:ASPxCheckBox>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -284,6 +349,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="modal-btn-send">Pošlji razpis</button>
                         <button type="button" class="btn btn-default" id="modal-btn-download">Prenesi</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
                     </div>

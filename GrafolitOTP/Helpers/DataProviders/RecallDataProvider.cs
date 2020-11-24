@@ -169,6 +169,19 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return null;
         }
 
+        public void SetZbirnikTon(List<ZbirnikTonModel> model)
+        {
+            AddValueToSession(Enums.RecallSession.ZbirnikTon, model);
+        }
+
+        public List<ZbirnikTonModel> GetZbirnikTon()
+        {
+            if (SessionHasValue(Enums.RecallSession.ZbirnikTon))
+                return (List<ZbirnikTonModel>)GetValueFromSession(Enums.RecallSession.ZbirnikTon);
+
+            return null;
+        }
+
         public void SetRecallPosIDOptimalStockOverflow(List<object> model)
         {
             AddValueToSession(Enums.RecallSession.RecallPosOptimalStockOverflow, model);

@@ -1,4 +1,5 @@
-﻿using DatabaseWebService.ModelsOTP.Route;
+﻿using DatabaseWebService.Models;
+using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Web;
 using DevExpress.XtraReports.UI;
@@ -18,16 +19,30 @@ namespace OptimizacijaTransprotov.Pages.Statistic
     public partial class ViewRoutePrices : ServerMasterPage
     {
         List<RouteTransporterPricesModel> model = null;
+
+        hlpViewRoutePricesModel helperRPModel = null;
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated) RedirectHome();
 
             this.Master.PageHeadlineTitle = Title;
+
+            DateTime dateStart = DateTime.Now.AddYears(-1).Date;
+            DateTime dateEnd = DateTime.Now.Date;
+
+            DateEditDatumOd.Date = dateStart;
+            DateEditDatumDo.Date = dateEnd;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                if (helperRPModel == null) helperRPModel = new hlpViewRoutePricesModel();
+                helperRPModel.DateFrom = DateEditDatumOd.Date;
+                helperRPModel.DateTo = DateEditDatumDo.Date;
+                helperRPModel.iWeightType = 1;
+                helperRPModel.iViewType = 1;
+
                 ASPxGridViewRouteTransportPricesCompare.DataBind();
 
             }
@@ -93,7 +108,8 @@ namespace OptimizacijaTransprotov.Pages.Statistic
 
         protected void ASPxGridViewRouteTransportPricesCompare_DataBinding(object sender, EventArgs e)
         {
-            model = (model == null) ? CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(1,1)) : GetRouteDataProvider().GetRouteTransportPrices();
+
+            model = (model == null) ? CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(helperRPModel)).lRouteTransporterPriceModel : GetRouteDataProvider().GetRouteTransportPrices();
 
             (sender as ASPxGridView).DataSource = model;
             (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
@@ -105,26 +121,58 @@ namespace OptimizacijaTransprotov.Pages.Statistic
         {
             int iWeight = Convert.ToInt32(RadioButtonTeza.Value);
 
-            string sViewType = (CommonMethods.ParseInt(e.Parameter) > 0) ? RadioButtonList.Value.ToString() : e.Parameter;
+            string sViewType = RadioButtonList.Value.ToString();
 
-            
+            if (helperRPModel == null) helperRPModel = new hlpViewRoutePricesModel();
+
+            helperRPModel.DateFrom = DateEditDatumOd.Date;
+            helperRPModel.DateTo = DateEditDatumDo.Date;
+            helperRPModel.iWeightType = iWeight;
 
             if (sViewType == "AllValues")
             {
-                model = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(1, iWeight));
+                helperRPModel.iViewType = 1;
             }
-            else if (sViewType == "LastniPrevoz")
+            else if (sViewType == "GrafolitPrevoz")
             {
-                model = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(2, iWeight));
+                helperRPModel.iViewType = 2;
             }
-            else if (sViewType == "OstaliPrevoz")
+            else if (sViewType == "Dobavitelj")
             {
-                model = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(3, iWeight));
+                helperRPModel.iViewType = 3;
             }
-                       
+            else if (sViewType == "Kupec")
+            {
+                helperRPModel.iViewType = 4;
+            }
+            else if (sViewType == "GrafolitLastniPrevoz")
+            {
+                helperRPModel.iViewType = 5;
+            }
+
+            model = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(helperRPModel)).lRouteTransporterPriceModel;
+
+
             GetRouteDataProvider().SetRouteTransportPrices(model);
             ASPxGridViewRouteTransportPricesCompare.DataBind();
         }
 
+        protected void ASPxGridViewRouteTransportPricesCompare_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.Caption != "Cena") return;
+            if (Convert.ToInt32(e.Value) == 0)
+                e.DisplayText = " ";
+        }
+
+        protected void ASPxGridViewRouteTransportPricesCompare_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
+        {
+            if (e.RowType != GridViewRowType.Data) return;
+
+            if (CommonMethods.ParseBool(e.GetValue("IsRoute").ToString()))
+            {
+                e.Row.Font.Bold = true;
+                e.Row.Font.Underline = true;
+            }
+        }
     }
 }

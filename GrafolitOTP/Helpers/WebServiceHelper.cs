@@ -401,6 +401,12 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceClientURL + "GetAllTransportTypes";
         }
+
+
+        public static string GetAllZbirnikTon()
+        {
+            return WebServiceClientURL + "GetAllZbirnikTon";
+        }
         public static string GetClientTransportTypeByID(int id)
         {
             return WebServiceClientURL + "GetTransportTypeByID?transportTypeID=" + id;
@@ -431,9 +437,9 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceRouteURL + "GetAllRoutes";
         }
-        public static string GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
+        public static string GetAllRoutesTransportPricesByViewType()
         {
-            return WebServiceRouteURL + "GetAllRoutesTransportPricesByViewType?iViewType=" + iViewType + "&iWeightType=" + iWeightType;
+            return WebServiceRouteURL + "GetAllRoutesTransportPricesByViewType";
         }
         public static string GetRouteByID(int routeID)
         {
@@ -484,9 +490,9 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceTenderURL + "DeleteTender?tenderID=" + id;
         }
 
-        public static string GetTenderListByRouteID(int routeID)
+        public static string GetTenderListByRouteIDandZbirnikTon(int routeID, int ZbirnikTonID)
         {
-            return WebServiceTenderURL + "GetTenderListByRouteID?routeID=" + routeID;
+            return WebServiceTenderURL + "GetTenderListByRouteIDandZbirnikTon?routeID=" + routeID+"&ZbirnikTonID=" + ZbirnikTonID;
         }
 
         public static string GetTenderListByRouteIDAndTenderDate(int routeID, string TenderDate)
@@ -529,6 +535,11 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceTenderURL + "GetLowestAndMostRecentPriceByRouteID?routeID=" + routeID.ToString();
         }
 
+        public static string GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(int routeID, int ZbirnikTonID)
+        {
+            return WebServiceTenderURL + "GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID?routeID=" + routeID.ToString() + "&ZbirnikTonID=" + ZbirnikTonID.ToString();
+        }
+
         public static string GetTransportCounByTransporterIDAndRouteID()
         {
             return WebServiceTenderURL + "GetTransportCounByTransporterIDAndRouteID";
@@ -542,6 +553,21 @@ namespace OptimizacijaTransprotov.Helpers
         public static string GetTenderDownloadFile(int iIDTender)
         {
             return WebServiceTenderURL + "GetTenderDownloadFile?TenderID=" + iIDTender;
+        }
+
+        public static string GetAllTons()
+        {
+            return WebServiceTenderURL + "GetAllTons";
+        }
+
+        public static string PrepareDataForTenderTransport()
+        {
+            return WebServiceTenderURL + "PrepareDataForTenderTransport";
+        }
+
+        public static string SendTenderToTransportersEmails()
+        {
+            return WebServiceTenderURL + "SendTenderToTransportersEmails";
         }
         #endregion
 

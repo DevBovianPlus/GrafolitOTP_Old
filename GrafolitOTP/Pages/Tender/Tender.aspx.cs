@@ -165,22 +165,54 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 model.ExcelRoutes = new List<ExcelRouteModel>();
 
                 int rowIndex = 3;
-
+                int routeID = 0;
+                int cntExit = 0;
+                ExcelRouteModel routeModel = null;
                 while (true)
                 {
-                    ExcelRouteModel routeModel = new ExcelRouteModel();
-                    int routeID = CommonMethods.ParseInt(sheet.Cells[rowIndex, 0].Value);
-                    if (routeID > 0)
+
+                    int tmpID = CommonMethods.ParseInt(sheet.Cells[rowIndex, 0].Value);
+                    string routeName = sheet.Cells[rowIndex, 1].Value.ToString();
+
+                    if (routeName.Length > 9)
                     {
-                        routeModel.RouteID = routeID;
-                        routeModel.RouteName = sheet.Cells[rowIndex, 1].Value.ToString();
-                        routeModel.Price = CommonMethods.ParseDecimal(sheet.Cells[rowIndex, 2].Value);
+                        cntExit = 0;
+                        routeModel = new ExcelRouteModel();
+                        routeModel.RouteID = tmpID;
+                        routeModel.RouteName = routeName;
+
                     }
                     else
-                        break;
+                    {
+                        if (routeName.Length != 0)
+                        {
+                            if (routeModel.TonsList == null) routeModel.TonsList = new List<ExcelTonsModel>();
+                            ExcelTonsModel tonsModel = new ExcelTonsModel();
+                            tonsModel.ZbirnikTonID = CommonMethods.ParseInt(sheet.Cells[rowIndex, 0].Value);
+                            tonsModel.TonsKoda = sheet.Cells[rowIndex, 1].Value.ToString();
+                            tonsModel.Price = CommonMethods.ParseDecimal(sheet.Cells[rowIndex, 3].Value);
+                            routeModel.TonsList.Add(tonsModel);
+                        }
+                        else
+                        {
+                            if (cntExit == 0)
+                            {
+                                model.ExcelRoutes.Add(routeModel);
+                            }
+                        }
+                    }
+
+                    if (tmpID == 0)
+                    {
+                        cntExit++;
+                        routeID = 0;
+
+                        if (cntExit == 2)
+                            break;
+                    }
 
                     rowIndex++;
-                    model.ExcelRoutes.Add(routeModel);
+                    //model.ExcelRoutes.Add(routeModel);
                 }
 
                 return model;
@@ -224,18 +256,23 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 TenderFullModel tender = tenderList.Where(t => t.RazpisID == model.TenderID).FirstOrDefault();
                 foreach (var item in tender.RazpisPozicija.Where(rp => rp.StrankaID == model.CarrierID).ToList())
                 {
-                    decimal newPrice = model.ExcelRoutes.Where(er => er.RouteID == item.RelacijaID).FirstOrDefault().Price;
-                    if (item.Cena != newPrice)
+                    ExcelRouteModel erm = model.ExcelRoutes.Where(er => er.RouteID == item.RelacijaID).FirstOrDefault();
+                    if (erm != null)
                     {
-                        val = new GridViewTenderPosValues();
-                        val.FieldName = "Cena";
-                        val.KeyValue = item.RazpisPozicijaID;
-                        val.NewValue = newPrice;
-                        val.OldValue = item.Cena;
+                        ExcelTonsModel etm = erm.TonsList.Where(et => et.ZbirnikTonID == item.ZbirnikTonID).FirstOrDefault();
+                        decimal newPrice = (etm != null) ? etm.Price : 0;
+                        if (item.Cena != newPrice)
+                        {
+                            val = new GridViewTenderPosValues();
+                            val.FieldName = "Cena";
+                            val.KeyValue = item.RazpisPozicijaID;
+                            val.NewValue = newPrice;
+                            val.OldValue = item.Cena;
 
-                        item.Cena = newPrice;
+                            item.Cena = newPrice;
 
-                        values.Add(val);
+                            values.Add(val);
+                        }
                     }
                 }
                 Session["GridViewTenderValues"] = values;
@@ -307,10 +344,10 @@ namespace OptimizacijaTransprotov.Pages.Tender
             e.Handled = true;
         }
 
-    
+
         protected void ASPxGridViewTender_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnDownloadTender_Click(object sender, EventArgs e)
@@ -324,9 +361,9 @@ namespace OptimizacijaTransprotov.Pages.Tender
             if (selectedTenderID > 0)
             {
                 TenderFullModel tenderF = tenderList.Where(t => t.RazpisID == selectedTenderID).FirstOrDefault();
-                if (tenderF != null && tenderF.PotRazpisa != null && tenderF.PotRazpisa.Length>0)
+                if (tenderF != null && tenderF.PotRazpisa != null && tenderF.PotRazpisa.Length > 0)
                 {
-                    string sExtension = tenderF.PotRazpisa.Substring(tenderF.PotRazpisa.IndexOf(".")+1,3);
+                    string sExtension = tenderF.PotRazpisa.Substring(tenderF.PotRazpisa.IndexOf(".") + 1, 3);
 
                     string[] split = tenderF.PotRazpisa.Split('\\');
                     string sFileName = split[split.Length - 1];

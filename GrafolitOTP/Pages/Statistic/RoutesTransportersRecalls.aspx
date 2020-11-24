@@ -99,6 +99,7 @@
                                         </dx:GridViewDataTextColumn>
 
                                         <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="50%">
+                                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                         </dx:GridViewDataTextColumn>
 
                                         <dx:GridViewDataTextColumn Caption="Vsi odpoklici v prejšnjem letu"

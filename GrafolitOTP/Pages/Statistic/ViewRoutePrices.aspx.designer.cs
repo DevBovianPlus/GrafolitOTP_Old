@@ -24,6 +24,51 @@ namespace OptimizacijaTransprotov.Pages.Statistic
         protected global::DevExpress.Web.ASPxCallbackPanel CallbackPanelRoute;
 
         /// <summary>
+        /// ASPxLabel9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel9;
+
+        /// <summary>
+        /// DateEditDatumOd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit DateEditDatumOd;
+
+        /// <summary>
+        /// ASPxLabel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+
+        /// <summary>
+        /// DateEditDatumDo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit DateEditDatumDo;
+
+        /// <summary>
+        /// ASPxLabel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+
+        /// <summary>
         /// RadioButtonList control.
         /// </summary>
         /// <remarks>
@@ -31,6 +76,15 @@ namespace OptimizacijaTransprotov.Pages.Statistic
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxRadioButtonList RadioButtonList;
+
+        /// <summary>
+        /// ASPxLabel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
 
         /// <summary>
         /// RadioButtonTeza control.

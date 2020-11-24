@@ -61,10 +61,12 @@
 
                         <dx:GridViewDataTextColumn Caption="Koda" FieldName="Koda" Width="10%"
                             ReadOnly="true" ShowInCustomizationForm="True" Visible="false">
+                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
 
                         <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="35%"
                             ReadOnly="true" ShowInCustomizationForm="True">
+                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
 
                         <dx:GridViewDataTextColumn Caption="Opomba"

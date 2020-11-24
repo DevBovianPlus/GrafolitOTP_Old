@@ -208,6 +208,11 @@
                                                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                             </dx:GridViewDataTextColumn>
 
+                                             <dx:GridViewDataTextColumn Caption="Teža v t" FieldName="ZbirnikTon.Koda" Width="8%"
+                                                ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False">
+                                                <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                                            </dx:GridViewDataTextColumn>
+
                                             <dx:GridViewDataTextColumn Caption="Cena"
                                                 FieldName="Cena" ShowInCustomizationForm="True"
                                                 Width="15%" PropertiesTextEdit-DisplayFormatString="N3">

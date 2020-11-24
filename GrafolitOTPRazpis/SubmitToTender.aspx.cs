@@ -43,7 +43,7 @@ namespace GrafolitOTPRazpis
 
                             DecodedQueryStringModel model = new DecodedQueryStringModel();
                             model.PrijavaPrevoznikaID = CommonMethods.ParseInt(split[0]);
-                            model.CenaPrevoza = CommonMethods.ParseDecimal(split[1]);
+                            model.CenaPrevoza = CommonMethods.ParseDecimal(split[1].Replace(",","."));
                             model.RelacijaID = CommonMethods.ParseInt(split[2]);
                             model.NazivRelacije = split[3];
                             model.DatumNaklada = DateTime.Parse(split[4], CultureInfo.GetCultureInfo("sl-SI"));

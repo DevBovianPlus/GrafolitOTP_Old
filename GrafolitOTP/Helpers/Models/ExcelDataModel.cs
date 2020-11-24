@@ -20,6 +20,14 @@ namespace OptimizacijaTransprotov.Helpers.Models
     {
         public int RouteID { get; set; }
         public string RouteName { get; set; }
+        public List<ExcelTonsModel> TonsList { get; set; }
+  
+    }
+
+    public class ExcelTonsModel
+    {
+        public int ZbirnikTonID { get; set; }
+        public string TonsKoda { get; set; }
         public decimal Price { get; set; }
     }
 }

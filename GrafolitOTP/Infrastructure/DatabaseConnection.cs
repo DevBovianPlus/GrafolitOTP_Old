@@ -1051,6 +1051,21 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+        public WebResponseContentModel<List<ZbirnikTonModel>> GetAllZbirnikTon()
+        {
+            WebResponseContentModel<List<ZbirnikTonModel>> dt = new WebResponseContentModel<List<ZbirnikTonModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<ZbirnikTonModel>>>(WebServiceHelper.GetAllZbirnikTon(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
         public WebResponseContentModel<ClientTransportType> GetTransportTypeByID(int transportTypeID)
         {
             WebResponseContentModel<ClientTransportType> transportType = new WebResponseContentModel<ClientTransportType>();
@@ -1147,20 +1162,23 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
-        public WebResponseContentModel<List<RouteTransporterPricesModel>> GetAllRoutesTransportPricesByViewType(int iViewType, int iWeightType)
-        {
-            WebResponseContentModel<List<RouteTransporterPricesModel>> dt = new WebResponseContentModel<List<RouteTransporterPricesModel>>();
+        public WebResponseContentModel<hlpViewRoutePricesModel> GetAllRoutesTransportPricesByViewType(hlpViewRoutePricesModel vRPModel)
+        {            
+            WebResponseContentModel<hlpViewRoutePricesModel> model = new WebResponseContentModel<hlpViewRoutePricesModel>();
             try
-            {
-                dt = GetResponseFromWebRequest<WebResponseContentModel<List<RouteTransporterPricesModel>>>(WebServiceHelper.GetAllRoutesTransportPricesByViewType(iViewType, iWeightType), "get");
+            {                
+                model.Content = vRPModel;
+                model = PostWebRequestData<WebResponseContentModel<hlpViewRoutePricesModel>>(WebServiceHelper.GetAllRoutesTransportPricesByViewType(), "post", model);
             }
             catch (Exception ex)
             {
-                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
             }
 
-            return dt;
+            return model;
         }
+
+
 
         public WebResponseContentModel<RouteModel> GetRouteByID(int routeID)
         {
@@ -1309,12 +1327,12 @@ namespace OptimizacijaTransprotov.Infrastructure
             return model;
         }
 
-        public WebResponseContentModel<List<TenderPositionModel>> GetTenderListByRouteID(int routeID)
+        public WebResponseContentModel<List<TenderPositionModel>> GetTenderListByRouteIDandZbirnikTon(int routeID, int ZbirnikTonID)
         {
             WebResponseContentModel<List<TenderPositionModel>> dt = new WebResponseContentModel<List<TenderPositionModel>>();
             try
             {
-                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionModel>>>(WebServiceHelper.GetTenderListByRouteID(routeID), "get");
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionModel>>>(WebServiceHelper.GetTenderListByRouteIDandZbirnikTon(routeID, ZbirnikTonID), "get");
             }
             catch (Exception ex)
             {
@@ -1486,6 +1504,21 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+        public WebResponseContentModel<decimal> GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(int routeID, int ZbirnikTonID)
+        {
+            WebResponseContentModel<decimal> dt = new WebResponseContentModel<decimal>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<decimal>>(WebServiceHelper.GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeID, ZbirnikTonID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
         public WebResponseContentModel<List<TenderPositionModel>> GetTenderListByRouteIDAndRecallID(int routeID, int recallID)
         {
             WebResponseContentModel<List<TenderPositionModel>> dt = new WebResponseContentModel<List<TenderPositionModel>>();
@@ -1500,6 +1533,22 @@ namespace OptimizacijaTransprotov.Infrastructure
 
             return dt;
         }
+
+        public WebResponseContentModel<List<TonsModel>> GetAllTons()
+        {
+            WebResponseContentModel<List<TonsModel>> dt = new WebResponseContentModel<List<TonsModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TonsModel>>>(WebServiceHelper.GetAllTons(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
 
         #endregion
 
@@ -1548,6 +1597,38 @@ namespace OptimizacijaTransprotov.Infrastructure
             }
 
             return dt;
+        }
+
+        public WebResponseContentModel<hlpTenderTransporterSelection> PrepareDataForTenderTransport(hlpTenderTransporterSelection vTTModel)
+        {
+            WebResponseContentModel<hlpTenderTransporterSelection> model = new WebResponseContentModel<hlpTenderTransporterSelection>();
+            try
+            {
+                model.Content = vTTModel;
+                model = PostWebRequestData<WebResponseContentModel<hlpTenderTransporterSelection>>(WebServiceHelper.PrepareDataForTenderTransport(), "post", model);
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+        public WebResponseContentModel<hlpTenderCreateExcellData> SendTenderToTransportersEmails(hlpTenderCreateExcellData vTTModel)
+        {
+            WebResponseContentModel<hlpTenderCreateExcellData> model = new WebResponseContentModel<hlpTenderCreateExcellData>();
+            try
+            {
+                model.Content = vTTModel;
+                model = PostWebRequestData<WebResponseContentModel<hlpTenderCreateExcellData>>(WebServiceHelper.SendTenderToTransportersEmails(), "post", model);
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
         }
         #endregion
 

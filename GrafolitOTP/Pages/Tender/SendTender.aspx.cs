@@ -1,4 +1,6 @@
-﻿using DatabaseWebService.ModelsOTP.Tender;
+﻿using DatabaseWebService.Models;
+using DatabaseWebService.ModelsOTP.Route;
+using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Spreadsheet;
 using DevExpress.Spreadsheet.Drawings;
 using DevExpress.Web;
@@ -10,6 +12,7 @@ using OptimizacijaTransprotov.Infrastructure;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,6 +24,9 @@ namespace OptimizacijaTransprotov.Pages.Tender
 {
     public partial class SendTender : ServerMasterPage
     {
+
+        hlpViewRoutePricesModel helperRPModel = null;
+        List<RouteModel> lFilteredRoutes = null;
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated) RedirectHome();
@@ -34,13 +40,32 @@ namespace OptimizacijaTransprotov.Pages.Tender
             {
                 ASPxGridViewCarrier.DataBind();
                 ASPxGridViewRoutes.DataBind();
+                ASPxGridViewTons.DataBind();
                 DateEditDatumRazpisa.Date = DateTime.Now;
+
+                //int idx = ASPxGridViewTons.FindVisibleIndexByKeyValue(10);
+                ASPxGridViewTons.Selection.SelectRowByKey(10);
             }
         }
 
         protected void ASPxGridViewRoutes_DataBinding(object sender, EventArgs e)
         {
-            (sender as ASPxGridView).DataSource = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutes());
+            if (helperRPModel == null) helperRPModel = new hlpViewRoutePricesModel();
+            helperRPModel.DateFrom = DateTime.Now.AddYears(-1);
+            helperRPModel.DateTo = DateTime.Now;
+            helperRPModel.iWeightType = 0;
+            helperRPModel.iViewType = 1;
+
+            lFilteredRoutes = ((GetRouteDataProvider().GetFilteredRoutesForTender() == null) ? CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(helperRPModel)).lRouteList : GetRouteDataProvider().GetFilteredRoutesForTender());
+            lFilteredRoutes = lFilteredRoutes.OrderByDescending(fr => fr.RecallCount).ToList();
+            (sender as ASPxGridView).DataSource = lFilteredRoutes;
+            (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
+        }
+
+
+        protected void ASPxGridViewTons_DataBinding(object sender, EventArgs e)
+        {
+            (sender as ASPxGridView).DataSource = CheckModelValidation(GetDatabaseConnectionInstance().GetAllTons());
             (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
         }
 
@@ -53,86 +78,22 @@ namespace OptimizacijaTransprotov.Pages.Tender
 
         protected void CallbackPanelSendTenders_Callback(object sender, CallbackEventArgsBase e)
         {
-            List<object> selectedRowsRoutes = ASPxGridViewRoutes.GetSelectedFieldValues("RelacijaID", "Naziv");
-            List<object> selectedRowsCarriers = ASPxGridViewCarrier.GetSelectedFieldValues("idStranka", "NazivPrvi");
 
-            TenderFullModel tender = new TenderFullModel();
-            tender.CenaSkupaj = 0;
-            tender.DatumRazpisa = DateEditDatumRazpisa.Date;
-            tender.Naziv = txtTenderName.Text;
-            tender.RazpisID = 0;
-            tender.tsIDOseba = PrincipalHelper.GetUserPrincipal().ID;
-            List<TenderPositionModel> tenderPositionsToSave = new List<TenderPositionModel>();
-            List<TransportCountModel> transportCountList = new List<TransportCountModel>();
 
-            foreach (var routeItem in selectedRowsRoutes)
-            {
-                IList routeList = (IList)routeItem;
-                foreach (var carrierItem in selectedRowsCarriers)
-                {
-                    IList carrierList = (IList)carrierItem;
-                    TenderPositionModel model = new TenderPositionModel();
-                    model.Cena = 0;
-                    model.RazpisID = 0;
-                    model.RazpisPozicijaID = 0;
-                    model.RelacijaID = CommonMethods.ParseInt(routeList[0]);
-                    model.StrankaID = CommonMethods.ParseInt(carrierList[0]);
-                    model.IDOseba = PrincipalHelper.GetUserPrincipal().ID;
-                    tenderPositionsToSave.Add(model);
-                    transportCountList.Add(new TransportCountModel { RelacijaID = model.RelacijaID, PrevoznikID = model.StrankaID });
-                }
-            }
+            int iViewType = CommonMethods.ParseInt( RadioButtonList.Value.ToString());
 
-            // transportCountList = CheckModelValidation(GetDatabaseConnectionInstance().GetTransportCounByTransporterAndRoute(transportCountList));
+            if (helperRPModel == null) helperRPModel = new hlpViewRoutePricesModel();
 
-            string path = Server.MapPath("~");
-            Workbook workbook = null;
-            int rowIndex = 0;
-            string zipFileName = "Razpisi_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm") + ".zip";
-            using (ZipFile zip = new ZipFile(path + zipFileName))
-            {
+            helperRPModel.DateFrom = DateTime.Now.AddYears(-1);
+            helperRPModel.DateTo = DateTime.Now;
+            helperRPModel.iWeightType = 0;
+            helperRPModel.iViewType = iViewType;
 
-                foreach (var item in selectedRowsCarriers)
-                {
-                    IList carrierList = (IList)item;
-                    workbook = new Workbook();
-                    workbook.Worksheets[0].Name = carrierList[1].ToString();
-                    workbook.Worksheets[0].Cells[0, 0].Value = carrierList[0].ToString();//prvi stolpec shranjujemo ID-je
-                    workbook.Worksheets[0].Cells[0, 0].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                    workbook.Worksheets[0].Cells[0, 1].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                    workbook.Worksheets[0].Cells[0, 1].Font.Bold = true;
-                    workbook.Worksheets[0].Cells[0, 1].Value = carrierList[1].ToString();
-                    workbook.Worksheets[0].Cells[0, 2].Font.Bold = true;
-                    workbook.Worksheets[0].Cells[0, 2].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                    workbook.Worksheets[0].Cells[0, 2].Value = "Cena";
-                    workbook.Worksheets[0].Cells[0, 1].AutoFitColumns();
-                    workbook.Worksheets[0].Cells[0, 1].AutoFitRows();
+            hlpViewRoutePricesModel vRPModel = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutesTransportPricesByViewType(helperRPModel));
+            lFilteredRoutes = vRPModel.lRouteList;
+            GetRouteDataProvider().SetFilteredRoutesForTender(lFilteredRoutes);
+            ASPxGridViewRoutes.DataBind();
 
-                    rowIndex = 1;
-                    foreach (var obj in selectedRowsRoutes)
-                    {
-                        IList routeList = (IList)obj;
-                        workbook.Worksheets[0].Cells[rowIndex, 0].Value = routeList[0].ToString();
-                        workbook.Worksheets[0].Cells[rowIndex, 1].Value = routeList[1].ToString();
-
-                        rowIndex++;
-                    }
-
-                    workbook.Worksheets[0].Columns[0].Visible = false;
-                    workbook.SaveDocument(path + carrierList[1].ToString().Replace(" ", "_").Replace(".", "") + "_Razpis.xls", DocumentFormat.OpenXml);
-
-                    zip.AddFile(path + carrierList[1].ToString().Replace(" ", "_") + "_Razpis.xls");
-                }
-
-                zip.Save();
-
-                byte[] byteFile = File.ReadAllBytes(path + zipFileName);
-                CommonMethods.WriteDocumentToResponse(this, byteFile, "zip", false, zipFileName);
-            }
-
-            tender.RazpisPozicija = tenderPositionsToSave;
-            CallbackPanelSendTenders.JSProperties["cpSendTender"] = tenderPositionsToSave.Count.ToString();
-            //CheckModelValidation(GetDatabaseConnectionInstance().SaveTenderAndTenderPosition(tender));
         }
 
         protected void ASPxPopupCompleteTenderData_WindowCallback(object source, PopupWindowCallbackArgs e)
@@ -196,6 +157,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
             {
                 List<object> selectedRowsRoutes = ASPxGridViewRoutes.GetSelectedFieldValues("RelacijaID", "Naziv", "RecallCount");
                 List<object> selectedRowsCarriers = ASPxGridViewCarrier.GetSelectedFieldValues("idStranka", "NazivPrvi");
+                List<object> selectedRowsTons = ASPxGridViewTons.GetSelectedFieldValues("ZbirnikTonID", "Naziv");
 
                 TenderFullModel tender = new TenderFullModel();
                 tender.CenaSkupaj = 0;
@@ -206,24 +168,20 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 List<TenderPositionModel> tenderPositionsToSave = new List<TenderPositionModel>();
                 List<TransportCountModel> transportCountList = new List<TransportCountModel>();
 
-                foreach (var routeItem in selectedRowsRoutes)
-                {
-                    IList routeList = (IList)routeItem;
-                    foreach (var carrierItem in selectedRowsCarriers)
-                    {
-                        IList carrierList = (IList)carrierItem;
-                        TenderPositionModel model = new TenderPositionModel();
-                        model.Cena = 0;
-                        model.RazpisID = 0;
-                        model.RazpisPozicijaID = 0;
-                        model.RelacijaID = CommonMethods.ParseInt(routeList[0]);
-                        model.StrankaID = CommonMethods.ParseInt(carrierList[0]);
-                        model.IDOseba = PrincipalHelper.GetUserPrincipal().ID;
-                        tenderPositionsToSave.Add(model);
-                        transportCountList.Add(new TransportCountModel { RelacijaID = model.RelacijaID, PrevoznikID = model.StrankaID });
-                    }
-                }
 
+
+                // podatki za preverjenje 
+                // če ne gre za najcenejšega prevoznika ga izločimo iz seznama 
+                hlpTenderTransporterSelection vTTModel = new hlpTenderTransporterSelection();
+                vTTModel.SelectedRowsRoutes = selectedRowsRoutes;
+                vTTModel.SelectedRowsCarriers = selectedRowsCarriers;
+                vTTModel.SelectedRowsTons = selectedRowsTons;
+                vTTModel.CheapestTransporterTender = CommonMethods.ParseBool(chkNajcenejsiPrevoznik.Checked);
+                vTTModel.RazpisPozicija = tenderPositionsToSave;
+
+
+                vTTModel = CheckModelValidation(GetDatabaseConnectionInstance().PrepareDataForTenderTransport(vTTModel));
+                tenderPositionsToSave = vTTModel.RazpisPozicija;
                 //Server.ScriptTimeout = 1200;
 
                 // transportCountList = CheckModelValidation(GetDatabaseConnectionInstance().GetTransportCounByTransporterAndRoute(transportCountList));
@@ -256,7 +214,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 razpisiPath = Server.MapPath("~/Razpisi/Razpisi_" + DateTime.Now.ToString("dd-MM-yyyy") + "/");
 
                 //uporabimi če se bo generiral samo en razpis potem ne rabimo prenašat zip datoteke k uporabniku ampak samo xlsx 
-                string currentFullFileName = "";                
+                string currentFullFileName = "";
                 string currentFileName = "";
                 string zipFileName = "Razpisi_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss") + ".zip";
                 string sFileLocation = razpisiPath + zipFileName;
@@ -264,55 +222,93 @@ namespace OptimizacijaTransprotov.Pages.Tender
                 using (ZipFile zip = new ZipFile(razpisiPath + zipFileName))
                 {
 
-                    foreach (var item in selectedRowsCarriers)
+                    foreach (TransporterSimpleModel tsm in vTTModel.tTenderCreateExcellData.TransporterList)
                     {
-                        IList carrierList = (IList)item;
                         workbook = new Workbook();
-                        string wsName = carrierList[1].ToString().Length > 30 ? carrierList[1].ToString().Substring(0, 30) : carrierList[1].ToString();
+                        string wsName = tsm.Naziv.ToString().Length > 30 ? tsm.Naziv.ToString().Substring(0, 30) : tsm.Naziv.ToString();
                         workbook.Worksheets[0].Name = RemoveForbidenChracters(wsName);
                         workbook.Worksheets[0].MergeCells(workbook.Worksheets[0].Range["B1:C1"]);
                         workbook.Worksheets[0].Cells[0, 0].Value = objTender.RazpisID.ToString();//prvi stolpec shranjujemo ID-je
                         workbook.Worksheets[0].Cells[0, 1].Value = txtTenderName.Text;
                         workbook.Worksheets[0].Cells[0, 1].Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
                         workbook.Worksheets[0].Cells[0, 1].Font.Bold = true;
-                        workbook.Worksheets[0].Cells[1, 0].Value = carrierList[0].ToString();
+                        workbook.Worksheets[0].Cells[1, 0].Value = tsm.ClientID.ToString();
                         workbook.Worksheets[0].Cells[1, 0].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
                         workbook.Worksheets[0].Cells[1, 1].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
                         workbook.Worksheets[0].Cells[1, 1].Font.Bold = true;
-                        workbook.Worksheets[0].Cells[1, 1].Value = carrierList[1].ToString();
+                        workbook.Worksheets[0].Cells[1, 1].Value = tsm.Naziv.ToString();
                         workbook.Worksheets[0].Cells[1, 2].Font.Bold = true;
                         workbook.Worksheets[0].Cells[1, 2].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                        workbook.Worksheets[0].Cells[1, 2].Value = "Cena";
+                        workbook.Worksheets[0].Cells[1, 2].Value = "Pripor. Cena";
                         workbook.Worksheets[0].Cells[1, 3].Font.Bold = true;
                         workbook.Worksheets[0].Cells[1, 3].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                        workbook.Worksheets[0].Cells[1, 3].Value = "Št. prevozev v zadnjem letu";
+                        workbook.Worksheets[0].Cells[1, 3].Value = "Cena";
                         workbook.Worksheets[0].Cells[1, 4].Font.Bold = true;
                         workbook.Worksheets[0].Cells[1, 4].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
-                        workbook.Worksheets[0].Cells[1, 4].Value = "Št. vseh prevozev za relacijo v zadnjem letu";
+                        workbook.Worksheets[0].Cells[1, 4].Value = "Št. VAŠIH prevozev v zadnjem letu";
+                        workbook.Worksheets[0].Cells[1, 5].Font.Bold = true;
+                        workbook.Worksheets[0].Cells[1, 5].Borders.BottomBorder.LineStyle = BorderLineStyle.Thick;
+                        workbook.Worksheets[0].Cells[1, 5].Value = "Št. vseh prevozev za relacijo v zadnjem letu";
                         workbook.Worksheets[0].Cells[1, 1].AutoFitColumns();
                         workbook.Worksheets[0].Cells[1, 1].AutoFitRows();
 
                         rowIndex = 3;
-                        foreach (var obj in selectedRowsRoutes)
+                        foreach (RouteSimpleModel rsm in tsm.RouteList)
                         {
-           
-
-                            IList routeList = (IList)obj;
-                            workbook.Worksheets[0].Cells[rowIndex, 0].Value = routeList[0].ToString();
-                            workbook.Worksheets[0].Cells[rowIndex, 1].Value = routeList[1].ToString();
+                            workbook.Worksheets[0].Cells[rowIndex, 0].Value = rsm.RouteID.ToString();
+                            workbook.Worksheets[0].Cells[rowIndex, 1].Value = rsm.Naziv.ToString();
+                            workbook.Worksheets[0].Cells[rowIndex, 1].ColumnWidth = 200;
+                            workbook.Worksheets[0].Cells[rowIndex, 1].Font.Bold = true;
+                            workbook.Worksheets[0].Cells[rowIndex, 1].Font.Italic = true;
 
                             //var value = transportCountList.Where(tcl => tcl.PrevoznikID == (int)carrierList[0] && tcl.RelacijaID == (int)routeList[0]).FirstOrDefault();
                             // 08.06.2020 - ugotovil da tega sploh ne uporabljajo in smo enostavno zakomentirali
                             //var value = CheckModelValidation(GetDatabaseConnectionInstance().GetTransportCounByTransporterIDAndRouteID(new TransportCountModel() { PrevoznikID = (int)carrierList[0], RelacijaID = (int)routeList[0] }).Result);
-                            TransportCountModel value = null;
-                            workbook.Worksheets[0].Cells[rowIndex, 3].Value = value != null ? value.StPotrjenihOdpoklicev : 0;
-                            //workbook.Worksheets[0].Cells[rowIndex, 4].Value = value != null ? value.StVsehOdpoklicevZaRelacijo : 0;
-                            workbook.Worksheets[0].Cells[rowIndex, 4].Value = routeList != null ? CommonMethods.ParseInt(routeList[2]) : 0;
+
+
+                            workbook.Worksheets[0].Cells[rowIndex, 4].Value = rsm.SteviloPrevozVLetuNaRelacijoPrevoznik.ToString();
+                            workbook.Worksheets[0].Cells[rowIndex, 5].Value = rsm.SteviloPrevozVLetuNaRelacijoVsiPrevozniki.ToString();
+                            //workbook.Worksheets[0].Cells[rowIndex, 5].Value = tsm.RouteList != null ? CommonMethods.ParseInt(routeList[2]) : 0;
+                            rowIndex++;
+                            if (rsm.TonsList.Count > 0)
+                            {
+                                foreach (TonsModel sTons in rsm.TonsList)
+                                {
+                                    workbook.Worksheets[0].Cells[rowIndex, 0].Value = sTons.ZbirnikTonID.ToString();
+                                    workbook.Worksheets[0].Cells[rowIndex, 1].Value = sTons.Naziv.ToString();
+                                    workbook.Worksheets[0].Cells[rowIndex, 2].Value = sTons.NajnizjaCena.ToString();
+                                    workbook.Worksheets[0].Cells[rowIndex, 3].FillColor = Color.LightGreen;
+                                    workbook.Worksheets[0].Cells[rowIndex, 3].Protection.Locked = false;
+
+                                    // nastavimo še podatek v razpis pozicija 
+
+
+                                    rowIndex++;
+                                }
+                            }
 
                             rowIndex++;
+
+
                         }
-                        currentFileName = RemoveForbidenChracters(carrierList[1].ToString()).Replace(" ", "_").Replace(".", "") + "_" + DateTime.Now.Ticks.ToString() + "_Razpis.xls";
+                        workbook.Worksheets[0].Columns.AutoFit(0, 5);
+                        workbook.Worksheets[0].Columns[2].Visible = false;
+                        workbook.Worksheets[0].Protect("123", WorksheetProtectionPermissions.Default);
+
+                        currentFileName = RemoveForbidenChracters(tsm.Naziv.ToString()).Replace(" ", "_").Replace(".", "") + "_" + DateTime.Now.Ticks.ToString() + "_Razpis.xls";
                         currentFullFileName = razpisiPath + currentFileName;
+                        // dodamo ime dattotek v pozicijo in v session tdm
+                        tsm.ExcellFilePath = currentFullFileName;
+
+                        List<TenderPositionModel> lTenderPositionModel = tender.RazpisPozicija.Where(rp => rp.StrankaID == tsm.ClientID).ToList();
+                        if (lTenderPositionModel != null)
+                        {
+                            foreach (TenderPositionModel tpm in lTenderPositionModel)
+                            {
+                                tpm.PotDokumenta = tsm.ExcellFilePath;
+                            }
+                        }
+
                         workbook.Worksheets[0].Columns[0].Visible = false;
                         CommonMethods.LogThis("Ime in pot datoteke: " + currentFullFileName);
                         workbook.SaveDocument(currentFullFileName, DocumentFormat.OpenXml);
@@ -347,7 +343,10 @@ namespace OptimizacijaTransprotov.Pages.Tender
                     }
                     tender.RazpisKreiran = true;
                     tender.PotRazpisa = sFileLocation;
-                    var objTender2 = CheckModelValidation(GetDatabaseConnectionInstance().SaveTender(tender));
+                    tdm._hlpTenderCreateExcellData = vTTModel.tTenderCreateExcellData;
+                    vTTModel.tTenderCreateExcellData._TenderModel = tender;
+                    tender = CheckModelValidation(GetDatabaseConnectionInstance().SaveTenderAndTenderPosition(tender));
+                    //var objTender2 = CheckModelValidation(GetDatabaseConnectionInstance().SaveTender(tender));
 
                     AddValueToSession(Enums.TenderSession.DownloadTenderData, tdm);
 
@@ -412,6 +411,28 @@ namespace OptimizacijaTransprotov.Pages.Tender
 
                 RemoveSession(Enums.TenderSession.DownloadTenderData);
             }
+        }
+
+        protected void btnSendTender_Click(object sender, EventArgs e)
+        {
+            if (SessionHasValue(Enums.TenderSession.DownloadTenderData))
+            {
+                DownloadTenderDataModel tdm = (DownloadTenderDataModel)GetValueFromSession(Enums.TenderSession.DownloadTenderData);
+
+                hlpTenderCreateExcellData hlp = CheckModelValidation(GetDatabaseConnectionInstance().SendTenderToTransportersEmails(tdm._hlpTenderCreateExcellData));
+
+                RemoveSession(Enums.TenderSession.DownloadTenderData);
+            }
+        }
+
+        protected void ASPxGridViewTons_DataBound(object sender, EventArgs e)
+        {
+
+            //ASPxGridView grid = sender as ASPxGridView;
+            //for (int i = 0; i < grid.VisibleRowCount; i++)
+            //{
+            //    grid.Selection.SelectRow(i);
+            //}
         }
     }
 }

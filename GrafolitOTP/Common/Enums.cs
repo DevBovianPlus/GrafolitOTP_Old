@@ -70,6 +70,7 @@ namespace OptimizacijaTransprotov.Common
             ArgumentsOfApproval,
             ArgumentsOfApprovalToDB,
             TransportTypes,
+            ZbirnikTon,
             RecallPosOptimalStockOverflow,
             InquirySummaryRecallID,
             InquirySummaries,

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OptimizacijaTransprotov.Pages.Tender {
-    
-    
-    public partial class SendTender {
-        
+namespace OptimizacijaTransprotov.Pages.Tender
+{
+
+
+    public partial class SendTender
+    {
+
         /// <summary>
         /// LoadingPanel control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
-        
+
         /// <summary>
         /// CallbackPanelSendTenders control.
         /// </summary>
@@ -29,7 +31,34 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel CallbackPanelSendTenders;
-        
+
+        /// <summary>
+        /// ASPxGridViewTons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView ASPxGridViewTons;
+
+        /// <summary>
+        /// ASPxLabel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
+
+        /// <summary>
+        /// RadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxRadioButtonList RadioButtonList;
+
         /// <summary>
         /// ASPxGridViewRoutes control.
         /// </summary>
@@ -38,7 +67,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridViewRoutes;
-        
+
         /// <summary>
         /// ASPxGridViewCarrier control.
         /// </summary>
@@ -47,7 +76,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridViewCarrier;
-        
+
         /// <summary>
         /// btnSend control.
         /// </summary>
@@ -56,7 +85,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnSend;
-        
+
         /// <summary>
         /// btnConfirmDownload control.
         /// </summary>
@@ -65,7 +94,16 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnConfirmDownload;
-        
+
+        /// <summary>
+        /// btnSendTender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnSendTender;
+
         /// <summary>
         /// ASPxPopupCompleteTenderData control.
         /// </summary>
@@ -74,7 +112,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl ASPxPopupCompleteTenderData;
-        
+
         /// <summary>
         /// ASPxLabel3 control.
         /// </summary>
@@ -83,7 +121,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
-        
+
         /// <summary>
         /// DateEditDatumRazpisa control.
         /// </summary>
@@ -92,7 +130,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxDateEdit DateEditDatumRazpisa;
-        
+
         /// <summary>
         /// ASPxLabel18 control.
         /// </summary>
@@ -101,7 +139,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ASPxLabel18;
-        
+
         /// <summary>
         /// txtTenderName control.
         /// </summary>
@@ -110,7 +148,25 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtTenderName;
-        
+
+        /// <summary>
+        /// lblSupplierArrangesTransport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblSupplierArrangesTransport;
+
+        /// <summary>
+        /// chkNajcenejsiPrevoznik control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox chkNajcenejsiPrevoznik;
+
         /// <summary>
         /// btnConfirm control.
         /// </summary>
@@ -119,7 +175,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnConfirm;
-        
+
         /// <summary>
         /// btnCancel control.
         /// </summary>
@@ -128,15 +184,17 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnCancel;
-        
+
         /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new OptimizacijaTransprotov.Main Master {
-            get {
+        public new OptimizacijaTransprotov.Main Master
+        {
+            get
+            {
                 return ((OptimizacijaTransprotov.Main)(base.Master));
             }
         }
