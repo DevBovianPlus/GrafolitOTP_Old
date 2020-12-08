@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OptimizacijaTransprotov.Pages.Tender {
-    
-    
-    public partial class Tender {
-        
+namespace OptimizacijaTransprotov.Pages.Tender
+{
+
+
+    public partial class Tender
+    {
+
         /// <summary>
         /// LoadingPanel control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
-        
+
         /// <summary>
         /// CallbackPanelTender control.
         /// </summary>
@@ -29,7 +31,52 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel CallbackPanelTender;
-        
+
+        /// <summary>
+        /// ASPxLabel9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel9;
+
+        /// <summary>
+        /// DateEditDatumOd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit DateEditDatumOd;
+
+        /// <summary>
+        /// ASPxLabel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+
+        /// <summary>
+        /// DateEditDatumDo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit DateEditDatumDo;
+
+        /// <summary>
+        /// btnFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnFilter;
+
         /// <summary>
         /// ASPxGridViewTender control.
         /// </summary>
@@ -38,7 +85,7 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridViewTender;
-        
+
         /// <summary>
         /// ASPxPopupControlTender control.
         /// </summary>
@@ -47,34 +94,25 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControlTender;
-        
+
         /// <summary>
-        /// btnDelete control.
+        /// btnPrenosTender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnDelete;
-        
+        protected global::DevExpress.Web.ASPxButton btnPrenosTender;
+
         /// <summary>
-        /// btnAdd control.
+        /// btnPosljiTender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnAdd;
-        
-        /// <summary>
-        /// btnEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnEdit;
-        
+        protected global::DevExpress.Web.ASPxButton btnPosljiTender;
+
         /// <summary>
         /// HiddenUnhandledExpField control.
         /// </summary>
@@ -83,15 +121,17 @@ namespace OptimizacijaTransprotov.Pages.Tender {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxHiddenField HiddenUnhandledExpField;
-        
+
         /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new OptimizacijaTransprotov.Main Master {
-            get {
+        public new OptimizacijaTransprotov.Main Master
+        {
+            get
+            {
                 return ((OptimizacijaTransprotov.Main)(base.Master));
             }
         }

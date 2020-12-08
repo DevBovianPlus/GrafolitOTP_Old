@@ -81,7 +81,9 @@ namespace OptimizacijaTransprotov.Common
         {
             TenderFullModel,
             TenderID,
-            DownloadTenderData
+            SelectedTenderID,
+            DownloadTenderData,
+            SelectedTenderPositionRows
         }
 
         public enum ClientSession
@@ -149,6 +151,12 @@ namespace OptimizacijaTransprotov.Common
         public enum OrderFromRecallSession
         {
             ServiceList
+        }
+
+        public enum SystemEmailMessageSession
+        {
+            SystemMessageID,
+            SystemMessageModel
         }
     }
 }

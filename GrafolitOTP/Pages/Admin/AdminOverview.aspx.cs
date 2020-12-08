@@ -92,8 +92,7 @@ namespace OptimizacijaTransprotov.Pages.Admin
         }
 
         protected void btnCreatePDFAndSendPDOOrdersMultiple_Click(object sender, EventArgs e)
-        {
-            CheckModelValidation(GetDatabaseConnectionInstance().CreatePDFAndSendPDOOrdersMultiple());
+        {            
         }
 
         protected void btnGetConfigVal_Click(object sender, EventArgs e)

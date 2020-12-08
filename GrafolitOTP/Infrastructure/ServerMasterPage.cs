@@ -278,6 +278,16 @@ namespace OptimizacijaTransprotov.Infrastructure
 
             return provider;
         }
+
+        protected SystemEmailDataProvider GetSystemEmailDataProvider()
+        {
+            SystemEmailDataProvider provider = null;
+
+            if (provider == null)
+                return new SystemEmailDataProvider();
+
+            return provider;
+        }
         #endregion
 
         #region User Action Buttons Handeling

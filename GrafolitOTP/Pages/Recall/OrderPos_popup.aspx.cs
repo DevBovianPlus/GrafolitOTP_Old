@@ -15,7 +15,7 @@ using System.Web.UI.WebControls;
 
 namespace OptimizacijaTransprotov.Pages.Recall
 {
-    public partial class OrderPos_popup : ServerMasterPage
+    public partial class OrderPos_popup :  ServerMasterPage 
     {
         List<OrderPositionModelNew> model;
         string supplierID;

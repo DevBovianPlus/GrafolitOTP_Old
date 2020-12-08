@@ -8383,3 +8383,947 @@ http://localhost:31695/Pages/Recall/RecallForm.aspx?action=2&recordId=4936
 24. 11. 2020 14:37:28 Before dowload
 24. 11. 2020 14:37:28 Before Add header
 24. 11. 2020 14:37:28 Before Binnarywrite
+26. 11. 2020 16:10:43 zipFileName: Razpisi_26_11_2020_04_10_43.zip
+26. 11. 2020 16:10:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\Joebstl_doo_637420038571331529_Razpis.xls
+26. 11. 2020 16:11:06 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\NERI_TRANSTRGPODUZEČE_637420038665861930_Razpis.xls
+26. 11. 2020 16:11:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\VIES_LTD_DOO_637420038696721674_Razpis.xls
+26. 11. 2020 16:16:53 Before dowload
+26. 11. 2020 16:16:53 Before Add header
+26. 11. 2020 16:16:53 Before Binnarywrite
+26. 11. 2020 16:25:11 zipFileName: Razpisi_26_11_2020_04_25_11.zip
+26. 11. 2020 16:31:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\RCM_doo_637420050868061238_Razpis.xls
+26. 11. 2020 22:30:21 zipFileName: Razpisi_26_11_2020_10_30_21.zip
+26. 11. 2020 22:30:33 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\LKW_WALTER_637420266333527076_Razpis.xls
+26. 11. 2020 22:30:39 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\Joebstl_doo_637420266391827095_Razpis.xls
+26. 11. 2020 22:30:46 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\VIES_LTD_DOO_637420266460167098_Razpis.xls
+26. 11. 2020 22:37:54 Before dowload
+26. 11. 2020 22:37:55 Before Add header
+26. 11. 2020 22:37:55 Before Binnarywrite
+26. 11. 2020 22:48:38 zipFileName: Razpisi_26_11_2020_10_48_38.zip
+26. 11. 2020 22:48:40 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\INTEREUROPA_dd_637420277204312016_Razpis.xls
+26. 11. 2020 22:48:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\RCM_doo_637420277254442031_Razpis.xls
+26. 11. 2020 22:48:49 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\MAJCEN_EUROTERMINAL_doo_637420277294512008_Razpis.xls
+26. 11. 2020 22:57:43 zipFileName: Razpisi_26_11_2020_10_57_43.zip
+26. 11. 2020 22:57:44 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\FRIKUS_doo_637420282649225836_Razpis.xls
+26. 11. 2020 22:57:49 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\INTEREUROPA_dd_637420282695845829_Razpis.xls
+26. 11. 2020 23:01:06 zipFileName: Razpisi_26_11_2020_11_01_06.zip
+26. 11. 2020 23:01:07 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\VIES_LTD_DOO_637420284678991011_Razpis.xls
+26. 11. 2020 23:01:10 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\PRIGO,_doo,_Brezovica_637420284702761021_Razpis.xls
+26. 11. 2020 23:01:12 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\ŠPEDICIJA_GOJA_DOO_637420284726451021_Razpis.xls
+26. 11. 2020 23:01:47 Before dowload
+26. 11. 2020 23:01:47 Before Add header
+26. 11. 2020 23:01:47 Before Binnarywrite
+26. 11. 2020 23:54:17 zipFileName: Razpisi_26_11_2020_11_54_17.zip
+26. 11. 2020 23:54:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\Joebstl_doo_637420316675867893_Razpis.xls
+26. 11. 2020 23:54:41 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\NERI_TRANSTRGPODUZEČE_637420316810648203_Razpis.xls
+26. 11. 2020 23:55:06 Before dowload
+26. 11. 2020 23:55:06 Before Add header
+26. 11. 2020 23:55:06 Before Binnarywrite
+26. 11. 2020 23:58:11 zipFileName: Razpisi_26_11_2020_11_58_11.zip
+26. 11. 2020 23:58:20 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\B_MAKOVEC_TRANSPORT_doo_637420319005608978_Razpis.xls
+26. 11. 2020 23:58:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_26-11-2020\DOBAVITELJ_637420319073558981_Razpis.xls
+26. 11. 2020 23:59:08 Before dowload
+26. 11. 2020 23:59:08 Before Add header
+26. 11. 2020 23:59:08 Before Binnarywrite
+28. 11. 2020 16:50:46 zipFileName: Razpisi_28_11_2020_04_50_46.zip
+28. 11. 2020 16:51:00 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_28-11-2020\NERI_TRANSTRGPODUZEČE_637421790609815297_Razpis.xls
+28. 11. 2020 16:51:11 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_28-11-2020\VIES_LTD_DOO_637421790718631083_Razpis.xls
+28. 11. 2020 16:51:50 Before dowload
+28. 11. 2020 16:51:50 Before Add header
+28. 11. 2020 16:51:50 Before Binnarywrite
+28. 11. 2020 16:58:03 zipFileName: Razpisi_28_11_2020_04_58_03.zip
+28. 11. 2020 16:58:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_28-11-2020\LKW_WALTER_637421794859849460_Razpis.xls
+28. 11. 2020 16:58:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_28-11-2020\Joebstl_doo_637421794893909400_Razpis.xls
+28. 11. 2020 16:58:33 Before dowload
+28. 11. 2020 16:58:33 Before Add header
+28. 11. 2020 16:58:33 Before Binnarywrite
+30. 11. 2020 09:43:35 zipFileName: Razpisi_30_11_2020_09_43_35.zip
+30. 11. 2020 09:43:37 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\RCM_doo_637423262174405526_Razpis.xls
+30. 11. 2020 09:43:42 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\MAJCEN_EUROTERMINAL_doo_637423262225046453_Razpis.xls
+30. 11. 2020 09:43:43 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Joebstl_doo_637423262238684794_Razpis.xls
+30. 11. 2020 09:43:45 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\NERI_TRANSTRGPODUZEČE_637423262251824384_Razpis.xls
+30. 11. 2020 09:43:47 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\B_MAKOVEC_TRANSPORT_doo_637423262272546149_Razpis.xls
+30. 11. 2020 09:43:48 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Transporti_Mihalić,_vl_Neven_637423262286003155_Razpis.xls
+30. 11. 2020 09:43:49 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\PARAMETRIK_637423262297784648_Razpis.xls
+30. 11. 2020 09:43:51 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\INTEREUROPA_dd_637423262311476088_Razpis.xls
+30. 11. 2020 10:05:07 zipFileName: Razpisi_30_11_2020_10_05_07.zip
+30. 11. 2020 10:05:08 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\RCM_doo_637423275088933321_Razpis.xls
+30. 11. 2020 10:05:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\MAJCEN_EUROTERMINAL_doo_637423275538183174_Razpis.xls
+30. 11. 2020 10:05:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Joebstl_doo_637423275552619209_Razpis.xls
+30. 11. 2020 10:05:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\NERI_TRANSTRGPODUZEČE_637423275567003005_Razpis.xls
+30. 11. 2020 10:07:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\B_MAKOVEC_TRANSPORT_doo_637423276736433149_Razpis.xls
+30. 11. 2020 10:07:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Transporti_Mihalić,_vl_Neven_637423276756933423_Razpis.xls
+30. 11. 2020 10:07:57 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\PARAMETRIK_637423276770583715_Razpis.xls
+30. 11. 2020 10:07:58 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\INTEREUROPA_dd_637423276784559141_Razpis.xls
+30. 11. 2020 12:20:24 zipFileName: Razpisi_30_11_2020_12_20_24.zip
+30. 11. 2020 12:20:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\MAJCEN_EUROTERMINAL_doo_637423356264306174_Razpis.xls
+30. 11. 2020 12:20:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\LKW_WALTER_637423356295688386_Razpis.xls
+30. 11. 2020 12:20:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Joebstl_doo_637423356312842642_Razpis.xls
+30. 11. 2020 12:24:40 zipFileName: Razpisi_30_11_2020_12_24_40.zip
+30. 11. 2020 12:24:41 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\MAJCEN_EUROTERMINAL_doo_637423358816988461_Razpis.xls
+30. 11. 2020 12:24:43 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\LKW_WALTER_637423358838787528_Razpis.xls
+30. 11. 2020 12:25:34 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_30-11-2020\Joebstl_doo_637423359345194345_Razpis.xls
+30. 11. 2020 14:15:39 Repository failed to delete dataObject reference not set to an instance of an object.
+30. 11. 2020 14:18:24 Repository failed to delete dataObject reference not set to an instance of an object.
+30. 11. 2020 14:18:27 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 210
+30. 11. 2020 14:21:47 Repository failed to delete dataObject reference not set to an instance of an object.
+30. 11. 2020 14:21:56 Object reference not set to an instance of an object.
+OptimizacijaTransprotov
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 210
+30. 11. 2020 14:33:24 zipFileName: Razpisi_30_11_2020_02_33_24.zip
+30. 11. 2020 14:33:26 Value cannot be null.
+Parameter name: source
+System.Core
+   at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.btnConfirm_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 329
+30. 11. 2020 15:02:58 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 30. november 2020 ob 15:02:55 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.ASPxGridViewTender_HtmlRowPrepared(Object sender, ASPxGridViewTableRowEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 384
+   at DevExpress.Web.ASPxGridView.RaiseHtmlRowPrepared(GridViewTableRow row)
+   at DevExpress.Web.Rendering.GridViewTableDataRow.PrepareControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableCell.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxGridBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at DevExpress.Web.ContentControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at ASP.main_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\GitHub\GrafolitOTP\GrafolitOTP\Main.Master:line 74
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_tender_tender_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_s10efdx3.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.ASPxGridViewTender_HtmlRowPrepared(Object sender, ASPxGridViewTableRowEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 384
+   at DevExpress.Web.ASPxGridView.RaiseHtmlRowPrepared(GridViewTableRow row)
+   at DevExpress.Web.Rendering.GridViewTableDataRow.PrepareControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableCell.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxGridBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at DevExpress.Web.ContentControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at ASP.main_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\GitHub\GrafolitOTP\GrafolitOTP\Main.Master:line 74
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.ASPxGridViewTender_HtmlRowPrepared(Object sender, ASPxGridViewTableRowEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 384
+   at DevExpress.Web.ASPxGridView.RaiseHtmlRowPrepared(GridViewTableRow row)
+   at DevExpress.Web.Rendering.GridViewTableDataRow.PrepareControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableCell.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxGridBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at DevExpress.Web.ContentControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at ASP.main_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\GitHub\GrafolitOTP\GrafolitOTP\Main.Master:line 74
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_tender_tender_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_s10efdx3.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.Tender.ASPxGridViewTender_HtmlRowPrepared(Object sender, ASPxGridViewTableRowEventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\Tender.aspx.cs:line 384
+   at DevExpress.Web.ASPxGridView.RaiseHtmlRowPrepared(GridViewTableRow row)
+   at DevExpress.Web.Rendering.GridViewTableDataRow.PrepareControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableCell.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTableRow.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at DevExpress.Web.Internal.InternalTable.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxGridBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at DevExpress.Web.ContentControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   at DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at ASP.main_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\GitHub\GrafolitOTP\GrafolitOTP\Main.Master:line 74
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx
+
+
+1. 12. 2020 11:42:49 zipFileName: Razpisi_01_12_2020_11_42_45.zip
+1. 12. 2020 11:44:54 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\INTEREUROPA_dd_637424198618709469_Razpis.xls
+1. 12. 2020 11:45:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\RCM_doo_637424199090092189_Razpis.xls
+1. 12. 2020 11:45:09 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\MAJCEN_EUROTERMINAL_doo_637424199099622265_Razpis.xls
+1. 12. 2020 14:02:05 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:02:06 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:02:06 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:03:29 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:03:32 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:03:32 The remote server returned an error: (500) Internal Server Error. System
+1. 12. 2020 14:08:32 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 14:10:30 The request was aborted: The operation has timed out. System
+1. 12. 2020 14:12:46 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 14:14:34 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 14:15:46 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 14:15:58 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 14:16:29 Repository failed to retrieve dataLINQ to Entities does not recognize the method System.Nullable`1[System.DateTime] ParseDateTime(System.Object) method, and this method cannot be translated into a store expression.
+1. 12. 2020 15:05:12 zipFileName: Razpisi_01_12_2020_03_05_09.zip
+1. 12. 2020 15:05:13 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\INTEREUROPA_dd_637424319131151976_Razpis.xls
+1. 12. 2020 15:05:14 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\RCM_doo_637424319143351873_Razpis.xls
+1. 12. 2020 15:05:15 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\MAJCEN_EUROTERMINAL_doo_637424319152671772_Razpis.xls
+1. 12. 2020 16:00:16 zipFileName: Razpisi_01_12_2020_04_00_15.zip
+1. 12. 2020 16:00:17 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\Joebstl_doo_637424352179464510_Razpis.xls
+1. 12. 2020 16:00:19 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_01-12-2020\NERI_TRANSTRGPODUZEČE_637424352192674510_Razpis.xls
+2. 12. 2020 14:42:56 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid object name dbo.ZbirnikTon.
+2. 12. 2020 15:38:49 The request was aborted: The operation has timed out. System
+2. 12. 2020 16:15:09 The request was aborted: The operation has timed out. System
+2. 12. 2020 21:15:26 zipFileName: Razpisi_02_12_2020_09_15_25.zip
+2. 12. 2020 21:15:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\OMAHEN-TRANSPORT_doo_637425405279922014_Razpis.xls
+2. 12. 2020 21:15:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\ROLLING_TONS_637425405292962060_Razpis.xls
+2. 12. 2020 21:15:30 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\FRIKUS_doo_637425405305961988_Razpis.xls
+2. 12. 2020 21:15:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\INTEREUROPA_dd_637425405316681984_Razpis.xls
+2. 12. 2020 21:15:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\MAJCEN_EUROTERMINAL_doo_637425405329841978_Razpis.xls
+2. 12. 2020 21:15:34 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\Joebstl_doo_637425405342411997_Razpis.xls
+2. 12. 2020 21:15:35 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\NERI_TRANSTRGPODUZEČE_637425405354311988_Razpis.xls
+2. 12. 2020 21:15:36 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\VIES_LTD_DOO_637425405365982006_Razpis.xls
+2. 12. 2020 21:15:37 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\PRIGO,_doo,_Brezovica_637425405378571999_Razpis.xls
+2. 12. 2020 21:15:39 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\B_MAKOVEC_TRANSPORT_doo_637425405390561996_Razpis.xls
+2. 12. 2020 21:15:40 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\DOBAVITELJ_637425405405271993_Razpis.xls
+2. 12. 2020 21:15:41 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_02-12-2020\Transporti_Mihalić,_vl_Neven_637425405416252140_Razpis.xls
+2. 12. 2020 22:20:04 Log CheckRecallForAnomalies 1 - ŠT :0
+2. 12. 2020 22:20:04 Log CheckRecallForAnomalies 3 - ŠT :0
+2. 12. 2020 22:20:05 Log CheckRecallForAnomalies 5 - ŠT :0
+2. 12. 2020 22:20:05 Log CheckRecallForAnomalies 7 - ŠT :0
+2. 12. 2020 22:20:05 Log CheckRecallForAnomalies 9 - ŠT :0
+2. 12. 2020 22:20:05 Log CheckRecallForAnomalies 13 - ŠT :0
+2. 12. 2020 22:22:40 The request was aborted: The operation has timed out. System
+2. 12. 2020 22:22:40 Log CheckRecallForAnomalies 1 - ŠT :0
+2. 12. 2020 22:22:40 Log CheckRecallForAnomalies 3 - ŠT :0
+2. 12. 2020 22:24:17 Log CheckRecallForAnomalies 5 - ŠT :0
+2. 12. 2020 22:24:17 Log CheckRecallForAnomalies 7 - ŠT :0
+2. 12. 2020 22:24:17 Log CheckRecallForAnomalies 9 - ŠT :0
+2. 12. 2020 22:24:17 Log CheckRecallForAnomalies 13 - ŠT :0
+2. 12. 2020 22:44:32 Log CheckRecallForAnomalies 1 - ŠT :0
+2. 12. 2020 22:44:32 Log CheckRecallForAnomalies 3 - ŠT :0
+2. 12. 2020 22:44:34 Log CheckRecallForAnomalies 5 - ŠT :0
+2. 12. 2020 22:44:35 Log CheckRecallForAnomalies 7 - ŠT :0
+2. 12. 2020 22:44:35 Log CheckRecallForAnomalies 9 - ŠT :0
+2. 12. 2020 22:44:35 Log CheckRecallForAnomalies 13 - ŠT :0
+2. 12. 2020 22:44:49 Log CheckRecallForAnomalies 1 - ŠT :0
+2. 12. 2020 22:44:49 Log CheckRecallForAnomalies 3 - ŠT :0
+2. 12. 2020 22:44:50 Log CheckRecallForAnomalies 5 - ŠT :0
+2. 12. 2020 22:44:51 Log CheckRecallForAnomalies 7 - ŠT :0
+2. 12. 2020 22:44:51 Log CheckRecallForAnomalies 9 - ŠT :0
+2. 12. 2020 22:44:51 Log CheckRecallForAnomalies 13 - ŠT :0
+2. 12. 2020 22:45:02 Log 1 - ŠT :0
+2. 12. 2020 22:45:04 Log 7 - ŠT :0
+2. 12. 2020 22:45:04 Log 7.2 - ŠT :0
+3. 12. 2020 08:04:43 The request was aborted: The operation has timed out. System
+3. 12. 2020 08:09:26 The request was aborted: The operation has timed out. System
+3. 12. 2020 08:27:46 The operation has timed out System
+3. 12. 2020 08:42:06 Repository failed to retrieve dataAn error occurred while reading from the store providers data reader. See the inner exception for details.Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.The wait operation timed out
+3. 12. 2020 09:01:33 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Database Grafolit55SI is being recovered. Waiting until recovery is finished.
+3. 12. 2020 09:01:37 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Database Grafolit55SI is being recovered. Waiting until recovery is finished.
+3. 12. 2020 09:03:41 The request was aborted: The operation has timed out. System
+3. 12. 2020 09:09:48 The operation has timed out System
+3. 12. 2020 09:11:36 The request was aborted: The operation has timed out. System
+3. 12. 2020 09:18:11 The request was aborted: The operation has timed out. System
+3. 12. 2020 09:22:22 zipFileName: Razpisi_03_12_2020_09_22_22.zip
+3. 12. 2020 09:22:24 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\INTEREUROPA_dd_637425841444536267_Razpis.xls
+3. 12. 2020 09:22:25 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\RCM_doo_637425841456252759_Razpis.xls
+3. 12. 2020 09:22:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\MAJCEN_EUROTERMINAL_doo_637425841465502698_Razpis.xls
+3. 12. 2020 09:22:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\Joebstl_doo_637425841475733017_Razpis.xls
+3. 12. 2020 09:22:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\VIES_LTD_DOO_637425841486003877_Razpis.xls
+3. 12. 2020 09:22:29 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\Transporti_Mihalić,_vl_Neven_637425841494984074_Razpis.xls
+3. 12. 2020 09:22:30 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\PARAMETRIK_637425841505174304_Razpis.xls
+3. 12. 2020 09:22:31 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\JANČIČ_doo_Celje_637425841514354303_Razpis.xls
+3. 12. 2020 09:22:32 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_03-12-2020\TRUPI_MIRAN_SP_637425841524755131_Razpis.xls
+3. 12. 2020 09:22:33 Before dowload
+3. 12. 2020 09:22:33 Before Add header
+3. 12. 2020 09:22:33 Before Binnarywrite
+3. 12. 2020 15:28:46 Repository failed to retrieve dataAn error occurred while reading from the store providers data reader. See the inner exception for details.Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.The wait operation timed out
+3. 12. 2020 15:30:40 Repository failed to retrieve dataInvalid attempt to call IsDBNull when reader is closed.
+4. 12. 2020 08:17:46 The request was aborted: The operation has timed out. System
+4. 12. 2020 08:19:36 The operation has timed out System
+4. 12. 2020 08:26:02 The request was aborted: The operation has timed out. System
+4. 12. 2020 08:29:43 The request was aborted: The operation has timed out. System
+4. 12. 2020 08:35:06 Pozdravljeni! 
+ Uporabnik OTP Admin je dne petek, 04. december 2020 ob 08:35:04 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at DevExpress.Web.ASPxGridBase.DataBindNoControls()
+   at DevExpress.Web.ASPxGridBase.BindAndSynchronizeDataProxy()
+   at DevExpress.Web.ASPxGridBase.SortedColumnsChanged(IWebGridDataColumn column, Int32 value, Boolean changeGrouping, ColumnSortOrder sortOrder)
+   at DevExpress.Web.ASPxGridBase.SortBy(IWebGridColumn column, ColumnSortOrder value)
+   at DevExpress.Web.Internal.GridDataColumnAdapter.set_SortOrder(ColumnSortOrder value)
+   at DevExpress.Web.GridViewDataColumn.set_SortOrder(ColumnSortOrder value)
+   at DevExpress.Web.GridViewDataColumn.DevExpress.Web.Internal.IWebGridDataColumnBase.set_SortOrder(ColumnSortOrder value)
+   at DevExpress.Web.ASPxGridBase.CBSort(String[] args)
+   at DevExpress.Web.ASPxGridBase.DoCallBackPostBack(String eventArgument)
+   at DevExpress.Web.ASPxGridBase.TryDoCallBackPostBack(String eventArgument)
+   at DevExpress.Web.ASPxGridBase.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxGridView
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+4. 12. 2020 08:57:32 The operation has timed out System
+4. 12. 2020 09:07:18 The request was aborted: The operation has timed out. System
+4. 12. 2020 09:14:06 The operation has timed out System
+4. 12. 2020 09:17:02 The operation has timed out System
+4. 12. 2020 09:35:43 Repository failed to retrieve dataThe underlying provider failed on Open.Cannot open database "GrafolitOTP_Prod1" requested by the login. The login failed.Login failed for user martinp.
+4. 12. 2020 10:06:34 zipFileName: Razpisi_04_12_2020_10_06_29.zip
+4. 12. 2020 10:07:22 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\LKW_WALTER_637426732428193281_Razpis.xls
+4. 12. 2020 10:07:26 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\Joebstl_doo_637426732461693150_Razpis.xls
+4. 12. 2020 10:07:27 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\VIES_LTD_DOO_637426732474428281_Razpis.xls
+4. 12. 2020 10:07:28 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\PRIGO,_doo,_Brezovica_637426732489842582_Razpis.xls
+4. 12. 2020 10:07:30 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\B_MAKOVEC_TRANSPORT_doo_637426732505557680_Razpis.xls
+4. 12. 2020 10:10:00 Before dowload
+4. 12. 2020 10:10:00 Before Add header
+4. 12. 2020 10:10:00 Before Binnarywrite
+4. 12. 2020 10:41:50 zipFileName: Razpisi_04_12_2020_10_41_49.zip
+4. 12. 2020 10:41:52 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\LKW_WALTER_637426753120140825_Razpis.xls
+4. 12. 2020 10:41:53 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\Joebstl_doo_637426753134930801_Razpis.xls
+4. 12. 2020 10:41:55 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\NERI_TRANSTRGPODUZEČE_637426753151360796_Razpis.xls
+4. 12. 2020 10:41:56 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\VIES_LTD_DOO_637426753167550797_Razpis.xls
+4. 12. 2020 10:41:58 Before dowload
+4. 12. 2020 10:41:59 Before Add header
+4. 12. 2020 10:41:59 Before Binnarywrite
+4. 12. 2020 10:58:03 Before dowload
+4. 12. 2020 10:58:03 Before Add header
+4. 12. 2020 10:58:03 Before Binnarywrite
+4. 12. 2020 14:34:56 Pozdravljeni! 
+ Uporabnik OTP Admin je dne petek, 04. december 2020 ob 14:34:55 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'.
+   at System.Web.UI.TemplateParser.GetType(String typeName, Boolean ignoreCase, Boolean throwOnError)
+   at System.Web.UI.TemplateParser.ProcessInheritsAttribute(String baseTypeName, String codeFileBaseTypeName, String src, Assembly assembly)
+   at System.Web.UI.TemplateParser.PostProcessMainDirectiveAttributes(IDictionary parseData)
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
+   at System.Web.UI.TemplateParser.ParseInternal()
+   at System.Web.UI.TemplateParser.Parse()
+   at System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'.
+   at System.Web.UI.TemplateParser.GetType(String typeName, Boolean ignoreCase, Boolean throwOnError)
+   at System.Web.UI.TemplateParser.ProcessInheritsAttribute(String baseTypeName, String codeFileBaseTypeName, String src, Assembly assembly)
+   at System.Web.UI.TemplateParser.PostProcessMainDirectiveAttributes(IDictionary parseData)
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding) -------- System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'.
+   at System.Web.UI.TemplateParser.GetType(String typeName, Boolean ignoreCase, Boolean throwOnError)
+   at System.Web.UI.TemplateParser.ProcessInheritsAttribute(String baseTypeName, String codeFileBaseTypeName, String src, Assembly assembly)
+   at System.Web.UI.TemplateParser.PostProcessMainDirectiveAttributes(IDictionary parseData)
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
+   at System.Web.UI.TemplateParser.ParseInternal()
+   at System.Web.UI.TemplateParser.Parse()
+   at System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpParseException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'. ---> System.Web.HttpException (0x80004005): Could not load type 'OptimizacijaTransprotov.Pages.Settings.SystemEmailBody_popup'.
+   at System.Web.UI.TemplateParser.GetType(String typeName, Boolean ignoreCase, Boolean throwOnError)
+   at System.Web.UI.TemplateParser.ProcessInheritsAttribute(String baseTypeName, String codeFileBaseTypeName, String src, Assembly assembly)
+   at System.Web.UI.TemplateParser.PostProcessMainDirectiveAttributes(IDictionary parseData)
+   at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Settings/SystemEmailTable.aspx
+
+
+4. 12. 2020 14:37:30 The remote server returned an error: (404) Not Found. System
+4. 12. 2020 14:45:31 zipFileName: Razpisi_04_12_2020_02_45_30.zip
+4. 12. 2020 14:45:37 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\LKW_WALTER_637426899375640350_Razpis.xls
+4. 12. 2020 14:45:39 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\Joebstl_doo_637426899397760159_Razpis.xls
+4. 12. 2020 14:45:40 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\NERI_TRANSTRGPODUZEČE_637426899407600161_Razpis.xls
+4. 12. 2020 14:45:41 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_04-12-2020\VIES_LTD_DOO_637426899417810408_Razpis.xls
+7. 12. 2020 14:00:55 The request was aborted: The operation has timed out. System
+8. 12. 2020 10:26:45 The remote server returned an error: (404) Not Found. System
+8. 12. 2020 10:27:14 The remote server returned an error: (404) Not Found. System
+8. 12. 2020 10:27:34 The remote server returned an error: (404) Not Found. System
+8. 12. 2020 10:38:49 Repository failed to retrieve dataAn error occurred while reading from the store providers data reader. See the inner exception for details.Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.The wait operation timed out
+8. 12. 2020 10:40:50 The remote server returned an error: (404) Not Found. System
+8. 12. 2020 10:59:40 The request was aborted: The operation has timed out. System
+8. 12. 2020 11:26:57 The operation has timed out System
+8. 12. 2020 11:28:45 The request was aborted: The operation has timed out. System
+8. 12. 2020 13:57:53 zipFileName: Razpisi_08_12_2020_01_57_53.zip
+8. 12. 2020 13:58:00 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_08-12-2020\RCM_doo_637430326808570474_Razpis.xls
+8. 12. 2020 13:58:05 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_08-12-2020\MAJCEN_EUROTERMINAL_doo_637430326850926465_Razpis.xls
+8. 12. 2020 13:58:08 Ime in pot datoteke: D:\GitHub\GrafolitOTP\GrafolitOTP\Razpisi\Razpisi_08-12-2020\INTEREUROPA_dd_637430326885916221_Razpis.xls
+8. 12. 2020 13:58:09 Before dowload
+8. 12. 2020 13:58:09 Before Add header
+8. 12. 2020 13:58:09 Before Binnarywrite
+8. 12. 2020 14:18:47 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 14:18:47 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 14:18:52 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 14:18:52 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 14:18:52 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 14:18:52 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 14:21:34 Pozdravljeni! 
+ Uporabnik OTP Admin je dne torek, 08. december 2020 ob 14:21:32 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.CheckRecallForAnomalies(Boolean isSupplierArrangesTransport, Boolean isBuyerArrangesTransport) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 964
+   at OptimizacijaTransprotov.Pages.Recall.RecallForm.CallbackPanelUserInput_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallForm.aspx.cs:line 1521
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Recall/RecallForm.aspx?action=1&recordId=-1
+
+
+8. 12. 2020 14:24:48 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 14:24:48 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 14:24:52 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 14:24:52 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 14:24:52 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 14:24:52 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 14:25:25 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 14:25:25 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 14:25:30 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 14:25:30 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 14:25:30 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 14:25:30 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 14:27:02 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 14:27:10 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 14:30:23 The request was aborted: The operation has timed out. System
+8. 12. 2020 14:33:58 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 14:34:00 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 14:57:14 Repository failed to retrieve dataInvalid attempt to call IsDBNull when reader is closed.
+8. 12. 2020 14:57:58 Repository failed to retrieve dataInvalid attempt to call IsDBNull when reader is closed.
+8. 12. 2020 15:01:42 Repository failed to retrieve dataInvalid attempt to call IsDBNull when reader is closed.
+8. 12. 2020 15:03:23 Repository failed to retrieve dataInvalid attempt to call IsDBNull when reader is closed.
+8. 12. 2020 15:18:25 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 15:18:25 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 15:18:27 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 15:18:27 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 15:18:27 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 15:18:27 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 15:19:45 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 15:19:47 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 15:33:59 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 15:33:59 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 15:34:06 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 15:34:06 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 15:34:06 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 15:34:06 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 15:34:48 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 15:34:48 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 15:34:54 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 15:34:54 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 15:34:54 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 15:34:54 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 15:35:20 Log CheckRecallForAnomalies 1 - ŠT :0
+8. 12. 2020 15:35:20 Log CheckRecallForAnomalies 3 - ŠT :0
+8. 12. 2020 15:35:35 Log CheckRecallForAnomalies 5 - ŠT :0
+8. 12. 2020 15:35:35 Log CheckRecallForAnomalies 7 - ŠT :0
+8. 12. 2020 15:35:35 Log CheckRecallForAnomalies 9 - ŠT :0
+8. 12. 2020 15:35:35 Log CheckRecallForAnomalies 13 - ŠT :0
+8. 12. 2020 15:36:39 Log 1 - ŠT :0
+8. 12. 2020 15:36:48 Log 7 - ŠT :0
+8. 12. 2020 15:36:48 Log 7.2 - ŠT :0

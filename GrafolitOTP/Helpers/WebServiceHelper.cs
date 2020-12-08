@@ -80,6 +80,14 @@ namespace OptimizacijaTransprotov.Helpers
             }
         }
 
+        private static string WebServiceSettingsURL
+        {
+            get
+            {
+                return BaseWebServiceURI + WebConfigurationManager.AppSettings["SettingsController"].ToString();
+            }
+        }
+
         public static string SignIn(string username, string pass)
         {
             return WebServiceSignInURL + "SignInOTP?username=" + username + "&password=" + pass;
@@ -94,6 +102,7 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceSignInURL + "GetUtilityServiceLogFile";
         }
+
 
        
 
@@ -471,13 +480,23 @@ namespace OptimizacijaTransprotov.Helpers
 
         #region Tender
 
-        public static string GetTenderList()
+        public static string GetTenderList(string dtFrom, string dtTo)
         {
-            return WebServiceTenderURL + "GetTenderList";
+            return WebServiceTenderURL + "GetTenderList?dtFrom=" + dtFrom + "&dtTo=" + dtTo; 
+        }
+
+        public static string GetTenderListPositionByTenderID(int tenderID)
+        {
+            return WebServiceTenderURL + "GetTenderListPositionByTenderID?tenderID=" + tenderID;
         }
         public static string GetTenderByID(int tenderID)
         {
             return WebServiceTenderURL + "GetTenderByID?tenderID=" + tenderID;
+        }
+
+        public static string GetTenderSimpleModelByID(int tenderID)
+        {
+            return WebServiceTenderURL + "GetTenderSimpleModelByID?tenderID=" + tenderID;
         }
 
         public static string SaveTender()
@@ -595,7 +614,25 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceDashboardURL + "GetDashboardData";
         }
+
+        #endregion
+
+        #region Settings
+       
+        public static string GetAllEmailsOTP()
+        {
+            return WebServiceSettingsURL + "GetAllEmailsOTP";
+        }
         
+        public static string CreateMailCopyOTP(int mailID)
+        {
+            return WebServiceSettingsURL + "CreateMailCopyOTP?mailID=" + mailID;
+        }
+        
+        public static string GetMailByIDOTP(int mailID)
+        {
+            return WebServiceSettingsURL + "GetMailByIDOTP?mailID=" + mailID;
+        }
         #endregion
     }
 }

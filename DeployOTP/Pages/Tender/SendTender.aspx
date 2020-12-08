@@ -12,13 +12,13 @@
             $("#modal-btn-download").on("click", function () {
                 $("#warningButtonModal").modal('hide');
                 firstShow = false;
-                btnConfirmDownload.DoClick();
+                //btnConfirmDownload.DoClick();
             });
 
             $("#modal-btn-send").on("click", function () {
                 $("#warningButtonModal").modal('hide');
                 firstShow = false;
-                btnSendTender.DoClick();
+                //btnSendTender.DoClick();
             });
         });
 
@@ -42,6 +42,7 @@
         }
 
         function SendTenders(s, e) {
+            clientCallbackPanelSendTenders.PerformCallback('OpenPopUp');
             clientPopupCompleteTenderData.Show();
             //$("#saveKVPModal").modal('show');
             //clientCallbackPanelSendTenders.PerformCallback('');
@@ -66,6 +67,19 @@
             }
             else
                 e.processOnServer = false;
+        }
+
+        function RadioButtonList_ValueChanged(s, e) {
+            clientLoadingPanel.Show();
+            clientCallbackPanelSendTenders.PerformCallback(s.GetValue());
+        }
+
+        function CallbackPanelSendTenders_EndCallback(s, e) {
+            clientLoadingPanel.Hide();
+        }
+
+        function OnShown(s, e) {
+            setTimeout(function () { clientPopupCompleteTenderData.Hide(); }, 700000);
         }
     </script>
 </asp:Content>
@@ -117,8 +131,25 @@
 
                             </Columns>
                         </dx:ASPxGridView>
+
                         <h2 class="text-center">Relacije</h2>
                         <hr />
+                        <div class="col-xs-0 big-margin-r" style="margin-right: 20px;">
+                            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Prevoz organizira : " Width="180px"></dx:ASPxLabel>
+                        </div>
+                        <div class="col-xs-12 mb-2 mb-lg-0" style="margin-bottom: 10px">
+                            <dx:ASPxRadioButtonList ID="RadioButtonList" runat="server" ValueType="System.String" RepeatColumns="6" RepeatLayout="Flow">
+                                <CaptionSettings Position="Top" />
+                                <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
+                                <Items>
+                                    <dx:ListEditItem Text="Vseeno" Value="1" Selected="true" />
+                                    <dx:ListEditItem Text="Grafolit" Value="2" />
+                                    <dx:ListEditItem Text="Dobavitelj" Value="3" />
+                                    <dx:ListEditItem Text="Kupec" Value="4" />
+                                    <dx:ListEditItem Text="Grafolit - Lastni" Value="5" />
+                                </Items>
+                            </dx:ASPxRadioButtonList>
+                        </div>
                         <dx:ASPxGridView ID="ASPxGridViewRoutes" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRoutes"
                             Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRoutes_DataBinding"
                             KeyFieldName="RelacijaID" CssClass="gridview-no-header-padding">
@@ -231,13 +262,13 @@
                                 <Image Url="../../../Images/add.png" UrlHottracked="../../Images/addHover.png" />
                                 <ClientSideEvents Click="SendTenders" />
                             </dx:ASPxButton>
-                            <dx:ASPxButton ID="btnConfirmDownload" runat="server" Text="Prenesi" AutoPostBack="false"
+                            <%--<dx:ASPxButton ID="btnConfirmDownload" runat="server" Text="Prenesi" AutoPostBack="false"
                                 Height="25" Width="50" ClientInstanceName="btnConfirmDownload" ClientVisible="false" OnClick="btnConfirmDownload_Click">
-                            </dx:ASPxButton>
+                            </dx:ASPxButton>--%>
 
-                             <dx:ASPxButton ID="btnSendTender" runat="server" Text="Pošlji razpis" AutoPostBack="false"
+                           <%-- <dx:ASPxButton ID="btnSendTender" runat="server" Text="Pošlji razpis" AutoPostBack="false"
                                 Height="25" Width="50" ClientInstanceName="btnSendTender" ClientVisible="false" OnClick="btnSendTender_Click">
-                            </dx:ASPxButton>
+                            </dx:ASPxButton>--%>
                         </span>
                     </div>
                 </div>
@@ -246,9 +277,9 @@
                     ClientInstanceName="clientPopupCompleteTenderData" Modal="True" HeaderText="Dodajanje razpisa (manjkajoči podatki)"
                     CloseAction="CloseButton" Width="690px" Height="150px" PopupHorizontalAlign="WindowCenter"
                     PopupVerticalAlign="WindowCenter" PopupAnimationType="Slide" AllowDragging="true" ShowSizeGrip="true"
-                    AllowResize="true" ShowShadow="true"
+                    AllowResize="true" ShowShadow="true" 
                     OnWindowCallback="ASPxPopupCompleteTenderData_WindowCallback">
-                    <ClientSideEvents CloseButtonClick="OnPopupCloseButtonClick" />
+                    <ClientSideEvents CloseButtonClick="OnPopupCloseButtonClick"  Shown="OnShown"/>
                     <ContentStyle BackColor="#F7F7F7">
                         <Paddings PaddingBottom="0px" PaddingLeft="6px" PaddingRight="6px" PaddingTop="0px"></Paddings>
                     </ContentStyle>
@@ -280,7 +311,7 @@
                                                 <div class="col-sm-0 big-margin-r" style="margin-right: 74px;">
                                                     <dx:ASPxLabel ID="ASPxLabel18" runat="server" Font-Size="12px" Font-Bold="true" Text="NAZIV : "></dx:ASPxLabel>
                                                 </div>
-                                                <div class="col-sm-9 no-padding-left" style="margin-bottom:20px">
+                                                <div class="col-sm-9 no-padding-left" style="margin-bottom: 20px">
                                                     <dx:ASPxTextBox runat="server" ID="txtTenderName" ClientInstanceName="clientTxtTenderName"
                                                         CssClass="text-box-input" Font-Size="13px" Width="100%">
                                                         <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
@@ -289,12 +320,26 @@
                                                 </div>
                                             </div>
                                             <div class="row2 align-item-centerV-startH">
+                                                <div class="col-sm-0 big-margin-r" style="margin-right:0px;">
+                                                    <dx:ASPxCheckBox ID="chkCiljnaCena" runat="server"></dx:ASPxCheckBox>
+                                                </div>  
+                                                <div class="col-sm-2 no-padding-left" style="margin-bottom: 1px">
+                                                    <dx:ASPxLabel ID="ASPxLabel1" runat="server" Font-Size="12px" Font-Bold="true" Text="Ciljna cena "></dx:ASPxLabel>
+                                                </div>
+                                                <div class="col-sm-4 no-padding-left" style="margin-bottom: 1px">
+                                                    <dx:ASPxTextBox runat="server" ID="txtCiljnaCena" ClientInstanceName="clientTxtCiljnaCena"
+                                                        CssClass="text-box-input" Font-Size="13px" Width="100%">
+                                                        <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
+                                                        <ClientSideEvents GotFocus="FocusClearValidationIfAny" />
+                                                    </dx:ASPxTextBox>
+                                                </div>
+                                            </div>
+                                            <div class="row2 align-item-centerV-startH" style="margin-top:10px">
                                                 <div class="col-sm-0 big-margin-r" style="margin-right: 74px;">
                                                     <dx:ASPxLabel ID="lblSupplierArrangesTransport" runat="server" Font-Bold="true" Text="Pošlji najcenejšemu prevozniku : "></dx:ASPxLabel>
                                                 </div>
                                                 <div class="col-xs-1 no-padding-left">
                                                     <dx:ASPxCheckBox ID="chkNajcenejsiPrevoznik" runat="server">
-                                                        
                                                     </dx:ASPxCheckBox>
                                                 </div>
                                             </div>
@@ -349,8 +394,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" id="modal-btn-send">Pošlji razpis</button>
-                        <button type="button" class="btn btn-default" id="modal-btn-download">Prenesi</button>
+ <%--                       <button type="button" class="btn btn-default" id="modal-btn-send">Pošlji razpis</button>
+                        <button type="button" class="btn btn-default" id="modal-btn-download">Prenesi</button>--%>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
                     </div>
                 </div>

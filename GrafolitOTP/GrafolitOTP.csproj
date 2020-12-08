@@ -238,6 +238,9 @@
     <Content Include="Pages\Recall\RecallTakeOverOnly.aspx" />
     <Content Include="Pages\Recall\Recall.aspx" />
     <Content Include="Pages\Recall\RecallForm.aspx" />
+    <Content Include="Pages\Settings\SystemEmailBody_popup.aspx" />
+    <Content Include="Pages\Settings\SystemEmailTable.aspx" />
+    <Content Include="Pages\Settings\SystemEmail_popup.aspx" />
     <Content Include="Pages\Statistic\CarrierAndRoutesPricing.aspx" />
     <Content Include="Pages\Statistic\ViewRoutePrices.aspx" />
     <Content Include="Pages\Statistic\RoutesDetail_popup.aspx" />
@@ -312,6 +315,9 @@
     <Compile Include="Helpers\PrincipalHelper.cs" />
     <Compile Include="Helpers\PropertyCopyHelper.cs" />
     <Compile Include="Helpers\QueryStringBuilder.cs" />
+    <Compile Include="Helpers\DataProviders\SystemEmailDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Helpers\WebServiceHelper.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -451,6 +457,27 @@
     </Compile>
     <Compile Include="Pages\Recall\RecallForm.aspx.designer.cs">
       <DependentUpon>RecallForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmailBody_popup.aspx.cs">
+      <DependentUpon>SystemEmailBody_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmailBody_popup.aspx.designer.cs">
+      <DependentUpon>SystemEmailBody_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmailTable.aspx.cs">
+      <DependentUpon>SystemEmailTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmailTable.aspx.designer.cs">
+      <DependentUpon>SystemEmailTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmail_popup.aspx.cs">
+      <DependentUpon>SystemEmail_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\SystemEmail_popup.aspx.designer.cs">
+      <DependentUpon>SystemEmail_popup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Statistic\CarrierAndRoutesPricing.aspx.cs">
       <DependentUpon>CarrierAndRoutesPricing.aspx</DependentUpon>

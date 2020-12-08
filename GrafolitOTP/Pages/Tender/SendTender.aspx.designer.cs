@@ -87,24 +87,6 @@ namespace OptimizacijaTransprotov.Pages.Tender
         protected global::DevExpress.Web.ASPxButton btnSend;
 
         /// <summary>
-        /// btnConfirmDownload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnConfirmDownload;
-
-        /// <summary>
-        /// btnSendTender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSendTender;
-
-        /// <summary>
         /// ASPxPopupCompleteTenderData control.
         /// </summary>
         /// <remarks>
@@ -148,6 +130,33 @@ namespace OptimizacijaTransprotov.Pages.Tender
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtTenderName;
+
+        /// <summary>
+        /// chkCiljnaCena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox chkCiljnaCena;
+
+        /// <summary>
+        /// ASPxLabel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
+
+        /// <summary>
+        /// txtCiljnaCena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtCiljnaCena;
 
         /// <summary>
         /// lblSupplierArrangesTransport control.

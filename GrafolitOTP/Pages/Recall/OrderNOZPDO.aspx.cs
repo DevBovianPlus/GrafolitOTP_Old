@@ -168,9 +168,6 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void GridLookupCategory_DataBinding(object sender, EventArgs e)
         {
-            var list = CheckModelValidation(GetDatabaseConnectionInstance().GetCategoryList());
-            if (list != null)
-                (sender as ASPxGridLookup).DataSource = list;
         }
 
         protected void ASPxGridViewOrder10Positions_DataBinding(object sender, EventArgs e)

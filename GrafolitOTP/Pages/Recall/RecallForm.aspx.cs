@@ -124,8 +124,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             hfCurrentSum["CurrenSum"] = model.KolicinaSkupno;
             hfCurrentSumPalete["CurrenSumPalete"] = model.PaleteSkupaj;
-            
-          
+
+
 
             ASPxMemoOpombe.Text = model.Opis;
             txtSofer.Text = model.SoferNaziv;
@@ -457,7 +457,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (lZbirnikTon != null)
             {
-                return lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault().ZbirnikTonID;
+                if (lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault() != null)
+                    return lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault().ZbirnikTonID;
             }
 
             return 10;
@@ -1119,13 +1120,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je tip prevoza kamion - če vsota količine večja od 20000 potem more biti v mejah med 24000 in 24500 drugače gre v odobritev.
             //To ne preverjamo če imamo obkljukano dobavitelj priskrbi prevoz ali kupec priskrbi prevoz.
             if (GetSelecctedTransportTypeCode() == DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString() &&
-               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 24500)) && String.IsNullOrEmpty(memoKomentar.Text) &&
+               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 26000)) && String.IsNullOrEmpty(memoKomentar.Text) &&
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 12 - ŠT :" + model.OdpoklicStevilka.ToString());
-                memKomentarOdobritve += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.";
-                sArgumentOfApproval += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg. | ";
-                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.");
+                memKomentarOdobritve += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg.";
+                sArgumentOfApproval += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg. | ";
+                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg.");
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
                 btnRecall.ForeColor = Color.Tomato;
@@ -1211,14 +1212,14 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je tip prevoza kamion - če vsota količine večja od 20000 potem more biti v mejah med 24000 in 24500 drugače gre v odobritev.
             //To ne preverjamo če imamo obkljukano dobavitelj priskrbi prevoz ali kupec priskrbi prevoz.
             else if (GetSelecctedTransportTypeCode() == DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString() &&
-               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 24500)) && (String.IsNullOrEmpty(memoKomentar.Text) ||
+               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 26000)) && (String.IsNullOrEmpty(memoKomentar.Text) ||
                GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN && !String.IsNullOrEmpty(model.RazlogOdobritveSistem)) && //ta del pogoja zajema primer, ko uporabnik da odpoklic v odobritev in ga potem nazaj odpre
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))//če je delovna verzija in če ima razlog odobritev sistem polje vrednost potem moremo priti v ta if
             {
                 CommonMethods.LogThis("Log 6 - ŠT :" + model.OdpoklicStevilka.ToString());
 
-                memoKomentar.NullText = "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg. Zapiši komentar!";
-                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 24500kg.");
+                memoKomentar.NullText = "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg. Zapiši komentar!";
+                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg.");
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
                 btnRecall.ForeColor = Color.Tomato;
@@ -1501,8 +1502,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 {
                     int routeValueID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
                     int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
-                    
-                    decimal lowestPrice = (ZbirnikTonID == 0) ?  CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
+
+                    decimal lowestPrice = (ZbirnikTonID == 0) ? CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
                     txtNovaCena.Text = lowestPrice.ToString("N2");
                     ASPxGridLookupStranke.DataBind();
                 }

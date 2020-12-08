@@ -345,5 +345,34 @@ namespace OptimizacijaTransprotov.Common
 
             }
         }
+
+        public static string RemoveForbidenChracters(string possibleWorksheetName)
+        {
+            if (possibleWorksheetName.Contains("\\"))
+                possibleWorksheetName = possibleWorksheetName.Replace("\\", "-");
+
+            if (possibleWorksheetName.Contains("/"))
+                possibleWorksheetName = possibleWorksheetName.Replace("/", "-");
+
+            if (possibleWorksheetName.Contains("?"))
+                possibleWorksheetName = possibleWorksheetName.Replace("?", "-");
+
+            if (possibleWorksheetName.Contains(":"))
+                possibleWorksheetName = possibleWorksheetName.Replace(":", "-");
+
+            if (possibleWorksheetName.Contains("*"))
+                possibleWorksheetName = possibleWorksheetName.Replace("*", "-");
+
+            if (possibleWorksheetName.Contains("["))
+                possibleWorksheetName = possibleWorksheetName.Replace("[", "");
+
+            if (possibleWorksheetName.Contains("]"))
+                possibleWorksheetName = possibleWorksheetName.Replace("]", "");
+
+            if (possibleWorksheetName.Contains("\""))
+                possibleWorksheetName = possibleWorksheetName.Replace("\"", "");
+
+            return possibleWorksheetName;
+        }
     }
 }

@@ -6,7 +6,6 @@ using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.ModelsOTP.Tender;
-using DatabaseWebService.ModelsPDO.Inquiry;
 using Newtonsoft.Json;
 using OptimizacijaTransprotov.Helpers;
 using System;
@@ -135,20 +134,20 @@ namespace OptimizacijaTransprotov.Infrastructure
 
             return dt;
         }
-        public WebResponseContentModel<List<ProductCategory>> GetCategoryList()
-        {
-            WebResponseContentModel<List<ProductCategory>> client = new WebResponseContentModel<List<ProductCategory>>();
-            try
-            {
-                client = GetResponseFromWebRequest<WebResponseContentModel<List<ProductCategory>>>(WebServiceHelper.GetCategoryList(), "get");
-            }
-            catch (Exception ex)
-            {
-                client.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
-            }
+        //public WebResponseContentModel<List<ProductCategory>> GetCategoryList()
+        //{
+        //    WebResponseContentModel<List<ProductCategory>> client = new WebResponseContentModel<List<ProductCategory>>();
+        //    try
+        //    {
+        //        client = GetResponseFromWebRequest<WebResponseContentModel<List<ProductCategory>>>(WebServiceHelper.GetCategoryList(), "get");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        client.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+        //    }
 
-            return client;
-        }
+        //    return client;
+        //}
 
         #endregion
 
@@ -720,21 +719,7 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
-        public WebResponseContentModel<bool> CreatePDFAndSendPDOOrdersMultiple()
-        {
-            WebResponseContentModel<bool> dt = new WebResponseContentModel<bool>();
-            try
-            {
-                dt = GetResponseFromWebRequest<WebResponseContentModel<bool>>(WebServiceHelper.CreatePDFAndSendPDOOrdersMultiple(), "get");
-            }
-            catch (Exception ex)
-            {
-                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
-            }
-
-            return dt;
-        }
-
+       
         public WebResponseContentModel<bool> ChangeConfigValue(string sConfigName, string sConfigValue)
         {
             WebResponseContentModel<bool> model = new WebResponseContentModel<bool>();
@@ -1264,12 +1249,12 @@ namespace OptimizacijaTransprotov.Infrastructure
 
         #region Tender
 
-        public WebResponseContentModel<List<TenderFullModel>> GetTenderList()
+        public WebResponseContentModel<List<TenderFullModel>> GetTenderList(string dtFrom, string dtTo)
         {
             WebResponseContentModel<List<TenderFullModel>> dt = new WebResponseContentModel<List<TenderFullModel>>();
             try
-            {
-                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderFullModel>>>(WebServiceHelper.GetTenderList(), "get");
+            {                
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderFullModel>>>(WebServiceHelper.GetTenderList(dtFrom, dtTo), "get");
             }
             catch (Exception ex)
             {
@@ -1279,12 +1264,46 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+        public WebResponseContentModel<List<TenderPositionModel>> GetTenderListPositionByTenderID(int tenderID)
+        {
+            WebResponseContentModel<List<TenderPositionModel>> dt = new WebResponseContentModel<List<TenderPositionModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionModel>>>(WebServiceHelper.GetTenderListPositionByTenderID(tenderID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+
+
+
+
         public WebResponseContentModel<TenderFullModel> GetTenderByID(int tenderID)
         {
             WebResponseContentModel<TenderFullModel> dt = new WebResponseContentModel<TenderFullModel>();
             try
             {
                 dt = GetResponseFromWebRequest<WebResponseContentModel<TenderFullModel>>(WebServiceHelper.GetTenderByID(tenderID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+        public WebResponseContentModel<TenderModel> GetTenderSimpleModelByID(int tenderID)
+        {
+            WebResponseContentModel<TenderModel> dt = new WebResponseContentModel<TenderModel>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<TenderModel>>(WebServiceHelper.GetTenderSimpleModelByID(tenderID), "get");
             }
             catch (Exception ex)
             {
@@ -1475,6 +1494,24 @@ namespace OptimizacijaTransprotov.Infrastructure
             return model;
         }
 
+        public async Task<WebResponseContentModel<hlpTenderTransporterSelection>> PrepareDataForTenderTransportAsync(hlpTenderTransporterSelection vTTModel)
+        {
+            WebResponseContentModel<hlpTenderTransporterSelection> model = new WebResponseContentModel<hlpTenderTransporterSelection>();
+
+            try
+            {
+                model.Content = vTTModel;
+                var outputStr = await MakeRequestAsync(WebServiceHelper.PrepareDataForTenderTransport());
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+
         public WebResponseContentModel<byte[]> GetTenderDownloadFile(int iIDTender)
         {
             WebResponseContentModel<byte[]> user = new WebResponseContentModel<byte[]>();
@@ -1651,6 +1688,57 @@ namespace OptimizacijaTransprotov.Infrastructure
 
         #endregion
 
+        #region Settings
+
+        public WebResponseContentModel<List<OTPEmailModel>> GetAllEmails()
+        {
+            WebResponseContentModel<List<OTPEmailModel>> dt = new WebResponseContentModel<List<OTPEmailModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<OTPEmailModel>>>(WebServiceHelper.GetAllEmailsOTP(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+      
+
+        public WebResponseContentModel<bool> CreateMailCopyOTP(int mailID)
+        {
+            WebResponseContentModel<bool> dt = new WebResponseContentModel<bool>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<bool>>(WebServiceHelper.CreateMailCopyOTP(mailID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+       
+
+        public WebResponseContentModel<OTPEmailModel> GetMailByID(int mailID)
+        {
+            WebResponseContentModel<OTPEmailModel> dt = new WebResponseContentModel<OTPEmailModel>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<OTPEmailModel>>(WebServiceHelper.GetMailByIDOTP(mailID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+        #endregion
+
         public T GetResponseFromWebRequest<T>(string uri, string requestMethod)
         {
             object obj = default(T);
@@ -1724,6 +1812,45 @@ namespace OptimizacijaTransprotov.Infrastructure
             return ex.Message + " \r\n" + ex.Source + (ex.InnerException != null ? ex.InnerException.Message + " \r\n" + ex.Source : "");
         }
 
+        void DoWithResponse(HttpWebRequest request, Action<HttpWebResponse> responseAction)
+        {
+            Action wrapperAction = () =>
+            {
+                request.BeginGetResponse(new AsyncCallback((iar) =>
+                {
+                    var response = (HttpWebResponse)((HttpWebRequest)iar.AsyncState).EndGetResponse(iar);
+                    responseAction(response);
+                }), request);
+            };
+            wrapperAction.BeginInvoke(new AsyncCallback((iar) =>
+            {
+                var action = (Action)iar.AsyncState;
+                action.EndInvoke(iar);
+            }), wrapperAction);
+        }
+
+        private async Task<String> MakeRequestAsync(String url)
+        {
+            String responseText = await Task.Run(() =>
+            {
+                try
+                {
+                    HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                    WebResponse response = request.GetResponse();
+                    Stream responseStream = response.GetResponseStream();
+                    return new StreamReader(responseStream).ReadToEnd();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                }
+                return null;
+            });
+
+            return responseText;
+        }
+
+
         public async Task<T> PostWebRequestDataAsync<T>(string uri, string requestMethod, T objectToSerialize)
         {
             object obj = default(T);
@@ -1741,6 +1868,8 @@ namespace OptimizacijaTransprotov.Infrastructure
             }
 
             var response = (HttpWebResponse)await Task.Factory.FromAsync<WebResponse>(request.BeginGetResponse, request.EndGetResponse, null);
+            //var response = Task.Factory.FromAsync<WebResponse>(request.BeginGetResponse, request.EndGetResponse, null);
+            //response.Wait();
 
             // HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();

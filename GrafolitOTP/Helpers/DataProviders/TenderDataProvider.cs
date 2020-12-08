@@ -22,5 +22,18 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
 
             return null;
         }
+
+        public void SetSelectedTenderPositionRowsModel(List<TenderPositionModel> modelRows)
+        {
+            AddValueToSession(Enums.TenderSession.SelectedTenderPositionRows, modelRows);
+        }
+
+        public List<TenderPositionModel> GetSelectedTenderPositionRows()
+        {
+            if (SessionHasValue(Enums.TenderSession.SelectedTenderPositionRows))
+                return (List<TenderPositionModel>)GetValueFromSession(Enums.TenderSession.SelectedTenderPositionRows);
+
+            return null;
+        }
     }
 }

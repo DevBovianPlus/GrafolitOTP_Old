@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentHolder" runat="server">
     <script>
         function ShowPopUp(s, e) {
-            parameter = HandleUserActionsOnTabs(gridTender, clientBtnAdd, clientBtnEdit, clientBtnDelete, s);
+            parameter = HandleUserActionsOnTabs(gridTender, clientBtnAdd, null, clientBtnDelete, s);
             clientLoadingPanel.Show();
             clientCallbackPanelTender.PerformCallback(parameter);
         }
@@ -46,7 +46,7 @@
                 //if he doesn't confirm import on popup than there should be visible buttons on detailRow for import confirmation
                 delete (s.cpExcelConfirmImport);
             }
-            
+
             clientLoadingPanel.Hide();
         }
 
@@ -66,7 +66,7 @@
                 UploadedFilesTokenBox.AddToken(uploadedFiles[i]);
             updateTokenBoxVisibility();
             uploadedFiles = [];
-            
+
             if (errorText != "" && errorText !== undefined) {
                 $('#unhandledExpModalContentBody').append(errorText);
                 $('#unhandledExpModal').modal('show');
@@ -79,7 +79,7 @@
 
             gridTenderPosition.Refresh();
         }
-        
+
         function onTokenBoxValidation(s, e) {
             var isValid = clientDocumentsUploadControl.GetText().length > 0 || UploadedFilesTokenBox.GetText().length > 0;
             e.isValid = isValid;
@@ -100,8 +100,7 @@
             clientCallbackPanelTender.PerformCallback("AddNewTenderPosition");
         }
 
-        function gridTenderPosition_SelectionChanged(s, e)
-        {
+        function gridTenderPosition_SelectionChanged(s, e) {
             var selectedRowCount = s.GetSelectedRowCount();
 
             if (selectedRowCount > 0)
@@ -110,16 +109,19 @@
                 clientBtnDeleteSelected.SetEnabled(false);
         }
 
-        function btnDeleteSelected_Click(s, e)
-        {
+        function btnDeleteSelected_Click(s, e) {
             gridTenderPosition.GetSelectedFieldValues('RazpisPozicijaID', OnGetSelectedFieldValues);
         }
 
-        function OnGetSelectedFieldValues(value)
-        {
+        function OnGetSelectedFieldValues(value) {
             clientLoadingPanel.Show();
             clientCallbackPanelTender.PerformCallback("DeleteSelected;" + value);
         }
+
+        function OnDetailRowExpanding(s, e) {
+            gridTender.SetFocusedRowIndex(e.visibleIndex);
+        }
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
@@ -130,10 +132,46 @@
         <ClientSideEvents EndCallback="clientCallbackPanelTender_EndCallback" />
         <PanelCollection>
             <dx:PanelContent>
+                <div class="col-md-12" style="margin-bottom: 10px">
+                    <div class="row2 align-item-centerV-startH">
+                        <div class="col-xs-0 big-margin-r no-padding-right" style="margin-right: 20px;">
+                            <dx:ASPxLabel ID="ASPxLabel9" runat="server" Text="DATUM Od : " Width="80px"></dx:ASPxLabel>
+                        </div>
+                        <div class="col-xs-0 no-padding-left">
+                            <dx:ASPxDateEdit ID="DateEditDatumOd" runat="server" EditFormat="Date" Width="170" Theme="Moderno"
+                                CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumOd">
+                                
+                                <FocusedStyle CssClass="focus-text-box-input" />
+                                <CalendarProperties TodayButtonText="Danes" ClearButtonText="Izbriši" />
+                                <DropDownButton Visible="true"></DropDownButton>
+                            </dx:ASPxDateEdit>
+                        </div>
+
+                        <div class="col-xs-0" style="margin-right: 20px; margin-left: 20px;">
+                            <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="DATUM Do : " Width="80px"></dx:ASPxLabel>
+                        </div>
+                        <div class="col-xs-0">
+                            <dx:ASPxDateEdit ID="DateEditDatumDo" runat="server" EditFormat="Date" Width="170" Theme="Moderno"
+                                CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumDo">                                
+                                <FocusedStyle CssClass="focus-text-box-input" />
+                                <CalendarProperties TodayButtonText="Danes" ClearButtonText="Izbriši" />
+                                <DropDownButton Visible="true"></DropDownButton>
+                            </dx:ASPxDateEdit>
+                        </div>
+
+                        <div class="col-xs-0" style="margin-left: 20px; margin-top: -14px";>
+                            <dx:ASPxButton Theme="Moderno" ID="btnFilter" runat="server" Text="Filter" AutoPostBack="false"
+                                Height="15" Width="90" ClientVisible="true" OnClick="btnFilter_Click">                                
+                                <Image Url="../../../Images/magnifier.png" UrlHottracked="../../Images/magnifier.png" />                                
+                            </dx:ASPxButton>
+                        </div>
+                    </div>
+                </div>
                 <dx:ASPxGridView ID="ASPxGridViewTender" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTender"
-                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding" OnSelectionChanged="ASPxGridViewTender_SelectionChanged"
-                    KeyFieldName="RazpisID">
+                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding" OnSelectionChanged="ASPxGridViewTender_SelectionChanged" 
+                    KeyFieldName="RazpisID" OnHtmlRowPrepared="ASPxGridViewTender_HtmlRowPrepared" OnCustomColumnDisplayText="ASPxGridViewTender_CustomColumnDisplayText" AllowOnlyOneMasterRowExpanded="true">
                     <Paddings Padding="0" />
+                     <ClientSideEvents DetailRowExpanding="OnDetailRowExpanding" />
                     <Settings ShowVerticalScrollBar="True"
                         ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="600"
                         ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
@@ -153,7 +191,11 @@
                             ReadOnly="true" Visible="false" ShowInCustomizationForm="True" SortOrder="Descending">
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="62%"
+                        <dx:GridViewDataTextColumn Caption="Izdelano" FieldName="GeneriranTender" MinWidth="70" MaxWidth="250" Width="2%">
+                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                        </dx:GridViewDataTextColumn>
+
+                        <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Naziv" Width="55%"
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
@@ -166,7 +208,7 @@
 
                         <dx:GridViewDataDateColumn Caption="Datum razpisa" FieldName="DatumRazpisa" Width="13%">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
-                            <PropertiesDateEdit DisplayFormatString="dd. MMMM yyyy" />
+                            <PropertiesDateEdit DisplayFormatString="dd. MMMM yyyy HH:mm:ss" />
                         </dx:GridViewDataDateColumn>
                     </Columns>
                     <Templates>
@@ -176,7 +218,7 @@
                                     <dx:ASPxGridView ID="ASPxGridViewTenderPosition" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTenderPosition"
                                         Width="100%" EnablePagingGestures="False" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTenderPosition_DataBinding"
                                         KeyFieldName="RazpisPozicijaID" OnBeforePerformDataSelect="ASPxGridViewTenderPosition_BeforePerformDataSelect"
-                                        OnHtmlRowPrepared="ASPxGridViewTenderPosition_HtmlRowPrepared" OnBatchUpdate="ASPxGridViewTenderPosition_BatchUpdate" >
+                                        OnHtmlRowPrepared="ASPxGridViewTenderPosition_HtmlRowPrepared" OnBatchUpdate="ASPxGridViewTenderPosition_BatchUpdate">
                                         <ClientSideEvents SelectionChanged="gridTenderPosition_SelectionChanged" />
                                         <Paddings Padding="0" />
                                         <Settings ShowVerticalScrollBar="True"
@@ -196,7 +238,6 @@
                                         <SettingsEditing Mode="Batch" BatchEditSettings-StartEditAction="DblClick" />
                                         <Columns>
                                             <dx:GridViewCommandColumn ShowSelectCheckbox="true" Caption="Izberi" Width="60px">
-
                                             </dx:GridViewCommandColumn>
                                             <dx:GridViewDataTextColumn Caption="Prevoznik" FieldName="Stranka.NazivPrvi" Width="35%"
                                                 ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False">
@@ -208,7 +249,7 @@
                                                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                             </dx:GridViewDataTextColumn>
 
-                                             <dx:GridViewDataTextColumn Caption="Teža v t" FieldName="ZbirnikTon.Koda" Width="8%"
+                                            <dx:GridViewDataTextColumn Caption="Teža v t" FieldName="ZbirnikTon.Koda" Width="8%"
                                                 ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False">
                                                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                             </dx:GridViewDataTextColumn>
@@ -229,7 +270,7 @@
                                 <div class="col-xs-4">
                                     <dx:ASPxFormLayout ID="FormLayout" runat="server" Width="100%" ColCount="2" UseDefaultPaddings="false">
                                         <Items>
-                                            <dx:LayoutGroup ShowCaption="False"  GroupBoxDecoration="None" Width="100%" UseDefaultPaddings="false">
+                                            <dx:LayoutGroup ShowCaption="False" GroupBoxDecoration="None" Width="100%" UseDefaultPaddings="false">
                                                 <Items>
                                                     <dx:LayoutGroup Caption="Dokumenti">
                                                         <Items>
@@ -295,10 +336,10 @@
                                                                         <ClientSideEvents Click="btnDeleteSelected_Click" />
                                                                     </dx:ASPxButton>
                                                                 </span>
-                                                                 <span class="AddEditButtons">
+                                                                <span class="AddEditButtons">
                                                                     <dx:ASPxButton ID="btnDownloadTender" runat="server" Text="Prenos razpisa" AutoPostBack="false"
                                                                         Height="25" Width="50" ClientInstanceName="clientBtnDownloadTender" ClientEnabled="true" OnClick="btnDownloadTender_Click">
-                                                                        <Paddings PaddingLeft="10" PaddingRight="10" />                                                                        
+                                                                        <Paddings PaddingLeft="10" PaddingRight="10" />
                                                                     </dx:ASPxButton>
                                                                 </span>
                                                             </dx:LayoutItemNestedControlContainer>
@@ -333,30 +374,21 @@
     </dx:ASPxCallbackPanel>
     <div class="AddEditButtonsWrap medium-margin-l medium-margin-r">
         <div class="DeleteButtonElements">
-            <span class="AddEditButtons">
-                <dx:ASPxButton Theme="Moderno" ID="btnDelete" runat="server" Text="Izbriši" AutoPostBack="false"
-                    Height="25" Width="50" ClientInstanceName="clientBtnDelete" ClientVisible="false">
-                    <Paddings PaddingLeft="10" PaddingRight="10" />
-                    <Image Url="../../../Images/trash.png" UrlHottracked="../../Images/trashHover.png" />
-                    <ClientSideEvents Click="ShowPopUp" />
-                </dx:ASPxButton>
-            </span>
+            <span class="AddEditButtons"></span>
         </div>
         <div class="AddEditButtonsElements">
             <span class="AddEditButtons">
-                <dx:ASPxButton Theme="Moderno" ID="btnAdd" runat="server" Text="Dodaj" AutoPostBack="false"
-                    Height="25" Width="90" ClientInstanceName="clientBtnAdd" ClientVisible="false">
+                <dx:ASPxButton Theme="Moderno" ID="btnPrenosTender" runat="server" Text="Prenos razpisa" AutoPostBack="false"
+                    Height="25" Width="90" ClientInstanceName="clientBtnPrenosTender" ClientVisible="true" OnClick="btnPrenosTender_Click" >
                     <Paddings PaddingLeft="10" PaddingRight="10" />
-                    <Image Url="../../../Images/add.png" UrlHottracked="../../Images/addHover.png" />
-                    <ClientSideEvents Click="ShowPopUp" />
+                    <Image Url="../../../Images/prevzem.png" UrlHottracked="../../Images/prevzemHover.png" />                    
                 </dx:ASPxButton>
             </span>
             <span class="AddEditButtons">
-                <dx:ASPxButton Theme="Moderno" ID="btnEdit" runat="server" Text="Spremeni" AutoPostBack="false"
-                    Height="25" Width="90" ClientInstanceName="clientBtnEdit" ClientVisible="false">
+                <dx:ASPxButton Theme="Moderno" ID="btnPosljiTender" runat="server" Text="Pošlji razpis" AutoPostBack="false"
+                    Height="25" Width="50" ClientInstanceName="clientBtnPosljiTender" ClientVisible="true" OnClick="btnPosljiTender_Click">
                     <Paddings PaddingLeft="10" PaddingRight="10" />
-                    <Image Url="../../../Images/edit.png" UrlHottracked="../../Images/editHover.png" />
-                    <ClientSideEvents Click="ShowPopUp" />
+                    <Image Url="../../../Images/sendMailToCarriers.png" UrlHottracked="../../Images/sendMailToCarriersHover.png" />
                 </dx:ASPxButton>
             </span>
         </div>
@@ -377,8 +409,8 @@
                     <p>Prosim potrdite ali zavrzite naložene cene za uspešno shranjevanje razpisa!</p>
                 </div>
                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
-                 </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+                </div>
             </div>
 
         </div>
@@ -399,9 +431,9 @@
                     <p id="unhandledExpModalContentBody"></p>
                     <dx:ASPxHiddenField ID="HiddenUnhandledExpField" runat="server" ClientInstanceName="clientHiddenUnhandledExpField"></dx:ASPxHiddenField>
                 </div>
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
-                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+                </div>
             </div>
 
         </div>

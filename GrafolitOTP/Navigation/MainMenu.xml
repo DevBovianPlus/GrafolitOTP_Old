@@ -25,7 +25,9 @@
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/BasicCodeList/TransportType/TransportType.aspx" Text="Tip prevoza" ImageUrl="~/Images/transportType.png" />
     </Group>
-
+    <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />
+    </Group>
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       
@@ -58,6 +60,9 @@
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
     </Group>
+    <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />
+    </Group>
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
@@ -88,6 +93,9 @@
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
     </Group>
+    <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />
+    </Group>
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
@@ -113,7 +121,10 @@
       <Link NavigateUrl="~/Pages/Tender/TenderPrice.aspx" Text="Pregled cen" ImageUrl="~/Images/PreviewList.png" />
       <Link NavigateUrl="~/Pages/Statistic/ViewRoutePrices.aspx" Text="Primerjava cen in relacij" ImageUrl="~/Images/PreviewList.png" />
     <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
-    </Group>  
+    </Group>
+    <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+      <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />
+    </Group>
     <Group Text="OSTALO" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Statistic/RoutesTransportersRecalls.aspx" Text="Odpoklici-podatki" ImageUrl="~/Images/odpokliciPodatki.png" />
       <Link NavigateUrl="~/Pages/Statistic/CarrierAndRoutesPricing.aspx" Text="Pregled prevoznikov in cen" ImageUrl="~/Images/carriersPrice.png" />
