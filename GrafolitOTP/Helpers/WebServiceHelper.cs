@@ -480,9 +480,9 @@ namespace OptimizacijaTransprotov.Helpers
 
         #region Tender
 
-        public static string GetTenderList(string dtFrom, string dtTo)
+        public static string GetTenderList(string dtFrom, string dtTo,string sFilterString)
         {
-            return WebServiceTenderURL + "GetTenderList?dtFrom=" + dtFrom + "&dtTo=" + dtTo; 
+            return WebServiceTenderURL + "GetTenderList?dtFrom=" + dtFrom + "&dtTo=" + dtTo + "&sFilterString=" + sFilterString; 
         }
 
         public static string GetTenderListPositionByTenderID(int tenderID)

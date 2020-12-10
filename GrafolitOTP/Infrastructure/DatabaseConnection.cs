@@ -1249,12 +1249,12 @@ namespace OptimizacijaTransprotov.Infrastructure
 
         #region Tender
 
-        public WebResponseContentModel<List<TenderFullModel>> GetTenderList(string dtFrom, string dtTo)
+        public WebResponseContentModel<List<TenderFullModel>> GetTenderList(string dtFrom, string dtTo, string sFilterString)
         {
             WebResponseContentModel<List<TenderFullModel>> dt = new WebResponseContentModel<List<TenderFullModel>>();
             try
             {                
-                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderFullModel>>>(WebServiceHelper.GetTenderList(dtFrom, dtTo), "get");
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderFullModel>>>(WebServiceHelper.GetTenderList(dtFrom, dtTo, sFilterString), "get");
             }
             catch (Exception ex)
             {

@@ -56,7 +56,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
         {
             List<TenderFullModel> tenderList = null;
 
-            tenderList = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderList(helperDTModel.DateFrom.ToString(), helperDTModel.DateTo.ToString()));
+            tenderList = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderList(helperDTModel.DateFrom.ToString(), helperDTModel.DateTo.ToString(), helperDTModel.FilterSearch));
 
             Session["TenderList"] = tenderList;
             (sender as ASPxGridView).DataSource = tenderList;
@@ -593,7 +593,8 @@ namespace OptimizacijaTransprotov.Pages.Tender
         {
             if (helperDTModel == null) helperDTModel = new hlpDateFilterModel();
             helperDTModel.DateFrom = DateEditDatumOd.Date;
-            helperDTModel.DateTo = DateEditDatumDo.Date.AddHours(23).AddMinutes(59); ;
+            helperDTModel.DateTo = DateEditDatumDo.Date.AddHours(23).AddMinutes(59);
+            helperDTModel.FilterSearch = txtRelacija.Text;
 
             ASPxGridViewTender.DataBind();
         }

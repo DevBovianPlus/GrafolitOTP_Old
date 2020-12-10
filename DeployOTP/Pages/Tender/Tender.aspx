@@ -120,6 +120,7 @@
 
         function OnDetailRowExpanding(s, e) {
             gridTender.SetFocusedRowIndex(e.visibleIndex);
+            clientCallbackPanelTender.PerformCallback("SelectPozicija;" + e.visibleIndex);
         }
 
     </script>

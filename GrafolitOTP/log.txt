@@ -9327,3 +9327,361 @@ http://localhost:31695/Pages/Recall/RecallForm.aspx?action=1&recordId=-1
 8. 12. 2020 15:36:39 Log 1 - ŠT :0
 8. 12. 2020 15:36:48 Log 7 - ŠT :0
 8. 12. 2020 15:36:48 Log 7.2 - ŠT :0
+10. 12. 2020 09:34:13 Repository failed to retrieve dataUnable to create a constant value of type DatabaseWebService.ModelsOTP.Route.RouteModel. Only primitive types or enumeration types are supported in this context.
+10. 12. 2020 09:34:44 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 10. december 2020 ob 09:34:42 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext() -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx
+
+
+10. 12. 2020 09:35:23 Repository failed to retrieve dataUnable to create a constant value of type DatabaseWebService.ModelsOTP.Route.RouteModel. Only primitive types or enumeration types are supported in this context.
+10. 12. 2020 09:36:18 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 10. december 2020 ob 09:36:17 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext() -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx?
+
+
+10. 12. 2020 09:37:32 Repository failed to retrieve dataThe type DatabaseWebService.ModelsOTP.Route.RouteModel appears in two structurally incompatible initializations within a single LINQ to Entities query. A type can be initialized in two places in the same query, but only if the same properties are set in both places and those properties are set in the same order.
+10. 12. 2020 09:37:37 Pozdravljeni! 
+ Uporabnik OTP Admin je dne četrtek, 10. december 2020 ob 09:37:35 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext() -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestAsync>d__515.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.UI.Page.<ProcessRequestAsync>d__554.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.TaskAsyncHelper.EndTask(IAsyncResult ar)
+   at System.Web.UI.Page.AsyncPageEndProcessRequest(IAsyncResult result)
+   at ASP.pages_tender_sendtender_aspx.EndProcessRequest(IAsyncResult ar) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_fd5n5ogu.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.ASPxGridViewRoutes_DataBinding(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 60
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at DevExpress.Web.Internal.DataHelper.PerformSelect()
+   at DevExpress.Web.Internal.GridDataHelper.PerformSelect()
+   at DevExpress.Web.Internal.DataContainer.PerformSelect()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindCore()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Tender.SendTender.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Tender\SendTender.aspx.cs:line 43
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.<LoadRecursiveAsync>d__246.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Util.WithinCancellableCallbackTaskAwaitable.WithinCancellableCallbackTaskAwaiter.GetResult()
+   at System.Web.UI.Page.<ProcessRequestMainAsync>d__523.MoveNext()
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx?
+
+
+10. 12. 2020 11:23:18 Repository failed to retrieve dataObject reference not set to an instance of an object.
