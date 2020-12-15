@@ -18,6 +18,7 @@ using System.Collections;
 using Ionic.Zip;
 using DatabaseWebService.Models;
 using Newtonsoft.Json;
+using OptimizacijaTransprotov.Helpers;
 
 namespace OptimizacijaTransprotov.Pages.Tender
 {
@@ -334,17 +335,21 @@ namespace OptimizacijaTransprotov.Pages.Tender
             if (tenderList != null && tenderList.Count > 0)
             {
                 TenderFullModel model = tenderList.Where(t => t.RazpisID == selectedTenderID).FirstOrDefault();
+                model.RazpisPozicija = (model.RazpisPozicija == null) ? (GetTenderDataProvider().GetSelectedTenderPositionRows() != null) ? GetTenderDataProvider().GetSelectedTenderPositionRows() : CheckModelValidation(GetDatabaseConnectionInstance().GetTenderListPositionByTenderID(selectedTenderID)) : model.RazpisPozicija;
                 List<TenderPositionModel> tenderPosList = model.RazpisPozicija;
                 TenderPositionModel tenderPosModel = null;
                 List<TenderPositionModel> tenderPosListToSave = new List<TenderPositionModel>();
+                List<TenderPositionChangeModel> tenderPosChangeListToSave = new List<TenderPositionChangeModel>();
 
                 Type myType = typeof(TenderPositionModel);
                 List<PropertyInfo> myPropInfo = myType.GetProperties().ToList();
 
+                TenderPositionChangeModel tenderPosChangeModel = null;
 
                 foreach (ASPxDataUpdateValues item in e.UpdateValues)
                 {
                     tenderPosModel = new TenderPositionModel();
+                    tenderPosChangeModel = new TenderPositionChangeModel();
 
                     foreach (DictionaryEntry obj in item.Keys)//we set table ID
                     {
@@ -367,9 +372,33 @@ namespace OptimizacijaTransprotov.Pages.Tender
                             tenderPosListToSave.Add(tenderPosModel);
                         }
                     }
+
+                    foreach (DictionaryEntry objOld in item.OldValues)
+                    {
+                        PropertyInfo info = myPropInfo.Where(prop => prop.Name.Equals(objOld.Key.ToString())).FirstOrDefault();
+
+                        if (info != null)
+                        {
+                            tenderPosChangeModel.StaraCena = CommonMethods.ParseDecimal(objOld.Value);                            
+                        }
+                    }
+
+                    // add other info to change position list
+                    tenderPosChangeModel.RazpisID = tenderPosModel.RazpisID;
+                    tenderPosChangeModel.StrankaID = tenderPosModel.StrankaID;
+                    tenderPosChangeModel.RelacijaID = tenderPosModel.RelacijaID;
+                    tenderPosChangeModel.ZbirnikTonID = tenderPosModel.ZbirnikTonID;                    
+                    tenderPosChangeModel.NovaCena = tenderPosModel.Cena;
+                    tenderPosChangeModel.SpremembeTS = DateTime.Now;
+                    tenderPosChangeModel.IDSpremembeOseba = PrincipalHelper.GetUserPrincipal().ID;
+                    tenderPosChangeModel.VnosTS = tenderPosModel.ts;
+                    tenderPosChangeModel.IDVnosOseba = tenderPosModel.IDOseba;
+
+                    tenderPosChangeListToSave.Add(tenderPosChangeModel);
                 }
 
                 model.RazpisPozicija = tenderPosListToSave;
+                CheckModelValidation(GetDatabaseConnectionInstance().SaveTenderPositionChanges(tenderPosChangeListToSave));
                 CheckModelValidation(GetDatabaseConnectionInstance().SaveTenderAndTenderPosition(model));
                 model.RazpisPozicija = tenderPosList;
             }

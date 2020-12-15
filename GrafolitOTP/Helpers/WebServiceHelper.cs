@@ -489,6 +489,11 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceTenderURL + "GetTenderListPositionByTenderID?tenderID=" + tenderID;
         }
+
+        public static string GetTenderListPositionChanges()
+        {
+            return WebServiceTenderURL + "GetTenderListPositionChanges";
+        }
         public static string GetTenderByID(int tenderID)
         {
             return WebServiceTenderURL + "GetTenderByID?tenderID=" + tenderID;
@@ -532,6 +537,11 @@ namespace OptimizacijaTransprotov.Helpers
         public static string SaveTenderAndTenderPosition()
         {
             return WebServiceTenderURL + "SaveTenderAndUploadPosition";
+        }
+
+        public static string SaveTenderPositionChanges()
+        {
+            return WebServiceTenderURL + "SaveTenderPositionChanges";
         }
 
         public static string DeleteTenderPosition(int tenderPositionID)

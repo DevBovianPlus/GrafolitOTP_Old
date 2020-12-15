@@ -1281,6 +1281,23 @@ namespace OptimizacijaTransprotov.Infrastructure
 
 
 
+        public WebResponseContentModel<List<TenderPositionChangeModel>> GetTenderListPositionChanges()
+        {
+            WebResponseContentModel<List<TenderPositionChangeModel>> dt = new WebResponseContentModel<List<TenderPositionChangeModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<TenderPositionChangeModel>>>(WebServiceHelper.GetTenderListPositionChanges(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+
+
 
 
         public WebResponseContentModel<TenderFullModel> GetTenderByID(int tenderID)
@@ -1418,6 +1435,23 @@ namespace OptimizacijaTransprotov.Infrastructure
             {
                 model.Content = newData;
                 model = PostWebRequestData<WebResponseContentModel<TenderFullModel>>(WebServiceHelper.SaveTenderAndTenderPosition(), "post", model);
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+        public WebResponseContentModel<List<TenderPositionChangeModel>> SaveTenderPositionChanges(List<TenderPositionChangeModel> newData)
+        {
+            WebResponseContentModel<List<TenderPositionChangeModel>> model = new WebResponseContentModel<List<TenderPositionChangeModel>>();
+
+            try
+            {
+                model.Content = newData;
+                model = PostWebRequestData<WebResponseContentModel<List<TenderPositionChangeModel>>>(WebServiceHelper.SaveTenderPositionChanges(), "post", model);
             }
             catch (Exception ex)
             {

@@ -9685,3 +9685,266 @@ http://localhost:31695/Home.aspx?
 
 
 10. 12. 2020 11:23:18 Repository failed to retrieve dataObject reference not set to an instance of an object.
+11. 12. 2020 11:06:59 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:06:59 Log CheckRecallForAnomalies 3 - ŠT :0
+11. 12. 2020 11:07:02 Log CheckRecallForAnomalies 8 - ŠT :0
+11. 12. 2020 11:07:05 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:07:15 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:07:16 Log CheckRecallForAnomalies 3 - ŠT :0
+11. 12. 2020 11:07:18 Log CheckRecallForAnomalies 8 - ŠT :0
+11. 12. 2020 11:07:19 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:07:33 Log 7 - ŠT :0
+11. 12. 2020 11:07:33 Log 7.1 - ŠT :0
+11. 12. 2020 11:22:53 Deleting client failed. Client with specific id does not exist
+11. 12. 2020 11:22:54 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:22:54 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:23:00 Deleting client failed. Client with specific id does not exist
+11. 12. 2020 11:23:02 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:23:02 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:25:05 Log CheckRecallForAnomalies 1 - ŠT :4989
+11. 12. 2020 11:25:05 Log CheckRecallForAnomalies 13 - ŠT :4989
+11. 12. 2020 11:25:11 Log CheckRecallForAnomalies 1 - ŠT :4989
+11. 12. 2020 11:25:11 Log CheckRecallForAnomalies 13 - ŠT :4989
+11. 12. 2020 11:25:17 Log CheckRecallForAnomalies 1 - ŠT :4989
+11. 12. 2020 11:25:17 Log CheckRecallForAnomalies 13 - ŠT :4989
+11. 12. 2020 11:34:35 Log CheckRecallForAnomalies 1 - ŠT :4989
+11. 12. 2020 11:34:35 Log CheckRecallForAnomalies 13 - ŠT :4989
+11. 12. 2020 11:35:22 Log CheckRecallForAnomalies 1 - ŠT :4989
+11. 12. 2020 11:35:22 Log CheckRecallForAnomalies 3 - ŠT :4989
+11. 12. 2020 11:35:23 Log CheckRecallForAnomalies 5 - ŠT :4989
+11. 12. 2020 11:35:23 Log CheckRecallForAnomalies 7 - ŠT :4989
+11. 12. 2020 11:35:23 Log CheckRecallForAnomalies 9 - ŠT :4989
+11. 12. 2020 11:35:23 Log CheckRecallForAnomalies 12 - ŠT :4989
+11. 12. 2020 11:35:23 Log CheckRecallForAnomalies 13 - ŠT :4989
+11. 12. 2020 11:52:04 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:52:04 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:52:15 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 11:52:15 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 11:54:18 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 12:20:03 Log CheckRecallForAnomalies 1 - ŠT :0
+11. 12. 2020 12:20:04 Log CheckRecallForAnomalies 12 - ŠT :0
+11. 12. 2020 12:20:07 Log CheckRecallForAnomalies 13 - ŠT :0
+11. 12. 2020 14:46:49 The request was aborted: The operation has timed out. System
+11. 12. 2020 14:47:20 Začni prenos LOG datotek
+11. 12. 2020 14:47:27 File: D:\GitHub\GrafolitOTP\GrafolitOTP\log.txt
+11. 12. 2020 14:47:27  -------- System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at OptimizacijaTransprotov.Pages.Admin.AdminOverview.btnGetLogs_Click(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Admin\AdminOverview.aspx.cs:line 160
+11. 12. 2020 16:15:32 Repository failed to save dataThe MERGE statement conflicted with the FOREIGN KEY constraint "FK_OsebaOTPVnosRazpisPozicijaSpremembeID". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.Osebe_OTP", column idOsebe.
+13. 12. 2020 19:28:52 Client with specific ID does not exist
+13. 12. 2020 19:30:44 The operation has timed out System
+13. 12. 2020 19:31:33 Client with specific ID does not exist
+13. 12. 2020 19:34:21 Client with specific ID does not exist
+13. 12. 2020 19:36:14 The request was aborted: The operation has timed out. System
+13. 12. 2020 19:36:27 Client with specific ID does not exist
+13. 12. 2020 19:38:21 The operation has timed out System
+13. 12. 2020 19:39:26 Client with specific ID does not exist
+13. 12. 2020 19:41:18 The operation has timed out System
+14. 12. 2020 08:41:54 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:41:58 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:41:59 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:42:10 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 14. december 2020 ob 08:42:08 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Home.ChartsCallbackPanel_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Home.aspx.cs:line 89
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Home.aspx
+
+
+14. 12. 2020 08:43:02 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:43:06 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:43:08 Dashboard repository errorThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 08:43:16 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 14. december 2020 ob 08:43:15 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Home.ChartsCallbackPanel_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Home.aspx.cs:line 89
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Home.aspx
+
+
+14. 12. 2020 08:43:39 Repository failed to retrieve dataThe underlying provider failed on Open.The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))
+14. 12. 2020 09:03:31 The request was aborted: The operation has timed out. System
+14. 12. 2020 09:30:45 The request was aborted: The operation has timed out. System
+14. 12. 2020 09:32:28 The operation has timed out System
+14. 12. 2020 09:32:48 Log CheckRecallForAnomalies 1 - ŠT :0
+14. 12. 2020 09:32:51 Log CheckRecallForAnomalies 13 - ŠT :0
+14. 12. 2020 14:45:48 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 14:49:03 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 14:50:11 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 14:52:54 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 14:55:28 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 15:01:04 Repository failed to retrieve dataObject reference not set to an instance of an object.
+14. 12. 2020 15:05:50 Log CheckRecallForAnomalies 1 - ŠT :0
+14. 12. 2020 15:05:50 Log CheckRecallForAnomalies 3 - ŠT :0
+14. 12. 2020 15:05:53 Log CheckRecallForAnomalies 8 - ŠT :0
+14. 12. 2020 15:05:53 Log CheckRecallForAnomalies 13 - ŠT :0
+14. 12. 2020 15:08:21 The operation has timed out System
+14. 12. 2020 15:10:01 The request was aborted: The operation has timed out. System
+14. 12. 2020 15:10:01 Log CheckRecallForAnomalies 1 - ŠT :0
+14. 12. 2020 15:10:01 Log CheckRecallForAnomalies 3 - ŠT :0
+14. 12. 2020 15:11:37 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid object name dbo.RazpisPozicijaSpremembe.
+14. 12. 2020 15:21:42 Pozdravljeni! 
+ Uporabnik OTP Admin je dne ponedeljek, 14. december 2020 ob 15:21:40 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Web.HttpException (0x80004005): A field or property with name 'ts' was not found in the selected data source. Possible causes of this error may be the following: an incorrect or case-insensitive spelling of the grid column name; assigning a wrong or not properly initialized data source to the grid.
+   at DevExpress.Web.Data.WebDataControllerProvider.GetRowValueByControllerRow(Int32 controllerRow, String fieldName, Boolean isDesignTime)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetRowValue(Int32 visibleIndex, String fieldName, Boolean isDesignTime)
+   at DevExpress.Web.Data.WebDataProxy.GetRowValue(Int32 visibleIndex, String fieldName)
+   at DevExpress.Web.Internal.GridTextBuilder.GetDisplayControlArgs(IWebGridDataColumn column, Int32 visibleIndex, IValueProvider provider, ASPxGridBase grid, Boolean highlightSearchText)
+   at DevExpress.Web.Internal.GridRenderHelper.CreateDataCellDisplayControl(IWebGridDataColumn column, Int32 visibleIndex, IValueProvider row)
+   at DevExpress.Web.Internal.GridRenderHelper.AddDisplayControlToDataCell(Control cell, IWebGridDataColumn column, Int32 visibleIndex, IValueProvider row)
+   at DevExpress.Web.Rendering.GridViewTableDataCell.CreateControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableCell.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.Internal.InternalTableCell.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at DevExpress.Web.ASPxWebControl.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Settings.TenderPositionManualChanges.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Settings\TenderPositionManualChanges.aspx.cs:line 48
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_settings_tenderpositionmanualchanges_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_a5ywnwnp.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Web.HttpException (0x80004005): A field or property with name 'ts' was not found in the selected data source. Possible causes of this error may be the following: an incorrect or case-insensitive spelling of the grid column name; assigning a wrong or not properly initialized data source to the grid.
+   at DevExpress.Web.Data.WebDataControllerProvider.GetRowValueByControllerRow(Int32 controllerRow, String fieldName, Boolean isDesignTime)
+   at DevExpress.Web.Data.WebDataControllerProvider.GetRowValue(Int32 visibleIndex, String fieldName, Boolean isDesignTime)
+   at DevExpress.Web.Data.WebDataProxy.GetRowValue(Int32 visibleIndex, String fieldName)
+   at DevExpress.Web.Internal.GridTextBuilder.GetDisplayControlArgs(IWebGridDataColumn column, Int32 visibleIndex, IValueProvider provider, ASPxGridBase grid, Boolean highlightSearchText)
+   at DevExpress.Web.Internal.GridRenderHelper.CreateDataCellDisplayControl(IWebGridDataColumn column, Int32 visibleIndex, IValueProvider row)
+   at DevExpress.Web.Internal.GridRenderHelper.AddDisplayControlToDataCell(Control cell, IWebGridDataColumn column, Int32 visibleIndex, IValueProvider row)
+   at DevExpress.Web.Rendering.GridViewTableDataCell.CreateControlHierarchy()
+   at DevExpress.Web.Internal.InternalTableCell.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.Internal.InternalTableCell.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.DevExpress.Web.Internal.IWebControl.EnsureChildControls()
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Predicate`1 skipControlCondition)
+   at DevExpress.Web.Internal.RenderUtils.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control, Boolean skipContentContainers)
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControlsRecursive(Control control)
+   at DevExpress.Web.ASPxWebControlBase.CreateChildControls()
+   at DevExpress.Web.ASPxWebControl.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DevExpress.Web.ASPxWebControlBase.EnsureChildControls()
+   at DevExpress.Web.ASPxDataWebControlBase.DataBindInternal()
+   at DevExpress.Web.ASPxWebControl.DataBind()
+   at OptimizacijaTransprotov.Pages.Settings.TenderPositionManualChanges.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Settings\TenderPositionManualChanges.aspx.cs:line 48
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_settings_tenderpositionmanualchanges_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_a5ywnwnp.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Tender/Tender.aspx
+
+
+15. 12. 2020 07:45:41 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 07:45:41 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 12. 2020 07:45:42 Log CheckRecallForAnomalies 8 - ŠT :0
+15. 12. 2020 07:45:42 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 12. 2020 07:46:12 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 07:46:12 Log CheckRecallForAnomalies 3 - ŠT :0
+15. 12. 2020 07:46:39 Log CheckRecallForAnomalies 8 - ŠT :0
+15. 12. 2020 07:46:39 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 12. 2020 08:05:33 Client with specific ID does not exist
+15. 12. 2020 08:08:25 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 08:08:25 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 12. 2020 08:08:25 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 12. 2020 08:08:33 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 08:08:33 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 12. 2020 08:08:40 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 08:08:40 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 12. 2020 08:08:40 Log CheckRecallForAnomalies 13 - ŠT :0
+15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 1 - ŠT :0
+15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 12 - ŠT :0
+15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 13 - ŠT :0

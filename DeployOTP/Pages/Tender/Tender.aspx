@@ -141,7 +141,7 @@
                         <div class="col-xs-0 no-padding-left">
                             <dx:ASPxDateEdit ID="DateEditDatumOd" runat="server" EditFormat="Date" Width="170" Theme="Moderno"
                                 CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumOd">
-                                
+
                                 <FocusedStyle CssClass="focus-text-box-input" />
                                 <CalendarProperties TodayButtonText="Danes" ClearButtonText="Izbriši" />
                                 <DropDownButton Visible="true"></DropDownButton>
@@ -151,28 +151,37 @@
                         <div class="col-xs-0" style="margin-right: 20px; margin-left: 20px;">
                             <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="DATUM Do : " Width="80px"></dx:ASPxLabel>
                         </div>
-                        <div class="col-xs-0">
+                        <div class="col-xs-0" style="margin-right: 30px;">
                             <dx:ASPxDateEdit ID="DateEditDatumDo" runat="server" EditFormat="Date" Width="170" Theme="Moderno"
-                                CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumDo">                                
+                                CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumDo">
                                 <FocusedStyle CssClass="focus-text-box-input" />
                                 <CalendarProperties TodayButtonText="Danes" ClearButtonText="Izbriši" />
                                 <DropDownButton Visible="true"></DropDownButton>
                             </dx:ASPxDateEdit>
                         </div>
-
-                        <div class="col-xs-0" style="margin-left: 20px; margin-top: -14px";>
+                        <div class="col-xs-0" style="margin-left: 20px; margin-top: -14px">
                             <dx:ASPxButton Theme="Moderno" ID="btnFilter" runat="server" Text="Filter" AutoPostBack="false"
-                                Height="15" Width="90" ClientVisible="true" OnClick="btnFilter_Click">                                
-                                <Image Url="../../../Images/magnifier.png" UrlHottracked="../../Images/magnifier.png" />                                
+                                Height="15" Width="90" ClientVisible="true" OnClick="btnFilter_Click">
+                                <Image Url="../../../Images/magnifier.png" UrlHottracked="../../Images/magnifier.png" />
                             </dx:ASPxButton>
+                        </div>
+                    </div>
+                    <div class="row2 align-item-centerV-startH" style="margin-top: 10px">
+                        <div class="col-xs-0 big-margin-r no-padding-right" style="margin-right: 47px;">
+                            <dx:ASPxLabel ID="ASPxLabel11" runat="server" Text="Relacija : "></dx:ASPxLabel>
+                        </div>
+                        <div class="col-xs-4 no-padding-left">
+                            <dx:ASPxTextBox runat="server" ID="txtRelacija" ClientInstanceName="clientTxtRelacija" CssClass="text-box-input" Font-Size="14px" Width="80%">
+                                <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
+                            </dx:ASPxTextBox>
                         </div>
                     </div>
                 </div>
                 <dx:ASPxGridView ID="ASPxGridViewTender" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTender"
-                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding" OnSelectionChanged="ASPxGridViewTender_SelectionChanged" 
+                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewTender_DataBinding" OnSelectionChanged="ASPxGridViewTender_SelectionChanged"
                     KeyFieldName="RazpisID" OnHtmlRowPrepared="ASPxGridViewTender_HtmlRowPrepared" OnCustomColumnDisplayText="ASPxGridViewTender_CustomColumnDisplayText" AllowOnlyOneMasterRowExpanded="true">
                     <Paddings Padding="0" />
-                     <ClientSideEvents DetailRowExpanding="OnDetailRowExpanding" />
+                    <ClientSideEvents DetailRowExpanding="OnDetailRowExpanding" />
                     <Settings ShowVerticalScrollBar="True"
                         ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="600"
                         ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
@@ -380,9 +389,9 @@
         <div class="AddEditButtonsElements">
             <span class="AddEditButtons">
                 <dx:ASPxButton Theme="Moderno" ID="btnPrenosTender" runat="server" Text="Prenos razpisa" AutoPostBack="false"
-                    Height="25" Width="90" ClientInstanceName="clientBtnPrenosTender" ClientVisible="true" OnClick="btnPrenosTender_Click" >
+                    Height="25" Width="90" ClientInstanceName="clientBtnPrenosTender" ClientVisible="true" OnClick="btnPrenosTender_Click">
                     <Paddings PaddingLeft="10" PaddingRight="10" />
-                    <Image Url="../../../Images/prevzem.png" UrlHottracked="../../Images/prevzemHover.png" />                    
+                    <Image Url="../../../Images/prevzem.png" UrlHottracked="../../Images/prevzemHover.png" />
                 </dx:ASPxButton>
             </span>
             <span class="AddEditButtons">

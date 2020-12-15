@@ -239,6 +239,7 @@
     <Content Include="Pages\Recall\Recall.aspx" />
     <Content Include="Pages\Recall\RecallForm.aspx" />
     <Content Include="Pages\Settings\SystemEmailBody_popup.aspx" />
+    <Content Include="Pages\Settings\TenderPositionManualChanges.aspx" />
     <Content Include="Pages\Settings\SystemEmailTable.aspx" />
     <Content Include="Pages\Settings\SystemEmail_popup.aspx" />
     <Content Include="Pages\Statistic\CarrierAndRoutesPricing.aspx" />
@@ -464,6 +465,13 @@
     </Compile>
     <Compile Include="Pages\Settings\SystemEmailBody_popup.aspx.designer.cs">
       <DependentUpon>SystemEmailBody_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\TenderPositionManualChanges.aspx.cs">
+      <DependentUpon>TenderPositionManualChanges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\TenderPositionManualChanges.aspx.designer.cs">
+      <DependentUpon>TenderPositionManualChanges.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\SystemEmailTable.aspx.cs">
       <DependentUpon>SystemEmailTable.aspx</DependentUpon>

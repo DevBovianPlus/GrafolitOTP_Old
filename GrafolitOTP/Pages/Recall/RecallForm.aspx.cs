@@ -1120,13 +1120,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je tip prevoza kamion - če vsota količine večja od 20000 potem more biti v mejah med 24000 in 24500 drugače gre v odobritev.
             //To ne preverjamo če imamo obkljukano dobavitelj priskrbi prevoz ali kupec priskrbi prevoz.
             if (GetSelecctedTransportTypeCode() == DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString() &&
-               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 26000)) && String.IsNullOrEmpty(memoKomentar.Text) &&
+               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24500 && kolicinaVsota <= 26000)) && String.IsNullOrEmpty(memoKomentar.Text) &&
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 12 - ŠT :" + model.OdpoklicStevilka.ToString());
-                memKomentarOdobritve += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg.";
-                sArgumentOfApproval += "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg. | ";
-                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24000kg in 26000kg.");
+                memKomentarOdobritve += "Skupna količina presega 20000kg in ni v mejah med 24500kg in 26000kg.";
+                sArgumentOfApproval += "Skupna količina presega 20000kg in ni v mejah med 24500kg in 26000kg. | ";
+                AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Skupna količina presega 20000kg in ni v mejah med 24500kg in 26000kg.");
                 memoKomentar.ClientVisible = true;
                 btnRecall.Text = "V odobritev";
                 btnRecall.ForeColor = Color.Tomato;
@@ -1654,6 +1654,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     memoKomentar.ClientVisible = false;
                     btnRecall.Text = "Odpokliči";
                     GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN);
+                    EnableUserControls();
                 }
 
                 if (needToConfirmRecall)

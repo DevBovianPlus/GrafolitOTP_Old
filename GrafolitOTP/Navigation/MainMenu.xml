@@ -4,6 +4,7 @@
   <SuperAdmin>
     <Group Text="NADZOR" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Home.aspx" Text="Nadzorna plošča" ImageUrl="~/Images/dashboard.png" />
+      <Link NavigateUrl="~/Pages/Settings/TenderPositionManualChanges.aspx" Text="Ročne spremembe na razpisih" ImageUrl="~/Images/carriersPrice.png" />
     </Group>
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
@@ -39,6 +40,7 @@
   <Admin>
     <Group Text="NADZOR" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Home.aspx" Text="Nadzorna plošča" ImageUrl="~/Images/dashboard.png" />
+      <Link NavigateUrl="~/Pages/Settings/TenderPositionManualChanges.aspx" Text="Ročne spremembe na razpisih" ImageUrl="~/Images/carriersPrice.png" />
     </Group>
     <Group Text="ODPOKLIC" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/Recall.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
