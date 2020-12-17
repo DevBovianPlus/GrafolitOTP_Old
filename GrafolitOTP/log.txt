@@ -9948,3 +9948,80 @@ http://localhost:31695/Pages/Tender/Tender.aspx
 15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 1 - ŠT :0
 15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 12 - ŠT :0
 15. 12. 2020 08:08:54 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:05:32 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:05:33 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:05:33 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:06:11 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:06:11 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:06:11 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:06:23 Log 1 - ŠT :0
+16. 12. 2020 11:06:23 Log 7 - ŠT :0
+16. 12. 2020 11:06:23 Log 7.1 - ŠT :0
+16. 12. 2020 11:08:20 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:08:20 Log CheckRecallForAnomalies 3 - ŠT :0
+16. 12. 2020 11:08:28 Log CheckRecallForAnomalies 5 - ŠT :0
+16. 12. 2020 11:08:28 Log CheckRecallForAnomalies 7 - ŠT :0
+16. 12. 2020 11:08:28 Log CheckRecallForAnomalies 9 - ŠT :0
+16. 12. 2020 11:08:28 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 3 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 5 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 7 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 9 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:08:34 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:13:48 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:13:48 Log CheckRecallForAnomalies 3 - ŠT :0
+16. 12. 2020 11:13:57 Log CheckRecallForAnomalies 5 - ŠT :0
+16. 12. 2020 11:13:57 Log CheckRecallForAnomalies 7 - ŠT :0
+16. 12. 2020 11:13:57 Log CheckRecallForAnomalies 9 - ŠT :0
+16. 12. 2020 11:13:57 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:14:11 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:14:11 Log CheckRecallForAnomalies 3 - ŠT :0
+16. 12. 2020 11:14:11 Log CheckRecallForAnomalies 5 - ŠT :0
+16. 12. 2020 11:14:12 Log CheckRecallForAnomalies 7 - ŠT :0
+16. 12. 2020 11:14:12 Log CheckRecallForAnomalies 9 - ŠT :0
+16. 12. 2020 11:14:12 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:14:12 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:20:49 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:20:49 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:20:49 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:24:38 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:24:38 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:24:38 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:24:47 Log 1 - ŠT :0
+16. 12. 2020 11:24:47 Log 7 - ŠT :0
+16. 12. 2020 11:24:47 Log 7.1 - ŠT :0
+16. 12. 2020 11:37:40 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:37:40 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:37:40 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:42:49 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 11:42:49 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 11:42:49 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 11:42:54 Log 1 - ŠT :0
+16. 12. 2020 11:42:54 Log 7 - ŠT :0
+16. 12. 2020 11:42:54 Log 7.1 - ŠT :0
+16. 12. 2020 12:01:07 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:01:07 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:01:07 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:01:23 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:01:23 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:01:23 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:01:27 Log 1 - ŠT :0
+16. 12. 2020 12:01:27 Log 7 - ŠT :0
+16. 12. 2020 12:01:27 Log 7.1 - ŠT :0
+16. 12. 2020 12:04:13 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:04:13 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:04:13 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:04:29 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:04:29 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:04:29 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:04:35 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:04:35 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:04:35 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:04:40 Log CheckRecallForAnomalies 1 - ŠT :0
+16. 12. 2020 12:04:40 Log CheckRecallForAnomalies 10 - ŠT :0
+16. 12. 2020 12:04:40 Log CheckRecallForAnomalies 13 - ŠT :0
+16. 12. 2020 12:17:37 Log 1 - ŠT :0
+16. 12. 2020 12:17:37 Log 7 - ŠT :0
+16. 12. 2020 12:17:37 Log 7.1 - ŠT :0
