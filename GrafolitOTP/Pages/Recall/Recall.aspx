@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Odpoklici" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Recall.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.Recall" %>
+﻿    <%@ Page Title="Odpoklici" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Recall.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.Recall" %>
 
 <%@ MasterType VirtualPath="~/Main.Master" %>
 

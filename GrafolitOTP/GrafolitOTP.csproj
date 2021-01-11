@@ -230,11 +230,13 @@
     <Content Include="Pages\Client\ClientForm.aspx" />
     <Content Include="Pages\Client\ContactPerson_popup.aspx" />
     <Content Include="Pages\Recall\CreateOrder_popup.aspx" />
+    <Content Include="Pages\Recall\RecallBuyerCreate.aspx" />
     <Content Include="Pages\Recall\OrderOstalo.aspx" />
     <Content Include="Pages\Recall\OrderNOZPDO.aspx" />
     <Content Include="Pages\Recall\Order.aspx" />
     <Content Include="Pages\Recall\CarriersInquirySummary_popup.aspx" />
     <Content Include="Pages\Recall\OrderPos_popup.aspx" />
+    <Content Include="Pages\Recall\RecallBuyer.aspx" />
     <Content Include="Pages\Recall\RecallTakeOverOnly.aspx" />
     <Content Include="Pages\Recall\Recall.aspx" />
     <Content Include="Pages\Recall\RecallForm.aspx" />
@@ -403,6 +405,13 @@
     <Compile Include="Pages\Recall\CreateOrder_popup.aspx.designer.cs">
       <DependentUpon>CreateOrder_popup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.cs">
+      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.designer.cs">
+      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Recall\OrderOstalo.aspx.cs">
       <DependentUpon>OrderOstalo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,6 +446,13 @@
     </Compile>
     <Compile Include="Pages\Recall\OrderPos_popup.aspx.designer.cs">
       <DependentUpon>OrderPos_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyer.aspx.cs">
+      <DependentUpon>RecallBuyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyer.aspx.designer.cs">
+      <DependentUpon>RecallBuyer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Recall\RecallTakeOverOnly.aspx.cs">
       <DependentUpon>RecallTakeOverOnly.aspx</DependentUpon>

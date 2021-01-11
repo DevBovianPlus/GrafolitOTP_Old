@@ -34,14 +34,14 @@
 
             }
             cntSkupaj = cntPDOKolicina + cntNOZKolicina + cntOstaleKolicina;
-            cntSkupaj = "SKUPAJ za odpoklic:" + cntSkupaj + " kg";
+            cntSkupaj = "SKUPAJ za odpoklic:" + parseFloat(cntSkupaj).toFixed(2) + " kg";
 
             clientHfSumNOZ.Set("CurrenSumNOZ", cntNOZKolicina);
             clientHfSumPDO.Set("CurrenSumPDO", cntPDOKolicina);
 
-            cntNOZKolicina = "Naročilnice NOZ: " + cntNOZKolicina + " kg";
-            cntPDOKolicina = "Naročilnice PDO: " + cntPDOKolicina + " kg";
-            cntOstaleKolicina = "Naročilnice ostale: " + cntOstaleKolicina + " kg";
+            cntNOZKolicina = "Naročilnice NOZ: " + parseFloat(cntNOZKolicina).toFixed(2)  + " kg";
+            cntPDOKolicina = "Naročilnice PDO: " + parseFloat(cntPDOKolicina).toFixed(2)  + " kg";
+            cntOstaleKolicina = "Naročilnice ostale: " + parseFloat(cntOstaleKolicina).toFixed(2)  + " kg";
 
 
 

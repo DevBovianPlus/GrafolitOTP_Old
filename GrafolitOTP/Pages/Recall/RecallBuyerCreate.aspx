@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Postavke naročilnic PDO, NOZ" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="OrderNOZPDO.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.OrderNOZPDO" %>
+﻿<%@ Page Title="Izdelava odpoklice za kupce" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RecallBuyerCreate.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate" %>
 
 <%@ MasterType VirtualPath="~/Main.Master" %>
 

@@ -201,6 +201,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (clientSupplier != null) AddValueToSession(Enums.OrderSession.CientID, clientSupplier.idStranka);
 
             txtStOdpoklic.Text = model.OdpoklicStevilka.ToString();
+
+            if ((model.DobaviteljNaziv == null) || (model.DobaviteljNaziv.Length == 0))
+            {
+                ShowClientWarningPopUp("DOBAVITELJ ni izbran, NAPAKA - Odpoklic ni mogoč ");
+            }
             txtDobaviteljNaziv.Text = model.DobaviteljNaziv;
 
             if (disableRecallBtnBasedOnTransporter && (!model.DobaviteljUrediTransport && !model.KupecUrediTransport))
@@ -360,6 +365,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 else if (!isTransportType15Valid(model.OdpoklicPozicija))
                     ShowClientWarningPopUp("Odpoklicana količina presega optimalno zaradi tipa transporta (15) ");
 
+                if ((model.DobaviteljNaziv == null) || (model.DobaviteljNaziv.Length == 0))
+                {
+                    ShowClientWarningPopUp("DOBAVITELJ ni izbran, NAPAKA - Odpoklic ni mogoč ");
+                }
                 txtDobaviteljNaziv.Text = model.DobaviteljNaziv;
             }
 
