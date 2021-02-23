@@ -15,6 +15,159 @@ namespace OptimizacijaTransprotov.Pages.Recall
     {
 
         /// <summary>
+        /// LoadingPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+
+        /// <summary>
+        /// hfCurrentSum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField hfCurrentSum;
+
+        /// <summary>
+        /// ASPxHFCena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField ASPxHFCena;
+
+        /// <summary>
+        /// hfCurrentSumPercent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField hfCurrentSumPercent;
+
+        /// <summary>
+        /// ASPxHiddenField1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField ASPxHiddenField1;
+
+        /// <summary>
+        /// lblRelacija control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblRelacija;
+
+        /// <summary>
+        /// ASPxGridLookupRealacija control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup ASPxGridLookupRealacija;
+
+        /// <summary>
+        /// ASPxGridSelectPositions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView ASPxGridSelectPositions;
+
+        /// <summary>
+        /// CallbackPanelUserInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel CallbackPanelUserInput;
+
+        /// <summary>
+        /// ASPxLabel11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel11;
+
+        /// <summary>
+        /// txtStOdpoklic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStOdpoklic;
+
+        /// <summary>
+        /// ASPxLabel5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel5;
+
+        /// <summary>
+        /// txtStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStatus;
+
+        /// <summary>
+        /// ASPxLabel6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
+
+        /// <summary>
+        /// txtStNarocilnice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStNarocilnice;
+
+        /// <summary>
+        /// ASPxLabel15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel15;
+
+        /// <summary>
+        /// ASPxGridLookupZbirnikTon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup ASPxGridLookupZbirnikTon;
+
+        /// <summary>
         /// ASPxLabel1 control.
         /// </summary>
         /// <remarks>
@@ -24,121 +177,58 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
 
         /// <summary>
-        /// ASPxGridLookupDobavitelj control.
+        /// ASPxGridLookupPrevoznik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup ASPxGridLookupDobavitelj;
+        protected global::DevExpress.Web.ASPxGridLookup ASPxGridLookupPrevoznik;
 
         /// <summary>
-        /// ASPxLabel19 control.
+        /// ASPxLabel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel ASPxLabel19;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
 
         /// <summary>
-        /// GridLookupCategory control.
+        /// txtNovaCena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup GridLookupCategory;
+        protected global::DevExpress.Web.ASPxTextBox txtNovaCena;
 
         /// <summary>
-        /// cbpRefreshsUpplier control.
+        /// memoKomentar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel cbpRefreshsUpplier;
+        protected global::DevExpress.Web.ASPxMemo memoKomentar;
 
         /// <summary>
-        /// hfCurrentSumPDO control.
+        /// ASPxPopupControlOrderPos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxHiddenField hfCurrentSumPDO;
+        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControlOrderPos;
 
         /// <summary>
-        /// hfCurrentSumNOZ control.
+        /// ASPxPopupControlCreateOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxHiddenField hfCurrentSumNOZ;
-
-        /// <summary>
-        /// ASPxGridViewOrdersPositions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridViewOrdersPositions;
-
-        /// <summary>
-        /// ASPxGridViewOrder10Positions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridViewOrder10Positions;
-
-        /// <summary>
-        /// ASPxRoundPanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxRoundPanel ASPxRoundPanel1;
-
-        /// <summary>
-        /// lblPDO control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblPDO;
-
-        /// <summary>
-        /// lblNoz control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblNoz;
-
-        /// <summary>
-        /// lblOstale control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblOstale;
-
-        /// <summary>
-        /// lblSUM control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblSUM;
+        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControlCreateOrder;
 
         /// <summary>
         /// btnConfirm control.
@@ -148,6 +238,33 @@ namespace OptimizacijaTransprotov.Pages.Recall
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnConfirm;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnCancel;
+
+        /// <summary>
+        /// btnReopenRecall control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnReopenRecall;
+
+        /// <summary>
+        /// btnRecall control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnRecall;
 
         /// <summary>
         /// Master property.

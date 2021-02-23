@@ -148,9 +148,19 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceRecallURL + "GetRecallByID?recallID=" + recallID;
         }
 
+        public static string GetRecallBuyerByID(int recallID)
+        {
+            return WebServiceRecallURL + "GetRecallBuyerByID?recallID=" + recallID;
+        }
+
+
         public static string SaveRecall()
         {
             return WebServiceRecallURL + "SaveRecall";
+        }
+        public static string SaveBuyerRecall()
+        {
+            return WebServiceRecallURL + "SaveBuyerRecall";
         }
 
         public static string DeleteRecall(int id)
@@ -231,6 +241,11 @@ namespace OptimizacijaTransprotov.Helpers
         public static string GetAllNoneTakeOverRecalls()
         {
             return WebServiceRecallURL + "GetAllNoneTakeOverRecalls";
+        }
+
+        public static string GetAllBuyersRecalls()
+        {
+            return WebServiceRecallURL + "GetAllBuyersRecalls";
         }
 
         public static string IsSubmittingPriceForCarrierStillValid(int prijavaPrevoznikaID)
@@ -322,6 +337,12 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return WebServiceRecallURL + "ResetRecallStatusByID?RecallID=" + RecallID;
         }
+
+        public static string GetDisconnectedInvoices()
+        {
+            return WebServiceRecallURL + "GetDisconnectedInvoices";
+        }
+
         #endregion
 
         #region Client

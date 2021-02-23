@@ -183,6 +183,22 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+
+        public WebResponseContentModel<RecallBuyerFullModel> GetRecallBuyerByID(int recallID)
+        {
+            WebResponseContentModel<RecallBuyerFullModel> dt = new WebResponseContentModel<RecallBuyerFullModel>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<RecallBuyerFullModel>>(WebServiceHelper.GetRecallBuyerByID(recallID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
         public WebResponseContentModel<RecallFullModel> SaveRecall(RecallFullModel newData)
         {
             WebResponseContentModel<RecallFullModel> model = new WebResponseContentModel<RecallFullModel>();
@@ -191,6 +207,23 @@ namespace OptimizacijaTransprotov.Infrastructure
             {
                 model.Content = newData;
                 model = PostWebRequestData<WebResponseContentModel<RecallFullModel>>(WebServiceHelper.SaveRecall(), "post", model);
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+        public WebResponseContentModel<RecallBuyerFullModel> SaveBuyerRecall(RecallBuyerFullModel newData)
+        {
+            WebResponseContentModel<RecallBuyerFullModel> model = new WebResponseContentModel<RecallBuyerFullModel>();
+
+            try
+            {
+                model.Content = newData;
+                model = PostWebRequestData<WebResponseContentModel<RecallBuyerFullModel>>(WebServiceHelper.SaveBuyerRecall(), "post", model);
             }
             catch (Exception ex)
             {
@@ -490,6 +523,22 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
 
+        public WebResponseContentModel<List<RecallBuyerModel>> GetAllBuyersRecalls()
+        {
+            WebResponseContentModel<List<RecallBuyerModel>> dt = new WebResponseContentModel<List<RecallBuyerModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<RecallBuyerModel>>>(WebServiceHelper.GetAllBuyersRecalls(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+
         public string IsSubmittingPriceForCarrierStillValid(int prijavaPrevoznikaID)
         {
             WebResponseContentModel<string> dt = new WebResponseContentModel<string>();
@@ -766,6 +815,21 @@ namespace OptimizacijaTransprotov.Infrastructure
             }
 
             return model;
+        }
+
+        public WebResponseContentModel<List<DisconnectedInvoicesModel>> GetDisconnectedInvoices()
+        {
+            WebResponseContentModel<List<DisconnectedInvoicesModel>> dt = new WebResponseContentModel<List<DisconnectedInvoicesModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<DisconnectedInvoicesModel>>>(WebServiceHelper.GetDisconnectedInvoices(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
         }
 
 
@@ -1772,6 +1836,8 @@ namespace OptimizacijaTransprotov.Infrastructure
             return dt;
         }
         #endregion
+
+        
 
         public T GetResponseFromWebRequest<T>(string uri, string requestMethod)
         {

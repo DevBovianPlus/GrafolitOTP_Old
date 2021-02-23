@@ -23,8 +23,7 @@ namespace UtilityServiceOTP
     {
         private IKernel kernel;
         private Timer timerSchedular;
-        private IUtilityServiceRepository utilityserviceRepo;        
-        private IOrderPDORepository orderRepoPDO;
+        private IUtilityServiceRepository utilityserviceRepo;                
 
         public UtilityServiceOTP()
         {
@@ -39,13 +38,13 @@ namespace UtilityServiceOTP
                 kernel.Bind<IRecallRepository>().To<RecallRepository>();
                 kernel.Bind<IClientOTPRepository>().To<ClientOTPRepository>();
                 kernel.Bind<IMSSQLFunctionsRepository>().To<MSSQLFunctionsRepository>();
-                kernel.Bind<IOrderPDORepository>().To<OrderPDORepository>();
-                kernel.Bind<ISystemEmailMessageRepository_PDO>().To<SystemEmailMessageRepository_PDO>();
+                //kernel.Bind<IOrderPDORepository>().To<OrderPDORepository>();
+                //kernel.Bind<ISystemEmailMessageRepository_PDO>().To<SystemEmailMessageRepository_PDO>();
                 kernel.Bind<IInquiryRepository>().To<InquiryRepository>();
-                kernel.Bind<IMSSQLPDOFunctionRepository>().To<MSSQLPDOFunctionRepository>();
+                //kernel.Bind<IMSSQLPDOFunctionRepository>().To<MSSQLPDOFunctionRepository>();
 
                 utilityserviceRepo = kernel.Get<IUtilityServiceRepository>();
-                orderRepoPDO = kernel.Get<IOrderPDORepository>();
+                //orderRepoPDO = kernel.Get<IOrderPDORepository>();
             }
             catch (Exception ex)
             {

@@ -326,6 +326,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.KupecUrediTransport = BuyerArrangesTransportCheckBox2.Checked;
 
+            if (model.OdobritevKomentar != null && model.OdobritevKomentar.Length == 0 && recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString())
+            {
+                CommonMethods.LogThis("NAPAKA V odobritev brez razloga :" + model.OdpoklicStevilka.ToString() + ": model.RazlogOdobritveSistem :" + model.RazlogOdobritveSistem);
+                model.StatusID = 4;
+            }
+
             RecallFullModel returnModel = CheckModelValidation(GetDatabaseConnectionInstance().SaveRecall(model));
 
             RemoveSession(Enums.RecallSession.RecallStatus);
@@ -413,6 +419,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
             // = sum;
             return sum;
         }
+
+       
+
 
         protected object GetTotalPaleteSummaryValue()
         {

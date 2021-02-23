@@ -24,6 +24,24 @@ namespace OptimizacijaTransprotov.Pages.Settings
         protected global::DevExpress.Web.ASPxCallbackPanel TPManualChangesCallbackPanel;
 
         /// <summary>
+        /// btnExportManualChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnExportManualChanges;
+
+        /// <summary>
+        /// ASPxGridViewExporterManualChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridViewExporter ASPxGridViewExporterManualChanges;
+
+        /// <summary>
         /// ASPxGridViewTPManualChanges control.
         /// </summary>
         /// <remarks>

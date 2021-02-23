@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Odpoklici" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RecallBuyer.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.RecallBuyer" %>
+﻿<%@ Page Title="Odpoklici kupcev" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RecallBuyer.aspx.cs" Inherits="OptimizacijaTransprotov.Pages.Recall.RecallBuyer" %>
 
 <%@ MasterType VirtualPath="~/Main.Master" %>
 
@@ -16,21 +16,23 @@
         });
 
         function DoubleClick(s, e) {
-            gridRecall.GetRowValues(gridRecall.GetFocusedRowIndex(), 'OdpoklicID', OnGetRowValues);
+            gridRecallBuyer.GetRowValues(gridRecallBuyer.GetFocusedRowIndex(), 'OdpoklicKupecID', OnGetRowValues);
         }
 
         function OnGetRowValues(value) {
-            gridRecall.PerformCallback('DblClick;' + value);
+            gridRecallBuyer.PerformCallback('DblClick;' + value);
         }
 
-        function gridRecall_EndCallback(s, e) {
+        function gridRecallBuyer_EndCallback(s, e) {
             if (s.cpPrintID != "" && s.cpPrintID != undefined) {
-                window.open(s.cpPrintID, '_blank');
-                delete (s.cpPrintID);
+                //    window.open(s.cpPrintID, '_blank');
+                //    delete (s.cpPrintID);
+
+                clientPopupPrintSelection.Show();
             }
         }
 
-        function OnSelectionChanged_gridRecall(s, e) {
+        function OnSelectionChanged_gridRecallBuyer(s, e) {
             if (s.GetSelectedRowCount() > 0) {
                 var role = '<%= OptimizacijaTransprotov.Helpers.PrincipalHelper.IsUserAdmin()%>';
                 var role2 = '<%= OptimizacijaTransprotov.Helpers.PrincipalHelper.IsUserSuperAdmin()%>';
@@ -51,7 +53,7 @@
         }
 
         function OnFocusedRowChanged_gridRecall(s, e) {
-            gridRecall.GetRowValues(gridRecall.GetFocusedRowIndex(), 'StatusKoda', OnGetRowValuesFocusedChanged);
+            gridRecallBuyer.GetRowValues(gridRecall.GetFocusedRowIndex(), 'StatusKoda', OnGetRowValuesFocusedChanged);
         }
         function OnGetRowValuesFocusedChanged(value) {
 
@@ -63,11 +65,18 @@
         }
 
         function btnOpenInquirySummaryForCarrier_Click(s, e) {
-            gridRecall.GetRowValues(gridRecall.GetFocusedRowIndex(), 'OdpoklicID', OnGetFocuesdRowValue);
+            gridRecallBuyer.GetRowValues(gridRecall.GetFocusedRowIndex(), 'OdpoklicKupecID', OnGetFocuesdRowValue);
         }
 
         function OnGetFocuesdRowValue(value) {
             RecallCalbackPanel.PerformCallback('InquirySummary;' + value);
+        }
+
+        function IzpisOdpoklica(s, e) {
+
+            clientPopupPrintSelection.Hide();            
+            e.processOnServer = true;
+
         }
 
         function OnClosePopUpHandler(command, sender) {
@@ -101,11 +110,11 @@
         <PanelCollection>
             <dx:PanelContent>
 
-                <dx:ASPxGridView ID="ASPxGridViewRecall" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecall"
-                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecall_DataBinding"
-                    KeyFieldName="OdpoklicID" CssClass="gridview-no-header-padding" OnCustomCallback="ASPxGridViewRecall_CustomCallback"
-                    OnCustomButtonCallback="ASPxGridViewRecall_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecall_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecall_CommandButtonInitialize">
-                    <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecall_EndCallback" SelectionChanged="OnSelectionChanged_gridRecall" />
+                <dx:ASPxGridView ID="ASPxGridViewRecallBuyer" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecallBuyer"
+                    Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecallBuyer_DataBinding"
+                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
+                    OnCustomButtonCallback="ASPxGridViewRecallBuyer_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecallBuyer_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecallBuyer_CommandButtonInitialize">
+                    <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecallBuyer_EndCallback" SelectionChanged="OnSelectionChanged_gridRecallBuyer" />
                     <%-- FocusedRowChanged="OnFocusedRowChanged_gridRecall" --%>
                     <Paddings Padding="0" />
                     <Settings ShowVerticalScrollBar="True"
@@ -123,23 +132,27 @@
                     </Styles>
                     <SettingsText EmptyDataRow="Trenutno ni podatka o odpoklicih. Dodaj novega." />
                     <Columns>
-                        <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="2%" SelectAllCheckboxMode="None" Caption="Izberi" ShowClearFilterButton="true" />
                         <dx:GridViewCommandColumn ButtonRenderMode="Button" Width="5%" Caption="Dokument">
                             <CustomButtons>
                                 <dx:GridViewCommandColumnCustomButton ID="Print">
                                 </dx:GridViewCommandColumnCustomButton>
                             </CustomButtons>
                         </dx:GridViewCommandColumn>
-                        <dx:GridViewDataTextColumn Caption="ID" FieldName="OdpoklicID" Width="1%"
+                        <dx:GridViewDataTextColumn Caption="ID" FieldName="OdpoklicKupecID" Width="1%"
                             ReadOnly="true" Visible="false" ShowInCustomizationForm="True" SortOrder="Descending">
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Odpoklic št." FieldName="OdpoklicStevilka" Width="3%"
+                        <dx:GridViewDataTextColumn Caption="Naročilnica št." FieldName="StevilkaNarocilnica" Width="5%"
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Dobavitelj" FieldName="DobaviteljNaziv" Width="14%"
+                        <dx:GridViewDataTextColumn Caption="Odpoklic št." FieldName="OdpoklicKupecStevilka" Width="3%"
+                            ReadOnly="true" ShowInCustomizationForm="True">
+                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                        </dx:GridViewDataTextColumn>
+
+                        <dx:GridViewDataTextColumn Caption="Prevoznik" FieldName="PrevoznikNaziv" Width="14%"
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
@@ -149,31 +162,11 @@
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Naroč. prevoz. št." FieldName="P_TransportOrderPDFName" Width="5%"
-                            ReadOnly="true" ShowInCustomizationForm="True" Visible="false">
-                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
-                        </dx:GridViewDataTextColumn>
-
-                        <dx:GridViewDataTextColumn Caption="Status Koda" FieldName="StatusKoda" Width="10%"
-                            Visible="false" ShowInCustomizationForm="True">
-                        </dx:GridViewDataTextColumn>
-
-                        <%--<dx:GridViewDataTextColumn Caption="Tip"
-                FieldName="TipNaziv" ShowInCustomizationForm="True"
-                Width="25%">
-                <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
-            </dx:GridViewDataTextColumn>--%>
-
-                        <dx:GridViewDataTextColumn Caption="Status"
-                            FieldName="StatusNaziv" ShowInCustomizationForm="True"
-                            Width="10%">
-                            <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
-                        </dx:GridViewDataTextColumn>
-
                         <dx:GridViewDataTextColumn Caption="Cena prevoza"
                             FieldName="CenaPrevoza" ShowInCustomizationForm="True"
-                            Width="4%">
+                            Width="5%">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
+                            <PropertiesTextEdit DisplayFormatString="c"></PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
 
                         <dx:GridViewDataTextColumn Caption="Skupna količina"
@@ -185,17 +178,13 @@
                             ReadOnly="true" ShowInCustomizationForm="True" Visible="false">
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Dobavitelj pošta" FieldName="DobaviteljPosta"
-                            ReadOnly="true" ShowInCustomizationForm="True" Visible="false">
-                        </dx:GridViewDataTextColumn>
-
-                        <dx:GridViewDataTextColumn Caption="Dobavitelj naslov" FieldName="DobaviteljNaslov"
-                            ReadOnly="true" ShowInCustomizationForm="True" Visible="false">
-                        </dx:GridViewDataTextColumn>
                         <dx:GridViewDataDateColumn Caption="Datum odpoklica" FieldName="ts" CellStyle-HorizontalAlign="Right" Width="7%">
                             <PropertiesDateEdit DisplayFormatString="dd. MMMM yyyy"></PropertiesDateEdit>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="#" FieldName="P_UnsuccCountCreatePDFPantheon" Width="3%" />
+
+                        <dx:GridViewDataTextColumn Caption="Status Koda" FieldName="StatusKoda" Width="10%"
+                            Visible="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
                 <div class="AddEditButtonsWrap medium-margin-l medium-margin-r">
@@ -270,8 +259,67 @@
                     </ContentStyle>
                 </dx:ASPxPopupControl>
 
+                <dx:ASPxPopupControl ID="ASPxPopupPrintSelection" runat="server"
+                    ClientInstanceName="clientPopupPrintSelection" Modal="True" HeaderText="Izberite način izpisa"
+                    CloseAction="CloseButton" Width="400px" Height="150px" PopupHorizontalAlign="WindowCenter"
+                    PopupVerticalAlign="WindowCenter" PopupAnimationType="Slide" AllowDragging="true" ShowSizeGrip="true"
+                    AllowResize="true" ShowShadow="true">
+                    <ContentStyle BackColor="#F7F7F7">
+                        <Paddings PaddingBottom="0px" PaddingLeft="6px" PaddingRight="6px" PaddingTop="0px"></Paddings>
+                    </ContentStyle>
+                    <ContentCollection>
+                        <dx:PopupControlContentControl>
+                            <div class="row small-padding-bottom small-padding-top">
+                                <div class="col-md-12">
+                                    <div class="row2">
+                                        <div class="col-xs-2 align-item-centerV-centerH">
+                                            <i class="fa fa-balance-scale" style="font-size: 30px; color: #3C8DBC;"></i>
+                                        </div>
+                                        <div class="col-xs-10 text-right">
+                                            <div class="row2 align-item-centerV-startH small-padding-bottom">
+                                                <div class="col-sm-0 big-margin-r">
+                                                    <dx:ASPxLabel ID="ASPxLabel3" runat="server" Font-Size="12px" Font-Bold="true" Text="Prikaz vrednost transporta : "></dx:ASPxLabel>
+                                                </div>
+                                                <div class="col-xs-1 no-padding-left">
+                                                    <dx:ASPxCheckBox ID="chkPrikazVrednosti" runat="server">
+                                                    </dx:ASPxCheckBox>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row small-padding-bottom">
+                                <div class="col-xs-12">
+                                    <div class="AddEditButtonsElements">
+                                        <span class="AddEditButtons">
+                                            <dx:ASPxButton ID="btnConfirm" runat="server" Text="Izpiši" AutoPostBack="false"
+                                                Height="25" Width="50" ClientInstanceName="btnIzpis" OnClick="btnConfirm_Click">
+                                                <Paddings PaddingLeft="10" PaddingRight="10" />
+                                                <ClientSideEvents Click="IzpisOdpoklica" />
+                                            </dx:ASPxButton>
+                                        </span>
+                                        <span class="AddEditButtons">
+                                            <dx:ASPxButton ID="btnCancel" runat="server" Text="Prekliči" AutoPostBack="false"
+                                                Height="25" Width="50" ClientInstanceName="btnCancel">
+                                                <Paddings PaddingLeft="10" PaddingRight="10" />
+                                                <ClientSideEvents Click="function(s,e){clientPopupCompleteTenderData.Hide();}" />
+                                            </dx:ASPxButton>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </dx:PopupControlContentControl>
+                    </ContentCollection>
+                </dx:ASPxPopupControl>
+
             </dx:PanelContent>
         </PanelCollection>
+
+
+
+
     </dx:ASPxCallbackPanel>
 
     <!-- Warning - Modal -->

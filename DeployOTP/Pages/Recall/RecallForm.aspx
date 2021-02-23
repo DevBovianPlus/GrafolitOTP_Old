@@ -108,6 +108,13 @@
             }
         }
 
+        function gridRecall_EndCallback(s, e) {
+            if (s.cpPrintID != "" && s.cpPrintID != undefined) {
+                window.open(s.cpPrintID, '_blank');
+                delete (s.cpPrintID);
+            }
+        }
+
         var postbackInitiated = false;
         function CheckFieldValidation(s, e) {
             var process = false;
@@ -483,7 +490,7 @@
         CssClass="gridview-no-header-padding" OnDataBinding="ASPxGridViewSelectedPositions_DataBinding" OnCellEditorInitialize="ASPxGridViewSelectedPositions_CellEditorInitialize"
         OnBatchUpdate="ASPxGridViewSelectedPositions_BatchUpdate" OnCommandButtonInitialize="ASPxGridViewSelectedPositions_CommandButtonInitialize"
         OnHtmlRowPrepared="ASPxGridViewSelectedPositions_HtmlRowPrepared" OnDataBound="ASPxGridViewSelectedPositions_DataBound">
-        <ClientSideEvents SelectionChanged="OnSelectionChanged_gridSelectedPositions" BatchEditStartEditing="gridSelectedPositions_BatchEditStartEditing" />
+        <ClientSideEvents SelectionChanged="OnSelectionChanged_gridSelectedPositions" BatchEditStartEditing="gridSelectedPositions_BatchEditStartEditing" EndCallback="gridRecall_EndCallback" />
         <Settings ShowVerticalScrollBar="True"
             VerticalScrollableHeight="250" HorizontalScrollBarMode="Auto"
             VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" ShowFooter="true" />

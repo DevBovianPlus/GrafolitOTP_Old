@@ -16,9 +16,9 @@
     <div class="row small-padding-bottom">
         <div class="col-xs-12 no-padding-left no-padding-right">
             <dx:ASPxGridView ID="ASPxGridViewOrdersPositions" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridOrdersPositions"
-                Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewOrdersPositions_DataBinding"
+                Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" 
                 KeyFieldName="tempID" CssClass="gridview-no-header-padding" OnCustomCallback="ASPxGridViewOrdersPositions_CustomCallback"
-                OnHtmlRowPrepared="ASPxGridViewOrdersPositions_HtmlRowPrepared"
+                OnHtmlRowPrepared="ASPxGridViewOrdersPositions_HtmlRowPrepared" OnDataBinding="ASPxGridViewOrdersPositions_DataBinding"
                 OnCommandButtonInitialize="ASPxGridViewOrdersPositions_CommandButtonInitialize">
                 <ClientSideEvents SelectionChanged="OnSelectionChanged_gridOrdersPositions" />
                 <Paddings Padding="0" />
@@ -122,7 +122,6 @@
                         ReadOnly="true" ShowInCustomizationForm="True">
                         <PropertiesTextEdit DisplayFormatString="N3" />
                     </dx:GridViewDataTextColumn>
-
                 </Columns>
             </dx:ASPxGridView>
         </div>

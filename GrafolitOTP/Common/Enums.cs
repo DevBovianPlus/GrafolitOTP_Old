@@ -14,6 +14,14 @@ namespace OptimizacijaTransprotov.Common
             Delete = 3
         }
 
+        public enum UserActionStr 
+        {
+            Add ,
+            Edit ,
+            Update,
+            Delete
+        }
+
         public enum UserRole
         {
             SuperAdmin,
@@ -47,7 +55,9 @@ namespace OptimizacijaTransprotov.Common
             showPreviewReport,
             filter,
             id,
-            lang
+            lang,
+            Refresh,
+            showValue
         }
 
         public enum OrderSession
@@ -63,6 +73,7 @@ namespace OptimizacijaTransprotov.Common
             RecallPositions,
             SelectedPositionsRecall,
             RecallFulModel,
+            RecallBuyerFulModel,
             TenderListFromRoute,
             RecallStatuses,
             RecallStatus,
@@ -74,7 +85,10 @@ namespace OptimizacijaTransprotov.Common
             RecallPosOptimalStockOverflow,
             InquirySummaryRecallID,
             InquirySummaries,
-            Order10Position
+            Order10Position,
+            DisconnectedInvoicesList,
+            SelectedBuyerRecallID
+
         }
 
         public enum TenderSession

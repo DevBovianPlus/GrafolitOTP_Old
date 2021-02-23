@@ -66,8 +66,16 @@ namespace OptimizacijaTransprotov.Pages.Settings
 
         protected void PopupControlEmployee_WindowCallback(object source, PopupWindowCallbackArgs e)
         {
-            RemoveSession(Enums.CommonSession.UserActionPopUp);            
+            RemoveSession(Enums.CommonSession.UserActionPopUp);
         }
+
+
+
+        protected void btnExportManualChanges_Click(object sender, EventArgs e)
+        {
+            CommonMethods.ExportToPDFFitToPage(ASPxGridViewExporterManualChanges, this);
+        }
+
 
         protected void TPManualChangesCallbackPanel_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
         {

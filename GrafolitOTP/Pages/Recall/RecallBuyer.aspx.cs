@@ -1,6 +1,7 @@
 ﻿using DatabaseWebService.ModelsOTP.Recall;
 using DevExpress.Web;
 using OptimizacijaTransprotov.Common;
+using OptimizacijaTransprotov.Helpers;
 using OptimizacijaTransprotov.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -34,18 +35,18 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 if (recallIDFocusedRowIndex > 0)
                 {
-                    ASPxGridViewRecall.FocusedRowIndex = ASPxGridViewRecall.FindVisibleIndexByKeyValue(recallIDFocusedRowIndex);
-                    ASPxGridViewRecall.ScrollToVisibleIndexOnClient = ASPxGridViewRecall.FindVisibleIndexByKeyValue(recallIDFocusedRowIndex);
+                    ASPxGridViewRecallBuyer.FocusedRowIndex = ASPxGridViewRecallBuyer.FindVisibleIndexByKeyValue(recallIDFocusedRowIndex);
+                    ASPxGridViewRecallBuyer.ScrollToVisibleIndexOnClient = ASPxGridViewRecallBuyer.FindVisibleIndexByKeyValue(recallIDFocusedRowIndex);
                 }
 
-                ASPxGridViewRecall.DataBind();
+                ASPxGridViewRecallBuyer.DataBind();
                 InitializeEditDeleteButtons();
             }
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            object valueID = ASPxGridViewRecall.GetRowValues(ASPxGridViewRecall.FocusedRowIndex, "OdpoklicID");
+            object valueID = ASPxGridViewRecallBuyer.GetRowValues(ASPxGridViewRecallBuyer.FocusedRowIndex, "OdpoklicKupecID");
 
             ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
             RedirectWithCustomURI("RecallForm.aspx", (int)Enums.UserAction.Edit, valueID);
@@ -54,12 +55,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
-            Response.Redirect("OrderNOZPDO.aspx");
+            Response.Redirect("RecallBuyerList.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            object valueID = ASPxGridViewRecall.GetRowValues(ASPxGridViewRecall.FocusedRowIndex, "OdpoklicID");
+            object valueID = ASPxGridViewRecallBuyer.GetRowValues(ASPxGridViewRecallBuyer.FocusedRowIndex, "OdpoklicKupecID");
             ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
 
             RedirectWithCustomURI("RecallForm.aspx", (int)Enums.UserAction.Delete, valueID);
@@ -68,7 +69,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         private void InitializeEditDeleteButtons()
         {
             //Check to enable Edit and Delete button for Tab PLAN
-            /*if (ASPxGridViewRecall.VisibleRowCount <= 0)
+            /*if (ASPxGridViewRecallBuyer.VisibleRowCount <= 0)
             {
                 EnabledDeleteAndEditBtnPopUp(btnEdit, btnDelete);
             }
@@ -78,55 +79,38 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }*/
         }
 
-        protected void ASPxGridViewRecall_DataBinding(object sender, EventArgs e)
+        protected void ASPxGridViewRecallBuyer_DataBinding(object sender, EventArgs e)
         {
-            List<RecallModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetAllNoneTakeOverRecalls());
-
-            if (filterType > 0)
-            {
-                string statusKoda = "";
-                switch (filterType)
-                {
-                    case 1:
-                        statusKoda = DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POTRJEN.ToString();
-                        list = list.Where(l => l.StatusKoda == statusKoda).ToList();
-                        break;
-                    case 2:
-                        statusKoda = DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ZAVRNJEN.ToString();
-                        list = list.Where(l => l.StatusKoda == statusKoda).ToList();
-                        break;
-                    case 3:
-                        statusKoda = DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString();
-                        list = list.Where(l => l.StatusKoda == statusKoda).ToList();
-                        break;
-                }
-            }
+            List<RecallBuyerModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetAllBuyersRecalls());
 
 
             (sender as ASPxGridView).DataSource = list;
             (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
         }
 
-        protected void ASPxGridViewRecall_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        protected void ASPxGridViewRecallBuyer_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
         {
             string[] split = e.Parameters.Split(';');
             if (split[0] == "DblClick" && !String.IsNullOrEmpty(split[1]))
             {
                 ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
-                ASPxWebControl.RedirectOnCallback(GenerateURI("RecallForm.aspx", (int)Enums.UserAction.Edit, split[1]));
+                ASPxWebControl.RedirectOnCallback(GenerateURI("RecallBuyerCreate.aspx", (int)Enums.UserAction.Edit, split[1]));
             }
         }
 
-        protected void ASPxGridViewRecall_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
+        protected void ASPxGridViewRecallBuyer_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
         {
             if (e.ButtonID != "Print") return;
 
-            object valueID = ASPxGridViewRecall.GetRowValues(e.VisibleIndex, "OdpoklicID");
+            object valueID = ASPxGridViewRecallBuyer.GetRowValues(e.VisibleIndex, "OdpoklicKupecID");
 
-            ASPxGridViewRecall.JSProperties["cpPrintID"] = ConcatenateURLForPrint(valueID, "Recall", true);
+            AddValueToSession(Enums.RecallSession.SelectedBuyerRecallID, valueID);
+
+
+            ASPxGridViewRecallBuyer.JSProperties["cpPrintID"] = ConcatenateURLForPrint(valueID, "RecallBuyer", true);
         }
 
-        protected void ASPxGridViewRecall_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
+        protected void ASPxGridViewRecallBuyer_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
         {
             if (e.RowType != GridViewRowType.Data) return;
 
@@ -144,15 +128,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#dff0d8");
         }
 
-        protected void ASPxGridViewRecall_CommandButtonInitialize(object sender, ASPxGridViewCommandButtonEventArgs e)
+        protected void ASPxGridViewRecallBuyer_CommandButtonInitialize(object sender, ASPxGridViewCommandButtonEventArgs e)
         {
 
-            object order = ASPxGridViewRecall.GetRowValues(e.VisibleIndex, "OdpoklicID");
+            object order = ASPxGridViewRecallBuyer.GetRowValues(e.VisibleIndex, "OdpoklicKupecID");
 
 
 
 
-            object item = ASPxGridViewRecall.GetRowValues(e.VisibleIndex, "StatusKoda");
+            object item = ASPxGridViewRecallBuyer.GetRowValues(e.VisibleIndex, "StatusKoda");
             if (item != null)
             {
                 bool isinquiryNotSubmited = item != null ? (item.ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfInquiry.ERR_ADMIN_MAIL.ToString() ? true : false) : false;
@@ -161,14 +145,14 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 //if (item.ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELNO_PREVZET.ToString() || (item.ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ERR_ADMIN_MAIL.ToString()) || (item.ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString()) || (item.ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ERR_ORDER_NO_SEND.ToString()) && (orderExist))
                 //    e.Visible = true;
                 //else
-                    e.Visible = false;
+                e.Visible = false;
             }
         }
 
         protected void btnOpenNewRecall_Click(object sender, EventArgs e)
         {
-            List<int> selectedRows = ASPxGridViewRecall.GetSelectedFieldValues("OdpoklicID").OfType<int>().ToList();
-            List<string> selectedSuppliers = ASPxGridViewRecall.GetSelectedFieldValues("DobaviteljNaziv").OfType<string>().ToList();
+            List<int> selectedRows = ASPxGridViewRecallBuyer.GetSelectedFieldValues("OdpoklicKupecID").OfType<int>().ToList();
+            List<string> selectedSuppliers = ASPxGridViewRecallBuyer.GetSelectedFieldValues("DobaviteljNaziv").OfType<string>().ToList();
 
             string firstSelectedSupplier = selectedSuppliers.First();
             bool isAllSuppliersEqual = selectedSuppliers.All(x => x.Equals(firstSelectedSupplier));
@@ -176,7 +160,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (!isAllSuppliersEqual)
             {
                 ShowClientWarningPopUp("Za odpiranje novega odpoklica izberi identične dobavitelje!");
-                ASPxGridViewRecall.Selection.UnselectAll();
+                ASPxGridViewRecallBuyer.Selection.UnselectAll();
                 return;
             }
 
@@ -192,7 +176,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             RecallFullModel recall = new RecallFullModel();
             recall.OdpoklicPozicija = new List<RecallPositionModel>();
-            object obj = ASPxGridViewRecall.GetRowValues(ASPxGridViewRecall.FocusedRowIndex, "DobaviteljPosta", "DobaviteljKraj", "DobaviteljNaslov");
+            object obj = ASPxGridViewRecallBuyer.GetRowValues(ASPxGridViewRecallBuyer.FocusedRowIndex, "DobaviteljPosta", "DobaviteljKraj", "DobaviteljNaslov");
 
             object[] items = (object[])obj;
             recall.DobaviteljNaziv = firstSelectedSupplier;
@@ -219,25 +203,65 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (split[0] == "InquirySummary")
             {
                 bool open = SetSessionsAndOpenPopUp("2", Enums.RecallSession.InquirySummaryRecallID, split[1]);
-                //ASPxPopupControlCarriersInquirySummary.ShowOnPageLoad = open;
+                ASPxPopupControlCarriersInquirySummary.ShowOnPageLoad = open;
             }
         }
 
         protected void btnClearStatus_Click(object sender, EventArgs e)
         {
-            List<int> valueIDs = ASPxGridViewRecall.GetSelectedFieldValues("OdpoklicID").OfType<int>().ToList();
+            List<int> valueIDs = ASPxGridViewRecallBuyer.GetSelectedFieldValues("OdpoklicKupecID").OfType<int>().ToList();
 
             if (valueIDs.Count == 1)
             {
                 CheckModelValidation(GetDatabaseConnectionInstance().ResetRecallStatusByID(valueIDs[0]));
             }
-            ASPxGridViewRecall.Selection.UnselectAll();
-            ASPxGridViewRecall.DataBind();
+            ASPxGridViewRecallBuyer.Selection.UnselectAll();
+            ASPxGridViewRecallBuyer.DataBind();
         }
 
         protected void btnSendOrder_Click(object sender, EventArgs e)
         {
             CheckModelValidation(GetDatabaseConnectionInstance().CreateAndSendOrdersMultiple());
         }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            object valueID = CommonMethods.ParseInt(GetStringValueFromSession(Enums.RecallSession.SelectedBuyerRecallID));
+
+            string url = ConcatenateURLForPrint(valueID, "RecallBuyer", true);
+
+            List<QueryStrings> list = new List<QueryStrings> {
+                new QueryStrings { Attribute = Enums.QueryStringName.printReport.ToString(), Value = "RecallBuyer" },
+                new QueryStrings { Attribute = Enums.QueryStringName.showPreviewReport.ToString(), Value = "true" }
+            };
+
+            if (valueID != null)
+            {
+                list.Add(new QueryStrings { Attribute = Enums.QueryStringName.printId.ToString(), Value = valueID.ToString() });
+            }
+
+            bool bIsPrikazanaVrednost = CommonMethods.ParseBool(chkPrikazVrednosti.Checked);
+            list.Add(new QueryStrings { Attribute = Enums.QueryStringName.showValue.ToString(), Value = bIsPrikazanaVrednost.ToString() });
+
+            url = GenerateURI("../../Reports/ReportPreview.aspx", list);
+            Response.Redirect(url);
+
+            //url = GenerateURI("../../Reports/ReportPreview.aspx", list);
+
+            //Response.Write(" < script language='javascript' > window.open('" + url + "'); < /script > ");
+            //Response.Write(" < script language='javascript' > window.open('http://www.google.com'); < /script > ");
+            //Response.End();
+
+            //ClientScript.RegisterStartupScript(this.Page.GetType(), "", "window.open('http://www.google.com','Graph','height=400,width=500');", true);
+            //ScriptManager.RegisterClientScriptBlock(this, GetType(), "OpenWindow", "fnOpenWindow('http://www.google.com');", true);
+
+            //CommonMethods.Redirect(Response, url, "_blank", "menubar=0,scrollbars=1,width=780,height=900,top=10");
+
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "OpenWindow", "window.open('http://www.google.com','_newtab');", true);
+
+
+        }
+
+
     }
 }

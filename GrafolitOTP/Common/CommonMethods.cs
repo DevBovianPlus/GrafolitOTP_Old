@@ -1,6 +1,8 @@
-﻿using DevExpress.Web;
+﻿using DatabaseWebService.ModelsOTP.Recall;
+using DevExpress.Web;
 using DevExpress.XtraPrintingLinks;
 using OptimizacijaTransprotov.Helpers;
+using OptimizacijaTransprotov.Helpers.DataProviders;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -373,6 +375,54 @@ namespace OptimizacijaTransprotov.Common
                 possibleWorksheetName = possibleWorksheetName.Replace("\"", "");
 
             return possibleWorksheetName;
+        }
+
+        public static RecallBuyerFullModel CalculatePercentageShippingCost(RecallBuyerFullModel model)
+        {
+            var sum = (from t in model.OdpoklicKupecPozicija where t.Akcija != (int)Enums.UserAction.Delete select t.Kolicina).Sum();
+
+            model.ProcentPrevozaSkupno = (model.CenaPrevozaSkupno * 100) / sum;
+
+            
+
+            foreach (RecallBuyerPositionModel pos in model.OdpoklicKupecPozicija)
+            {
+                pos.VrednostPrevoza = (pos.Vrednost * model.ProcentPrevozaSkupno) / 100;
+                pos.ProcentPrevoza = model.ProcentPrevozaSkupno;
+            }
+
+            return model;
+        }
+
+        public static void Redirect(this HttpResponse response, string url, string target, string windowFeatures)
+        {
+
+            if ((String.IsNullOrEmpty(target) || target.Equals("_self", StringComparison.OrdinalIgnoreCase)) && String.IsNullOrEmpty(windowFeatures))
+            {
+                response.Redirect(url);
+            }
+            else
+            {
+                Page page = (Page)HttpContext.Current.Handler;
+
+                if (page == null)
+                {
+                    throw new InvalidOperationException("Cannot redirect to new window outside Page context.");
+                }
+                url = page.ResolveClientUrl(url);
+
+                string script;
+                if (!String.IsNullOrEmpty(windowFeatures))
+                {
+                    script = @"window.open(""{0}"", ""{1}"", ""{2}"");";
+                }
+                else
+                {
+                    script = @"window.open(""{0}"", ""{1}"");";
+                }
+                script = String.Format(script, url, target, windowFeatures);
+                ScriptManager.RegisterStartupScript(page, typeof(Page), "Redirect", script, true);
+            }
         }
     }
 }

@@ -44,18 +44,27 @@ namespace OptimizacijaTransprotov.Pages.Tender
         {
             if (!IsPostBack)
             {
-                if (helperDTModel == null) helperDTModel = new hlpDateFilterModel();
-                helperDTModel.DateFrom = DateEditDatumOd.Date;
-                helperDTModel.DateTo = DateEditDatumDo.Date.AddHours(23).AddMinutes(59);
+                helperDTModel = ReturnDateValues(helperDTModel);
 
 
                 ASPxGridViewTender.DataBind();
             }
         }
 
+        private hlpDateFilterModel ReturnDateValues(hlpDateFilterModel helperDTModel)
+        {
+            if (helperDTModel == null) helperDTModel = new hlpDateFilterModel();
+            helperDTModel.DateFrom = DateEditDatumOd.Date;
+            helperDTModel.DateTo = DateEditDatumDo.Date.AddHours(23).AddMinutes(59);
+
+            return helperDTModel;
+        }
+
         protected void ASPxGridViewTender_DataBinding(object sender, EventArgs e)
         {
             List<TenderFullModel> tenderList = null;
+
+            helperDTModel = ReturnDateValues(helperDTModel);
 
             tenderList = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderList(helperDTModel.DateFrom.ToString(), helperDTModel.DateTo.ToString(), helperDTModel.FilterSearch));
 
@@ -190,7 +199,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
             {
                 model.TenderID = GetTenderIDFromUploadExcel(sheet);
                 model.TenderName = GetTenderNameFromUploadExcel(sheet);
-
+                Console.WriteLine("test");
                 model.CarrierID = GetCarrierIDFromUploadExcel(sheet);
                 model.CarrierName = GetCarrierNameFromUploadExcel(sheet);
 
@@ -206,7 +215,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
                     int tmpID = CommonMethods.ParseInt(sheet.Cells[rowIndex, 0].Value);
                     string routeName = sheet.Cells[rowIndex, 1].Value.ToString();
 
-                    if (routeName.Length > 9)
+                    if ((routeName.Length > 9) && (routeName.IndexOf("pall") < 0 && routeName.IndexOf("kg") < 0))
                     {
                         cntExit = 0;
                         routeModel = new ExcelRouteModel();

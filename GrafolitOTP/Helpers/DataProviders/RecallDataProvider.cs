@@ -29,6 +29,34 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return null;
         }
 
+        //Recall Buyer full model
+        public void SetRecallBuyerFullModel(RecallBuyerFullModel model)
+        {
+            AddValueToSession(Enums.RecallSession.RecallBuyerFulModel, model);
+        }
+
+        public RecallBuyerFullModel GetRecallBuyerFullModel()
+        {
+            if (SessionHasValue(Enums.RecallSession.RecallBuyerFulModel))
+                return (RecallBuyerFullModel)GetValueFromSession(Enums.RecallSession.RecallBuyerFulModel);
+
+            return null;
+        }
+
+        //Recall Buyer list disconnected invoices
+        public void SetDisconnectedInvoicesList(List<DisconnectedInvoicesModel> modelList)
+        {
+            AddValueToSession(Enums.RecallSession.DisconnectedInvoicesList, modelList);
+        }
+
+        public List<DisconnectedInvoicesModel> GetDisconnectedInvoicesList()
+        {
+            if (SessionHasValue(Enums.RecallSession.DisconnectedInvoicesList))
+                return (List<DisconnectedInvoicesModel>)GetValueFromSession(Enums.RecallSession.DisconnectedInvoicesList);
+
+            return null;
+        }
+
         //Recall positions
         public void SetRecallPositions(List<RecallPositionModel> positions)
         {

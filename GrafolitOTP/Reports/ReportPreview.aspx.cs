@@ -19,8 +19,9 @@ namespace OptimizacijaTransprotov.Reports
         string printReport = "";
         int printID = -1;
         bool showPreview = false;
+        bool showValues = false;
 
-        protected void Page_Init(object sender, EventArgs e) 
+        protected void Page_Init(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated) RedirectHome();
 
@@ -30,6 +31,11 @@ namespace OptimizacijaTransprotov.Reports
             printReport = CommonMethods.Trim(Request.QueryString[Enums.QueryStringName.printReport.ToString()].ToString());
             printID = CommonMethods.ParseInt(Request.QueryString[Enums.QueryStringName.printId.ToString()] != null ? Request.QueryString[Enums.QueryStringName.printId.ToString()].ToString() : "-1");
             showPreview = CommonMethods.ParseBool(Request.QueryString[Enums.QueryStringName.showPreviewReport.ToString()].ToString());
+            if (Request.QueryString[Enums.QueryStringName.showValue.ToString()] != null)
+            {
+                showValues = CommonMethods.ParseBool(Request.QueryString[Enums.QueryStringName.showValue.ToString()].ToString());
+            }
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,13 +46,23 @@ namespace OptimizacijaTransprotov.Reports
         private void ShowReport()
         {
             switch (printReport)
-            { 
+            {
                 case "Recall":
                     RecallFullModel model = null;
                     model = GetRecallFullModel();
                     if (model != null && model.OdpoklicPozicija.Count > 0)
                     {
                         Recall report = new Recall(model);
+                        SetReportPreview(showPreview, report);
+                    }
+                    break;
+
+                case "RecallBuyer":
+                    RecallBuyerFullModel modelBuyer = null;
+                    modelBuyer = GetRecallBuyerFullModel();
+                    if (modelBuyer != null && modelBuyer.OdpoklicKupecPozicija.Count > 0)
+                    {
+                        RecallBuyer report = new RecallBuyer(modelBuyer, showValues);
                         SetReportPreview(showPreview, report);
                     }
                     break;
@@ -57,7 +73,6 @@ namespace OptimizacijaTransprotov.Reports
         {
             if (createDocument)
                 report.CreateDocument();
-
             if (preview)
                 ASPxWebDocumentViewer.OpenReport(report);
             else
@@ -102,6 +117,18 @@ namespace OptimizacijaTransprotov.Reports
             {
                 model = GetRecallDataProvider().GetRecallFullModelForPrint();
                 RemoveSession(Enums.CommonSession.PrintModel);
+            }
+
+            return model;
+        }
+
+        private RecallBuyerFullModel GetRecallBuyerFullModel()
+        {
+            RecallBuyerFullModel model = null;
+
+            if (printID > 0)
+            {
+                model = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallBuyerByID(printID));
             }
 
             return model;

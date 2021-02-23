@@ -24,13 +24,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected global::DevExpress.Web.ASPxCallbackPanel RecallCallbackPanel;
 
         /// <summary>
-        /// ASPxGridViewRecall control.
+        /// ASPxGridViewRecallBuyer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridViewRecall;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridViewRecallBuyer;
 
         /// <summary>
         /// Print control.
@@ -112,6 +112,51 @@ namespace OptimizacijaTransprotov.Pages.Recall
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControlCarriersInquirySummary;
+
+        /// <summary>
+        /// ASPxPopupPrintSelection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupPrintSelection;
+
+        /// <summary>
+        /// ASPxLabel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
+
+        /// <summary>
+        /// chkPrikazVrednosti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox chkPrikazVrednosti;
+
+        /// <summary>
+        /// btnConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnConfirm;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnCancel;
 
         /// <summary>
         /// Master property.

@@ -1,18 +1,24 @@
-﻿using DatabaseWebService.ModelsOTP.Client;
+﻿using DatabaseWebService.Models.Client;
+using DatabaseWebService.ModelsOTP.Client;
 using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
+using DatabaseWebService.ModelsOTP.Route;
+using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Web;
 using DevExpress.Web.Data;
-using DevExpress.Web.Rendering;
+using DevExpress.XtraReports.UI;
+using Newtonsoft.Json;
 using OptimizacijaTransprotov.Common;
+using OptimizacijaTransprotov.Helpers;
 using OptimizacijaTransprotov.Infrastructure;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -21,372 +27,850 @@ namespace OptimizacijaTransprotov.Pages.Recall
 {
     public partial class RecallBuyerCreate : ServerMasterPage
     {
-        List<OrderPositionModelNew> model = null;
-        List<OrderPositionModelNew> modelOrder10 = null;
+        RecallBuyerFullModel model = null;
+        int recallID = -1;
+        int action = -1;
+        int iRefresh = 0;
+        public decimal maxKolicina = 0;
+        public string criticalTransportType = "15 - SKLADIŠČE MALOPRODAJA";
+        public bool reopenRecall = false;
+        private bool recallStatusChanged = false;
+        private bool bIsRejectOrAccept = false;
+
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated) RedirectHome();
 
             this.Master.PageHeadlineTitle = Title;
 
-            ASPxGridLookupDobavitelj.GridView.Settings.GridLines = GridLines.Both;
+            if (Request.QueryString[Enums.QueryStringName.recordId.ToString()] != null)
+            {
+                action = CommonMethods.ParseInt(Request.QueryString[Enums.QueryStringName.action.ToString()].ToString());
+                recallID = CommonMethods.ParseInt(Request.QueryString[Enums.QueryStringName.recordId.ToString()].ToString());
+                if (Request.QueryString[Enums.QueryStringName.Refresh.ToString()] != null)
+                {
+                    iRefresh = CommonMethods.ParseInt(Request.QueryString[Enums.QueryStringName.Refresh.ToString()].ToString());
+                }
+            }
+
+            ASPxGridLookupRealacija.GridView.Settings.GridLines = GridLines.Both;
+            ASPxGridLookupPrevoznik.GridView.Settings.GridLines = GridLines.Both;
+            ASPxGridLookupZbirnikTon.GridView.Settings.GridLines = GridLines.Both;
+
+            //maxKolicina = GetMaxQuantityForRecall();
+
+            this.Master.DisableNavBar = true;
         }
+
+
+        protected void ASPxGridViewDisconnectedInvoices_DataBinding(object sender, EventArgs e)
+        {
+            (sender as ASPxGridView).DataSource = model.OdpoklicKupecPozicija.Where(p => p.Akcija != CommonMethods.ParseInt(Enums.UserAction.Delete)).ToList();
+            (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
+        }
+
+        protected void ASPxGridLookupStranke_DataBinding(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            object id = null;
+
+            object id2 = null;
+
+            if (ASPxGridLookupRealacija.Value != null)
+                id = ASPxGridLookupRealacija.Value;
+            else if (model != null && model.RelacijaID > 0)
+                id = model.RelacijaID;
+            if (ASPxGridLookupZbirnikTon.Value != null)
+            {
+                id2 = ASPxGridLookupZbirnikTon.Value;
+            }
+
+            if (id != null)
+            {
+                int idRoute = CommonMethods.ParseInt(id);
+                int idZbirnikTon = CommonMethods.ParseInt(id2);
+                List<TenderPositionModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetTenderListByRouteIDandZbirnikTon(idRoute, idZbirnikTon));
+
+                if (list == null)
+                    list = new List<TenderPositionModel>();
+
+                //list.Add(new TenderPositionModel { RazpisID = -1, Stranka = new ClientFullModel { idStranka = -1, NazivPrvi = "Izberi..." } });
+
+                EnableUserControls();
+
+                if (list.Count > 0)
+                {
+                    GetRecallDataProvider().SetTenderListFromSelectedRoute(list);
+
+                    (sender as ASPxGridLookup).DataSource = list;
+
+                    if (action == (int)Enums.UserAction.Add)
+                        ASPxGridLookupPrevoznik.Value = -1;
+                }
+            }
+            //else
+            //  ClearSessionsAndRedirect();
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //Initialize();
-
-                /*if (model != null)
+                Initialize();
+                if (action == (int)Enums.UserAction.Edit || action == (int)Enums.UserAction.Delete)
                 {
-                    GetOrderDataProvider().SetOrderPositions(model);
-                }*/
-                ASPxGridLookupDobavitelj.DataBind();
-                modelOrder10 = CheckModelValidation(GetDatabaseConnectionInstance().GetListOfOrderNumber10());
-                GetRecallDataProvider().SetOrder10Positions(modelOrder10);
-                ASPxGridViewOrder10Positions.DataBind();
-                GridLookupCategory.DataBind();
+                    if (recallID > 0)
+                    {
+                        if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+                            model = GetRecallDataProvider().GetRecallBuyerFullModel();
+                        else
+                        {
+                            model = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallBuyerByID(recallID));
+                        }
+
+                        if (model != null)
+                        {
+                            GetRecallDataProvider().SetRecallBuyerFullModel(model);
+                            FillForm();
+                        }
+                    }
+
+                }
+                else if (action == (int)Enums.UserAction.Add)
+                {
+                    SetFormDefaultValues();
+                }
+                UserActionConfirmBtnUpdate(btnConfirm, action);
+
             }
             else
             {
-                if (model == null && SessionHasValue(Enums.OrderSession.OrdersPositionsList))
-                    model = GetOrderDataProvider().GetOrderPositions();
+                if (model == null && SessionHasValue(Enums.RecallSession.RecallBuyerFulModel))
+                    model = GetRecallDataProvider().GetRecallBuyerFullModel();
+
+                if (model.CenaPrevozaSkupno > 0)
+                {
+                    btnRecall.ClientEnabled = true;
+                }
+
+            }
+            if (iRefresh == 1)
+            {
+                FillForm();
             }
         }
 
-        private RecallFullModel SetSelectedQnt(RecallFullModel recall)
+        private void FillForm()
         {
+            ASPxGridLookupRealacija.Value = model.RelacijaID > 0 ? model.RelacijaID : -1;
 
 
-            decimal dSumPDO = CommonMethods.ParseDecimal(hfCurrentSumPDO["CurrenSumPDO"].ToString());
-            decimal dSumNOZ = CommonMethods.ParseDecimal(hfCurrentSumNOZ["CurrenSumNOZ"].ToString());
+            if (model.RazpisPozicijaID != null || model.RazpisPozicijaID > 0)
+                ASPxGridLookupPrevoznik.Value = model.RazpisPozicijaID;//dobvitelja/prevoznika preberemo iz razpisa pozicije
+            else
+            {
+                ASPxGridLookupPrevoznik.Text = model.PrevoznikNaziv;
+            }
 
-            decimal dSumPDONOZ = dSumNOZ + dSumPDO;
+            txtNovaCena.Text = CommonMethods.ParseDecimal(model.CenaPrevozaSkupno).ToString("N2");
+            //ComboBoxTip.SelectedIndex = model.TipID > 0 ? ComboBoxTip.Items.IndexOfValue(model.TipID.ToString()) : 0;
+            txtStatus.Text = model.StatusNaziv != null ? model.StatusNaziv : "";
+            txtStNarocilnice.Text = model.StevilkaNarocilnica != null ? model.StevilkaNarocilnica : "";
 
-            recall.IzbranaKolicinaPDO = dSumPDO;
-            recall.IzbranaKolicinaNOZ = dSumNOZ;
-            recall.SkupajNOZPDO = dSumPDONOZ;
 
-            return recall;
+
+            model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
+
+            txtStOdpoklic.Text = model.OdpoklicKupecStevilka.ToString();
+
+
+
+
+            //FuncionalityBasedOnUserRole();
+            if (iRefresh != 1)
+            {
+                if (model.StatusKoda != null && (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString() || model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString()))
+                    SetEnabledAllControls(true);
+                else
+                    SetEnabledAllControls(false);
+            }
+
+
+
+            ASPxGridLookupZbirnikTon.Value = model.ZbirnikTonID > 0 ? model.ZbirnikTonID : -1;
+
+            // nastavimo zbirnik ton
+            SetZbirnikTonByODpoklicValue();
+
+            if (model != null && model.StatusKoda != null && model.StatusOdpoklica.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
+                btnReopenRecall.ClientVisible = true;
+
+
         }
 
-        protected void PerformClickNaprej()
+        private bool AddOrEditEntityObject(bool add = false)
         {
+            if (add)
+            {
+                model = GetRecallDataProvider().GetRecallBuyerFullModel() != null ? GetRecallDataProvider().GetRecallBuyerFullModel() : new RecallBuyerFullModel();
+
+                model.ts = DateTime.Now;
+                model.tsIDOseba = PrincipalHelper.GetUserPrincipal().ID;
+                model.UserID = PrincipalHelper.GetUserPrincipal().ID;
+
+                if (model.OdpoklicKupecPozicija != null)//pri dodajanju novega odpoklica imamo v začetku nastavljene začasne id-je. Zato jih je potrebno ob shranjevanju nastavit na 0, da dobijo sql-ove id-je
+                {
+                    model.OdpoklicKupecPozicija.ForEach(poz => poz.OdpoklicKupecPozicijaID = 0);
+                    model.OdpoklicKupecPozicija.ForEach(poz => poz.OdpoklicKupecPozicijaID = 0);
+                }
+            }
+            else if (model == null && !add)
+            {
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
+            }
+
+            model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
+            model.RelacijaNaziv = ASPxGridLookupRealacija.Text;
+
+            string recallStatusCode = GetRecallDataProvider().GetRecallStatus().ToString();
+
+
+            if (model.IzdelajNarocilnico == 1)
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+               .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
+               .FirstOrDefault().StatusOdpoklicaID;
+            }
+            else if (recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+                .FirstOrDefault().StatusOdpoklicaID;
+            }
+            else
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+               .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString())
+               .FirstOrDefault().StatusOdpoklicaID;
+            }
+
+            model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
+            model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
+            model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
+            model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(GetLatestPrice());
+            model.StevilkaNarocilnica = txtStNarocilnice.Text;
+
+
+            // preverimo, če je odpoklic zavrnjen ali potrjen, zaradi filtra
+            if (recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POTRJEN.ToString() || recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ZAVRNJEN.ToString())
+                bIsRejectOrAccept = true;
+
+            RecallBuyerFullModel returnModel = CheckModelValidation(GetDatabaseConnectionInstance().SaveBuyerRecall(model));
+
+            RemoveSession(Enums.RecallSession.RecallStatus);
+
+
+
+
+            if (returnModel != null)
+            {
+                //this we need if we want to add new client and then go and add new Plan with no redirection to Clients page
+                model = returnModel;//if we need updated model in the same request;
+                GetRecallDataProvider().SetRecallBuyerFullModel(returnModel);
+
+                //TODO: ADD new item to session and if user has added new client and create data bind.
+                return true;
+            }
+            else
+                return false;
+        }
+
+
+
+        #region Initialization
+
+        private void Initialize()
+        {
+            PopulateModel();
+
+            ASPxGridLookupRealacija.DataBind();
+
+            if (action != (int)Enums.UserAction.Add)
+                ASPxGridLookupPrevoznik.DataBind();
+
+            ASPxGridSelectPositions.DataBind();
+            ASPxGridLookupZbirnikTon.DataBind();
+            GetRecallDataProvider().SetRecallStatuses(CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses()));
+
+            if (model.StatusKoda != null && model.StatusKoda != DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
+            {
+                CalculatePercShip();
+                SetZbirnikTonByODpoklicValue();
+            }
+
+            if (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+            {
+                btnRecall.Text = "Osveži naročilnico";
+            }
+        }
+
+        private void PopulateModel()
+        {
+            if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+            {
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
+            }
+            else if (recallID > 0)
+            {
+                model = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallBuyerByID(recallID));
+            }
+        }
+
+        protected object GetTotalSummaryValue()
+        {
+            object sum = null;
+            ASPxSummaryItem summaryItem = ASPxGridSelectPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
+            if (hfCurrentSum.Contains("CurrenSum"))
+            {
+                decimal sumHidden = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+                sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+                decimal tSum = CommonMethods.ParseDecimal(sum);
+                if (tSum > sumHidden)
+                    sum = sumHidden;
+            }
+            else
+                sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            // = sum;
+            return sum;
+        }
+
+
+        protected object GetAvgSummaryTransportPercent()
+        {
+            object sum = null;
+
+            if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+            {
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
+            }
             if (model != null)
             {
-                RecallFullModel recall = new RecallFullModel();
-                recall.OdpoklicPozicija = new List<RecallPositionModel>();
-                SupplierModel supplier = null;
+                sum = CommonMethods.ParseDecimal(model.ProcentPrevozaSkupno).ToString("N2");
+            }
+
+            //ASPxSummaryItem summaryItem = ASPxGridSelectPositions.TotalSummary.First(i => i.FieldName == "ProcentPrevoza");
+            //if (hfCurrentSumPercent.Contains("CurrenSum"))
+            //{
+            //    decimal sumHidden = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            //    sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            //    decimal tSum = CommonMethods.ParseDecimal(sum);
+            //    if (tSum > sumHidden)
+            //        sum = sumHidden;
+            //}
+            //else
+            //    sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            //// = sum;
+            return sum;
+        }
 
 
-                SetSelectedQnt(recall);
+        private void SetFormDefaultValues()
+        {
+            ASPxGridLookupPrevoznik.Value = -1;
+            ASPxGridLookupRealacija.Value = -1;
+            ASPxGridLookupZbirnikTon.Value = -1;
 
-                if (GetRecallDataProvider().GetSuppliersList() != null)
-                {
-                    supplier = GetRecallDataProvider().GetSuppliersList().Where(su => su.Dobavitelj == ASPxGridLookupDobavitelj.Value.ToString()).FirstOrDefault();
-                    if (supplier != null)
-                    {
 
-                        recall.DobaviteljNaziv = supplier.Dobavitelj.Trim();
-                        recall.DobaviteljNaslov = supplier.Naslov.Trim();
-                        recall.DobaviteljPosta = supplier.Posta.Trim();
-                        recall.DobaviteljKraj = supplier.Kraj.Trim();
-                    }
-                }
+            ASPxSummaryItem summaryItem = ASPxGridSelectPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
+            decimal sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem));
 
-                List<object> selectedRows = ASPxGridViewOrdersPositions.GetSelectedFieldValues("tempID");
-                OrderPositionModelNew obj = null;
-                List<OrderPositionModelNew> selectedList = new List<OrderPositionModelNew>();
-                int sequentialNum = 1;
-                decimal maxRecallQuantity = 0;
 
-                foreach (var item in selectedRows)
-                {
-                    int id = CommonMethods.ParseInt(item);
-                    obj = model.Where(o => o.tempID == id).FirstOrDefault();
-                    if (obj != null)
-                    {
-                        decimal izbranaKolicina = obj.Prevzeto <= 0 ? obj.OdpoklicKolicinaOTP : obj.Prevzeto;
+            if (GetRecallDataProvider().GetRecallStatuses() != null)
+            {
+                string status = DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString();
+                string naziv = GetRecallDataProvider().GetRecallStatuses().Where(r => r.Koda == status)
+                    .FirstOrDefault().Naziv;
+                txtStatus.Text = naziv;
+            }
 
-                        if (obj.Proizvedeno > 0)
-                            maxRecallQuantity = obj.Proizvedeno - izbranaKolicina;
-                        else
-                            maxRecallQuantity = obj.Razlika - izbranaKolicina;
+            decimal dCurrentWeightValue = model.KolicinaSkupno;
 
-                        maxRecallQuantity = maxRecallQuantity == 0 ? obj.Razlika : maxRecallQuantity;
+            ASPxGridLookupRealacija.Value = model.RelacijaID > 0 ? model.RelacijaID : -1;
 
-                        recall.OdpoklicPozicija.Add(new RecallPositionModel
-                        {
-                            Kolicina = maxRecallQuantity < 0 ? (obj.Razlika < 0 ? 0 : obj.Razlika) : maxRecallQuantity,//nastavimo trenutno odpoklicano količino razliko med količino iz naročila in prevzeto količino
-                            KolicinaIzNarocila = obj.Naroceno,
-                            Material = obj.Artikel,
-                            NarociloID = obj.Narocilnica,
-                            NarociloPozicijaID = obj.St_Pozicija,
-                            OC = obj.Order_Confirm,
-                            KolicinaPrevzeta = obj.Prevzeto,
-                            KolicinaRazlika = obj.Razlika,
-                            KupecNaziv = obj.Kupec,
-                            OdpoklicPozicijaID = obj.tempID,
-                            TrenutnaZaloga = obj.Zaloga,
-                            OptimalnaZaloga = obj.Dovoljeno_Odpoklicati,
-                            TipNaziv = obj.Tip,
-                            Interno = obj.Interno,
-                            Proizvedeno = obj.Proizvedeno,
-                            MaterialIdent = obj.Ident,
-                            KolicinaOTP = obj.VsotaOdpoklicKolicinaOTP,
-                            ZaporednaStevilka = sequentialNum++,
-                            KolicinaOTPPozicijaNarocilnice = obj.OdpoklicKolicinaOTP,
-                            KupecNaslov = obj.Kupec_Naslov,
-                            KupecKraj = obj.Kupec_Kraj,
-                            KupecPosta = obj.Kupec_Posta,
-                            OdpoklicIzLastneZaloge = supplier != null ? (supplier.StrankaSkladisceID > 0 ? true : false) : false,
-                            EnotaMere = obj.EnotaMere,
-                            TransportnaKolicina = ReturnEnotaMere(obj.EnotaMere) == Enums.UnitsFromOrder.KG.ToString() ? (obj.Razlika - izbranaKolicina) < 0 ? 0 : (obj.Razlika - izbranaKolicina) : 0
-                        });
-                    }
-                }
+            // calculate with current recall values, preverimo kaka je celotna vrednost teže in najdemo ter predlagamo pravi zbirnik            
+            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
 
-                ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
-                GetRecallDataProvider().SetRecallFullModel(recall);
-                ASPxWebControl.RedirectOnCallback(GenerateURI("RecallForm.aspx", (int)Enums.UserAction.Add, -1));
+            if (ASPxGridLookupRealacija.Value != null && ASPxGridLookupZbirnikTon.Value != null)
+            {
+                int routeValueID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
+                int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
+
+                decimal lowestPrice = (ZbirnikTonID == 0) ? CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
+                txtNovaCena.Text = lowestPrice.ToString("N2");
+                model.CenaPrevozaSkupno = lowestPrice;
+                ASPxGridLookupPrevoznik.DataBind();
+                ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+                CalculatePercShip();
+                GetRecallDataProvider().SetRecallBuyerFullModel(model);
+                ASPxGridSelectPositions.DataBind();
+            }
+            else
+            {
+                btnRecall.ClientEnabled = false;
             }
         }
 
-        private string ReturnEnotaMere(string enotaMere)
+        private void CalculatePercShip()
         {
-            if (!String.IsNullOrEmpty(enotaMere))
-                return enotaMere.Trim();
+            if (model == null)
+            {
+                if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+                {
+                    model = GetRecallDataProvider().GetRecallBuyerFullModel();
+                }
+            }
 
-            return "";
+            model = CommonMethods.CalculatePercentageShippingCost(model);
+
+            ASPxLabel lblSumPercent = (ASPxLabel)ASPxGridSelectPositions.FindFooterRowTemplateControl("lblSumProcentSkupaj");
+
+            if (lblSumPercent != null) lblSumPercent.Text = CommonMethods.ParseDecimal(model.ProcentPrevozaSkupno).ToString("N2"); ;
+
+            GetRecallDataProvider().SetRecallBuyerFullModel(model);
         }
 
-        protected void ASPxGridViewOrdersPositions_DataBinding(object sender, EventArgs e)
+
+        private int ReturnZbirnikTonIDByOdpoklicValue(decimal dWeightValue)
         {
-            (sender as ASPxGridView).DataSource = model;
-            (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
-        }
+            List<ZbirnikTonModel> lZbirnikTon = GetRecallDataProvider().GetZbirnikTon();
 
-        protected void GridLookupCategory_DataBinding(object sender, EventArgs e)
-        {
-        }
+            if (lZbirnikTon != null)
+            {
+                if (lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault() != null)
+                    return lZbirnikTon.Where(zt => zt.TezaOd <= dWeightValue && zt.TezaDo >= dWeightValue).FirstOrDefault().ZbirnikTonID;
+            }
 
-        protected void ASPxGridViewOrder10Positions_DataBinding(object sender, EventArgs e)
-        {
-            //modelOrder10 = GetRecallDataProvider().GetOrder10Positions();
-
-
-            (sender as ASPxGridView).DataSource = modelOrder10;
-            (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
-        }
-
-        #region Initialize
-        private void Initialize(string supplier, int strankaSkladisceID = 0)
-        {
-            PopulateModel(supplier, strankaSkladisceID);
-            ASPxGridViewOrdersPositions.DataBind();
-            ASPxGridViewOrder10Positions.DataBind();
+            return 10;
         }
         #endregion
 
-        private List<OrderPositionModelNew> FilterOrderPositionsByCategory(List<OrderPositionModelNew> model, string selCategories)
+        #region DataBindings
+
+        protected void ASPxGridViewSelectedPositions_DataBinding(object sender, EventArgs e)
         {
-            var predicate = PredicateBuilder.True<OrderPositionModelNew>();
-            selCategories = selCategories.Replace(", ", ",");
-
-            var catg = selCategories.Split(',').ToList();
-
-            // where in 
-            model = model.Where(e => catg.Any(ee => ee == e.Kategorija)).ToList();
-
-
-
-            return model;
-        }
-
-        private void PopulateModel(string supplier, int strankaSkladisceID = 0)
-        {
-            /* if (GetOrderDataProvider().GetOrderPositions() != null)
-             {
-                 model = GetOrderDataProvider().GetOrderPositions();
-             }
-             else
-             {
-                 model = CheckModelValidation(GetDatabaseConnectionInstance().GetOrdersPositions());
-             }*/
-            string selCategory = GridLookupCategory.Text.Trim();
-
-            supplier = supplier.Replace("&", "|");
-            model = CheckModelValidation(GetDatabaseConnectionInstance().GetOrderPositionsBySupplier(supplier, strankaSkladisceID));
-            modelOrder10 = GetRecallDataProvider().GetOrder10Positions();
-            if (selCategory.Length > 0)
+            if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
             {
-                model = FilterOrderPositionsByCategory(model, selCategory);
-                modelOrder10 = FilterOrderPositionsByCategory(modelOrder10, selCategory);
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
             }
-            //if (model != null) model = model.Where(opm => opm.TipAplikacije == "PDO" || opm.TipAplikacije == "NOZ").ToList();
-
-            if ((supplier != null) && (supplier.Length > 0))
-            {
-                if (modelOrder10 != null) modelOrder10 = modelOrder10.Where(opm => opm.Dobavitelj == supplier).ToList();
-            }
-
-
-            ASPxGridViewOrder10Positions.DataBind();
-            GetOrderDataProvider().SetOrderPositions(model);
-        }
-
-        //protected void ASPxGridViewOrdersPositions_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
-        //{
-        //    if (e.Parameters == "SupplierChanged")
-        //    {
-        //        RemoveSession(Enums.OrderSession.CientID);
-        //        string supplier = ASPxGridLookupDobavitelj.Value != null ? ASPxGridLookupDobavitelj.Value.ToString() : "";
-        //        var dobavitelj = GetRecallDataProvider().GetSuppliersList().Where(x => x.Dobavitelj == supplier).FirstOrDefault();
-
-        //        //Če je bilo izbrano skladišče kot dobavitelj (Iz tabele Stranka_OTP)
-        //        int strankaSkladisceID = 0;
-        //        if (dobavitelj != null)
-        //        {
-        //            strankaSkladisceID = dobavitelj.StrankaSkladisceID;
-        //            if (dobavitelj.StrankaSkladisceID > 0) AddValueToSession(Enums.OrderSession.CientID, dobavitelj.StrankaSkladisceID);
-        //        }
-
-        //        Initialize(supplier, strankaSkladisceID);
-        //    }
-        //}
-
-
-
-        protected void ASPxGridLookupDobavitelj_DataBinding(object sender, EventArgs e)
-        {
-            GetRecallDataProvider().SetSuppliersList(CheckModelValidation(GetDatabaseConnectionInstance().GetAllSuppliers()));
-            (sender as ASPxGridLookup).DataSource = GetRecallDataProvider().GetSuppliersList();
-        }
-
-        protected void ASPxGridViewOrdersPositions_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
-        {
-            if (model != null)
-            {
-                int keyValue = CommonMethods.ParseInt(e.KeyValue);
-                var item = model.Where(poz => poz.tempID == keyValue).FirstOrDefault();
-                if (item != null && String.IsNullOrEmpty(item.Order_Confirm))
-                {
-                    GridViewTableCommandCell cell = (GridViewTableCommandCell)e.Row.Cells[0];
-                    if (cell.Column.ShowSelectCheckbox)
-                    {
-                        e.Row.BackColor = Color.LightGray;
-                    }
-                }
-            }
-
-        }
-
-        protected void ASPxGridViewOrder10Positions_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
-        {
-            if (model != null)
-            {
-                int keyValue = CommonMethods.ParseInt(e.KeyValue);
-                var item = model.Where(poz => poz.tempID == keyValue).FirstOrDefault();
-                if (item != null && String.IsNullOrEmpty(item.Order_Confirm) && e.Row.Cells[0].GetType() == typeof(GridViewTableCommandCell))
-                {
-                    GridViewTableCommandCell cell = (GridViewTableCommandCell)e.Row.Cells[0];
-                    if (cell.Column.ShowSelectCheckbox)
-                    {
-                        e.Row.BackColor = Color.LightGray;
-                    }
-                }
-            }
-
-        }
-
-        protected void ASPxGridViewOrdersPositions_CommandButtonInitialize(object sender, ASPxGridViewCommandButtonEventArgs e)
-        {
-            object item = ASPxGridViewOrdersPositions.GetRowValues(e.VisibleIndex, "tempID", "Order_Confirm");
-            if (item != null)
-            {
-
-                object[] values = (object[])item;
-                if (values[0] != null)
-                {
-                    if (values[1] == null)
-                        e.Visible = false;
-                    else if (String.IsNullOrEmpty(values[1].ToString()))
-                        e.Visible = false;
-                }
-            }
-        }
-
-        protected void ASPxGridViewOrdersPositions_BatchUpdate(object sender, DevExpress.Web.Data.ASPxDataBatchUpdateEventArgs e)
-        {
 
             if (model != null)
             {
-                List<OrderPositionModelNew> updateList = model.ToList() ?? new List<OrderPositionModelNew>();
-                OrderPositionModelNew opm = null;
+                (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
+                (sender as ASPxGridView).DataSource = model.OdpoklicKupecPozicija.Where(p => p.Akcija != (int)Enums.UserAction.Delete).ToList();
 
-                Type myType = typeof(OrderPositionModelNew);
-                List<PropertyInfo> myPropInfo = myType.GetProperties().ToList();
-
-                //Spreminjanje zapisov v gridu
-                foreach (ASPxDataUpdateValues item in e.UpdateValues)
-                {
-                    opm = new OrderPositionModelNew();
-
-                    foreach (DictionaryEntry obj in item.Keys)//we set table ID
-                    {
-                        PropertyInfo info = myPropInfo.Where(prop => prop.Name.Equals(obj.Key.ToString())).FirstOrDefault();
-
-                        if (info != null)
-                        {
-                            opm = updateList.Where(ips => ips.tempID == (int)obj.Value).FirstOrDefault();
-                            break;
-                        }
-                    }
-
-                    foreach (DictionaryEntry obj in item.NewValues)
-                    {
-                        PropertyInfo info = myPropInfo.Where(prop => prop.Name.Equals(obj.Key.ToString())).FirstOrDefault();
-
-                        if (info != null)
-                        {
-                            info.SetValue(opm, obj.Value);
-                        }
-                    }
-                }
-
+                GetRecallDataProvider().SetRecallTypes(CheckModelValidation(GetDatabaseConnectionInstance().GetRecallTypes()));
 
             }
-
-            e.Handled = true;
         }
 
-        protected void cbpRefreshsUpplier_Callback(object sender, CallbackEventArgsBase e)
+        protected void ASPxGridLookupRealacija_DataBinding(object sender, EventArgs e)
         {
-            string supplier = ASPxGridLookupDobavitelj.Value != null ? ASPxGridLookupDobavitelj.Value.ToString() : "";
+            List<RouteModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutes());
+            (sender as ASPxGridLookup).DataSource = SerializeToDataTable(list);
+        }
 
-            if (e.Parameter == "SupplierChanged")
+        protected void ComboBoxTip_DataBinding(object sender, EventArgs e)
+        {
+            (sender as ASPxComboBox).DataSource = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallTypes());
+        }
+
+        protected void ASPxGridLookupZbirnikTon_DataBinding(object sender, EventArgs e)
+        {
+            List<ZbirnikTonModel> zbirnikTon = CheckModelValidation(GetDatabaseConnectionInstance().GetAllZbirnikTon());
+            GetRecallDataProvider().SetZbirnikTon(zbirnikTon);
+            (sender as ASPxGridLookup).DataSource = SerializeToDataTable(zbirnikTon);
+        }
+
+        #endregion
+
+        #region Helper methods
+
+        private bool DeleteObject()
+        {
+            return CheckModelValidation(GetDatabaseConnectionInstance().DeleteRecall(recallID));
+        }
+
+        private void ProcessUserAction()
+        {
+            bool isValid = false;
+            bool isDeleteing = false;
+
+            switch (action)
             {
-                RemoveSession(Enums.OrderSession.CientID);
-                var dobavitelj = GetRecallDataProvider().GetSuppliersList().Where(x => x.Dobavitelj == supplier).FirstOrDefault();
+                case (int)Enums.UserAction.Add:
+                    isValid = AddOrEditEntityObject(true);
+                    break;
+                case (int)Enums.UserAction.Edit:
+                    isValid = AddOrEditEntityObject();
+                    break;
+                case (int)Enums.UserAction.Delete:
+                    isValid = DeleteObject();
+                    isDeleteing = true;
+                    break;
+            }
 
-                //Če je bilo izbrano skladišče kot dobavitelj (Iz tabele Stranka_OTP)
-                int strankaSkladisceID = 0;
-                if (dobavitelj != null)
+            if (isValid)
+            {
+                ClearSessionsAndRedirect(isDeleteing);
+            }
+        }
+        private void ClearSessionsAndRedirect(bool isIDDeleted = false, bool saveAndPrintClick = false)
+        {
+            string redirectString = "";
+            List<QueryStrings> queryStrings = new List<QueryStrings> {
+                new QueryStrings() { Attribute = Enums.QueryStringName.recordId.ToString(), Value = recallID.ToString() }
+            };
+
+            /*else*/
+            if (isIDDeleted)
+                redirectString = "RecallBuyer.aspx";
+            else
+                redirectString = GenerateURI("RecallBuyer.aspx", queryStrings);
+
+            if (bIsRejectOrAccept && PrincipalHelper.IsUserLeader())
+            {
+                redirectString = "RecallBuyer.aspx?filter=3";
+            }
+
+
+            //RemoveSession(Enums.RecallSession.);
+            RemoveSession(Enums.CommonSession.UserActionPopUp);
+            RemoveSession(Enums.OrderSession.CientID);
+            RemoveSession(Enums.RecallSession.RecallBuyerFulModel);
+            RemoveSession(Enums.RecallSession.DisconnectedInvoicesList);
+
+            List<Enums.RecallSession> list = Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList();
+            ClearAllSessions(list, redirectString);
+        }
+
+        private bool HasSessionModelStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall status)
+        {
+            if (model == null) return false;
+
+            if (GetRecallDataProvider().GetRecallStatuses() != null)
+            {
+                string statusOdp = status.ToString();
+                int statusID = GetRecallDataProvider().GetRecallStatuses().Where(os => os.Koda == statusOdp).FirstOrDefault().StatusOdpoklicaID;
+
+                return (model.StatusID == statusID);
+            }
+
+            return false;
+        }
+
+
+
+        private decimal GetLatestPrice()
+        {
+
+            int routeValueID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
+            int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
+
+            decimal lowestPrice = CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
+
+            return lowestPrice;
+
+        }
+
+
+        #endregion
+
+        #region Controls Validation based on User roles
+
+        private void EnableUserControls(bool enable = true, bool buyerArrangesTransport = false)
+        {
+            ASPxGridLookupRealacija.ClientEnabled = enable;
+            ASPxGridLookupRealacija.BackColor = enable ? Color.White : Color.LightGray;
+            ASPxGridLookupPrevoznik.ClientEnabled = enable;
+            ASPxGridLookupPrevoznik.BackColor = enable ? Color.White : Color.LightGray;
+        }
+
+
+
+        private void SetEnabledAllControls(bool enabled = true)
+        {
+            ASPxGridSelectPositions.Settings.ShowStatusBar = enabled ? GridViewStatusBarMode.Visible : GridViewStatusBarMode.Hidden;
+
+            ASPxGridLookupRealacija.ClientEnabled = enabled;
+            ASPxGridLookupPrevoznik.ClientEnabled = enabled;
+            ASPxGridLookupZbirnikTon.ClientEnabled = enabled;
+            txtNovaCena.ClientEnabled = enabled;
+            btnRecall.ClientEnabled = enabled;
+            btnConfirm.ClientEnabled = enabled;
+
+        }
+        #endregion
+
+        #region Value validation
+
+        #endregion
+
+        #region Button events
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if (action == (int)Enums.UserAction.Add)
+                GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA);
+            else
+            { //ko shranjujemo odpoklic ko ni več v delovni verziji
+                string code = GetRecallDataProvider().GetRecallStatuses().Where(rs => rs.StatusOdpoklicaID == model.StatusID).FirstOrDefault().Koda;
+                DatabaseWebService.Common.Enums.Enums.StatusOfRecall enumValue = DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN;
+                Enum.TryParse(code, out enumValue);
+                GetRecallDataProvider().SetRecallStatus(enumValue);
+            }
+            ProcessUserAction();
+        }
+
+        protected void btnRecall_Click(object sender, EventArgs e)
+        {
+            if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
+
+            model.IzdelajNarocilnico = 1;
+
+            ProcessUserAction();
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearSessionsAndRedirect();
+        }
+
+        protected void btnConfirmRecall_Click(object sender, EventArgs e)
+        {
+            recallStatusChanged = true;
+            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POTRJEN);
+            ProcessUserAction();
+        }
+
+        protected void btnRejectRecall_Click(object sender, EventArgs e)
+        {
+            recallStatusChanged = true;
+            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ZAVRNJEN);
+            ProcessUserAction();
+        }
+
+        protected void btnConfirmTakeOver_Click(object sender, EventArgs e)
+        {
+            if (model == null) return;
+
+            List<int> selectedPositions = ASPxGridSelectPositions.GetSelectedFieldValues(ASPxGridSelectPositions.KeyFieldName).OfType<int>().ToList();
+
+            ProcessUserAction();
+        }
+
+        protected void btnReopenRecall_Click(object sender, EventArgs e)
+        {
+            reopenRecall = true;
+            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO);
+            AddOrEditEntityObject();
+
+            List<Enums.RecallSession> list = Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList();
+            ClearAllSessions(list, Request.RawUrl);
+        }
+
+        protected void btnSendInquiry_Click(object sender, EventArgs e)
+        {
+            recallStatusChanged = true;
+            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.RAZPIS_PREVOZNIK);
+            ProcessUserAction();
+        }
+
+        #endregion
+
+        #region ASPxGridViewSelectedPositions Events
+
+
+        protected void ASPxGridViewSelectedPositions_CellEditorInitialize(object sender, ASPxGridViewEditorEventArgs e)
+        {
+            if (e.Column.FieldName == "TipID")
+            {
+                ASPxComboBox box = e.Editor as ASPxComboBox;
+                box.DataSource = GetRecallDataProvider().GetRecallTypes();
+                box.ValueField = "TipOdpoklicaID";
+                box.ValueType = typeof(Int32);
+                box.TextField = "Naziv";
+                box.DataBindItems();
+            }
+        }
+
+        protected void ASPxGridViewSelectedPositions_CommandButtonInitialize(object sender, ASPxGridViewCommandButtonEventArgs e)
+        {
+            //if (e.ButtonType == ColumnCommandButtonType.SelectCheckbox)
+            //{
+            //    if (action != (int)Enums.UserAction.Add && model != null && (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POTRJEN.ToString() || model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELNO_PREVZET.ToString()))
+            //    {
+            //        ASPxGridView grid = sender as ASPxGridView;
+            //        bool prevzeto = Convert.ToBoolean(grid.GetRowValues(e.VisibleIndex, "StatusPrevzeto"));
+
+            //        if (!prevzeto)
+            //            e.Visible = true;
+            //        else
+            //            e.Visible = false;
+            //    }
+            //    else
+            //    {
+            //        e.Visible = false;
+            //    }
+            //}
+        }
+
+        #endregion
+
+        protected void CallbackPanelUserInput_Callback(object sender, CallbackEventArgsBase e)
+        {
+            if (model == null)
+            {
+                if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
                 {
-                    strankaSkladisceID = dobavitelj.StrankaSkladisceID;
-                    if (dobavitelj.StrankaSkladisceID > 0) AddValueToSession(Enums.OrderSession.CientID, dobavitelj.StrankaSkladisceID);
+                    model = GetRecallDataProvider().GetRecallBuyerFullModel();
                 }
+            }
 
-                Initialize(supplier, strankaSkladisceID);
-            }
-            else if (e.Parameter == "ClickNaprej")
+            model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
+
+            model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
+            model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
+            model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(GetLatestPrice());
+            model.StevilkaNarocilnica = txtStNarocilnice.Text;
+            model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
+            model.RelacijaNaziv = ASPxGridLookupRealacija.Text;
+
+
+            if (e.Parameter == "Enable")
             {
-                PerformClickNaprej();
+                EnableUserControls();
+                ASPxGridSelectPositions.DataBind();
             }
-            else if (e.Parameter == "CategoryChanged")
+            else if (e.Parameter == "SelectRelacija")//Če uporabnik želi dodati novo pozicijo iz naročila
             {
-                Initialize(supplier, 0);
+
+                ASPxGridLookupPrevoznik.DataBind();
+
+                decimal dCenaPrevoza = GetLatestPrice();
+
+                txtNovaCena.Text = dCenaPrevoza.ToString("N2");
+                model.CenaPrevozaSkupno = dCenaPrevoza;
+                ASPxHFCena["Cena"] = dCenaPrevoza.ToString("N2");
+
+                ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+
+                btnRecall.ClientEnabled = true;
+                btnRecall.Enabled = true;
+
+                CalculatePercShip();
+
+                CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
+                SetZbirnikTonByODpoklicValue();
             }
+            else if (e.Parameter == "SelectPrevoznik")//Če uporabnik želi dodati novo pozicijo iz naročila
+            {
+                if (ASPxHFCena.Contains("IzbrCena"))
+                {
+                    model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(ASPxHFCena["IzbrCena"]);
+                    CalculatePercShip();
+                    CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
+                    txtNovaCena.Text = model.CenaPrevozaSkupno.ToString("N2");
+                    btnRecall.ClientEnabled = true;
+                    btnRecall.Enabled = true;
+                    SetZbirnikTonByODpoklicValue();
+                }
+            }
+            else if (e.Parameter == "ShowOrderPositionPopUp")//Če uporabnik želi dodati novo pozicijo iz naročila
+            {
+                AddValueToSession(Enums.OrderSession.SupplierID, model.PrevoznikNaziv);
+                //AddValueToSession(Enums.OrderSession., model.DobaviteljNaziv);
+                AddValueToSession(Enums.CommonSession.UserActionPopUp, action);
+
+                model = GetRecallDataProvider().GetRecallBuyerFullModel();
+                model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
+                GetRecallDataProvider().SetRecallBuyerFullModel(model);
+
+                ASPxPopupControlOrderPos.ShowOnPageLoad = true;
+
+                SetZbirnikTonByODpoklicValue();
+            }
+            else if (e.Parameter == "DeleteSelectedPosition")//Če uporabnik želi izbrisati izbrano pozicijo iz odpoklica
+            {                
+                int iTempID = CommonMethods.ParseInt(ASPxGridSelectPositions.GetRowValues(ASPxGridSelectPositions.FocusedRowIndex, "ZaporednaStevilka"));
+                if (iTempID > 0)
+                {
+
+                    SetZbirnikTonByODpoklicValue();
+
+                    //CheckModelValidation(GetDatabaseConnectionInstance().DeleteRecallPosition(iTempID));
+                    var recallPos = model.OdpoklicKupecPozicija.Where(op => op.ZaporednaStevilka == iTempID).FirstOrDefault();
+                    //if (recallPos != null)
+                    //    model.OdpoklicKupecPozicija.Remove(recallPos);
+                    
+                    recallPos.Akcija = (int)Enums.UserAction.Delete;
+                    CalculatePercShip();
+                    ASPxGridSelectPositions.DataBind();
+                    CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
+                    hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
+
+                    GetRecallDataProvider().SetRecallBuyerFullModel(model);
+                }
+            }
+
+            if (model.RazpisPozicijaID > 0)
+            {
+                btnRecall.ClientEnabled = true;
+            }
+        }
+
+        private void SetZbirnikTonByODpoklicValue()
+        {
+            hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
+            decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+        }
+
+        protected void ASPxPopupControlOrderPos_WindowCallback(object source, PopupWindowCallbackArgs e)
+        {
+            RemoveSession(Enums.CommonSession.UserActionPopUp);
+            RemoveSession(Enums.OrderSession.SupplierID);
+            RemoveSession(Enums.OrderSession.CientID);
+        }
+
+        protected void ASPxGridViewSelectedPositions_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
+        {
+            var obj = e.KeyValue;
+
+            List<object> optimalStockOverflowIds = GetRecallDataProvider().GetRecallPosIDOptimalStockOverflow();
+
+            if (obj != null && optimalStockOverflowIds.Exists(op => (int)op == (int)obj))
+            {
+                e.Row.BackColor = Color.Tomato;
+                ASPxGridSelectPositions.FocusedRowIndex = -1;
+            }
+        }
+
+        protected void ASPxGridViewSelectedPositions_DataBound(object sender, EventArgs e)
+        {
+            hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
+        }
+
+        protected void ASPxPopupControlCarriersInquirySummary_WindowCallback(object source, PopupWindowCallbackArgs e)
+        {
+            RemoveSession(Enums.CommonSession.UserActionPopUp);
+            RemoveSession(Enums.RecallSession.InquirySummaryRecallID);
+        }
+
+        protected void ASPxPopupControlCreateOrder_WindowCallback(object source, PopupWindowCallbackArgs e)
+        {
+            RemoveSession(Enums.OrderFromRecallSession.ServiceList);
         }
     }
 }

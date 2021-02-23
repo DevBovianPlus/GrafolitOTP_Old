@@ -230,13 +230,15 @@
     <Content Include="Pages\Client\ClientForm.aspx" />
     <Content Include="Pages\Client\ContactPerson_popup.aspx" />
     <Content Include="Pages\Recall\CreateOrder_popup.aspx" />
-    <Content Include="Pages\Recall\RecallBuyerCreate.aspx" />
+    <Content Include="Pages\Recall\OrderBuyerPos_popup.aspx" />
+    <Content Include="Pages\Recall\RecallBuyer.aspx" />
+    <Content Include="Pages\Recall\RecallBuyerList.aspx" />
     <Content Include="Pages\Recall\OrderOstalo.aspx" />
     <Content Include="Pages\Recall\OrderNOZPDO.aspx" />
     <Content Include="Pages\Recall\Order.aspx" />
     <Content Include="Pages\Recall\CarriersInquirySummary_popup.aspx" />
     <Content Include="Pages\Recall\OrderPos_popup.aspx" />
-    <Content Include="Pages\Recall\RecallBuyer.aspx" />
+    <Content Include="Pages\Recall\RecallBuyerCreate.aspx" />
     <Content Include="Pages\Recall\RecallTakeOverOnly.aspx" />
     <Content Include="Pages\Recall\Recall.aspx" />
     <Content Include="Pages\Recall\RecallForm.aspx" />
@@ -405,12 +407,26 @@
     <Compile Include="Pages\Recall\CreateOrder_popup.aspx.designer.cs">
       <DependentUpon>CreateOrder_popup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.cs">
-      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
+    <Compile Include="Pages\Recall\OrderBuyerPos_popup.aspx.cs">
+      <DependentUpon>OrderBuyerPos_popup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.designer.cs">
-      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
+    <Compile Include="Pages\Recall\OrderBuyerPos_popup.aspx.designer.cs">
+      <DependentUpon>OrderBuyerPos_popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyer.aspx.cs">
+      <DependentUpon>RecallBuyer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyer.aspx.designer.cs">
+      <DependentUpon>RecallBuyer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyerList.aspx.cs">
+      <DependentUpon>RecallBuyerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Recall\RecallBuyerList.aspx.designer.cs">
+      <DependentUpon>RecallBuyerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Recall\OrderOstalo.aspx.cs">
       <DependentUpon>OrderOstalo.aspx</DependentUpon>
@@ -447,12 +463,12 @@
     <Compile Include="Pages\Recall\OrderPos_popup.aspx.designer.cs">
       <DependentUpon>OrderPos_popup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Recall\RecallBuyer.aspx.cs">
-      <DependentUpon>RecallBuyer.aspx</DependentUpon>
+    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.cs">
+      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Recall\RecallBuyer.aspx.designer.cs">
-      <DependentUpon>RecallBuyer.aspx</DependentUpon>
+    <Compile Include="Pages\Recall\RecallBuyerCreate.aspx.designer.cs">
+      <DependentUpon>RecallBuyerCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Recall\RecallTakeOverOnly.aspx.cs">
       <DependentUpon>RecallTakeOverOnly.aspx</DependentUpon>
@@ -574,6 +590,9 @@
       <DependentUpon>Popup.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\RecallBuyer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Recall.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -595,6 +614,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\RecallBuyer.resx">
+      <DependentUpon>RecallBuyer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Recall.resx">
       <DependentUpon>Recall.cs</DependentUpon>
     </EmbeddedResource>

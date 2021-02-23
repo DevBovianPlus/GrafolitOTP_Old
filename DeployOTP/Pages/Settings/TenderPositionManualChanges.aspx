@@ -11,6 +11,15 @@
     <dx:ASPxCallbackPanel ID="TPManualChangesCallbackPanel" runat="server" OnCallback="TPManualChangesCallbackPanel_Callback" ClientInstanceName="clientTPManualChangesCallbackPanel">
         <PanelCollection>
             <dx:PanelContent>
+
+                <dx:ASPxButton ID="btnExportManualChanges" runat="server" RenderMode="Link" ClientEnabled="true" OnClick="btnExportManualChanges_Click"
+                    AutoPostBack="false" UseSubmitBehavior="false" ClientInstanceName="clientbtnExportManualChanges" ToolTip="Izvozi v excel">
+                    <DisabledStyle CssClass="icon-disabled" />
+                    <HoverStyle CssClass="icon-hover" />
+                    <Image Url="../../Images/pdf-export.png" Width="30px" />
+                </dx:ASPxButton>
+                <dx:ASPxGridViewExporter ID="ASPxGridViewExporterManualChanges" GridViewID="ASPxGridViewTPManualChanges" runat="server"></dx:ASPxGridViewExporter>
+
                 <dx:ASPxGridView ID="ASPxGridViewTPManualChanges" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridTPManualChanges"
                     OnDataBinding="ASPxGridViewTPManualChanges_DataBinding" Width="100%"
                     KeyFieldName="RazpisPozicijaSpremembeID" CssClass="gridview-no-header-padding">
