@@ -35,6 +35,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         public bool reopenRecall = false;
         private bool recallStatusChanged = false;
         private bool bIsRejectOrAccept = false;
+        private bool bIsKos = false;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -195,6 +196,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
             // nastavimo zbirnik ton
             SetZbirnikTonByODpoklicValue();
 
+            if (model.ZbrirnikTonID != null && model.StatusOdpoklica.Koda != DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString())
+            {
+                ASPxGridLookupZbirnikTon.Value = model.ZbrirnikTonID;
+            }
 
             //Ko odpremo odpoklic je potrebno prevertiti če je dobavitelj Skladišče. Če je res potem je potrebno poiskati ID dobavitelja (tabela Stranke_OTP)
             ClientFullModel clientSupplier = CheckModelValidation(GetDatabaseConnectionInstance().GetClientByName(model.DobaviteljNaziv));
@@ -420,7 +425,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             return sum;
         }
 
-       
+
 
 
         protected object GetTotalPaleteSummaryValue()
@@ -449,8 +454,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (sum <= GetMaxQuantityForRecall())
                 EnableUserControls();
+            else if (bIsKos)
+            {
+                EnableUserControls();
+            }
             else
+            {
                 EnableUserControls(false);
+            }
+
 
             if (GetRecallDataProvider().GetRecallStatuses() != null)
             {
@@ -465,8 +477,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             // calculate with current recall values, preverimo kaka je celotna vrednost teže in najdemo ter predlagamo pravi zbirnik
             //ASPxGridLookupZbirnikTon.Value = GetRecallDataProvider().GetZbirnikTon().Where(tt => tt.Koda == truck).FirstOrDefault().ZbirnikTonID;
-            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
 
+            if (GetRecallDataProvider().GetRecallFullModel() != null)
+                model = GetRecallDataProvider().GetRecallFullModel();
+
+            bIsKos = CheckIfKosPosition();
+            if (!bIsKos)
+            {
+                ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+            }
         }
 
         private int ReturnZbirnikTonIDByOdpoklicValue(decimal dWeightValue)
@@ -481,6 +500,18 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             return 10;
         }
+
+        private bool CheckIfKosPosition()
+        {
+            bool bRet = false;
+            string kos = Enums.UnitsFromOrder.KOS.ToString();
+
+            if (model != null)
+            {
+                bRet = model.OdpoklicPozicija.Exists(m => m.EnotaMere == kos);
+            }
+            return bRet;
+        }
         #endregion
 
         #region DataBindings
@@ -492,9 +523,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
                 (sender as ASPxGridView).DataSource = model.OdpoklicPozicija != null ? model.OdpoklicPozicija : new List<RecallPositionModel>();
                 string kos = Enums.UnitsFromOrder.KOS.ToString();
-
+                bIsKos = false;
+                hfIsKos["IsKos"] = false.ToString();
                 if (model.OdpoklicPozicija.Exists(m => m.EnotaMere == kos))
                 {
+                    bIsKos = true;
+                    hfIsKos["IsKos"] = true.ToString();
                     var column = (GridViewDataTextColumn)ASPxGridViewSelectedPositions.Columns["TransportnaKolicina"];
                     column.PropertiesTextEdit.ValidationSettings.RequiredField.IsRequired = true;
                     column.PropertiesTextEdit.ValidationSettings.RegularExpression.ValidationExpression = "^[1-9]\\d*$";
@@ -978,11 +1012,12 @@ namespace OptimizacijaTransprotov.Pages.Recall
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             string sArgumentOfApproval = "";
             bool bOptimalnaPrekoracena = false;
+            bIsKos = CheckIfKosPosition();
 
             CommonMethods.LogThis("Log CheckRecallForAnomalies 1 - ŠT :" + model.OdpoklicStevilka.ToString());
             string memKomentarOdobritve = "";
 
-            if (kolicinaVsota > GetMaxQuantityForRecall())
+            if (kolicinaVsota > GetMaxQuantityForRecall() && !bIsKos)
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 2 - ŠT :" + model.OdpoklicStevilka.ToString());
 
@@ -1138,7 +1173,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je tip prevoza kamion - če vsota količine večja od 20000 potem more biti v mejah med 24000 in 24500 drugače gre v odobritev.
             //To ne preverjamo če imamo obkljukano dobavitelj priskrbi prevoz ali kupec priskrbi prevoz.
             if (GetSelecctedTransportTypeCode() == DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString() &&
-               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24500 && kolicinaVsota <= 26000)) && String.IsNullOrEmpty(memoKomentar.Text) &&
+               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24500 && kolicinaVsota <= 26000) && !bIsKos) && String.IsNullOrEmpty(memoKomentar.Text) &&
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))
             {
                 CommonMethods.LogThis("Log CheckRecallForAnomalies 12 - ŠT :" + model.OdpoklicStevilka.ToString());
@@ -1183,6 +1218,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             bool isValid = true;
 
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
+            bIsKos = CheckIfKosPosition();
 
             //odpoklic pozicij preverjamo smo če imajo transport tipa 15
             if (CheckForOptimalStockOverflow(model.OdpoklicPozicija))
@@ -1230,7 +1266,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //preverimo če je tip prevoza kamion - če vsota količine večja od 20000 potem more biti v mejah med 24000 in 24500 drugače gre v odobritev.
             //To ne preverjamo če imamo obkljukano dobavitelj priskrbi prevoz ali kupec priskrbi prevoz.
             else if (GetSelecctedTransportTypeCode() == DatabaseWebService.Common.Enums.Enums.TransportType.KAMION.ToString() &&
-               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 26000)) && (String.IsNullOrEmpty(memoKomentar.Text) ||
+               (kolicinaVsota >= 20000 && !(kolicinaVsota >= 24000 && kolicinaVsota <= 26000) && !bIsKos) && (String.IsNullOrEmpty(memoKomentar.Text) ||
                GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN && !String.IsNullOrEmpty(model.RazlogOdobritveSistem)) && //ta del pogoja zajema primer, ko uporabnik da odpoklic v odobritev in ga potem nazaj odpre
                (!SupplierArrangesTransportCheckBox2.Checked && !BuyerArrangesTransportCheckBox2.Checked))//če je delovna verzija in če ima razlog odobritev sistem polje vrednost potem moremo priti v ta if
             {
@@ -1737,7 +1773,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
             decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
-            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+            bIsKos = CheckIfKosPosition();
+            if (!bIsKos)
+            {
+                ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+            }
         }
 
         protected void ASPxPopupControlOrderPos_WindowCallback(object source, PopupWindowCallbackArgs e)

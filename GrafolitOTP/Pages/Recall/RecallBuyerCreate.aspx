@@ -26,7 +26,7 @@
         }
 
         function ValueChanged_lookUpPrevoznik(s, e) {
-            lookUpPrevoznik.GetGridView().GetRowValues(lookUpPrevoznik.GetGridView().GetFocusedRowIndex(), 'Cena', OnGetRowValuesPrevoznik);            
+            lookUpPrevoznik.GetGridView().GetRowValues(lookUpPrevoznik.GetGridView().GetFocusedRowIndex(), 'Cena', OnGetRowValuesPrevoznik);
         }
 
         function OnGetRowValuesPrevoznik(value) {
@@ -75,17 +75,18 @@
                     switch (sender) {
                         case 'OrderBuyerPos':
                             clientPopUpOrderPos.Hide();
-                            if (userAction !== undefined && recallID !== undefined)
+                            if (userAction !== undefined && recallID !== undefined) {
+                                clientLoadingPanel.Show();
                                 window.location.replace("RecallBuyerCreate.aspx?action=" + userAction + "&recordId=" + recallID + "&Refresh=1");
-                            //gridSelectedPositions.Refresh();
-                            break;                       
+                            }
+                            break;
                     }
                     break;
                 case 'Preklici':
                     switch (sender) {
                         case 'OrderBuyerPos':
                             clientPopUpOrderPos.Hide();
-                            break;                      
+                            break;
                     }
                     break;
             }
@@ -98,7 +99,7 @@
     <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="clientLoadingPanel" Modal="true"></dx:ASPxLoadingPanel>
     <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSum" ID="hfCurrentSum">
     </dx:ASPxHiddenField>
-     <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCena" ID="ASPxHFCena">
+    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCena" ID="ASPxHFCena">
     </dx:ASPxHiddenField>
     <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSumPercent" ID="hfCurrentSumPercent">
     </dx:ASPxHiddenField>
@@ -177,7 +178,7 @@
         </Styles>
         <SettingsText EmptyDataRow="Trenutno ni podatka o odpoklicih. Dodaj novega." />
         <Columns>
-            <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="80px" SelectAllCheckboxMode="None" Caption="Izberi" ShowClearFilterButton="true" Visible ="false"/>
+            <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="80px" SelectAllCheckboxMode="None" Caption="Izberi" ShowClearFilterButton="true" Visible="false" />
             <dx:GridViewDataTextColumn Caption="Ključ" FieldName="Kljuc" Width="8%"
                 ReadOnly="true" Visible="true" ShowInCustomizationForm="True">
             </dx:GridViewDataTextColumn>
@@ -187,7 +188,7 @@
 
             <dx:GridViewDataDateColumn Caption="Datum" FieldName="Datum" Width="6%"
                 ReadOnly="true" Visible="true" ShowInCustomizationForm="True">
-                <PropertiesDateEdit DisplayFormatString="dd.MM.yyy" EditFormatString="dd.MM.yyyy"></PropertiesDateEdit>  
+                <PropertiesDateEdit DisplayFormatString="dd.MM.yyy" EditFormatString="dd.MM.yyyy"></PropertiesDateEdit>
             </dx:GridViewDataDateColumn>
 
 
@@ -218,7 +219,7 @@
                 <PropertiesTextEdit DisplayFormatString="c"></PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
 
-              <dx:GridViewDataTextColumn Caption="Procent prevoz"
+            <dx:GridViewDataTextColumn Caption="Procent prevoz"
                 FieldName="ProcentPrevoza" ShowInCustomizationForm="True"
                 Width="5%">
                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
@@ -302,7 +303,7 @@
                         </div>
                     </div>
 
-                     <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="row2 align-item-centerV-centerH">
                             <div class="col-xs-0 big-margin-r no-padding-right">
                                 <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Št. naročilnice : ">
@@ -533,7 +534,7 @@
                             <Image Url="../../Images/lock.png" UrlHottracked="../../Images/lockHover.png" />
                         </dx:ASPxButton>
                     </span>
-              
+
 
                     <div class="AddEditButtonsElements">
                         <span class="AddEditButtons">

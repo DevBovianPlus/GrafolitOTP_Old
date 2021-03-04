@@ -281,7 +281,7 @@
                                                     <dx:ASPxLabel ID="ASPxLabel3" runat="server" Font-Size="12px" Font-Bold="true" Text="Prikaz vrednost transporta : "></dx:ASPxLabel>
                                                 </div>
                                                 <div class="col-xs-1 no-padding-left">
-                                                    <dx:ASPxCheckBox ID="chkPrikazVrednosti" runat="server">
+                                                    <dx:ASPxCheckBox ID="chkPrikazVrednosti" runat="server" Checked="true">
                                                     </dx:ASPxCheckBox>
                                                 </div>
                                             </div>

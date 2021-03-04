@@ -260,6 +260,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
             model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(GetLatestPrice());
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
+            //
+
+            List<TenderPositionModel> tenderList = GetRecallDataProvider().GetTenderListFromSelectedRoute();
+            if (tenderList != null)
+            {
+                model.PrevoznikNaziv = tenderList.Where(t => t.RazpisPozicijaID == model.RazpisPozicijaID).FirstOrDefault().Stranka.NazivPrvi;
+            }
 
 
             // preverimo, če je odpoklic zavrnjen ali potrjen, zaradi filtra

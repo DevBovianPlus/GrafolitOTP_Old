@@ -53,10 +53,10 @@
       <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
       <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
-    <!--<Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+    <Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/RecallBuyer.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallBuyerList.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
-    </Group>-->
+    </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
@@ -90,10 +90,10 @@
       <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
       <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
-    <!--<Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+    <Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/RecallBuyer.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallBuyerList.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
-    </Group>-->
+    </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
@@ -127,10 +127,10 @@
       <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
       <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
-    <!--<Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+    <Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/RecallBuyer.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallBuyerList.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
-    </Group>-->
+    </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />
@@ -160,10 +160,10 @@
       <!--<Link NavigateUrl="~/Pages/Recall/Order.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />-->
       <Link NavigateUrl="~/Pages/Recall/OrderNOZPDO.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
     </Group>
-    <!--<Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
+    <Group Text="ODPOKLIC - KUPCI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Recall/RecallBuyer.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Recall/RecallBuyerList.aspx" Text="Nov odpoklic" ImageUrl="~/Images/addnewMenu.png" />
-    </Group>-->
+    </Group>
     <Group Text="TRANSPORT" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Tender/Tender.aspx" Text="Pregled" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Tender/SendTender.aspx" Text="Razpis" ImageUrl="~/Images/tender.png" />

@@ -16396,3 +16396,126 @@ http://localhost:31695/Home.aspx
 21. 02. 2021 19:40:49 Repository failed to retrieve dataAn error occurred while executing the command definition. See the inner exception for details.Invalid column name acKey.
 21. 02. 2021 19:42:44 Repository failed to save dataAn error occurred while executing the command definition. See the inner exception for details.Could not find stored procedure dbo.DodajPantheonSupplierOrderAndLinkInvoice.
 21. 02. 2021 19:45:52 Repository failed to save dataAn error occurred while executing the command definition. See the inner exception for details.Could not find stored procedure dbo.SeznamPovezanihFakturByOrderNo.
+2. 03. 2021 13:45:09 Log CheckRecallForAnomalies 1 - ŠT :0
+2. 03. 2021 13:45:11 Log CheckRecallForAnomalies 2 - ŠT :0
+3. 03. 2021 07:47:15 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 07:48:37 Log CheckRecallForAnomalies 2 - ŠT :0
+3. 03. 2021 07:58:32 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 07:58:41 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 07:59:02 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 07:59:06 Log CheckRecallForAnomalies 12 - ŠT :0
+3. 03. 2021 07:59:07 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 08:00:08 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 08:00:36 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 08:01:04 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 08:36:42 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 08:36:44 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 08:36:51 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 08:36:57 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 08:37:15 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 08:37:16 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 08:37:41 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 08:37:41 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 08:37:52 Log 6 - ŠT :0
+3. 03. 2021 08:42:26 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 08:42:28 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 08:42:36 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 08:42:39 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 08:42:59 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 08:43:00 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 08:43:12 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 08:43:15 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 09:18:07 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 09:18:16 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 09:18:27 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 09:18:42 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 09:33:42 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 09:33:47 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 09:33:56 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 09:33:59 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 11:36:54 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 11:36:56 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 11:37:08 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 11:37:17 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 11:37:34 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 11:37:34 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 11:37:45 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 11:37:45 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 11:38:28 Log 7 - ŠT :0
+3. 03. 2021 11:38:28 Log 7.1 - ŠT :0
+3. 03. 2021 12:23:16 Log CheckRecallForAnomalies 1 - ŠT :5885
+3. 03. 2021 12:23:16 Log CheckRecallForAnomalies 3 - ŠT :5885
+3. 03. 2021 12:23:28 Log CheckRecallForAnomalies 8 - ŠT :5885
+3. 03. 2021 12:23:28 Log CheckRecallForAnomalies 13 - ŠT :5885
+3. 03. 2021 12:23:42 Log CheckRecallForAnomalies 1 - ŠT :5885
+3. 03. 2021 12:23:42 Log CheckRecallForAnomalies 3 - ŠT :5885
+3. 03. 2021 12:23:56 Log CheckRecallForAnomalies 8 - ŠT :5885
+3. 03. 2021 12:23:56 Log CheckRecallForAnomalies 13 - ŠT :5885
+3. 03. 2021 12:24:34 Log 7 - ŠT :5885
+3. 03. 2021 12:24:34 Log 7.1 - ŠT :5885
+3. 03. 2021 12:27:47 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:27:47 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:27:57 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:27:57 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:28:06 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:28:06 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:28:16 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:28:16 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:29:52 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:29:52 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:30:02 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:30:02 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:30:15 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:30:15 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:30:26 Log CheckRecallForAnomalies 4 - ŠT :0
+3. 03. 2021 12:30:36 Log CheckRecallForAnomalies 9 - ŠT :0
+3. 03. 2021 12:30:36 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:31:18 Log 7 - ŠT :0
+3. 03. 2021 12:31:18 Log 7.2 - ŠT :0
+3. 03. 2021 12:32:43 Log CheckRecallForAnomalies 1 - ŠT :5886
+3. 03. 2021 12:32:43 Log CheckRecallForAnomalies 3 - ŠT :5886
+3. 03. 2021 12:32:52 Log CheckRecallForAnomalies 8 - ŠT :5886
+3. 03. 2021 12:32:52 Log CheckRecallForAnomalies 13 - ŠT :5886
+3. 03. 2021 12:33:06 Log 7 - ŠT :5886
+3. 03. 2021 12:33:06 Log 7.1 - ŠT :5886
+3. 03. 2021 12:36:29 Log CheckRecallForAnomalies 1 - ŠT :5886
+3. 03. 2021 12:36:29 Log CheckRecallForAnomalies 3 - ŠT :5886
+3. 03. 2021 12:36:39 Log CheckRecallForAnomalies 4 - ŠT :5886
+3. 03. 2021 12:36:48 Log CheckRecallForAnomalies 9 - ŠT :5886
+3. 03. 2021 12:36:48 Log CheckRecallForAnomalies 13 - ŠT :5886
+3. 03. 2021 12:37:12 Log 7 - ŠT :5886
+3. 03. 2021 12:37:12 Log 7.2 - ŠT :5886
+3. 03. 2021 12:56:09 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:56:09 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:56:21 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:56:21 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:57:23 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:57:23 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:57:35 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:57:35 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:58:40 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 12:58:40 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 12:58:40 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 12:58:40 Log CheckRecallForAnomalies 10 - ŠT :0
+3. 03. 2021 12:58:40 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 12:58:43 Log 7 - ŠT :0
+3. 03. 2021 12:58:43 Log 7.1 - ŠT :0
+3. 03. 2021 13:00:16 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 13:00:17 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 13:00:26 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 13:00:26 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 13:01:34 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 13:01:34 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 13:01:34 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 13:01:34 Log CheckRecallForAnomalies 10 - ŠT :0
+3. 03. 2021 13:01:34 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 13:01:38 Log 7 - ŠT :0
+3. 03. 2021 13:01:38 Log 7.1 - ŠT :0
+3. 03. 2021 13:38:06 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 13:38:06 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 13:38:16 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 13:38:16 Log CheckRecallForAnomalies 13 - ŠT :0
+3. 03. 2021 13:38:30 Log CheckRecallForAnomalies 1 - ŠT :0
+3. 03. 2021 13:38:30 Log CheckRecallForAnomalies 3 - ŠT :0
+3. 03. 2021 13:38:40 Log CheckRecallForAnomalies 8 - ŠT :0
+3. 03. 2021 13:38:40 Log CheckRecallForAnomalies 13 - ŠT :0

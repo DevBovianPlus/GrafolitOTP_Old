@@ -42,6 +42,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected global::DevExpress.Web.ASPxHiddenField hfCurrentSumPalete;
 
         /// <summary>
+        /// hfIsKos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField hfIsKos;
+
+        /// <summary>
         /// ASPxGridViewSelectedPositions control.
         /// </summary>
         /// <remarks>

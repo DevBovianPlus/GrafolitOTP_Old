@@ -379,7 +379,7 @@ namespace OptimizacijaTransprotov.Common
 
         public static RecallBuyerFullModel CalculatePercentageShippingCost(RecallBuyerFullModel model)
         {
-            var sum = (from t in model.OdpoklicKupecPozicija where t.Akcija != (int)Enums.UserAction.Delete select t.Kolicina).Sum();
+            var sum = (from t in model.OdpoklicKupecPozicija where t.Akcija != (int)Enums.UserAction.Delete select t.Vrednost).Sum();
 
             model.ProcentPrevozaSkupno = (model.CenaPrevozaSkupno * 100) / sum;
 

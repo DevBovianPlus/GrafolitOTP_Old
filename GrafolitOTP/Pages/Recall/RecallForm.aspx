@@ -45,9 +45,13 @@
             var difPalete = newValuePalete - originalValuePalete;
             var sumPalete = (parseInt(labelSumPalete.GetValue() + difPalete));
 
+
             clientHfCurrentSum.Set("CurrenSum", sum);
 
             clientHfCurrentSumPalete.Set("CurrenSumPalete", sumPalete);
+
+            var valIsKos = alert(hfIsKos);
+            var valIsKos = alert(hfIsKos.Get('IsKos'));
 
             if (dif != 0) {
                 if (sum > max) {
@@ -366,6 +370,11 @@
 
             max = parseInt(values[1]);
 
+            //var valIsKos1 = alert(hfIsKos);
+            //var valIsKos2 = alert(hfIsKos.Get('IsKos'));
+
+            //var valIsKos = hfIsKos.Get("IsKos");
+
             if (parseFloat(labelSum.GetText().replace(".", "")) > max)
                 labelSum.GetMainElement().style.color = 'Red';
         }
@@ -479,10 +488,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="clientLoadingPanel" Modal="true"></dx:ASPxLoadingPanel>
-    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSum" ID="hfCurrentSum">
-    </dx:ASPxHiddenField>
-    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSumPalete" ID="hfCurrentSumPalete">
-    </dx:ASPxHiddenField>
+    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSum" ID="hfCurrentSum"></dx:ASPxHiddenField>
+    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentSumPalete" ID="hfCurrentSumPalete"></dx:ASPxHiddenField>
+    <dx:ASPxHiddenField runat="server" ClientInstanceName="clientHfCurrentIsKos" ID="hfIsKos"></dx:ASPxHiddenField>
     <dx:ASPxGridView ID="ASPxGridViewSelectedPositions" runat="server" AutoGenerateColumns="False"
         EnableTheming="True" EnableCallbackCompression="true" ClientInstanceName="gridSelectedPositions"
         Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G"

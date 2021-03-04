@@ -10,9 +10,14 @@
             else
                 clientBtnConfirm.SetEnabled(false);
         }
+
+        function btnConfirm_Click(s, e) {
+            clientLoadingPanel.Show();            
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolderPopup" runat="server">
+    <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="clientLoadingPanel" Modal="true"></dx:ASPxLoadingPanel>
     <div class="row small-padding-bottom">
         <div class="col-xs-12 no-padding-left no-padding-right">
             <dx:ASPxGridView ID="ASPxGridViewOrdersBuyerPositions" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridOrdersPositions"
@@ -88,6 +93,7 @@
                     Height="25" Width="90" ClientEnabled="false" ClientInstanceName="clientBtnConfirm">
                     <Paddings PaddingLeft="10" PaddingRight="10" />
                     <Image Url="../../../Images/add.png" UrlHottracked="../../Images/addHover.png" />
+                    <ClientSideEvents Click="btnConfirm_Click" />
                 </dx:ASPxButton>
             </span>
         </div>
