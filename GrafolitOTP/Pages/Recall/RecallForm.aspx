@@ -50,8 +50,6 @@
 
             clientHfCurrentSumPalete.Set("CurrenSumPalete", sumPalete);
 
-            var valIsKos = alert(hfIsKos);
-            var valIsKos = alert(hfIsKos.Get('IsKos'));
 
             if (dif != 0) {
                 if (sum > max) {
@@ -122,7 +120,7 @@
         var postbackInitiated = false;
         function CheckFieldValidation(s, e) {
             var process = false;
-            var lookUpItems = [lookUpStranke, lookUpRelacija, lookUpTipPrevoza];
+            var lookUpItems = [lookUpStranke, lookUpRelacija, lookUpTipPrevoza, lookUpZbirnikTon];
             //var comboBoxItems = [clientComboBoxTip];
             var inputItems = [clientTxtNovaCena];
             var memoItems = null;
@@ -370,10 +368,7 @@
 
             max = parseInt(values[1]);
 
-            //var valIsKos1 = alert(hfIsKos);
-            //var valIsKos2 = alert(hfIsKos.Get('IsKos'));
 
-            //var valIsKos = hfIsKos.Get("IsKos");
 
             if (parseFloat(labelSum.GetText().replace(".", "")) > max)
                 labelSum.GetMainElement().style.color = 'Red';

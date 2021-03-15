@@ -249,6 +249,22 @@ namespace OptimizacijaTransprotov.Infrastructure
             return model;
         }
 
+        public WebResponseContentModel<bool> DeleteBuyerRecall(int recallID)
+        {
+            WebResponseContentModel<bool> model = new WebResponseContentModel<bool>();
+
+            try
+            {
+                model = GetResponseFromWebRequest<WebResponseContentModel<bool>>(WebServiceHelper.DeleteBuyerRecall(recallID), "get");
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
         public WebResponseContentModel<RecallPositionModel> GetRecallPositionByID(int recallPosID)
         {
             WebResponseContentModel<RecallPositionModel> dt = new WebResponseContentModel<RecallPositionModel>();

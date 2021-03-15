@@ -10,7 +10,7 @@
 
             //we delete successMessage query string so we show modal only once!
             var params = QueryStringsToObject();
-            delete params.filter;
+            delete params.filter;i
             var path = window.location.pathname + '?' + SerializeQueryStrings(params);
             history.pushState({}, document.title, path);
         });

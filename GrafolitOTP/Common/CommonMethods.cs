@@ -381,9 +381,11 @@ namespace OptimizacijaTransprotov.Common
         {
             var sum = (from t in model.OdpoklicKupecPozicija where t.Akcija != (int)Enums.UserAction.Delete select t.Vrednost).Sum();
 
-            model.ProcentPrevozaSkupno = (model.CenaPrevozaSkupno * 100) / sum;
+            if (sum != 0)
+            {
+                model.ProcentPrevozaSkupno = (model.CenaPrevozaSkupno * 100) / sum;
+            }
 
-            
 
             foreach (RecallBuyerPositionModel pos in model.OdpoklicKupecPozicija)
             {

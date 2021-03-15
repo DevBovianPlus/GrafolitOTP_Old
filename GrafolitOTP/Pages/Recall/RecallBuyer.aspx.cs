@@ -63,7 +63,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             object valueID = ASPxGridViewRecallBuyer.GetRowValues(ASPxGridViewRecallBuyer.FocusedRowIndex, "OdpoklicKupecID");
             ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
 
-            RedirectWithCustomURI("RecallForm.aspx", (int)Enums.UserAction.Delete, valueID);
+            RedirectWithCustomURI("RecallBuyerCreate.aspx", (int)Enums.UserAction.Delete, valueID);
         }
 
         private void InitializeEditDeleteButtons()

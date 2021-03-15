@@ -168,6 +168,11 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceRecallURL + "DeleteRecall?recallID=" + id;
         }
 
+        public static string DeleteBuyerRecall(int id)
+        {
+            return WebServiceRecallURL + "DeleteBuyerRecall?recallBuyerID=" + id;
+        }
+
         public static string GetRecallPositionByID(int recallPosID)
         {
             return WebServiceRecallURL + "GetRecallPositionByID?recallPosID=" + recallPosID;

@@ -306,7 +306,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             model.TipPrevozaID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
             model.ZbrirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
 
-            if (SessionHasValue(Enums.RecallSession.ArgumentsOfApprovalToDB))
+            if (SessionHasValue(Enums.RecallSession.ArgumentsOfApprovalToDB) && GetValueFromSession(Enums.RecallSession.ArgumentsOfApprovalToDB).ToString().Length > 0)
             {
                 model.RazlogOdobritveSistem = GetValueFromSession(Enums.RecallSession.ArgumentsOfApprovalToDB).ToString();
                 RemoveSession(Enums.RecallSession.ArgumentsOfApprovalToDB);

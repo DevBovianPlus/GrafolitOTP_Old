@@ -49,6 +49,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 {
                     GetRecallDataProvider().SetRecallBuyerFullModel(model);
                 }
+                PopulateModel();
             }
         }
 

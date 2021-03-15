@@ -385,7 +385,7 @@
                                 <dx:ASPxGridLookup ID="ASPxGridLookupPrevoznik" runat="server" ClientInstanceName="lookUpPrevoznik"
                                     KeyFieldName="RazpisPozicijaID" TextFormatString="{1} - {4} EUR" CssClass="text-box-input"
                                     Paddings-PaddingTop="0" Paddings-PaddingBottom="0" Width="100%" Font-Size="14px"
-                                    OnLoad="ASPxGridLookupLoad_WidthXtraLarge" OnDataBinding="ASPxGridLookupStranke_DataBinding" IncrementalFilteringMode="Contains" SelectionMode="Single">
+                                    OnLoad="ASPxGridLookupLoad_WidthXtraLarge" OnDataBinding="ASPxGridLookupPrevoznik_DataBinding" IncrementalFilteringMode="Contains" SelectionMode="Single">
                                     <ClearButton DisplayMode="OnHover" />
                                     <ClientSideEvents ValueChanged="ValueChanged_lookUpPrevoznik" />
                                     <%-- DropDown="function(s,e){s.GetGridView().GetAutoFilterEditor('Stranka.NazivPrvi').Focus();}" --%>
