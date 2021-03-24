@@ -120,7 +120,7 @@
         var postbackInitiated = false;
         function CheckFieldValidation(s, e) {
             var process = false;
-            var lookUpItems = [lookUpStranke, lookUpRelacija, lookUpTipPrevoza];
+            var lookUpItems = [lookUpStranke, lookUpRelacija, lookUpTipPrevoza, lookUpZbirnikTon];
             //var comboBoxItems = [clientComboBoxTip];
             var inputItems = [clientTxtNovaCena];
             var memoItems = null;

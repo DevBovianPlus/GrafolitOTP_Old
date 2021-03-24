@@ -17249,3 +17249,131 @@ http://localhost:31695/Pages/Recall/RecallBuyerCreate.aspx?action=1&recordId=-1
 12. 03. 2021 10:00:21 Log 1 - ŠT :0
 12. 03. 2021 10:00:21 Log 7 - ŠT :0
 12. 03. 2021 10:00:21 Log 7.2 - ŠT :0
+17. 03. 2021 08:19:14 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Relacija_OdpoklicKupec". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.Relacija", column RelacijaID.The statement has been terminated.
+17. 03. 2021 08:21:55 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Relacija_OdpoklicKupec". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.Relacija", column RelacijaID.The statement has been terminated.
+17. 03. 2021 08:21:57 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Odpoklic_RazpisPozicija". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.RazpisPozicija", column RazpisPozicijaID.The statement has been terminated.
+17. 03. 2021 08:22:08 Repository failed to save dataAn error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Odpoklic_RazpisPozicija". The conflict occurred in database "GrafolitOTP_Prod1", table "dbo.RazpisPozicija", column RazpisPozicijaID.The statement has been terminated.
+17. 03. 2021 11:28:19 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 17. marec 2021 ob 11:28:17 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.CallbackPanelUserInput_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 781
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Recall/RecallBuyerCreate.aspx?action=1&recordId=-1
+
+
+17. 03. 2021 15:07:02 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 17. marec 2021 ob 15:07:00 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerList.aspx(33): error CS0103: The name 'chkBrezFaktureClient' does not exist in the current context
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.Web.HttpCompileException (0x80004005): d:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerList.aspx(33): error CS0103: The name 'chkBrezFaktureClient' does not exist in the current context
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 
+ASP._global_asax
+http://localhost:31695/Home.aspx
+
+
+17. 03. 2021 15:39:28 Repository failed to save dataAn error occurred while executing the command definition. See the inner exception for details.XML parsing: line 4, character 11, unexpected end of input
+17. 03. 2021 15:43:52 Repository failed to save dataAn error occurred while executing the command definition. See the inner exception for details.XML parsing: line 4, character 11, unexpected end of input
+17. 03. 2021 15:46:36 Repository failed to save dataAn error occurred while executing the command definition. See the inner exception for details.XML parsing: line 4, character 11, unexpected end of input
+17. 03. 2021 16:39:42 Pozdravljeni! 
+ Uporabnik OTP Admin je dne sreda, 17. marec 2021 ob 16:39:40 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.CallbackPanelUserInput_Callback(Object sender, CallbackEventArgsBase e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 791
+   at DevExpress.Web.ASPxCallbackPanel.OnCallback(CallbackEventArgsBase e)
+   at DevExpress.Web.ASPxCallbackPanel.RaiseCallbackEvent(String eventArgument)
+   at DevExpress.Web.ASPxWebControl.System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(String eventArgument)
+ 
+DevExpress.Web.ASPxCallbackPanel
+http://localhost:31695/Pages/Recall/RecallBuyerCreate.aspx?action=2&recordId=1055
+
+
+17. 03. 2021 18:28:57 1
+19. 03. 2021 13:20:17 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 03. 2021 13:20:19 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 03. 2021 13:26:25 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 03. 2021 13:26:25 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 03. 2021 13:27:50 Log CheckRecallForAnomalies 1 - ŠT :0
+19. 03. 2021 13:27:50 Log CheckRecallForAnomalies 13 - ŠT :0
+19. 03. 2021 13:28:07 Log CheckRecallForAnomalies 1 - ŠT :5959
+19. 03. 2021 13:28:07 Log CheckRecallForAnomalies 13 - ŠT :5959
+23. 03. 2021 10:39:42 Pozdravljeni! 
+ Uporabnik OTP Admin je dne torek, 23. marec 2021 ob 10:39:40 naletel na napako! 
+ Podrobnosti napake so navedene spodaj: 
+ 
+ -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.FillForm() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 176
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 159
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallbuyercreate_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_cruqehw1.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.FillForm() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 176
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 159
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) -------- System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.FillForm() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 176
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 159
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.pages_recall_recallbuyercreate_aspx.ProcessRequest(HttpContext context) in c:\Users\win10delo\AppData\Local\Temp\Temporary ASP.NET Files\vs\c6c8d1c2\b5c10e18\App_Web_cruqehw1.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) -------- System.NullReferenceException: Object reference not set to an instance of an object.
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.FillForm() in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 176
+   at OptimizacijaTransprotov.Pages.Recall.RecallBuyerCreate.Page_Load(Object sender, EventArgs e) in D:\GitHub\GrafolitOTP\GrafolitOTP\Pages\Recall\RecallBuyerCreate.aspx.cs:line 159
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+ 
+ASP._global_asax
+http://localhost:31695/Pages/Recall/RecallBuyerCreate.aspx?action=2&recordId=1069&Refresh=1
+
+

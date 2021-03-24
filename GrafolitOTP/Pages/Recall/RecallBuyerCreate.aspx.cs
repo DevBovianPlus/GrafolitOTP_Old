@@ -147,7 +147,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     model = GetRecallDataProvider().GetRecallBuyerFullModel();
                 if (model != null)
                 {
-                    if (model.CenaPrevozaSkupno > 0)
+                    if (model.CenaPrevozaSkupno > 0) 
                     {
                         btnRecall.ClientEnabled = true;
                     }
@@ -196,8 +196,14 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 ASPxGridLookupPrevoznik.Text = model.PrevoznikNaziv;
             }
-
-            txtNovaCena.Text = CommonMethods.ParseDecimal(model.CenaPrevozaSkupno).ToString("N2");
+            if (CommonMethods.ParseDecimal(txtNovaCena.Text.Length) > 0)
+            {
+                txtNovaCena.Text = CommonMethods.ParseDecimal(txtNovaCena.Text) != CommonMethods.ParseDecimal(model.CenaPrevozaSkupno) ? CommonMethods.ParseDecimal(txtNovaCena.Text).ToString("N2") : CommonMethods.ParseDecimal(model.CenaPrevozaSkupno).ToString("N2");
+            }
+            else
+            {
+                txtNovaCena.Text = CommonMethods.ParseDecimal(model.CenaPrevozaSkupno).ToString("N2");
+            }
             //ComboBoxTip.SelectedIndex = model.TipID > 0 ? ComboBoxTip.Items.IndexOfValue(model.TipID.ToString()) : 0;
             txtStatus.Text = model.StatusNaziv != null ? model.StatusNaziv : "";
             txtStNarocilnice.Text = model.StevilkaNarocilnica != null ? model.StevilkaNarocilnica : "";
@@ -214,7 +220,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //FuncionalityBasedOnUserRole();
             if (iRefresh != 1)
             {
-                if (model.StatusKoda != null && (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString() || model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString()))
+                if (model.StatusKoda != null && (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString() || model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString() || model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NAR_BREZ_FAKTURE.ToString()))
                     SetEnabledAllControls(true);
                 else
                     SetEnabledAllControls(false);
@@ -225,8 +231,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
             ASPxGridLookupZbirnikTon.Value = model.ZbirnikTonID > 0 ? model.ZbirnikTonID : -1;
 
             // nastavimo zbirnik ton
-            SetZbirnikTonByODpoklicValue();
-
+            if (model.ZbirnikTonID == 0)
+            {
+                SetZbirnikTonByODpoklicValue();
+            }
             if (model != null && model.StatusKoda != null && model.StatusOdpoklica.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
                 btnReopenRecall.ClientVisible = true;
 
@@ -284,10 +292,17 @@ namespace OptimizacijaTransprotov.Pages.Recall
                .FirstOrDefault().StatusOdpoklicaID;
             }
 
+            if (model.bBrezFakture)
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                  .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NAR_BREZ_FAKTURE.ToString())
+                  .FirstOrDefault().StatusOdpoklicaID;
+            }
+
             model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
             model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
-            model.CenaPrevozaSkupno = txtNovaCena.Text.Contains(".") ? CommonMethods.ParseDecimal(txtNovaCena.Text.Replace(".", ",")) : CommonMethods.ParseDecimal(txtNovaCena.Text); 
+            model.CenaPrevozaSkupno = txtNovaCena.Text.Contains(".") ? CommonMethods.ParseDecimal(txtNovaCena.Text.Replace(".", ",")) : CommonMethods.ParseDecimal(txtNovaCena.Text);
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
             //
 
@@ -346,7 +361,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (model.StatusKoda != null && model.StatusKoda != DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
             {
                 CalculatePercShip();
-                SetZbirnikTonByODpoklicValue();
+                if (model.ZbirnikTonID == 0)
+                {
+                    SetZbirnikTonByODpoklicValue();
+                }
             }
 
             if (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
@@ -499,18 +517,21 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void ASPxGridViewSelectedPositions_DataBinding(object sender, EventArgs e)
         {
-            if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+            if (!model.bBrezFakture)
             {
-                model = GetRecallDataProvider().GetRecallBuyerFullModel();
-            }
+                if (GetRecallDataProvider().GetRecallBuyerFullModel() != null)
+                {
+                    model = GetRecallDataProvider().GetRecallBuyerFullModel();
+                }
 
-            if (model != null)
-            {
-                (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
-                (sender as ASPxGridView).DataSource = model.OdpoklicKupecPozicija.Where(p => p.Akcija != (int)Enums.UserAction.Delete).ToList();
+                if (model != null)
+                {
+                    (sender as ASPxGridView).Settings.GridLines = GridLines.Both;
+                    (sender as ASPxGridView).DataSource = model.OdpoklicKupecPozicija.Where(p => p.Akcija != (int)Enums.UserAction.Delete).ToList();
 
-                GetRecallDataProvider().SetRecallTypes(CheckModelValidation(GetDatabaseConnectionInstance().GetRecallTypes()));
+                    GetRecallDataProvider().SetRecallTypes(CheckModelValidation(GetDatabaseConnectionInstance().GetRecallTypes()));
 
+                }
             }
         }
 
@@ -813,6 +834,36 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
                 SetZbirnikTonByODpoklicValue();
+            }
+            else if (e.Parameter == "SelectZbirnikTon")//Če uporabnik želi dodati novo pozicijo iz naročila
+            {
+
+                ASPxGridLookupPrevoznik.DataBind();
+
+                decimal dCenaPrevoza = GetLatestPrice();
+
+                txtNovaCena.Text = dCenaPrevoza.ToString("N2");
+                model.CenaPrevozaSkupno = dCenaPrevoza;
+                ASPxHFCena["Cena"] = dCenaPrevoza.ToString("N2");
+
+                ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+
+                btnRecall.ClientEnabled = true;
+                btnRecall.Enabled = true;
+
+                CalculatePercShip();
+
+                CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
+                //SetZbirnikTonByODpoklicValue();
+            }
+            else if (e.Parameter == "ChangePrice")//Če uporabnik želi dodati novo pozicijo iz naročila
+            {
+                model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(txtNovaCena.Text);
+
+                CalculatePercShip();
+
+                CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
+                //SetZbirnikTonByODpoklicValue();
             }
             else if (e.Parameter == "SelectPrevoznik")//Če uporabnik želi dodati novo pozicijo iz naročila
             {

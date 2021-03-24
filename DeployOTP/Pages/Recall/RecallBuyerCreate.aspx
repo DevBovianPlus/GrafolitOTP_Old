@@ -25,6 +25,10 @@
             clientCallbackPanelUserInput.PerformCallback('SelectRelacija');
         }
 
+        function ValueChanged_lookUpZbirnikTon(s, e) {
+            clientCallbackPanelUserInput.PerformCallback('SelectZbirnikTon');
+        }
+
         function ValueChanged_lookUpPrevoznik(s, e) {
             lookUpPrevoznik.GetGridView().GetRowValues(lookUpPrevoznik.GetGridView().GetFocusedRowIndex(), 'Cena', OnGetRowValuesPrevoznik);
         }
@@ -332,6 +336,7 @@
                                     OnLoad="ASPxGridLookupLoad_WidthMedium" OnDataBinding="ASPxGridLookupZbirnikTon_DataBinding" IncrementalFilteringMode="Contains">
                                     <ClearButton DisplayMode="OnHover" />
                                     <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
+                                    <ClientSideEvents ValueChanged="ValueChanged_lookUpZbirnikTon" />
                                     <GridViewStyles>
                                         <Header CssClass="gridview-no-header-padding" ForeColor="Black"></Header>
                                         <FilterBarClearButtonCell></FilterBarClearButtonCell>

@@ -87,6 +87,24 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected global::DevExpress.Web.ASPxButton btnConfirm;
 
         /// <summary>
+        /// chkBrezFakture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCheckBox chkBrezFakture;
+
+        /// <summary>
+        /// ASPxLabel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
+
+        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>

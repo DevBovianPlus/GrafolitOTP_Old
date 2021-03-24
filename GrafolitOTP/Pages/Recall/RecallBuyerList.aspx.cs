@@ -42,13 +42,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 /*if (model != null)
                 {
                     GetOrderDataProvider().SetOrderPositions(model);
-                }*/                
+                }*/
             }
             else
-            {                              
+            {
             }
         }
-        
+
 
         protected void PerformClickNaprej()
         {
@@ -61,7 +61,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 //ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
                 //GetRecallDataProvider().SetRecallFullModel(recall);
-                model.KolicinaSkupno = CommonMethods.ParseDecimal (hfQnt["SelectQnt"]);
+                bool bBrezFakture = CommonMethods.ParseBool(chkBrezFakture.Checked);
+                if (!bBrezFakture)
+                {
+                    model.KolicinaSkupno = CommonMethods.ParseDecimal(hfQnt["SelectQnt"]);
+                }
+                else
+                {
+                    model.bBrezFakture = true;
+                }
                 ASPxWebControl.RedirectOnCallback(GenerateURI("RecallBuyerCreate.aspx", (int)Enums.UserAction.Add, -1));
             }
         }
@@ -69,11 +77,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
         private void CreateModel()
         {
             model = new RecallBuyerFullModel();
-            DisconnectedInvoicesModel obj = null;            
+            DisconnectedInvoicesModel obj = null;
             model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
 
             List<object> selectedRows = ASPxGridViewDisconnectedInvoices.GetSelectedFieldValues("TempID");
-            int i = 0 ;
+            int i = 0;
             foreach (var item in selectedRows)
             {
                 int id = CommonMethods.ParseInt(item);
@@ -98,15 +106,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     recallBuyPos.Kolicina = obj.Kolicina;
                     recallBuyPos.Vrednost = obj.ZnesekFakture;
                     recallBuyPos.Kupec = obj.Kupec;
-                    recallBuyPos.Prevzemnik = obj.Prevzemnik;                    
+                    recallBuyPos.Prevzemnik = obj.Prevzemnik;
 
                     if (model.OdpoklicKupecPozicija == null) model.OdpoklicKupecPozicija = new List<RecallBuyerPositionModel>();
 
                     model.OdpoklicKupecPozicija.Add(recallBuyPos);
-                }        
+                }
             }
 
-            GetRecallDataProvider().SetRecallBuyerFullModel(model);            
+            GetRecallDataProvider().SetRecallBuyerFullModel(model);
         }
 
 
@@ -129,7 +137,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             List<RouteModel> list = CheckModelValidation(GetDatabaseConnectionInstance().GetAllRoutes());
             (sender as ASPxGridLookup).DataSource = SerializeToDataTable(list);
         }
-       
+
 
 
 
@@ -141,15 +149,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //ASPxGridLookupZbirnikTon.DataBind();
         }
         #endregion
-      
+
         protected void ASPxGridViewDisconnectedInvoices_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
         {
-           
+
         }
 
         protected void ASPxGridViewOrder10Positions_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
         {
-          
+
         }
 
         protected void ASPxGridViewDisconnectedInvoices_CommandButtonInitialize(object sender, ASPxGridViewCommandButtonEventArgs e)
@@ -176,13 +184,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void RecallCallbackPanel_Callback(object sender, CallbackEventArgsBase e)
         {
-          if (e.Parameter == "ClickNaprej")
+            if (e.Parameter == "ClickNaprej")
             {
                 PerformClickNaprej();
             }
-          else if (e.Parameter == "CategoryChanged")
+            else if (e.Parameter == "CategoryChanged")
             {
-                
+
             }
         }
 

@@ -14,35 +14,31 @@
 
         function GetSelectedFieldValuesCallback(values) {
             var cntKolicina = 0;
-            
+
             for (var i = 0; i < values.length; i++) {
-              
-                cntKolicina += values[i];              
+
+                cntKolicina += values[i];
             }
 
-            clientQnt.Set("SelectQnt", cntKolicina);            
+            clientQnt.Set("SelectQnt", cntKolicina);
 
-
+            if (cntKolicina == 0)
+            {
+                chkBrezFaktureClient.SetEnabled(true);}
+            else
+            {
+                chkBrezFaktureClient.SetEnabled(false);}
+            
 
             clientKolicina.SetText(parseFloat(cntKolicina).toFixed(2) + " kg");
 
             //SetZbirnikByQnt(cntKolicina)
         }
 
-        //function SetZbirnikByQnt(cntKolicina)
-        //{
-        //    var grid = lookUpZbirnikTon.GetGridView(); 
-
-        //    for (var index = grid.GetTopVisibleIndex(); index < grid.GetVisibleRowsOnPage(); index++) {               
-        //        //alert(index);
-        //    }
-
-        //    //var rowCount = lookUpZbirnikTon.GetVisibleRowsOnPage();
-        //    //alert(rowCount);
-        //    //for (let i = 0; i < rowCount; i++) {
-        //    //    //lookUpZbirnikTon.batchEditApi.SetCellValue(i, column, value);
-        //    //}  
-        //}
+        function chkBrezFakture_CheckChanged(s, e) {
+            var value = s.GetChecked();
+            clientBtnConfirm.SetEnabled(value);
+        }
 
         function btnConfirm_Click(s, e) {
             //e.processOnServer = !isBtnConfirmIntiated;
@@ -108,7 +104,7 @@
                             <dx:GridViewDataTextColumn Caption="Datum"
                                 FieldName="Datum" ShowInCustomizationForm="True"
                                 Width="15%" Visible="false">
-                                
+
                                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                             </dx:GridViewDataTextColumn>
 
@@ -143,8 +139,8 @@
                         <Header Paddings-PaddingTop="5" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="true"></Header>
                         <FocusedRow BackColor="#d1e6fe" Font-Bold="true" ForeColor="#606060"></FocusedRow>
                     </Styles>
-                    <ClientSideEvents SelectionChanged="OnSelectionChanged_gridDisconnectedInvoices"/>
-                    <SettingsText EmptyDataRow="Trenutno ni podatka o odpoklicih. Dodaj novega."/>                    
+                    <ClientSideEvents SelectionChanged="OnSelectionChanged_gridDisconnectedInvoices" />
+                    <SettingsText EmptyDataRow="Trenutno ni podatka o odpoklicih. Dodaj novega." />
                     <Columns>
                         <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="80px" SelectAllCheckboxMode="None" Caption="Izberi" ShowClearFilterButton="true" />
                         <dx:GridViewDataTextColumn Caption="Ključ" FieldName="Kljuc" Width="8%"
@@ -153,7 +149,7 @@
 
                         <dx:GridViewDataDateColumn Caption="Datum" FieldName="Datum" Width="5%"
                             ReadOnly="true" Visible="true" ShowInCustomizationForm="True">
-                            <PropertiesDateEdit DisplayFormatString="dd.MM.yyy" EditFormatString="dd.MM.yyyy"></PropertiesDateEdit>  
+                            <PropertiesDateEdit DisplayFormatString="dd.MM.yyy" EditFormatString="dd.MM.yyyy"></PropertiesDateEdit>
                         </dx:GridViewDataDateColumn>
 
 
@@ -200,16 +196,35 @@
 
 
 
-                    <div class="col-md-2">
-                        <span class="AddEditButtons">
-                            <dx:ASPxButton Theme="Moderno" ID="btnConfirm" runat="server" Text="Naprej" AutoPostBack="false"
-                                Height="25" Width="90" ClientEnabled="false" ClientInstanceName="clientBtnConfirm">
-                                <Paddings PaddingLeft="10" PaddingRight="10" />
-                                <Image Url="../../../Images/forward.png" UrlHottracked="../../Images/forwardHoover.png" />
-                                <ClientSideEvents Click="btnConfirm_Click" />
-                            </dx:ASPxButton>
-                        </span>
+                    <div class="col-md-4 ">
+                        <div class="col-md-2" style="padding-right: 40px">
+                            <span class="AddEditButtons">
+                                <dx:ASPxButton Theme="Moderno" ID="btnConfirm" runat="server" Text="Naprej" AutoPostBack="false"
+                                    Height="25" Width="90" ClientEnabled="false" ClientInstanceName="clientBtnConfirm">
+                                    <Paddings PaddingLeft="10" PaddingRight="10" />
+                                    <Image Url="../../../Images/forward.png" UrlHottracked="../../Images/forwardHoover.png" />
+                                    <ClientSideEvents Click="btnConfirm_Click" />
+                                </dx:ASPxButton>
+                            </span>
+                        </div>
+                        <div class="col-md-1" style="padding-top: 20px;">
+
+                            <div>
+                                <dx:ASPxCheckBox ID="chkBrezFakture" runat="server" Checked="false" ClientInstanceName="chkBrezFaktureClient">
+                                    <ClientSideEvents CheckedChanged="chkBrezFakture_CheckChanged" />
+                                </dx:ASPxCheckBox>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-top: 20px">
+                            <div>
+                                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Font-Size="12px" Font-Bold="true" Text="Brez fakture "></dx:ASPxLabel>
+
+                            </div>
+                        </div>
+
                     </div>
+
+
 
                 </div>
 
