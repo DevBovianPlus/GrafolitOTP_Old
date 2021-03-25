@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OptimizacijaTransprotov {
-    
-    
-    public partial class Home {
-        
+namespace OptimizacijaTransprotov
+{
+
+
+    public partial class Home
+    {
+
         /// <summary>
         /// FormLayoutWrap control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FormLayoutWrap;
-        
+
         /// <summary>
         /// ASPxFormLayoutLogin control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayoutLogin;
-        
+
         /// <summary>
         /// ErrorLabel control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel ErrorLabel;
-        
+
         /// <summary>
         /// txtUsername control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtUsername;
-        
+
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtPassword;
-        
+
         /// <summary>
         /// rememberMeCheckBox control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCheckBox rememberMeCheckBox;
-        
+
         /// <summary>
         /// ASPxButton1 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton ASPxButton1;
-        
+
         /// <summary>
         /// LoginCallback control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallback LoginCallback;
-        
+
         /// <summary>
         /// LoadingPanel control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
-        
+
         /// <summary>
         /// MainDashboard control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MainDashboard;
-        
+
         /// <summary>
         /// lblAllRecalls control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lblAllRecalls;
-        
+
         /// <summary>
         /// lblConfirmedRecalls control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lblConfirmedRecalls;
-        
+
         /// <summary>
         /// lblRejectedRecalls control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lblRejectedRecalls;
-        
+
         /// <summary>
         /// lblNeedToConfirmRecall control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLabel lblNeedToConfirmRecall;
-        
+
         /// <summary>
         /// ChartsCallbackPanel control.
         /// </summary>
@@ -146,15 +148,26 @@ namespace OptimizacijaTransprotov {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel ChartsCallbackPanel;
-        
+
+        /// <summary>
+        /// ASPxGridViewRecallBuyer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView ASPxGridViewRecallBuyer;
+
         /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new OptimizacijaTransprotov.Main Master {
-            get {
+        public new OptimizacijaTransprotov.Main Master
+        {
+            get
+            {
                 return ((OptimizacijaTransprotov.Main)(base.Master));
             }
         }
