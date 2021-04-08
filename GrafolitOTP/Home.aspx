@@ -257,9 +257,7 @@
         }
 
         function OnSelectionChanged_gridRecallBuyer(s, e) {
-            if (s.GetSelectedRowCount() > 0) {
-                var role = '<%= OptimizacijaTransprotov.Helpers.PrincipalHelper.IsUserAdmin()%>';
-                var role2 = '<%= OptimizacijaTransprotov.Helpers.PrincipalHelper.IsUserSuperAdmin()%>';
+            if (s.GetSelectedRowCount() > 0) {               
                 btnClearStatus.SetVisible(true);
                 btnSendOrder.SetVisible(true);
 
@@ -430,7 +428,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-default">
                                 <div class="panel-body no-padding-imp">
-                                    <h5 class="small-margin-l" style="padding: 0px 0px;">Seznam odpoklicov kupcem - Naročilnice brez faktur</h5>
+                                    <h5 class="small-margin-l" style="padding: 0px 0px;">Seznam odpoklic kupcem - Naročilnice brez faktur</h5>
                                     <!--<div id="chart_employees_div" style="width: 100%; height: 300px;"></div>-->
                                     <dx:ASPxGridView ID="ASPxGridViewRecallBuyer" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecallBuyer"
                                         Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecallBuyer_DataBinding"
@@ -438,7 +436,7 @@
                                         OnCustomButtonCallback="ASPxGridViewRecallBuyer_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecallBuyer_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecallBuyer_CommandButtonInitialize">
                                         <Paddings Padding="0" />
                                         <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecallBuyer_EndCallback" SelectionChanged="OnSelectionChanged_gridRecallBuyer" />
-                                        <Settings ShowVerticalScrollBar="True" VerticalScrollableHeight="275" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
+                                        <Settings ShowVerticalScrollBar="True" VerticalScrollableHeight="280" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
                                         <SettingsPager PageSize="50" ShowNumericButtons="true">
                                             <PageSizeItemSettings Visible="true" Items="50,80,100" Caption="Zapisi na stran : " AllItemText="Vsi">
                                             </PageSizeItemSettings>
@@ -455,7 +453,7 @@
                                                 ReadOnly="true" Visible="false" ShowInCustomizationForm="True" SortOrder="Descending">
                                             </dx:GridViewDataTextColumn>
 
-                                            <dx:GridViewDataTextColumn Caption="Naročilnica št." FieldName="StevilkaNarocilnica" Width="7%"
+                                            <dx:GridViewDataTextColumn Caption="Naročilnica št." FieldName="StevilkaNarocilnica" Width="8%"
                                                 ReadOnly="true" ShowInCustomizationForm="True" Visible="true">
                                                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                                             </dx:GridViewDataTextColumn>

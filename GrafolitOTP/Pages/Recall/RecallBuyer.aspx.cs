@@ -66,6 +66,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
             RedirectWithCustomURI("RecallBuyerCreate.aspx", (int)Enums.UserAction.Delete, valueID);
         }
 
+        protected void btnStorno_Click(object sender, EventArgs e)
+        {
+            object valueID = ASPxGridViewRecallBuyer.GetRowValues(ASPxGridViewRecallBuyer.FocusedRowIndex, "OdpoklicKupecID");
+            ClearAllSessions(Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList());
+
+            RedirectWithCustomURI("RecallBuyerCreate.aspx", (int)Enums.UserAction.Storno, valueID);
+        }
+
+
         private void InitializeEditDeleteButtons()
         {
             //Check to enable Edit and Delete button for Tab PLAN
@@ -118,7 +127,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#dff0d8");
             else if (e.GetValue("StatusKoda").ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString())
                 e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#fcf8e3");
-            else if (e.GetValue("StatusKoda").ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.ZAVRNJEN.ToString())
+            else if (e.GetValue("StatusKoda").ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
                 e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#f2dede");
             else if (e.GetValue("StatusKoda").ToString() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.PREVZET.ToString())
                 e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#ffbf00");

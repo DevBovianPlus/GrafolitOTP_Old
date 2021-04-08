@@ -216,21 +216,21 @@
 
             <dx:GridViewDataTextColumn Caption="Skupna količina"
                 FieldName="Kolicina" ShowInCustomizationForm="True"
-                Width="5%">
+                Width="7%">
                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                 <PropertiesTextEdit DisplayFormatString="f2"></PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
 
             <dx:GridViewDataTextColumn Caption="Skupna vrednost"
                 FieldName="Vrednost" ShowInCustomizationForm="True"
-                Width="5%">
+                Width="7%">
                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                 <PropertiesTextEdit DisplayFormatString="c"></PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
 
             <dx:GridViewDataTextColumn Caption="Procent prevoz"
                 FieldName="ProcentPrevoza" ShowInCustomizationForm="True"
-                Width="5%">
+                Width="7%">
                 <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                 <PropertiesTextEdit DisplayFormatString="f2"></PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
@@ -542,6 +542,15 @@
                             OnClick="btnReopenRecall_Click">
                             <Paddings PaddingLeft="10" PaddingRight="10" />
                             <Image Url="../../Images/lock.png" UrlHottracked="../../Images/lockHover.png" />
+                        </dx:ASPxButton>
+                    </span>
+
+                     <span class="AddEditButtons">
+                        <dx:ASPxButton ID="btnStorno" runat="server" ForeColor="Red" Text="Storno" AutoPostBack="false"
+                            Height="50" Width="110" UseSubmitBehavior="false" ClientVisible="false" ClientInstanceName="clientbtnStorno"
+                            OnClick="btnStorno_Click">
+                            <Paddings PaddingLeft="10" PaddingRight="10" />
+                            <Image Url="../../Images/storno.png" UrlHottracked="../../Images/storno.png" />
                         </dx:ASPxButton>
                     </span>
 

@@ -11,7 +11,8 @@ namespace OptimizacijaTransprotov.Common
         {
             Add = 1,
             Edit = 2,
-            Delete = 3
+            Delete = 3,
+            Storno = 4
         }
 
         public enum UserActionStr 

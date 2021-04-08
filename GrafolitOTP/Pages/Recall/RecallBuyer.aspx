@@ -112,7 +112,7 @@
 
                 <dx:ASPxGridView ID="ASPxGridViewRecallBuyer" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecallBuyer"
                     Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecallBuyer_DataBinding"
-                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
+                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding-medium-fonts" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
                     OnCustomButtonCallback="ASPxGridViewRecallBuyer_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecallBuyer_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecallBuyer_CommandButtonInitialize">
                     <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecallBuyer_EndCallback" SelectionChanged="OnSelectionChanged_gridRecallBuyer" />
                     <%-- FocusedRowChanged="OnFocusedRowChanged_gridRecall" --%>
@@ -142,7 +142,7 @@
                             ReadOnly="true" Visible="false" ShowInCustomizationForm="True" SortOrder="Descending">
                         </dx:GridViewDataTextColumn>
 
-                        <dx:GridViewDataTextColumn Caption="Naročilnica št." FieldName="StevilkaNarocilnica" Width="5%"
+                        <dx:GridViewDataTextColumn Caption="Naročilnica št." FieldName="StevilkaNarocilnica" Width="6%"
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
@@ -198,10 +198,10 @@
                         </span>
 
                         <span class="AddEditButtons">
-                            <dx:ASPxButton Theme="Moderno" ID="btnOpenNewRecall" runat="server" Text="Odpri nov odpoklic" AutoPostBack="false" OnClick="btnOpenNewRecall_Click"
-                                Height="47" Width="50" ClientInstanceName="clientBtnOpenNewRecall" ClientVisible="false">
-                                <Paddings PaddingLeft="10" PaddingRight="10" />
-                                <%--<Image Url="../../../Images/trash.png" UrlHottracked="../../Images/trashHover.png" />--%>
+                            <dx:ASPxButton Theme="Moderno" ForeColor="Red" ID="btnStorno" runat="server" Text="Storno" AutoPostBack="false" OnClick="btnStorno_Click"
+                                Height="47" Width="50" ClientInstanceName="clientbtnStorno" ClientVisible="true">
+                                <Paddings PaddingLeft="10" PaddingRight="10" />                                
+                                <Image Url="../../../Images/storno.png" UrlHottracked="../../Images/storno.png" />
                             </dx:ASPxButton>
                         </span>
 

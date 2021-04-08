@@ -51,13 +51,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected global::DevExpress.Web.ASPxButton btnDelete;
 
         /// <summary>
-        /// btnOpenNewRecall control.
+        /// btnStorno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnOpenNewRecall;
+        protected global::DevExpress.Web.ASPxButton btnStorno;
 
         /// <summary>
         /// btnOpenInquirySummaryForCarrier control.

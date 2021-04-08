@@ -213,6 +213,7 @@
     <Content Include="Images\sendMailToCarriersHover.png" />
     <Content Include="Images\signOut.png" />
     <Content Include="Images\signOutHover.png" />
+    <Content Include="Images\storno.png" />
     <Content Include="Images\takeOverInspect.png" />
     <Content Include="Images\tender.png" />
     <Content Include="Images\transportType.png" />

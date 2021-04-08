@@ -115,7 +115,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (!IsPostBack)
             {
                 Initialize();
-                if (action == (int)Enums.UserAction.Edit || action == (int)Enums.UserAction.Delete)
+                if (action == (int)Enums.UserAction.Edit || action == (int)Enums.UserAction.Delete || action == (int)Enums.UserAction.Storno)
                 {
                     if (recallID > 0)
                     {
@@ -147,7 +147,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     model = GetRecallDataProvider().GetRecallBuyerFullModel();
                 if (model != null)
                 {
-                    if (model.CenaPrevozaSkupno > 0) 
+                    if (model.CenaPrevozaSkupno > 0)
                     {
                         btnRecall.ClientEnabled = true;
                     }
@@ -241,9 +241,21 @@ namespace OptimizacijaTransprotov.Pages.Recall
             if (action == (int)Enums.UserAction.Delete)
             {
                 btnConfirm.ClientEnabled = true;
+                btnReopenRecall.ClientVisible = false;
+                btnStorno.ClientVisible = false;
             }
 
+            if (action == (int)Enums.UserAction.Storno)
+            {
+                btnConfirm.ClientEnabled = false;
+                btnReopenRecall.ClientVisible = false;
+                btnStorno.ClientVisible = true;
+            }
 
+            if (model.StatusKoda != null && model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+            {
+                btnStorno.ClientEnabled = false;
+            }
         }
 
         private bool AddOrEditEntityObject(bool add = false)
@@ -279,18 +291,33 @@ namespace OptimizacijaTransprotov.Pages.Recall
                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.USTVARJENO_NAROCILO.ToString())
                .FirstOrDefault().StatusOdpoklicaID;
             }
-            else if (recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
-            {
-                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
-                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
-                .FirstOrDefault().StatusOdpoklicaID;
-            }
             else
             {
                 model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA.ToString())
                .FirstOrDefault().StatusOdpoklicaID;
             }
+
+            if (recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+                .FirstOrDefault().StatusOdpoklicaID;
+            }
+
+            if (recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+            {
+                model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+                .FirstOrDefault().StatusOdpoklicaID;
+                model.StatusKoda = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+                .FirstOrDefault().Koda;
+                model.StatusKoda = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+                .FirstOrDefault().Naziv;
+            }
+
 
             if (model.bBrezFakture)
             {
@@ -735,10 +762,28 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             reopenRecall = true;
             GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO);
+            model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                  .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
+                  .FirstOrDefault().StatusOdpoklicaID;
             AddOrEditEntityObject();
 
             List<Enums.RecallSession> list = Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList();
             ClearAllSessions(list, Request.RawUrl);
+        }
+
+        protected void btnStorno_Click(object sender, EventArgs e)
+        {
+            reopenRecall = true;
+            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO);
+            model.StatusID = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatuses())
+                  .Where(rs => rs.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.STORNO.ToString())
+                  .FirstOrDefault().StatusOdpoklicaID;
+            model.IzdelajNarocilnico = 1;
+
+            AddOrEditEntityObject();
+
+            List<Enums.RecallSession> list = Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList();
+            ClearSessionsAndRedirect();
         }
 
         protected void btnSendInquiry_Click(object sender, EventArgs e)

@@ -1,0 +1,1 @@
+alter table Razpis add PotRazpisa varchar(2000);
