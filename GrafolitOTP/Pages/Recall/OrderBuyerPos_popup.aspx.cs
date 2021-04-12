@@ -170,6 +170,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                         Prevzemnik = obj.Prevzemnik,
                         Vrednost = obj.ZnesekFakture,
                         Kolicina = obj.Kolicina,
+                        ZaporednaStevilka = model.OdpoklicKupecPozicija.Count + 1,
                         Akcija = (int)Enums.UserAction.Add,
                         addedFromPopUp = true
                     }) ; 

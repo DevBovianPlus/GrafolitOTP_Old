@@ -392,6 +392,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 {
                     SetZbirnikTonByODpoklicValue();
                 }
+
+                if (iRefresh == 1)
+                    SetZbirnikTonByODpoklicValue();
             }
 
             if (model.StatusKoda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.POPRAVLJENO_NAROCILO.ToString())
@@ -415,18 +418,26 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected object GetTotalSummaryValue()
         {
             object sum = null;
-            ASPxSummaryItem summaryItem = ASPxGridSelectPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
-            if (hfCurrentSum.Contains("CurrenSum"))
+            //ASPxSummaryItem summaryItem = ASPxGridSelectPositions.TotalSummary.First(i => i.FieldName == "Kolicina");
+            //if (hfCurrentSum.Contains("CurrenSum"))
+            //{
+            //    decimal sumHidden = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
+            //    sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            //    decimal tSum = CommonMethods.ParseDecimal(sum);
+            //    if (tSum > sumHidden)
+            //        sum = sumHidden;
+            //}
+            //else
+            //    sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
+            //// = sum;
+            if (model != null)
             {
-                decimal sumHidden = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
-                sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
-                decimal tSum = CommonMethods.ParseDecimal(sum);
-                if (tSum > sumHidden)
-                    sum = sumHidden;
+                if (model.OdpoklicKupecPozicija != null)
+                {
+                    sum = model.OdpoklicKupecPozicija.Where(p => p.Akcija != (int)Enums.UserAction.Delete).Select(s => s.Kolicina).Sum();
+                    sum = CommonMethods.ParseDecimal(sum);
+                }
             }
-            else
-                sum = CommonMethods.ParseDecimal(ASPxGridSelectPositions.GetTotalSummaryValue(summaryItem)).ToString("N2");
-            // = sum;
             return sum;
         }
 
@@ -848,7 +859,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
             model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
-            model.CenaPrevozaSkupno = CommonMethods.ParseDecimal(GetLatestPrice());
+
+            model.CenaPrevozaSkupno = (model.CenaPrevozaSkupno > 0 ? model.CenaPrevozaSkupno : CommonMethods.ParseDecimal(GetLatestPrice()));
+
+
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
             model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
             model.RelacijaNaziv = ASPxGridLookupRealacija.Text;
@@ -943,7 +957,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 if (iTempID > 0)
                 {
 
-                    SetZbirnikTonByODpoklicValue();
+
 
                     //CheckModelValidation(GetDatabaseConnectionInstance().DeleteRecallPosition(iTempID));
                     var recallPos = model.OdpoklicKupecPozicija.Where(op => op.ZaporednaStevilka == iTempID).FirstOrDefault();
@@ -951,6 +965,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     //    model.OdpoklicKupecPozicija.Remove(recallPos);
 
                     recallPos.Akcija = (int)Enums.UserAction.Delete;
+                    SetZbirnikTonByODpoklicValue();
                     CalculatePercShip();
                     ASPxGridSelectPositions.DataBind();
                     CallbackPanelUserInput.JSProperties["cpRefreshGrid"] = true;
@@ -970,7 +985,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             hfCurrentSum["CurrenSum"] = GetTotalSummaryValue();
             decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
-            ASPxGridLookupZbirnikTon.Value = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+
+            int iSelectedZbirnik = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
+            ASPxGridLookupZbirnikTon.Value = iSelectedZbirnik;
+            if (model != null)
+                model.ZbirnikTonID = iSelectedZbirnik;
         }
 
         protected void ASPxPopupControlOrderPos_WindowCallback(object source, PopupWindowCallbackArgs e)
