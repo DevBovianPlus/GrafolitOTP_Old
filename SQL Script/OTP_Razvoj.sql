@@ -174,9 +174,9 @@ select * from Grafolit55SI.dbo.tHE_Order where acDocType = '0200' and acConsigne
 update Grafolit55SI.dbo.tHE_Order set acStatus = 1 where acDocType = '0200' and acConsignee like 'RŽENIÈNIK JANEZ S.P. - PAKO - '
 select * from Grafolit55SI.dbo.tHE_Order where acKey='2102500000073' order by adDate desc -- 3.4.2020
 select adDate, acConsignee, anValue from Grafolit55SI.dbo.tHE_Order where acDocType = '0100' order by adDate desc
-select * from Grafolit55SI.dbo.tHE_OrderItem where acKey = '2102500000075' order by adTimeIns desc -- adDeliveryDeadline = 3.4.2020
+select * from Grafolit55SI.dbo.tHE_OrderItem where acKey = '2102400000193' order by adTimeIns desc -- adDeliveryDeadline = 3.4.2020
 
-select * from Grafolit55SI.dbo.tHE_Order where acDocType = '0100' and acKey = '2102500000073' order by adDate desc
+select * from Grafolit55SI.dbo.tHE_Order where acKey = '2102400000193' order by adDate desc
 
 select O.acStatus as Status, OI.adDeliveryDeadline as ZeljeniRokDobave, SUBSTRING(O.acKey, 1, 2) + '-' + SUBSTRING(O.acKey, 3, 3) + '-' + SUBSTRING(O.acKey, 6, 8) as StevilkaDokumenta, 
 O.acReceiver as Stranka, MS.DOBAVITELJ as Dobavitelj, OI.acIdent as KodaArtikla, OI.acName as NazivArtikla, OI.anQty as NarocenaKolicina, OI.acUM as EnotaMere,OI._addelivery as PotrjeniRokDobave, MS.POREKLO
@@ -267,12 +267,12 @@ on MI.acKey = G.acKey
       LEFT JOIN Grafolit55SI.dbo._epos_GTLink GT
             ON G.ackey = GT.LinkKljuc
 WHERE G.acDocType IN ('3600', '3900', '3910', '3920', '3930', '3960')
-      AND GT.NarocKljuc = '2102400000045'
+      AND GT.NarocKljuc = '2102400000193'
 and Year(G.adDate) = 2020 and Month(G.adDate) = 12 and Day(G.adDate) > 1
 group by LEFT(G.acKey, 2) + '-' + SUBSTRING(G.acKey, 3, 3) + '-' + RIGHT(G.acKey, 6), G.acKey, G.adDate, G.acCurrency, G.acReceiver, acPrsn3, GT.ProcTrans, GT.Vrednost, GT.VredTrans, GT.ProcTransFakt
 
-select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000020'
-select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102500000073'
+select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000193'
+select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000194'
 select * FROM Grafolit55SI.dbo._epos_GTLink where NarocKljuc = '2102400000065'
 
 select * FROM Grafolit55SI.dbo._epos_GTLink order by 1 desc
@@ -281,7 +281,7 @@ select * from SeznamNepovezanihFaktur()
 select * from OdpoklicKupecPozicija order by 1 desc
 select * from OdpoklicKupec order by 1 desc
 select * from ZbirnikTon order by 1 desc
-exec SeznamPovezanihFakturByOrderNo '2102400000083'
+exec SeznamPovezanihFakturByOrderNo '2102400000131'
 
 update Osebe_NOZ set NOZDostop = 1,  where UporabniskoIme='AljosaS'
 
@@ -296,3 +296,9 @@ select * from Relacija where RelacijaID = 1174
 select * from Relacija where Naziv like '%NAKLO%'
 
 select * from RazpisPozicija where ZbirnikTonID <> 10 and Cena>0 order by 1 desc
+
+select * from Grafolit55SI.dbo.tHE_OrderItem order by adTimeIns desc
+select * from Grafolit55SI.dbo.tHE_Order order by adTimeIns desc
+select * from Grafolit55SI.dbo.tHE_Move order by adTimeIns desc
+
+select * from OdpoklicKupec order by 1 desc

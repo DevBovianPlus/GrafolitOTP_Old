@@ -10,7 +10,7 @@
 
             //we delete successMessage query string so we show modal only once!
             var params = QueryStringsToObject();
-            delete params.filter;i
+            delete params.filter;
             var path = window.location.pathname + '?' + SerializeQueryStrings(params);
             history.pushState({}, document.title, path);
         });
@@ -112,7 +112,7 @@
 
                 <dx:ASPxGridView ID="ASPxGridViewRecallBuyer" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecallBuyer"
                     Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecallBuyer_DataBinding"
-                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding-medium-fonts" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
+                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding-type1" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
                     OnCustomButtonCallback="ASPxGridViewRecallBuyer_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecallBuyer_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecallBuyer_CommandButtonInitialize">
                     <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecallBuyer_EndCallback" SelectionChanged="OnSelectionChanged_gridRecallBuyer" />
                     <%-- FocusedRowChanged="OnFocusedRowChanged_gridRecall" --%>

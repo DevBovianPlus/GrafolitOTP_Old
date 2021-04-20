@@ -18,3 +18,7 @@
 9. 12. 2019 21:16:54 Napačna zahteva! Query string vrednost ne vsebuje potrebnih parametrov (';').
 9. 12. 2019 21:54:03 Napaka! Seja je prazna
 9. 12. 2019 21:54:41 Napaka! Seja je prazna
+04/13/2021 13:33:21 Rok za vpis cene je potekel.
+04/13/2021 13:35:12 Rok za vpis cene je potekel.
+04/13/2021 13:35:26 Rok za vpis cene je potekel.
+04/13/2021 13:40:41 Rok za vpis cene je potekel.

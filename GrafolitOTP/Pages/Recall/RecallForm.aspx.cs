@@ -331,7 +331,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.KupecUrediTransport = BuyerArrangesTransportCheckBox2.Checked;
 
-            if (model.OdobritevKomentar != null && model.OdobritevKomentar.Length == 0 && recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString())
+            if (model.RazlogOdobritveSistem != null && model.RazlogOdobritveSistem.Length == 0 && recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString())
             {
                 CommonMethods.LogThis("NAPAKA V odobritev brez razloga :" + model.OdpoklicStevilka.ToString() + ": model.RazlogOdobritveSistem :" + model.RazlogOdobritveSistem);
                 model.StatusID = 4;
