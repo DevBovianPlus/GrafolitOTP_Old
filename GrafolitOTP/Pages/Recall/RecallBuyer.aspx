@@ -112,7 +112,7 @@
 
                 <dx:ASPxGridView ID="ASPxGridViewRecallBuyer" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRecallBuyer"
                     Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRecallBuyer_DataBinding"
-                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding-type1" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
+                    KeyFieldName="OdpoklicKupecID" CssClass="gridview-no-header-padding-medium-fonts" OnCustomCallback="ASPxGridViewRecallBuyer_CustomCallback"
                     OnCustomButtonCallback="ASPxGridViewRecallBuyer_CustomButtonCallback" OnHtmlRowPrepared="ASPxGridViewRecallBuyer_HtmlRowPrepared" OnCommandButtonInitialize="ASPxGridViewRecallBuyer_CommandButtonInitialize">
                     <ClientSideEvents RowDblClick="DoubleClick" EndCallback="gridRecallBuyer_EndCallback" SelectionChanged="OnSelectionChanged_gridRecallBuyer" />
                     <%-- FocusedRowChanged="OnFocusedRowChanged_gridRecall" --%>
@@ -132,7 +132,7 @@
                     </Styles>
                     <SettingsText EmptyDataRow="Trenutno ni podatka o odpoklicih. Dodaj novega." />
                     <Columns>
-                        <dx:GridViewCommandColumn ButtonRenderMode="Button" Width="5%" Caption="Dokument">
+                        <dx:GridViewCommandColumn ButtonRenderMode="Button" Width="6%" Caption="Dokument">
                             <CustomButtons>
                                 <dx:GridViewCommandColumnCustomButton ID="Print">
                                 </dx:GridViewCommandColumnCustomButton>

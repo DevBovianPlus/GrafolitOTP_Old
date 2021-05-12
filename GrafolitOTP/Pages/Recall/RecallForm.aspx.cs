@@ -331,11 +331,14 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.KupecUrediTransport = BuyerArrangesTransportCheckBox2.Checked;
 
-            if (model.RazlogOdobritveSistem != null && model.RazlogOdobritveSistem.Length == 0 && recallStatusCode == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV.ToString())
+            if (model.RazlogOdobritveSistem != null && model.RazlogOdobritveSistem.Length == 0 && model.StatusID == Convert.ToInt32(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.V_ODOBRITEV))
             {
                 CommonMethods.LogThis("NAPAKA V odobritev brez razloga :" + model.OdpoklicStevilka.ToString() + ": model.RazlogOdobritveSistem :" + model.RazlogOdobritveSistem);
                 model.StatusID = 4;
             }
+
+            CommonMethods.LogThis("recallStatusCode :" + recallStatusCode);
+            CommonMethods.LogThis("StatusID :" + model.StatusID.ToString());
 
             RecallFullModel returnModel = CheckModelValidation(GetDatabaseConnectionInstance().SaveRecall(model));
 
@@ -1014,6 +1017,20 @@ namespace OptimizacijaTransprotov.Pages.Recall
             bool bOptimalnaPrekoracena = false;
             bIsKos = CheckIfKosPosition();
 
+            if (model == null)
+            {
+                if (GetRecallDataProvider().GetRecallFullModel() != null)
+                {
+                    model = GetRecallDataProvider().GetRecallFullModel();
+                }
+                else
+                {
+                    CommonMethods.LogThis("Recall model is null:");
+                    return;
+                }
+
+            }
+
             CommonMethods.LogThis("Log CheckRecallForAnomalies 1 - ŠT :" + model.OdpoklicStevilka.ToString());
             string memKomentarOdobritve = "";
 
@@ -1055,11 +1072,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (isNewPriceHigherFromTender())
                 {
+                    
+
                     CommonMethods.LogThis("Log CheckRecallForAnomalies 4 - ŠT :" + model.OdpoklicStevilka.ToString());
-                    sArgumentOfApproval += "Cena je višja od zadnjega razpisa izbranega prevoznika. | ";
+                    sArgumentOfApproval += "Cena je višja od najcenejšega razpisa za izbrano relacijo (" + model.LowestPrice.ToString("N2") + "). | ";
                     bool optimalStockOverFlow = CheckForOptimalStockOverflow(model.OdpoklicPozicija);//preverimo če je cena napačna in preverimo še če je optimalna zaloga prekoračena.
                     needToConfirmRecall = true;
-                    memKomentarOdobritve += "Cena je višja od zadnjega razpisa izbranega prevoznika." + (optimalStockOverFlow ? "\r\n Preseg optimalne količine. |" : " (" + GetLatestPrice().ToString("N2") + ")") + " |";
+                    memKomentarOdobritve += "Cena je višja od najcenejšega razpisa za izbrano relacijo (" + model.LowestPrice.ToString("N2") + "). " + (optimalStockOverFlow ? "\r\n Preseg optimalne količine. |" : " (" + GetLatestPrice().ToString("N2") + ")") + " |";
                     //AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Cena je višja od zadnjega razpisa izbranega prevoznika. (" + GetLatestPrice().ToString("N2") + ")");
                 }
 
@@ -1152,7 +1171,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             if (isSupplierArrangesTransport)
             {
-                CommonMethods.LogThis("Log CheckRecallForAnomalies 10 - ŠT :" + model.OdpoklicStevilka.ToString());
+                CommonMethods.LogThis("Log CheckRecallForAnomalies 10 - ŠT :" + model.OdpoklicStevilka.ToString() + " Optimalna prekoračena: " + bOptimalnaPrekoracena);
                 btnRecall.Text = bOptimalnaPrekoracena == true ? "V odobritev" : "Odpokliči";
                 EnableUserControls(false);
                 btnRecall.ClientEnabled = true;
@@ -1216,6 +1235,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected void btnRecall_Click(object sender, EventArgs e)
         {
             bool isValid = true;
+            string sArgumentOfApproval = "";
 
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             bIsKos = CheckIfKosPosition();
@@ -1225,6 +1245,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 CommonMethods.LogThis("Log 1 - ŠT :" + model.OdpoklicStevilka.ToString());
                 ShowClientWarningPopUp("Odpoklicana količina presega optimalno!");
+                sArgumentOfApproval += "Odpoklicana količina presega optimalno! | ";
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 isValid = false;
             }
@@ -1232,6 +1253,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 CommonMethods.LogThis("Log 2 - ŠT :" + model.OdpoklicStevilka.ToString());
                 ShowClientWarningPopUp("Odpoklicana količina presega optimalno zaradi tipa transporta (15).");
+                sArgumentOfApproval += "Odpoklicana količina presega optimalno zaradi tipa transporta (15). |";
                 AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, "Odpoklicana količina višja od optimalne");
                 isValid = false;
             }
@@ -1296,6 +1318,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 ProcessUserAction();
             }
+
+            AddValueToSession(Enums.RecallSession.ArgumentsOfApprovalToDB, sArgumentOfApproval);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -1558,7 +1582,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
 
                     decimal lowestPrice = (ZbirnikTonID == 0) ? CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
-                    txtNovaCena.Text = lowestPrice.ToString("N2");
+                    txtNovaCena.Text = lowestPrice.ToString("N2");                    
+                    model.LowestPrice = (model != null) ? lowestPrice : 0;
+
+
                     ASPxGridLookupStranke.DataBind();
                 }
 

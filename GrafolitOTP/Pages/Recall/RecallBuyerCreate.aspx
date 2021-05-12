@@ -16,6 +16,30 @@
 
         });
 
+        var postbackInitiated = false;
+        function CheckFieldValidation(s, e) {
+            var process = false;
+            var lookUpItems = [lookUpRelacija];
+            //var comboBoxItems = [clientComboBoxTip];
+            var inputItems = null;
+            var memoItems = null;
+
+
+            process = InputFieldsValidation(lookUpItems, inputItems, null, memoItems, /*comboBoxItems*/null, null);
+
+            if (clientBtnConfirm.GetText() == 'Izbriši')
+                process = true;
+
+            if (process) {
+                e.processOnServer = !postbackInitiated;
+                postbackInitiated = true;
+            }
+            else
+                e.processOnServer = false;
+
+            return process;
+        }
+
         function btnAddOrderPosition_Click(s, e) {
             clientLoadingPanel.Show();
             clientCallbackPanelUserInput.PerformCallback("ShowOrderPositionPopUp");
@@ -329,12 +353,12 @@
                 </div>
 
                 <div class="row small-padding-bottom">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <div class="row2 align-item-centerV-startH">
                             <div class="col-sm-0 big-margin-r" style="padding-right: 6px">
                                 <dx:ASPxLabel ID="ASPxLabel15" runat="server" Text="Zbirnik Teža : " ClientInstanceName="clientLblZbirnik"></dx:ASPxLabel>
                             </div>
-                            <div class="col-sm-6 no-padding-left">
+                            <div class="col-sm-8 no-padding-left">
                                 <dx:ASPxGridLookup ID="ASPxGridLookupZbirnikTon" runat="server" ClientInstanceName="lookUpZbirnikTon"
                                     KeyFieldName="ZbirnikTonID" TextFormatString="{2}" CssClass="text-box-input" ClientEnabled="true"
                                     Paddings-PaddingTop="0" Paddings-PaddingBottom="0" Width="100%" Font-Size="14px"
@@ -524,7 +548,7 @@
                             Height="25" Width="110" ClientInstanceName="clientBtnConfirm" UseSubmitBehavior="false" OnClick="btnConfirm_Click">
                             <Paddings PaddingLeft="10" PaddingRight="10" />
                             <Image Url="../../../Images/add.png" UrlHottracked="../../Images/addHover.png" />
-                            <%--<ClientSideEvents Click="btnConfirm_Click" />--%>
+                            <ClientSideEvents Click="CheckFieldValidation" />
                         </dx:ASPxButton>
                     </span>
                     <span class="AddEditButtons">

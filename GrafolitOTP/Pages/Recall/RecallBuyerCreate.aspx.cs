@@ -884,7 +884,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 model.CenaPrevozaSkupno = dCenaPrevoza;
                 ASPxHFCena["Cena"] = dCenaPrevoza.ToString("N2");
 
-                ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+                if (ASPxGridLookupPrevoznik.GridView.VisibleRowCount > 0)
+                    ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
 
                 btnRecall.ClientEnabled = true;
                 btnRecall.Enabled = true;
@@ -905,7 +906,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 model.CenaPrevozaSkupno = dCenaPrevoza;
                 ASPxHFCena["Cena"] = dCenaPrevoza.ToString("N2");
 
-                ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+                if (ASPxGridLookupPrevoznik.GridView.VisibleRowCount > 0)
+                {
+                    ASPxGridLookupPrevoznik.GridView.Selection.SelectRow(0);
+                }
 
                 btnRecall.ClientEnabled = true;
                 btnRecall.Enabled = true;
@@ -987,9 +991,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             decimal dCurrentWeightValue = CommonMethods.ParseDecimal(hfCurrentSum["CurrenSum"]);
 
             int iSelectedZbirnik = ReturnZbirnikTonIDByOdpoklicValue(CommonMethods.ParseDecimal(dCurrentWeightValue));
-            ASPxGridLookupZbirnikTon.Value = iSelectedZbirnik;
-            if (model != null)
-                model.ZbirnikTonID = iSelectedZbirnik;
+            int iCurrentZbirnikID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
+            if (iCurrentZbirnikID == iSelectedZbirnik)
+            {
+                ASPxGridLookupZbirnikTon.Value = iSelectedZbirnik;
+                if (model != null)
+                    model.ZbirnikTonID = iSelectedZbirnik;
+            }
         }
 
         protected void ASPxPopupControlOrderPos_WindowCallback(object source, PopupWindowCallbackArgs e)
