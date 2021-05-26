@@ -62,6 +62,8 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
     private XRLabel lblPrevoznik;
     private XRLabel xrLabel1;
     private XRLine xrLine2;
+    private XRLabel lblOpomba;
+    private XRRichText lblOpomba1;
 
     /// <summary>
     /// Required designer variable.
@@ -82,6 +84,8 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
         lblOrderNumber.Text = model.StevilkaNarocilnica.ToString();
         lblPrevoznik.Text = model.PrevoznikNaziv;
         lblDatumIzpisa.Text = "Date : " + DateTime.Now.ToString("dd.MM.yyyy");
+        lblOpomba1.Text = model.OpisOdpoklicKupec.ToString();
+
         iCnt = 0;
         foreach (var item in model.OdpoklicKupecPozicija)
         {
@@ -311,12 +315,15 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.lblOpomba = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
+            this.lblOpomba1 = new DevExpress.XtraReports.UI.XRRichText();
             ((System.ComponentModel.ISupportInitialize)(this.session1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecallPositionTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblOpomba1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -760,9 +767,24 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             // 
             // GroupFooter1
             // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblOpomba1,
+            this.lblOpomba});
             this.GroupFooter1.Dpi = 254F;
-            this.GroupFooter1.HeightF = 0F;
+            this.GroupFooter1.HeightF = 127.3319F;
             this.GroupFooter1.Name = "GroupFooter1";
+            // 
+            // lblOpomba
+            // 
+            this.lblOpomba.Dpi = 254F;
+            this.lblOpomba.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOpomba.LocationFloat = new DevExpress.Utils.PointFloat(0.0002422333F, 0F);
+            this.lblOpomba.Multiline = true;
+            this.lblOpomba.Name = "lblOpomba";
+            this.lblOpomba.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblOpomba.SizeF = new System.Drawing.SizeF(279.2349F, 61.06586F);
+            this.lblOpomba.StylePriority.UseFont = false;
+            this.lblOpomba.Text = "Opomba:\t ";
             // 
             // PageFooter
             // 
@@ -792,6 +814,16 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(603.25F, 5.291668F);
             // 
+            // lblOpomba1
+            // 
+            this.lblOpomba1.Dpi = 254F;
+            this.lblOpomba1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.lblOpomba1.LocationFloat = new DevExpress.Utils.PointFloat(0.0002422333F, 61.06588F);
+            this.lblOpomba1.Name = "lblOpomba1";
+            this.lblOpomba1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.lblOpomba1.SerializableRtfString = resources.GetString("lblOpomba1.SerializableRtfString");
+            this.lblOpomba1.SizeF = new System.Drawing.SizeF(2722F, 58.41999F);
+            // 
             // RecallBuyer
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -814,6 +846,7 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             ((System.ComponentModel.ISupportInitialize)(this.session1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecallPositionTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblOpomba1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
     }

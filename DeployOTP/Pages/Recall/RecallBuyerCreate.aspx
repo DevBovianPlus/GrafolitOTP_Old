@@ -197,7 +197,7 @@
         OnHtmlRowPrepared="ASPxGridViewSelectedPositions_HtmlRowPrepared" OnDataBound="ASPxGridViewSelectedPositions_DataBound">
         <Paddings Padding="0" />
         <Settings ShowVerticalScrollBar="True" ShowFooter="true" ShowStatusBar="Visible"
-            ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="500"
+            ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="400"
             ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" HorizontalScrollBarMode="Auto" />
         <SettingsPager PageSize="50" ShowNumericButtons="true">
             <PageSizeItemSettings Visible="true" Items="50,80,100" Caption="Zapisi na stran : " AllItemText="Vsi">
@@ -329,7 +329,7 @@
                             </div>
                             <div class="col-xs-10 no-padding-left" style="align-items: center">
                                 <dx:ASPxTextBox runat="server" ID="txtStatus" ClientEnabled="false" ClientInstanceName="clientTxtStatus"
-                                    CssClass="text-box-input" Font-Size="14px" ReadOnly="true" BackColor="LightGray" Width="100%" Font-Bold="true">
+                                    CssClass="text-box-input" Font-Size="14px" ReadOnly="true" BackColor="LightGray" Width="80%" Font-Bold="true">
                                     <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
                                 </dx:ASPxTextBox>
                             </div>
@@ -344,7 +344,7 @@
                             </div>
                             <div class="col-xs-10 no-padding-left" style="align-items: center">
                                 <dx:ASPxTextBox runat="server" ID="txtStNarocilnice" ClientEnabled="false" ClientInstanceName="clientTxtStNarocilnice"
-                                    CssClass="text-box-input" Font-Size="14px" ReadOnly="true" BackColor="LightGray" Width="100%" Font-Bold="true">
+                                    CssClass="text-box-input" Font-Size="14px" ReadOnly="true" BackColor="LightGray" Width="60%" Font-Bold="true">
                                     <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
                                 </dx:ASPxTextBox>
                             </div>
@@ -409,6 +409,21 @@
                     </div>
 
                 </div>
+
+                 <div class="row small-padding-bottom">
+                    <div class="col-md-12">
+                        <div class="row2 align-item-centerV-startH">
+                            <div class="col-xs-0 big-margin-r no-padding-right" style="margin-right: 37px;">
+                                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="OPOMBA : "></dx:ASPxLabel>
+                            </div>
+                            <div class="col-xs-10 no-padding-left">
+                                 <dx:ASPxMemo runat="server" Rows="4" Width="60%" NullText="Vpiši opombo..." ClientVisible="true" ID="memOpis" MaxLength="5000"
+                                    ClientInstanceName="clientMemoKomentar" />
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+
                 <div class="row small-padding-bottom">
                     <div class="col-md-6">
                         <div class="row2 align-item-centerV-startH">
@@ -514,6 +529,8 @@
                         </div>
                     </div>
                 </div>
+
+               
 
 
 

@@ -207,6 +207,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             //ComboBoxTip.SelectedIndex = model.TipID > 0 ? ComboBoxTip.Items.IndexOfValue(model.TipID.ToString()) : 0;
             txtStatus.Text = model.StatusNaziv != null ? model.StatusNaziv : "";
             txtStNarocilnice.Text = model.StevilkaNarocilnica != null ? model.StevilkaNarocilnica : "";
+            memOpis.Text = model.OpisOdpoklicKupec != null ? model.OpisOdpoklicKupec : "";
 
 
 
@@ -331,6 +332,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
             model.CenaPrevozaSkupno = txtNovaCena.Text.Contains(".") ? CommonMethods.ParseDecimal(txtNovaCena.Text.Replace(".", ",")) : CommonMethods.ParseDecimal(txtNovaCena.Text);
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
+            model.OpisOdpoklicKupec = memOpis.Text;
             //
 
             List<TenderPositionModel> tenderList = GetRecallDataProvider().GetTenderListFromSelectedRoute();
@@ -707,6 +709,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             txtNovaCena.ClientEnabled = enabled;
             btnRecall.ClientEnabled = enabled;
             btnConfirm.ClientEnabled = enabled;
+            memOpis.ClientEnabled = enabled;
 
         }
         #endregion
@@ -866,7 +869,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
             model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
             model.RelacijaNaziv = ASPxGridLookupRealacija.Text;
-
+            model.OpisOdpoklicKupec = memOpis.Text;
 
             if (e.Parameter == "Enable")
             {

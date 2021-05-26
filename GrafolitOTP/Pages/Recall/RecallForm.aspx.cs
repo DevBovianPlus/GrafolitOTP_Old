@@ -236,6 +236,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         private bool AddOrEditEntityObject(bool add = false)
         {
+            CommonMethods.LogThis("recallStatusChanged :" + recallStatusChanged.ToString());
+
             if (add)
             {
                 model = GetRecallDataProvider().GetRecallFullModel() != null ? GetRecallDataProvider().GetRecallFullModel() : new RecallFullModel();
@@ -288,6 +290,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             string recallStatusCode = GetRecallDataProvider().GetRecallStatus().ToString();
             model.StatusID = GetRecallDataProvider().GetRecallStatuses() != null ? GetRecallDataProvider().GetRecallStatuses().Where(rs => rs.Koda == recallStatusCode).FirstOrDefault().StatusOdpoklicaID : 0;
+            
+            CommonMethods.LogThis("recallStatusCode :" + recallStatusCode.ToString());
+            CommonMethods.LogThis(" model.StatusID :" + model.StatusID.ToString());
 
             model.CenaPrevoza = CommonMethods.ParseDecimal(txtNovaCena.Text);
             model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
@@ -337,6 +342,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 model.StatusID = 4;
             }
 
+            CommonMethods.LogThis("RazlogOdobritveSistem :" + model.RazlogOdobritveSistem);
             CommonMethods.LogThis("recallStatusCode :" + recallStatusCode);
             CommonMethods.LogThis("StatusID :" + model.StatusID.ToString());
 
@@ -702,7 +708,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             if (model == null) return null;
 
-            List<MaterialModel> materials = new List<MaterialModel>();
+            List<MaterialModel> materials = new List<MaterialModel>(); 
             foreach (var item in model.OdpoklicPozicija)
             {
                 materials.Add(new MaterialModel { Ident = item.MaterialIdent });
@@ -1072,7 +1078,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (isNewPriceHigherFromTender())
                 {
-                    
+                    model.LowestPrice = model.LowestPrice > 0 ? model.LowestPrice : GetLatestPrice();
 
                     CommonMethods.LogThis("Log CheckRecallForAnomalies 4 - ŠT :" + model.OdpoklicStevilka.ToString());
                     sArgumentOfApproval += "Cena je višja od najcenejšega razpisa za izbrano relacijo (" + model.LowestPrice.ToString("N2") + "). | ";
@@ -1116,7 +1122,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     CommonMethods.LogThis("Log CheckRecallForAnomalies 8 - ŠT :" + model.OdpoklicStevilka.ToString());
 
                     btnRecall.ForeColor = Color.Green;
-                    memoKomentar.ClientVisible = false;
+                    //memoKomentar.ClientVisible = false;
                     btnRecall.Text = "Odpokliči";
                     GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN);
                 }
@@ -1211,7 +1217,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             AddValueToSession(Enums.RecallSession.ArgumentsOfApprovalToDB, sArgumentOfApproval);
             memKomentarOdobritve += " Vpiši komentar";
             memoKomentar.NullText = memKomentarOdobritve;
-            memoKomentar.Text = "";
+            //memoKomentar.Text = "";
         }
 
         #endregion
@@ -1239,6 +1245,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             bIsKos = CheckIfKosPosition();
+            
+            CommonMethods.LogThis("Status: " + GetRecallDataProvider().GetRecallStatus().ToString());
+            CommonMethods.LogThis("model.StatusID: " + model.StatusID.ToString());
 
             //odpoklic pozicij preverjamo smo če imajo transport tipa 15
             if (CheckForOptimalStockOverflow(model.OdpoklicPozicija))
@@ -1315,6 +1324,9 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     CommonMethods.LogThis("Log 7.2 - ŠT :" + model.OdpoklicStevilka.ToString());
                     recallStatusChanged = true;
                 }
+
+                CommonMethods.LogThis("Status: " + GetRecallDataProvider().GetRecallStatus().ToString());
+                CommonMethods.LogThis("model.StatusID: " + model.StatusID.ToString());
 
                 ProcessUserAction();
             }
