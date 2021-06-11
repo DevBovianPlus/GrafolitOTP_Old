@@ -95,6 +95,7 @@ namespace OptimizacijaTransprotov
 
                 userPrincipal.Role = serializeModel.Role;
                 userPrincipal.RoleId = serializeModel.RoleID;
+                userPrincipal.OTPPantheonUsrID = serializeModel.OTPPantheonUsrID;
 
                 HttpContext.Current.User = userPrincipal;
             }

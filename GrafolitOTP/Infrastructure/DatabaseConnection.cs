@@ -6,6 +6,7 @@ using DatabaseWebService.ModelsOTP.Order;
 using DatabaseWebService.ModelsOTP.Recall;
 using DatabaseWebService.ModelsOTP.Route;
 using DatabaseWebService.ModelsOTP.Tender;
+using DatabaseWebService.Models.Employee;
 using Newtonsoft.Json;
 using OptimizacijaTransprotov.Helpers;
 using System;
@@ -1780,6 +1781,87 @@ namespace OptimizacijaTransprotov.Infrastructure
             }
 
             return model;
+        }
+
+        public WebResponseContentModel<EmployeeFullModel> GetEmployeeByID(int employeeID)
+        {
+            WebResponseContentModel<EmployeeFullModel> dt = new WebResponseContentModel<EmployeeFullModel>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<EmployeeFullModel>>(WebServiceHelper.GetEmployeeByID(employeeID), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
+        }
+
+        public WebResponseContentModel<List<PantheonUsers>> GetPantheonUsers()
+        {
+            WebResponseContentModel<List<PantheonUsers>> client = new WebResponseContentModel<List<PantheonUsers>>();
+            try
+            {
+                client = GetResponseFromWebRequest<WebResponseContentModel<List<PantheonUsers>>>(WebServiceHelper.GetPantheonUsers(), "get");
+            }
+            catch (Exception ex)
+            {
+                client.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return client;
+        }
+
+        public WebResponseContentModel<EmployeeFullModel> SaveEmployeeOTP(EmployeeFullModel newData)
+        {
+            WebResponseContentModel<EmployeeFullModel> model = new WebResponseContentModel<EmployeeFullModel>();
+
+            try
+            {
+                model.Content = newData;
+                model = PostWebRequestData<WebResponseContentModel<EmployeeFullModel>>(WebServiceHelper.SaveEmployeeOTP(), "post", model);
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+        public WebResponseContentModel<bool> DeleteEmployee(int employeeID)
+        {
+            WebResponseContentModel<bool> model = new WebResponseContentModel<bool>();
+
+            try
+            {
+                model = GetResponseFromWebRequest<WebResponseContentModel<bool>>(WebServiceHelper.DeleteEmployee(employeeID), "get");
+            }
+            catch (Exception ex)
+            {
+                model.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return model;
+        }
+
+        #endregion
+
+        #region "Vloga"
+        public WebResponseContentModel<List<RoleModel>> GetRolesOTP()
+        {
+            WebResponseContentModel<List<RoleModel>> dt = new WebResponseContentModel<List<RoleModel>>();
+            try
+            {
+                dt = GetResponseFromWebRequest<WebResponseContentModel<List<RoleModel>>>(WebServiceHelper.GetRolesOTP(), "get");
+            }
+            catch (Exception ex)
+            {
+                dt.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+
+            return dt;
         }
         #endregion
 

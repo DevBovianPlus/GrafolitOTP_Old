@@ -30,6 +30,7 @@
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/BasicCodeList/TransportType/TransportType.aspx" Text="Tip prevoza" ImageUrl="~/Images/transportType.png" />
+	  <Link NavigateUrl="~/Pages/BasicCodeList/Employee/EmployeeTable.aspx" Text="Zaposleni" ImageUrl="~/Images/employee.png" />
     </Group>
     <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />
@@ -70,6 +71,7 @@
     <Group Text="ŠIFRANTI" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/BasicCodeList/Route/Route.aspx" Text="Relacije" ImageUrl="~/Images/inspect.png" />
       <Link NavigateUrl="~/Pages/Client/Client.aspx" Text="Prevozniki, dobavitelji" ImageUrl="~/Images/inspect.png" />
+	  <Link NavigateUrl="~/Pages/BasicCodeList/Employee/EmployeeTable.aspx" Text="Zaposleni" ImageUrl="~/Images/employee.png" />
     </Group>
     <Group Text="SPOROČILA" font="bold" align="center" ImageUrl="~/Images/Arrow-right.png">
       <Link NavigateUrl="~/Pages/Settings/SystemEmailTable.aspx" Text="Sistemska sporočila" ImageUrl="~/Images/sendMailToCarriersMenu.png" />

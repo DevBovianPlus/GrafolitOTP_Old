@@ -126,6 +126,12 @@ namespace OptimizacijaTransprotov.Common
 
         }
 
+        public enum EmployeeSession
+        {
+            EmployeeID,
+            EmployeeModel
+        }
+
         public enum PreviousPage
         {
             Orders,

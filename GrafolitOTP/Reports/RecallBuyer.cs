@@ -84,7 +84,8 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
         lblOrderNumber.Text = model.StevilkaNarocilnica.ToString();
         lblPrevoznik.Text = model.PrevoznikNaziv;
         lblDatumIzpisa.Text = "Date : " + DateTime.Now.ToString("dd.MM.yyyy");
-        lblOpomba1.Text = model.OpisOdpoklicKupec.ToString();
+        if (model.OpisOdpoklicKupec == null) model.OpisOdpoklicKupec = "";
+        lblOpomba1.Text =  model.OpisOdpoklicKupec.ToString();
 
         iCnt = 0;
         foreach (var item in model.OdpoklicKupecPozicija)

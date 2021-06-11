@@ -640,7 +640,31 @@ namespace OptimizacijaTransprotov.Helpers
 
         public static string GetEmployeeByID(int employeeId)
         {
-            return WebServiceEmployeeURL + "GetEmployeeByID=employeeId=" + employeeId;
+            return WebServiceEmployeeURL + "GetEmployeeByID?employeeId=" + employeeId;
+        }
+
+        public static string GetPantheonUsers()
+        {
+            return WebServiceEmployeeURL + "GetPantheonUsers";
+        }
+
+        public static string SaveEmployeeOTP()
+        {
+            return WebServiceEmployeeURL + "SaveEmployeeOTP";
+        }
+
+        public static string DeleteEmployee(int employeeID)
+        {
+            return WebServiceEmployeeURL + "DeleteEmployee?employeeID=" + employeeID;
+        }
+
+        #endregion
+
+        #region "Vloga"
+
+        public static string GetRolesOTP()
+        {
+            return WebServiceEmployeeURL + "GetRolesOTP";
         }
         #endregion
 

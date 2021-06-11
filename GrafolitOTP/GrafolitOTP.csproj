@@ -187,6 +187,7 @@
     <Content Include="Images\edit.png" />
     <Content Include="Images\editHover.png" />
     <Content Include="Images\editPopup.png" />
+    <Content Include="Images\employee.png" />
     <Content Include="Images\export_excel.png" />
     <Content Include="Images\forward.png" />
     <Content Include="Images\forwardHoover.png" />
@@ -223,6 +224,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Pages\Admin\AdminOverview.aspx" />
+    <Content Include="Pages\BasicCodeList\Employee\EmployeeTable.aspx" />
+    <Content Include="Pages\BasicCodeList\Employee\Employee_popup.aspx" />
     <Content Include="Pages\BasicCodeList\Route\Route.aspx" />
     <Content Include="Pages\BasicCodeList\Route\Route_popup.aspx" />
     <Content Include="Pages\BasicCodeList\TransportType\TransportType.aspx" />
@@ -298,6 +301,9 @@
     <Compile Include="Helpers\DataProviders\ClientDataProvider.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Helpers\DataProviders\EmployeeDataProvider.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Helpers\DataProviders\OrderDataProvider.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -351,6 +357,20 @@
     </Compile>
     <Compile Include="Pages\Admin\AdminOverview.aspx.designer.cs">
       <DependentUpon>AdminOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Employee\EmployeeTable.aspx.cs">
+      <DependentUpon>EmployeeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Employee\EmployeeTable.aspx.designer.cs">
+      <DependentUpon>EmployeeTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Employee\Employee_popup.aspx.cs">
+      <DependentUpon>Employee_popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasicCodeList\Employee\Employee_popup.aspx.designer.cs">
+      <DependentUpon>Employee_popup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BasicCodeList\Route\Route.aspx.cs">
       <DependentUpon>Route.aspx</DependentUpon>

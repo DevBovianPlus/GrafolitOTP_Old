@@ -110,7 +110,8 @@
                             clientPopUpOrderPos.Hide();
                             if (userAction !== undefined && recallID !== undefined) {
                                 clientLoadingPanel.Show();
-                                window.location.replace("RecallBuyerCreate.aspx?action=" + userAction + "&recordId=" + recallID + "&Refresh=1");
+                                clientCallbackPanelUserInput.PerformCallback('ChangePrice');
+                                //window.location.replace("RecallBuyerCreate.aspx?action=" + userAction + "&recordId=" + recallID + "&Refresh=1");
                             }
                             break;
                     }

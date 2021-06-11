@@ -22,7 +22,7 @@
         <PanelCollection>
             <dx:PanelContent>
                 <div class="row m-0 pb-3 justify-content-end">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="row2 align-item-centerV-startH">
                             <div class="col-xs-0 big-margin-r no-padding-right" style="margin-right: 20px;">
                                 <dx:ASPxLabel ID="ASPxLabel9" runat="server" Text="DATUM Od : " Width="80px"></dx:ASPxLabel>
@@ -37,13 +37,13 @@
                                 </dx:ASPxDateEdit>
                             </div>
 
-                            <div class="col-xs-0" style="margin-right: 20px; margin-left:20px;">
+                            <div class="col-xs-0" style="margin-right: 20px; margin-left: 20px;">
                                 <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="DATUM Do : " Width="80px"></dx:ASPxLabel>
                             </div>
                             <div class="col-xs-0">
                                 <dx:ASPxDateEdit ID="DateEditDatumDo" runat="server" EditFormat="Date" Width="170" Theme="Moderno"
                                     CssClass="text-box-input date-edit-padding" Font-Size="13px" ClientInstanceName="DateEditDatumDo">
-                                     <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
+                                    <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
                                     <FocusedStyle CssClass="focus-text-box-input" />
                                     <CalendarProperties TodayButtonText="Danes" ClearButtonText="Izbriši" />
                                     <DropDownButton Visible="true"></DropDownButton>
@@ -57,7 +57,7 @@
                         <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Prevoz organizira : " Width="180px"></dx:ASPxLabel>
                     </div>
                     <div class="col-xs-4 mb-2 mb-lg-0">
-                        <dx:ASPxRadioButtonList ID="RadioButtonList" runat="server" ValueType="System.String" RepeatColumns="6" RepeatLayout="Flow" >
+                        <dx:ASPxRadioButtonList ID="RadioButtonList" runat="server" ValueType="System.String" RepeatColumns="6" RepeatLayout="Flow">
                             <CaptionSettings Position="Top" />
                             <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
                             <Items>
@@ -69,11 +69,11 @@
                             </Items>
                         </dx:ASPxRadioButtonList>
                     </div>
-                    <div class="col-xs-0 big-margin-r" style="margin-right: 20px;" >
+                    <div class="col-xs-0 big-margin-r" style="margin-right: 20px;">
                         <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Teža : " Width="180px"></dx:ASPxLabel>
                     </div>
                     <div class="col-xs-4 mb-2 mb-lg-0">
-                        <dx:ASPxRadioButtonList ID="RadioButtonTeza" runat="server" ValueType="System.String" RepeatColumns="4" RepeatLayout="Flow" >
+                        <dx:ASPxRadioButtonList ID="RadioButtonTeza" runat="server" ValueType="System.String" RepeatColumns="4" RepeatLayout="Flow">
                             <CaptionSettings Position="Top" />
                             <ClientSideEvents ValueChanged="RadioButtonList_ValueChanged" />
                             <Items>
@@ -91,6 +91,13 @@
                     <HoverStyle CssClass="icon-hover" />
                     <Image Url="../../Images/pdf-export.png" Width="30px" />
                 </dx:ASPxButton>
+                <dx:ASPxButton ID="btnXlsxExport" runat="server" Text="" OnClick="btnXlsxExport_Click" Theme="MetropolisBlue" AutoPostBack="False"
+                    EnableTheming="false" RenderMode="Link"
+                    Border-BorderStyle="None" EnableViewState="False" BackColor="Transparent">
+                    <Image Url="../../Images/export_excel.png" Height="27px" Width="27px"></Image>                    
+                    <Border BorderStyle="None"></Border>
+                </dx:ASPxButton>
+
                 <dx:ASPxGridViewExporter ID="ASPxGridViewExporterTransportPricesCompare" GridViewID="ASPxGridViewRouteTransportPricesCompare" runat="server"></dx:ASPxGridViewExporter>
                 <dx:ASPxGridView ID="ASPxGridViewRouteTransportPricesCompare" runat="server" EnableCallbackCompression="true" ClientInstanceName="gridRoute" OnHtmlRowPrepared="ASPxGridViewRouteTransportPricesCompare_HtmlRowPrepared"
                     Theme="Moderno" Width="100%" KeyboardSupport="true" AccessKey="G" OnDataBinding="ASPxGridViewRouteTransportPricesCompare_DataBinding" OnCustomColumnDisplayText="ASPxGridViewRouteTransportPricesCompare_CustomColumnDisplayText"
@@ -98,7 +105,7 @@
 
                     <Paddings Padding="0" />
                     <Settings ShowVerticalScrollBar="True"
-                        ShowFilterBar="Auto" ShowFilterRow="True" VerticalScrollableHeight="600"
+                        ShowFilterBar="Hidden" ShowFilterRow="false" VerticalScrollableHeight="600"
                         ShowFilterRowMenu="True" VerticalScrollBarStyle="Standard" VerticalScrollBarMode="Auto" />
                     <SettingsPager PageSize="100" ShowNumericButtons="false" AlwaysShowPager="true">
                         <PageSizeItemSettings Visible="true" Items="100, 200, 300" Caption="Zapisi na stran : " AllItemText="Vsi">
@@ -130,7 +137,7 @@
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_1_Cena" Width="5%"  
+                        <dx:GridViewDataTextColumn Caption="Cena" FieldName="Prevoznik_1_Cena" Width="5%"
                             ReadOnly="true" ShowInCustomizationForm="True">
                             <Settings AllowAutoFilter="True" AutoFilterCondition="Contains" />
                             <PropertiesTextEdit DisplayFormatString="n2" />

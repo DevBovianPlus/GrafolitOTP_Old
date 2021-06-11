@@ -16,6 +16,7 @@ namespace OptimizacijaTransprotov.Infrastructure
         public string ProfileImage { get; set; }
 
         public int RoleId { get; set; }
+        public int OTPPantheonUsrID { get; set; }
         public IIdentity Identity { get; set; }
 
         public bool IsInRole(string role)

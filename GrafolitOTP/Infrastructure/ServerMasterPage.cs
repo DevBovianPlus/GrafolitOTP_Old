@@ -241,6 +241,16 @@ namespace OptimizacijaTransprotov.Infrastructure
             return provider;
         }
 
+        protected EmployeeDataProvider GetEmployeeDataProvider()
+        {
+            EmployeeDataProvider provider = null;
+
+            if (provider == null)
+                return new EmployeeDataProvider();
+
+            return provider;
+        }
+
         protected TenderDataProvider GetTenderDataProvider()
         {
             TenderDataProvider provider = null;

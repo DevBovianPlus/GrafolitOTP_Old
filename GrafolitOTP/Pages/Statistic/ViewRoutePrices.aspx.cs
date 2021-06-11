@@ -70,6 +70,11 @@ namespace OptimizacijaTransprotov.Pages.Statistic
 
         }
 
+        protected void btnXlsxExport_Click(object sender, EventArgs e)
+        {
+            ASPxGridViewExporterTransportPricesCompare.WriteXlsxToResponse();
+        }
+
 
         void generator_CustomizeColumn(object source, ControlCustomizationEventArgs e)
         {
