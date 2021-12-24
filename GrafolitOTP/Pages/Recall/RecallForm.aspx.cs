@@ -39,7 +39,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (!Request.IsAuthenticated) RedirectHome();
+
+            if (CheckIfAuthorised(Request.IsAuthenticated)) RedirectHome();
+
+            //if (!Request.IsAuthenticated) RedirectHome();
 
             this.Master.PageHeadlineTitle = Title;
 
@@ -79,6 +82,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                         if (model != null)
                         {
+                            CommonMethods.LogThis("Page_Load.Dobavitelj 1 :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
+
                             GetRecallDataProvider().SetRecallFullModel(model);
                             FillForm();
                         }
@@ -221,6 +226,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             BuyerArrangesTransportCheckBox2.Checked = model.KupecUrediTransport;
 
+
+
             //Iz odpoklica omogočimo da lahko uporabnik samo enkrat pošlje povpraševanje. Drugače ga lahko ureja na Recall.aspx strani kot popup.
             if (model.PovprasevanjePoslanoPrevoznikom)
             {
@@ -232,6 +239,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 btnCreateOrder.ClientVisible = true;
             }
+
+            if (PrincipalHelper.IsUserLogistics())
+            {
+                ASPxGridLookupStranke.ClientEnabled = true;
+                txtNovaCena.ClientEnabled = true;
+            }
+
         }
 
         private bool AddOrEditEntityObject(bool add = false)
@@ -255,6 +269,8 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 model = GetRecallDataProvider().GetRecallFullModel();
             }
+
+            CommonMethods.LogThis("0-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
 
             model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
 
@@ -290,7 +306,18 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             string recallStatusCode = GetRecallDataProvider().GetRecallStatus().ToString();
             model.StatusID = GetRecallDataProvider().GetRecallStatuses() != null ? GetRecallDataProvider().GetRecallStatuses().Where(rs => rs.Koda == recallStatusCode).FirstOrDefault().StatusOdpoklicaID : 0;
-            
+
+            // preverimo ali je status še vedno 0
+            if (model.StatusID == 0)
+            {
+                // get from database
+                RecallStatus st = CheckModelValidation(GetDatabaseConnectionInstance().GetRecallStatusByCode(recallStatusCode));
+                if (st != null)
+                {
+                    model.StatusID = st.StatusOdpoklicaID;
+                }
+            }
+
             CommonMethods.LogThis("recallStatusCode :" + recallStatusCode.ToString());
             CommonMethods.LogThis(" model.StatusID :" + model.StatusID.ToString());
 
@@ -310,6 +337,28 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.TipPrevozaID = CommonMethods.ParseInt(ASPxGridLookupTipPrevoza.Value);
             model.ZbrirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
+
+            CommonMethods.LogThis("1-model.TipPrevozaID :" + CommonMethods.Parse(model.TipPrevozaID.ToString()));
+            CommonMethods.LogThis("1-model.ZbrirnikTonID :" + CommonMethods.ParseInt(model.ZbrirnikTonID.ToString()));
+            CommonMethods.LogThis("1-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
+
+
+
+            if (model.DobaviteljNaziv == null)
+            {
+                if (GetRecallDataProvider().GetSelectSupplier() != null)
+                {
+                    SupplierModel suppmodel = GetRecallDataProvider().GetSelectSupplier();
+
+                    model.DobaviteljNaziv = suppmodel.Dobavitelj.Trim();
+                    model.DobaviteljNaslov = suppmodel.Naslov.Trim();
+                    model.DobaviteljPosta = suppmodel.Posta.Trim();
+                    model.DobaviteljKraj = suppmodel.Kraj.Trim();
+                }
+            }
+
+
+
 
             if (SessionHasValue(Enums.RecallSession.ArgumentsOfApprovalToDB) && GetValueFromSession(Enums.RecallSession.ArgumentsOfApprovalToDB).ToString().Length > 0)
             {
@@ -347,6 +396,11 @@ namespace OptimizacijaTransprotov.Pages.Recall
             CommonMethods.LogThis("RazlogOdobritveSistem :" + model.RazlogOdobritveSistem);
             CommonMethods.LogThis("recallStatusCode :" + recallStatusCode);
             CommonMethods.LogThis("StatusID :" + model.StatusID.ToString());
+
+            CommonMethods.LogThis("2-model.TipPrevozaID :" + model.TipPrevozaID.ToString());
+            CommonMethods.LogThis("2-model.ZbrirnikTonID :" + model.ZbrirnikTonID.ToString());
+            CommonMethods.LogThis("2-model.DobaviteljID :" + model.DobaviteljID == null ? "" : model.DobaviteljID.ToString());
+            CommonMethods.LogThis("2-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
 
             RecallFullModel returnModel = CheckModelValidation(GetDatabaseConnectionInstance().SaveRecall(model));
 
@@ -565,7 +619,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             {
                 id2 = ASPxGridLookupZbirnikTon.Value;
             }
-
+            id2 = id2 == null ? model.ZbrirnikTonID : id2;
             if (id != null)
             {
                 int idRoute = CommonMethods.ParseInt(id);
@@ -710,7 +764,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
         {
             if (model == null) return null;
 
-            List<MaterialModel> materials = new List<MaterialModel>(); 
+            List<MaterialModel> materials = new List<MaterialModel>();
             foreach (var item in model.OdpoklicPozicija)
             {
                 materials.Add(new MaterialModel { Ident = item.MaterialIdent });
@@ -1129,7 +1183,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN);
                 }
 
-               
+
                 if (needToConfirmRecall)
                 {
                     CommonMethods.LogThis("Log CheckRecallForAnomalies 9 - ŠT :" + model.OdpoklicStevilka.ToString());
@@ -1185,7 +1239,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             CommonMethods.LogThis("memKomentarOdobritve :" + memKomentarOdobritve);
             CommonMethods.LogThis("isSupplierArrangesTransport :" + isSupplierArrangesTransport);
             CommonMethods.LogThis("isBuyerArrangesTransport :" + isBuyerArrangesTransport);
-            
+
 
             SetZbirnikTonByODpoklicValue();
             AddValueToSession(Enums.RecallSession.ArgumentsOfApproval, memKomentarOdobritve);
@@ -1221,7 +1275,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             decimal kolicinaVsota = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             bIsKos = CheckIfKosPosition();
-            
+
             CommonMethods.LogThis("Status: " + GetRecallDataProvider().GetRecallStatus().ToString());
             CommonMethods.LogThis("model.StatusID: " + model.StatusID.ToString());
 
@@ -1288,7 +1342,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
             }
             else
             {
-                
+
                 CommonMethods.LogThis("Log 7 - ŠT :" + model.OdpoklicStevilka.ToString());
                 //TODO : Status se ni spremenil v času vpisovanja nove cene zato ima status privzeto vrednost
                 if (GetRecallDataProvider().GetRecallStatus() == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.NEZNAN)
@@ -1304,7 +1358,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 CommonMethods.LogThis("Status: " + GetRecallDataProvider().GetRecallStatus().ToString());
                 CommonMethods.LogThis("model.StatusID: " + model.StatusID.ToString());
-                
+
 
 
                 ProcessUserAction();
@@ -1573,7 +1627,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     int ZbirnikTonID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupZbirnikTon));
 
                     decimal lowestPrice = (ZbirnikTonID == 0) ? CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteID(routeValueID)) : CheckModelValidation(GetDatabaseConnectionInstance().GetLowestAndMostRecentPriceByRouteIDandZbirnikTonsID(routeValueID, ZbirnikTonID));
-                    txtNovaCena.Text = lowestPrice.ToString("N2");                    
+                    txtNovaCena.Text = lowestPrice.ToString("N2");
                     model.LowestPrice = (model != null) ? lowestPrice : 0;
 
 

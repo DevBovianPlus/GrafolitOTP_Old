@@ -1,4 +1,5 @@
 ﻿using DatabaseWebService.Models.Client;
+using DatabaseWebService.ModelsOTP;
 using OptimizacijaTransprotov.Common;
 using OptimizacijaTransprotov.Infrastructure;
 using System;
@@ -45,6 +46,20 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
         {
             if (SessionHasValue(Enums.ClientSession.ContactPersonModel))
                 return (ContactPersonModel)GetValueFromSession(Enums.ClientSession.ContactPersonModel);
+
+            return null;
+        }
+
+
+        public void SetAktivnostUporabnikaModel(AktivnostUporabnikaModel model)
+        {
+            AddValueToSession(Enums.ClientSession.AktivnostUporabnikaModel, model);
+        }
+
+        public AktivnostUporabnikaModel GetAktivnostUporabnikaModel()
+        {
+            if (SessionHasValue(Enums.ClientSession.AktivnostUporabnikaModel))
+                return (AktivnostUporabnikaModel)GetValueFromSession(Enums.ClientSession.AktivnostUporabnikaModel);
 
             return null;
         }

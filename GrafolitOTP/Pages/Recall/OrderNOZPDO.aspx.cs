@@ -91,6 +91,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                         recall.DobaviteljNaslov = supplier.Naslov.Trim();
                         recall.DobaviteljPosta = supplier.Posta.Trim();
                         recall.DobaviteljKraj = supplier.Kraj.Trim();
+
+
+                        GetRecallDataProvider().SetSelectSupplier(supplier);
+
                     }
                 }
 

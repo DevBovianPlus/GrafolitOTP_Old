@@ -184,6 +184,19 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
             return null;
         }
 
+
+        public void SetSelectSupplier(SupplierModel model)
+        {
+            AddValueToSession(Enums.RecallSession.SelectedSupplier, model);
+        }
+
+        public SupplierModel GetSelectSupplier()
+        {
+            if (SessionHasValue(Enums.RecallSession.SelectedSupplier))
+                return (SupplierModel)GetValueFromSession(Enums.RecallSession.SelectedSupplier);
+            return null;
+        }
+
         public void SetTransportTypes(List<ClientTransportType> model)
         {
             AddValueToSession(Enums.RecallSession.TransportTypes, model);

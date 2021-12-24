@@ -1,0 +1,1 @@
+update Osebe_OTP set idVloga = 6 where UporabniskoIme='ZeljkaB';

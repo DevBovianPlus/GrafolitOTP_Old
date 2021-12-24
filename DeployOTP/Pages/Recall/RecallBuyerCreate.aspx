@@ -19,9 +19,9 @@
         var postbackInitiated = false;
         function CheckFieldValidation(s, e) {
             var process = false;
-            var lookUpItems = [lookUpRelacija];
+            var lookUpItems = [lookUpRelacija, lookUpPrevoznik];
             //var comboBoxItems = [clientComboBoxTip];
-            var inputItems = null;
+            var inputItems = [clientTxtNovaCena];
             var memoItems = null;
 
 
@@ -603,6 +603,7 @@
                                 Height="25" Width="130" ClientEnabled="true" ClientInstanceName="clientBtnRecall" OnClick="btnRecall_Click">
                                 <Paddings PaddingLeft="10" PaddingRight="10" />
                                 <Image Url="../../../Images/add.png" UrlHottracked="../../Images/addHover.png" />
+                                <ClientSideEvents Click="CheckFieldValidation" />
                             </dx:ASPxButton>
                         </span>
                     </div>

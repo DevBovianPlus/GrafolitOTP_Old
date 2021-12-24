@@ -93,6 +93,11 @@ namespace OptimizacijaTransprotov.Helpers
             return WebServiceSignInURL + "SignInOTP?username=" + username + "&password=" + pass;
         }
 
+        public static string GetAktivnostUporabnikaByDateAndUserID(int UserID, string CurentDateStr)
+        {
+            return WebServiceSignInURL + "GetAktivnostUporabnikaByDateAndUserID?UserID=" + UserID + "&CurentDate=" + CurentDateStr;
+        }
+
         public static string GetWebServiceLogFile()
         {
             return WebServiceSignInURL + "GetWebServiceLogFile";

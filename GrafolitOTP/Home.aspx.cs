@@ -59,7 +59,8 @@ namespace OptimizacijaTransprotov
                 if (username != "" && password != "")
                 {
                     
-                   signInSuccess = auth.Authenticate(username, password);
+                   
+                    signInSuccess = auth.Authenticate(username, password);
                 }
 
             }

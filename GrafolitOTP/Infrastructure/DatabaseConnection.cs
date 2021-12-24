@@ -28,6 +28,13 @@ namespace OptimizacijaTransprotov.Infrastructure
             return user.Content;
         }
 
+
+        public AktivnostUporabnikaModel GetAktivnostUporabnikaByDateAndUserID(int UserID, string CurentDateStr)
+        {
+            WebResponseContentModel<AktivnostUporabnikaModel> user = GetResponseFromWebRequest<WebResponseContentModel<AktivnostUporabnikaModel>>(WebServiceHelper.GetAktivnostUporabnikaByDateAndUserID(UserID, CurentDateStr), "get");
+            return user.Content;
+        }
+
         public WebResponseContentModel<byte[]> GetWebServiceLogFile()
         {
             WebResponseContentModel<byte[]> user = new WebResponseContentModel<byte[]>();

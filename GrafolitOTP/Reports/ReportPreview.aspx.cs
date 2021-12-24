@@ -60,7 +60,7 @@ namespace OptimizacijaTransprotov.Reports
                 case "RecallBuyer":
                     RecallBuyerFullModel modelBuyer = null;
                     modelBuyer = GetRecallBuyerFullModel();
-                    if (modelBuyer != null && modelBuyer.OdpoklicKupecPozicija.Count > 0)
+                    if (modelBuyer != null)
                     {
                         RecallBuyer report = new RecallBuyer(modelBuyer, showValues);
                         SetReportPreview(showPreview, report);

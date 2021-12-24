@@ -15,10 +15,10 @@ namespace OptimizacijaTransprotov.Common
             Storno = 4
         }
 
-        public enum UserActionStr 
+        public enum UserActionStr
         {
-            Add ,
-            Edit ,
+            Add,
+            Edit,
             Update,
             Delete
         }
@@ -71,6 +71,7 @@ namespace OptimizacijaTransprotov.Common
         public enum RecallSession
         {
             Suppliers,
+            SelectedSupplier,
             RecallPositions,
             SelectedPositionsRecall,
             RecallFulModel,
@@ -108,7 +109,8 @@ namespace OptimizacijaTransprotov.Common
             ClientTransportTypeModel,
             ContactPersonModel,
             ContactPersonID,
-            ClientID
+            ClientID,
+            AktivnostUporabnikaModel
         }
 
         public enum RouteSession

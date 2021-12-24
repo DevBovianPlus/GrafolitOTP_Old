@@ -1,4 +1,7 @@
 ﻿using DatabaseWebService.Models;
+using DatabaseWebService.ModelsOTP;
+using DatabaseWebService.ModelsOTP.Recall;
+using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Web;
 using Newtonsoft.Json;
 using OptimizacijaTransprotov.Common;
@@ -196,7 +199,7 @@ namespace OptimizacijaTransprotov.Infrastructure
         /// </summary>
         protected void RedirectHome()
         {
-                Response.Redirect("~/Home.aspx");
+            Response.Redirect("~/Home.aspx");
         }
         #endregion
 
@@ -327,7 +330,7 @@ namespace OptimizacijaTransprotov.Infrastructure
         {
             if (disable)
             {
-               // buttonEdit.ImageUrl = "~/Images/btnPopUpEditDisabled.png";
+                // buttonEdit.ImageUrl = "~/Images/btnPopUpEditDisabled.png";
                 buttonEdit.Text = "Spremeni";
                 buttonEdit.ClientEnabled = false;
 
@@ -389,7 +392,7 @@ namespace OptimizacijaTransprotov.Infrastructure
         /// We are using this popup when the html code is written in .aspx page (bootstrap modal!)
         /// </summary>
         /// <param name="message">Message that will show on popup.</param>
-        protected void ShowClientWarningPopUp(string message ="")
+        protected void ShowClientWarningPopUp(string message = "")
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), "PageJS", String.Format("$('#warningModal').modal('show');  $('#modalBodyText').empty(); $('#modalBodyText').append('{0}');", message), true);
         }
@@ -532,5 +535,31 @@ namespace OptimizacijaTransprotov.Infrastructure
 
             return (T)obj;
         }
+
+        protected bool CheckIfAuthorised(bool CookieAuthorisation)
+        {
+            if (!CookieAuthorisation)
+            {
+                int iSessionTimeoutInHours = 8;
+                int iUserID = PrincipalHelper.GetUserPrincipal().ID;
+
+                DateTime dtC = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+                AktivnostUporabnikaModel aum = GetClientDataProvider().GetAktivnostUporabnikaModel();
+                AktivnostUporabnikaModel currentUserLogin = (aum == null) ? GetDatabaseConnectionInstance().GetAktivnostUporabnikaByDateAndUserID(iUserID, dtC.ToShortDateString()): aum;
+
+                if (currentUserLogin != null)
+                {
+                    var hours = (DateTime.Now - currentUserLogin.ts).TotalHours;
+                    if (hours > iSessionTimeoutInHours) return true;
+
+                    GetClientDataProvider().SetAktivnostUporabnikaModel(currentUserLogin);
+
+                }
+            }
+
+            return false;
+        }
+
     }
 }

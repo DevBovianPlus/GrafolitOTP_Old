@@ -1,21 +1,132 @@
-select * from StatusOdpoklica
+ï»¿select * from StatusOdpoklica
 
-select * from Odpoklic order by 1 desc
+select * from OdpoklicKupec order by 1 desc
 
-select * from RazpisPozicija where RelacijaID = 212 and Cena>0 order by cena, ts desc
+update OdpoklicKupec set StatusID=4 where Stevilkanarocilnica='2102400001103'
+
+select * from RazpisPozicija where RelacijaID = 1137 and Cena>0 order by cena, ts desc
+select OdpoklicStevilka, * from Odpoklic where RelacijaID = 1182
+select OdpoklicKupecStevilka,* from OdpoklicKupec where RelacijaID = 1137
 
 select * from RazpisPozicija where TenderID =694
 
-select * from Relacija R inner join RazpisPozicija RP on R.RelacijaID = RP.RelacijaID where R.Naziv like ('%AJDOVŠÈINA%')
-select DISTINCT RAZ.Naziv from Razpis RAZ  
+select * from Relacija R inner join RazpisPozicija RP on R.RelacijaID = RP.RelacijaID where R.Naziv like ('%(IT) 10060 NONE - (HR) 10 000 ZAGREB%')
+select * from Relacija R where R.Naziv like ('%(AT) 8101 GRATKORN - (SLO) 3310 Å½ALEC%')
+select * from Relacija R where R.Naziv like ('%MALACKY%')
+select * from Relacija R inner join RazpisPozicija RP on R.RelacijaID = RP.RelacijaID where R.Naziv like ('%(SLO) 1433 RADEÄŒE - (SK) 901 00 MALACKY%')
+
+select * from Razpis where RazpisID in (select RazpisID from Relacija R inner join RazpisPozicija RP on R.RelacijaID = RP.RelacijaID where R.Naziv like ('%(SLO) 1433 RADEÄŒE - (SK) 901 00 MALACKY%'))
+
+select DISTINCT S.NazivPrvi, RAZ.Naziv, RAZ.DatumRazpisa from Razpis RAZ  
  inner join RazpisPozicija RP on RAZ.RazpisID = RP.RazpisID
- inner join Relacija R on RP.RelacijaID = R.RelacijaID where R.Naziv like ('%AJDOVŠÈINA%')
+ inner join Relacija R on RP.RelacijaID = R.RelacijaID 
+ inner join Stranka_OTP S on S.idStranka = RP.StrankaID
+ where R.Naziv like ('%(IT) 10060 NONE - (SLO) 1310 RIBNICA%') and S.NazivPrvi = 'HART d.o.o.'
+ order by RAZ.DatumRazpisa desc
+
+ select DISTINCT O.OdpoklicStevilka, O.ts as DatumOdpoklica, S.NazivPrvi as NazivPrevoznik,R.Naziv as NazivRelacija,RAZ.Naziv as NazivRazpisa, RAZ.DatumRazpisa, RP.Cena from Odpoklic O 	
+	inner join Stranka_OTP S on O.DobaviteljID = S.idStranka
+	inner join Relacija R on O.RelacijaID = R.RelacijaID 
+	inner join RazpisPozicija RP on RP.RazpisPozicijaID = O.RazpisPozicijaID
+	inner join Razpis RAZ on RAZ.RazpisID = RP.RazpisID
+where S.NazivPrvi like '%INTEREUROPA d.d.%' and R.Naziv like '%(IT) 10060 NONE - (SLO) 1310 RIBNICA%' and O.OdpoklicStevilka = '6231'
+
+ select DISTINCT O.OdpoklicStevilka, O.ts as DatumOdpoklica, O.CenaPrevoza, 
+ O.ZbirnikTonID,O.RazpisPozicijaID, S.idStranka, S.NazivPrvi as NazivPrevoznik,O.RelacijaID,R.Naziv as NazivRelacija,RAZ.Naziv as NazivRazpisa, 
+ RAZ.DatumRazpisa, RP.Cena as RazpisnaCena, ZT.Naziv  from Odpoklic O 	
+	inner join Stranka_OTP S on O.DobaviteljID = S.idStranka
+	inner join Relacija R on O.RelacijaID = R.RelacijaID 
+	inner join RazpisPozicija RP on RP.RazpisPozicijaID = O.RazpisPozicijaID 
+	inner join Razpis RAZ on RAZ.RazpisID = RP.RazpisID
+	inner join ZbirnikTon ZT on ZT.ZbirnikTonID = O.ZbirnikTonID
+where O.OdpoklicStevilka = '7138'
+
+-- preverjamo analizo za Odpoklic
+ select DISTINCT O.OdpoklicStevilka, O.ts as DatumOdpoklica, O.ConfirmTS, O.CenaPrevoza, 
+ O.ZbirnikTonID, ZT.Naziv as ZbirnikTonOdpoklic ,O.RazpisPozicijaID, S.idStranka, S.NazivPrvi as NazivPrevoznik,O.RelacijaID,R.Naziv as NazivRelacija
+ ,RAZ.Naziv as NazivRazpisa, RAZ.DatumRazpisa, 
+ RP.Cena as RazpisnaCena from Odpoklic O 	
+	inner join Stranka_OTP S on O.DobaviteljID = S.idStranka
+	inner join Relacija R on O.RelacijaID = R.RelacijaID 
+	left outer join RazpisPozicija RP on RP.RazpisPozicijaID = O.RazpisPozicijaID and RP.ZbirnikTonID = O.ZbirnikTonID
+	inner join RazpisPozicija RP2 on RP2.RazpisPozicijaID = O.RazpisPozicijaID
+	inner join ZbirnikTon ZT on ZT.ZbirnikTonID = O.ZbirnikTonID
+	left outer join Razpis RAZ on RAZ.RazpisID = RP2.RazpisID
+where O.OdpoklicStevilka = '7755'
+
+-- preverjamo analizo za OdpoklicKupcem
+ select DISTINCT O.OdpoklicKupecStevilka, OdpoklicKupecID, O.ts  as DatumOdpoklica, O.CenaPrevoza, O.ZbirnikTonID,O.RazpisPozicijaID, 
+ S.NazivPrvi as NazivPrevoznik,
+ O.RelacijaID,R.Naziv as NazivRelacija
+ ,RAZ.Naziv as NazivRazpisa, RAZ.DatumRazpisa, RAZ.RazpisID, 
+ RP.Cena
+ ,ZT.Naziv, RP2.ZbirnikTonID 
+ from OdpoklicKupec O 		
+	inner join Relacija R on O.RelacijaID = R.RelacijaID 
+	left outer join RazpisPozicija RP on RP.RazpisPozicijaID = O.RazpisPozicijaID and RP.ZbirnikTonID = O.ZbirnikTonID
+	left outer join Stranka_OTP S on RP.StrankaID = S.idStranka	
+	inner join RazpisPozicija RP2 on RP2.RazpisPozicijaID = O.RazpisPozicijaID
+	inner join ZbirnikTon ZT on ZT.ZbirnikTonID = O.ZbirnikTonID
+	left outer join Razpis RAZ on RAZ.RazpisID = RP2.RazpisID
+where O.OdpoklicKupecStevilka = '1868'
+
+select * from Razpis where RazpisID = 1335
+
+select * from Odpoklic order by 1 desc
+select * from OdpoklicKupec where OdpoklicKupecStevilka = '1763'
+select * from OdpoklicKupecPozicija where OdpoklicKupecID = 1806 
+select * from Odpoklic where OdpoklicStevilka = '8542'
+select * from Odpoklic where OdpoklicStevilka = '7592'
+58570
+update Odpoklic set RazpisPozicijaID = null  where OdpoklicStevilka = '8542'
+select * from Stranka_OTP where idStranka = 50
+select * from RazpisPozicija where RazpisPozicijaID = 2878  
+select * from RazpisPozicija where Cena>0 and  RelacijaID = 1196 and ZbirnikTonID = 6 order by ts desc
+select * from RazpisPozicija where Cena>0 and  RelacijaID = 1421 and ZbirnikTonID = 6 order by Cena 
+select * from RazpisPozicija where RelacijaID = 1214 and Cena > 0 and ZbirnikTonID = 3
+select * from ZbirnikTon where ZbirnikTonID = 5
+select * from Razpis where RazpisID = 1110
+select * from RazpisPozicija where RelacijaID = 64 and Cena>0 and StrankaID = 50 order by cena, ts desc
+select * from Relacija where RelacijaID = 1236
+select * from RazpisPozicija where RelacijaID = 166 and Cena > 0 order by Cena 
+select * from Razpis where RazpisID = 25
+select * from AktivnostUporabnika
+
+select * from Razpis where Naziv = '%32035 BELLUNO%'
+select * from Relacija where Naziv like '%(SLO) 3310 Å½ALEC - (SL.KONJICE + SL.BISTRICA) (SLO) 2000 MARIBOR%'
+select * from Odpoklic where tmpTenderDate is not null
+
+UPDATE Odpoklic SET tmpTenderDate='44364' where OdpoklicStevilka = 'D6800';
+UPDATE Odpoklic SET tmpTenderDate='2021' where OdpoklicStevilka = 'D6800';
+UPDATE Odpoklic SET tmpTenderDate='2021/06/17' where OdpoklicStevilka = '6800';
+
+select * from OdpoklicKupec order by ts desc
+
+select * from Razpis where GeneriranTender is null
+
+ select * from Odpoklic where RelacijaID = 1182
+ select * from OdpoklicPozicija OP order by 1 desc
+ 
+select * from RazpisPozicija where RelacijaID = 1214 and cena > 0
+
+ select * from OdpoklicKupec where OdpoklicKupecID = 2052
+ select * from OdpoklicKupec where RelacijaID = 1120
+
+ select DISTINCT RAZ.Naziv from Razpis RAZ  
+ inner join RazpisPozicija RP on RAZ.RazpisID = RP.RazpisID
+ inner join Relacija R on RP.RelacijaID = R.RelacijaID 
+ inner join Stranka_OTP S on RP.DobaviteljID = S.idStranka
+ where  R.RelacijaID = 1182
 
 select * from Odpoklic where LastenPrevoz=1 and DobaviteljID not in (73, 20)  order by 1 desc
 
 select * from Odpoklic
+select * from OdpoklicPozicija
+select * from RazpisPozicija
+select * from RazpisPozicija
 
 select * from Osebe_OTP
+select * from Stranka_OTP
 
 update Odpoklic set LastenPrevoz = 0, Opis = Opis + ' - Update zaradi lastnega prevoza '  where LastenPrevoz=1 and DobaviteljID not in (73, 20) 
 
@@ -86,17 +197,48 @@ select r.* from Relacija r right join Odpoklic o on r.RelacijaID = o.RelacijaID 
 select * from Relacija where RelacijaID in (select RelacijaID from Odpoklic where  ts > '11-14-2019' and ts < '11-14-2020') 
 
 select * from Relacija order by 1 desc 
-select * from Relacija where RelacijaID = 1060
-select * from RazpisPozicija where  RelacijaID=1060 and Cena > 0
+select * from Relacija where RelacijaID = 949
+select * from RazpisPozicija where  RelacijaID=1120 and Cena > 0 and ZbirnikTonID = 10
+select * from RazpisPozicija where  RelacijaID=181 and ZbirnikTonID=5
+select * from RazpisPozicija where  RelacijaID=170 and ZbirnikTonID<>10 and Cena > 0
 select * from RazpisPozicija where  RazpisID=694 and StrankaID = 21 and RelacijaID = 1126
 select * from Razpis where RazpisID in (select RazpisID from RazpisPozicija where  RelacijaID=929)
 select * from RazpisPozicija where  RazpisID=777
+select * from RazpisPozicija where  RazpisID=83068
 select * from Razpis where RazpisID in (select RazpisID from RazpisPozicija where  RelacijaID=929)
-select * from Relacija where Naziv like '%(IT) 36040 SAREGO – (HU) 1033 BUDIMPEŠTA - (HU) 4400 NYIREGYHAZA%'
+select * from Relacija where Naziv like '%(SLO) 1433 RADEÄŒE - (MAK) 1000 SKOPJE%'
 select * from Odpoklic where OdpoklicStevilka = '4674'
+select * from Odpoklic where RelacijaID=1185 and ts >= '06-06-2020' and ts <= '06-06-2021' and StatusID in (4, 6, 7) and KolicinaSkupno < 20000
+select * from Odpoklic where RelacijaID=1182 and ts >= '06-06-2020' and ts <= '06-06-2021' and StatusID in (4, 6, 7) and KolicinaSkupno < 20000
 select * from Odpoklic where LastenPrevoz = 1 and DobaviteljID <> 20 and UserID not in (6,10)
-select * from Stranka_OTP where idStranka in (22,20,41,31,49,56)
+select * from Stranka_OTP where idStranka in (22,20,41,31,49,56,181,75,52)
 select * from Odpoklic order by 1 desc
+
+select * from RazpisPozicija where RelacijaID = 91 and Cena > 0 and ZbirnikTonID = 10 order by Cena asc
+
+select * from RazpisPozicija rp inner join Stranka_OTP s on rp.StrankaID = s.idStranka where rp.RelacijaID = 346 and rp.ZbirnikTonID = 3 and s.Activity = 1
+select * from RazpisPozicija rp where rp.RelacijaID = 346 and rp.ZbirnikTonID = 5
+select * from ZbirnikTon
+
+select * from Relacija where Naziv like '%RADEÄŒE %'
+
+select * from OdpoklicKupec where OdpoklicKupecStevilka = 164
+select * from Relacija where RelacijaID = 76
+select * from Razpis where RazpisID = 694
+select * from RazpisPozicija where  RelacijaID = 76 and StrankaID = 7
+select * from RazpisPozicija where  StrankaID = 75 and Cena > 0
+select * from RazpisPozicija where  RazpisPozicijaID = 83068
+select * from Relacija where RelacijaID = 1120
+
+select * from GetPantheonUsersNOZ()
+
+select RP.Cena, R.Naziv, S.NazivPrvi, * from RazpisPozicija RP inner join Stranka_OTP S on RP.StrankaID = S.idStranka inner join Relacija R on RP.RelacijaID = R.RelacijaID where  Cena = 1
+select * from Razpis where RazpisID = 613
+select * from Stranka_OTP where NazivPrvi like '%LKW%'
+
+select * from RazpisPozicija where RelacijaID = 1120
+select * from RazpisPozicija where RazpisPozicijaID = 83068
+
 
 select * from OdpoklicPozicija where OdpoklicID = 4460
 
@@ -160,23 +302,24 @@ alter table Odpoklic add P_GetPDFOrderFile datetime
 alter table SystemEmailMessage_OTP add Attachments varchar(4000);
 alter table PrijavaPrevoznika add OpombaPrijave varchar(4000);
 
-INSERT INTO StatusOdpoklica values('USTVARJENO_NAROCILO', 'Ustvarjeno naroèilo v Pantheon','Naroèilo je bilo uspešno ustvarjeno v Pantheon-u', 1,CURRENT_TIMESTAMP); 
-INSERT INTO StatusOdpoklica values('POPRAVLJENO_NAROCILO', 'Popravljeno izdelano naroèilo v OTP','Popravljeno izdelano naroèilo v OTP', 1,CURRENT_TIMESTAMP); 
-INSERT INTO StatusOdpoklica values('KREIRAN_PDF', 'Pantheon je kreiral PDF','Pantheon je kreiral PDF,ki se ga pošlje prevozniku', 1,CURRENT_TIMESTAMP); 
+INSERT INTO StatusOdpoklica values('USTVARJENO_NAROCILO', 'Ustvarjeno naroÃ¨ilo v Pantheon','NaroÃ¨ilo je bilo uspeÅ¡no ustvarjeno v Pantheon-u', 1,CURRENT_TIMESTAMP); 
+INSERT INTO StatusOdpoklica values('POPRAVLJENO_NAROCILO', 'Popravljeno izdelano naroÃ¨ilo v OTP','Popravljeno izdelano naroÃ¨ilo v OTP', 1,CURRENT_TIMESTAMP); 
+INSERT INTO StatusOdpoklica values('KREIRAN_PDF', 'Pantheon je kreiral PDF','Pantheon je kreiral PDF,ki se ga poÅ¡lje prevozniku', 1,CURRENT_TIMESTAMP); 
 
 select * from RazpisPozicija order by 1 desc
 select * from RazpisPozicijaSpremembe order by 1 desc
 select * from Razpis order by 1 desc
+select * from DeliveryNoteItem order by 1 desc
 
 select * from Grafolit55SI.dbo.tHE_OrderItem order by adTimeIns desc
 select * from Grafolit55SI.dbo.tHE_Order where acDocType = '0100' order by adDate desc
-select * from Grafolit55SI.dbo.tHE_Order where acDocType = '0200' and acConsignee like 'RŽENIÈNIK JANEZ S.P. - PAKO - ' order by adDate desc
-update Grafolit55SI.dbo.tHE_Order set acStatus = 1 where acDocType = '0200' and acConsignee like 'RŽENIÈNIK JANEZ S.P. - PAKO - '
-select * from Grafolit55SI.dbo.tHE_Order where acKey='2102500000073' order by adDate desc -- 3.4.2020
+select * from Grafolit55SI.dbo.tHE_Order where acDocType = '0200' and acConsignee like 'RÅ½ENIÃˆNIK JANEZ S.P. - PAKO - ' order by adDate desc
+update Grafolit55SI.dbo.tHE_Order set acStatus = 1 where acDocType = '0200' and acConsignee like 'RÅ½ENIÃˆNIK JANEZ S.P. - PAKO - '
+select * from Grafolit55SI.dbo.tHE_Order where acKey='2102400000142' order by adDate desc -- 3.4.2020
 select adDate, acConsignee, anValue from Grafolit55SI.dbo.tHE_Order where acDocType = '0100' order by adDate desc
-select * from Grafolit55SI.dbo.tHE_OrderItem where acKey = '2102400000193' order by adTimeIns desc -- adDeliveryDeadline = 3.4.2020
+select * from Grafolit55SI.dbo.tHE_OrderItem where acKey = '2102400000142' order by adTimeIns desc -- adDeliveryDeadline = 3.4.2020
 
-select * from Grafolit55SI.dbo.tHE_Order where acKey = '2102400000193' order by adDate desc
+select * from Grafolit55SI.dbo.tHE_Order where acKey = '2102400000132' order by adDate desc
 
 select O.acStatus as Status, OI.adDeliveryDeadline as ZeljeniRokDobave, SUBSTRING(O.acKey, 1, 2) + '-' + SUBSTRING(O.acKey, 3, 3) + '-' + SUBSTRING(O.acKey, 6, 8) as StevilkaDokumenta, 
 O.acReceiver as Stranka, MS.DOBAVITELJ as Dobavitelj, OI.acIdent as KodaArtikla, OI.acName as NazivArtikla, OI.anQty as NarocenaKolicina, OI.acUM as EnotaMere,OI._addelivery as PotrjeniRokDobave, MS.POREKLO
@@ -208,10 +351,10 @@ select * from Grafolit55SI.dbo.tHE_OrderItem OI inner join Grafolit55SI.dbo.tHE_
 update Grafolit55SI.dbo.tHE_OrderItem set _oc = '4441-2' where acKey = '2002500000048'
 update Grafolit55SI.dbo.tHE_OrderItem set _oc = '1111-3' where acKey = '2002500000049'
 
-select * from SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja('RŽENIÈNIK JANEZ S.P. - PAKO -') 
-select * from SeznamPozicijOdprtihNarocilnicGledeNaDobaviteljaMy('RŽENIÈNIK JANEZ S.P. - PAKO - ') 
-																RŽENIÈNIK JANEZ S.P. - PAKO -
-																RŽENIÈNIK JANEZ S.P. - PAKO - 
+select * from SeznamPozicijOdprtihNarocilnicGledeNaDobavitelja('BURGO GROUP s.p.a.            ') 
+select * from SeznamPozicijOdprtihNarocilnicGledeNaDobaviteljaMy('RÅ½ENIÃˆNIK JANEZ S.P. - PAKO - ') 
+																RÅ½ENIÃˆNIK JANEZ S.P. - PAKO -
+																RÅ½ENIÃˆNIK JANEZ S.P. - PAKO - 
 select * from SeznamPozicijNarocilnic10ZaOdpoklic()
 select * from Grafolit55SI.dbo.tHE_Order where 
 
@@ -271,9 +414,33 @@ WHERE G.acDocType IN ('3600', '3900', '3910', '3920', '3930', '3960')
 and Year(G.adDate) = 2020 and Month(G.adDate) = 12 and Day(G.adDate) > 1
 group by LEFT(G.acKey, 2) + '-' + SUBSTRING(G.acKey, 3, 3) + '-' + RIGHT(G.acKey, 6), G.acKey, G.adDate, G.acCurrency, G.acReceiver, acPrsn3, GT.ProcTrans, GT.Vrednost, GT.VredTrans, GT.ProcTransFakt
 
-select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000193'
-select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000194'
-select * FROM Grafolit55SI.dbo._epos_GTLink where NarocKljuc = '2102400000065'
+USE Grafolit55SI DBCC DBREINDEX tHE_MoveItem
+
+SELECT      LEFT(G.acKey, 2) + '-' + SUBSTRING(G.acKey, 3, 3) + '-' + RIGHT(G.acKey, 6) AS Kljuc,
+G.acKey,
+            G.adDate AS Datum,
+            G.acCurrency AS Valuta,
+            G.acReceiver AS Kupec,
+            acPrsn3 AS Prevzemnik,
+sum(MI.anQty) as Kolicina, 
+G.anValue as ZnesekFakture
+FROM Grafolit55SI.dbo.tHE_Move G
+ left join Grafolit55SI.dbo.tHE_MoveItem MI
+on MI.acKey = G.acKey
+      LEFT JOIN Grafolit55SI.dbo._epos_GTLink GT
+            ON G.ackey = GT.LinkKljuc
+WHERE G.acDocType IN ('3600', '3900', '3910', '3920', '3930', '3960','3950','3940')
+      AND GT.LinkKljuc IS NULL 
+and G.adDate > DATEADD(Year,-1,GETDATE())
+group by LEFT(G.acKey, 2) + '-' + SUBSTRING(G.acKey, 3, 3) + '-' + RIGHT(G.acKey, 6), G.acKey, G.adDate, G.acCurrency, G.acReceiver, acPrsn3, G.anValue
+
+select count(*) FROM Grafolit55SI.dbo.tHE_Move
+select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000132'
+select * FROM Grafolit55SI.dbo.tHE_Move where acKey = '2102400000132'
+select * FROM Grafolit55SI.dbo._epos_GTLink where NarocKljuc = '2102400000135'
+select * from Grafolit55SI.dbo.tHE_Order where acKey = '2102400000136' order by adDate desc
+select * from Relacija where Naziv = '(HR) 10 000 ZAGREB - (SLO) 5270 AJDOVÅ ÄŒINA'
+
 
 select * FROM Grafolit55SI.dbo._epos_GTLink order by 1 desc
 
@@ -281,7 +448,7 @@ select * from SeznamNepovezanihFaktur()
 select * from OdpoklicKupecPozicija order by 1 desc
 select * from OdpoklicKupec order by 1 desc
 select * from ZbirnikTon order by 1 desc
-exec SeznamPovezanihFakturByOrderNo '2102400000131'
+exec SeznamPovezanihFakturByOrderNo '2102400000132'
 
 update Osebe_NOZ set NOZDostop = 1,  where UporabniskoIme='AljosaS'
 
@@ -291,14 +458,30 @@ select * from Odpoklic where RelacijaID = 730 order by 1 desc
 select * from OdpoklicPozicija where  OdpoklicID = 5835 order by 1 desc
 select * from RazpisPozicija where RelacijaID = 730 and Cena > 0 order by 1 desc
 select * from RazpisPozicija where RelacijaID = 502 and Cena > 0 order by 1 desc
-select * from RazpisPozicija where RelacijaID = 1174 and Cena > 0 order by 1 desc
-select * from Relacija where RelacijaID = 1174
-select * from Relacija where Naziv like '%NAKLO%'
+select * from RazpisPozicija where RelacijaID = 129 and Cena > 0 order by 1 desc
+select * from RazpisPozicija where RelacijaID = 129 and Cena > 0 order by 1 desc
+select * from Relacija where RelacijaID = 1283
+select * from Relacija where Naziv like '%RIBNICA%'
 
-select * from RazpisPozicija where ZbirnikTonID <> 10 and Cena>0 order by 1 desc
+select * from RazpisPozicija where ZbirnikTonID = 13 and RelacijaID = 346 order by 1 desc
+select * from RazpisPozicija where Cena > 0 order by RelacijaID desc
 
 select * from Grafolit55SI.dbo.tHE_OrderItem order by adTimeIns desc
 select * from Grafolit55SI.dbo.tHE_Order order by adTimeIns desc
 select * from Grafolit55SI.dbo.tHE_Move order by adTimeIns desc
 
 select * from OdpoklicKupec order by 1 desc
+select * from Odpoklic order by 1 desc
+
+
+
+ select DISTINCT O.OdpoklicKupecStevilka, O.ts as DatumOdpoklica, O.CenaPrevoza, O.ZbirnikTonID, S.NazivPrvi as NazivPrevoznik,
+ O.RelacijaID,R.Naziv as NazivRelacija, RAZ.RazpisID, RAZ.Naziv as NazivRazpisa, RAZ.DatumRazpisa, RP.Cena, ZT.Naziv 
+ from OdpoklicKupec O 		
+	inner join Relacija R on O.RelacijaID = R.RelacijaID 
+	left outer join RazpisPozicija RP on RP.RazpisPozicijaID = O.RazpisPozicijaID and RP.ZbirnikTonID = O.ZbirnikTonID
+	inner join RazpisPozicija RP2 on RP2.RazpisPozicijaID = O.RazpisPozicijaID
+	inner join Stranka_OTP S on RP.StrankaID = S.idStranka
+	left outer join Razpis RAZ on RAZ.RazpisID = RP2.RazpisID
+	inner join ZbirnikTon ZT on ZT.ZbirnikTonID = O.ZbirnikTonID
+where O.OdpoklicKupecStevilka = '484'

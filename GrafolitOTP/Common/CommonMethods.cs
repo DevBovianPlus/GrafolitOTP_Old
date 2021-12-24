@@ -1,4 +1,5 @@
 ﻿using DatabaseWebService.ModelsOTP.Recall;
+using DatabaseWebService.ModelsOTP.Tender;
 using DevExpress.Web;
 using DevExpress.XtraPrintingLinks;
 using OptimizacijaTransprotov.Helpers;
@@ -20,6 +21,9 @@ namespace OptimizacijaTransprotov.Common
 {
     public static class CommonMethods
     {
+
+      
+
         public static int ParseInt(object param)
         {
             int num = 0;
@@ -33,6 +37,12 @@ namespace OptimizacijaTransprotov.Common
             }
 
             return num;
+        }
+
+
+        public static string Parse(string sTrim)
+        {
+            return String.IsNullOrEmpty(sTrim) ? "" : sTrim.Trim();
         }
 
         public static Nullable<int> ParseNullableInt(object param)
@@ -397,6 +407,8 @@ namespace OptimizacijaTransprotov.Common
             }
             return model;
         }
+
+        
 
         public static void Redirect(this HttpResponse response, string url, string target, string windowFeatures)
         {

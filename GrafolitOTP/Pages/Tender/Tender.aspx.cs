@@ -568,7 +568,7 @@ namespace OptimizacijaTransprotov.Pages.Tender
                                 {
                                     workbook.Worksheets[0].Cells[rowIndex, 0].Value = sTons.ZbirnikTonID.ToString();
                                     workbook.Worksheets[0].Cells[rowIndex, 1].Value = sTons.Naziv.ToString();
-                                    workbook.Worksheets[0].Cells[rowIndex, 2].Value = model.CiljnaCena;
+                                    workbook.Worksheets[0].Cells[rowIndex, 2].Value = sTons.NajnizjaCena;
                                     workbook.Worksheets[0].Cells[rowIndex, 3].FillColor = Color.LightGreen;
                                     workbook.Worksheets[0].Cells[rowIndex, 3].Protection.Locked = false;
 
@@ -591,7 +591,6 @@ namespace OptimizacijaTransprotov.Pages.Tender
                         currentFullFileName = razpisiPath + currentFileName;
                         // dodamo ime dattotek v pozicijo in v session tdm
                         tsm.ExcellFilePath = currentFullFileName;
-
                         model.PotRazpisa = tsm.ExcellFilePath;
 
                         //List<TenderPositionModel> lTenderPositionModel = tender.RazpisPozicija.Where(rp => rp.StrankaID == tsm.ClientID).ToList();

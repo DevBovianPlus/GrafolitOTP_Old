@@ -104,6 +104,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     if (action == (int)Enums.UserAction.Add)
                         ASPxGridLookupPrevoznik.Value = -1;
                 }
+                else
+                {
+                    txtNovaCena.Text = "";
+                }
             }
             else
                 ClearSessionsAndRedirect();
@@ -331,7 +335,7 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             model.KolicinaSkupno = CommonMethods.ParseDecimal(GetTotalSummaryValue());
             model.ZbirnikTonID = CommonMethods.ParseInt(ASPxGridLookupZbirnikTon.Value);
-            model.RazpisPozicijaID = CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value);
+            model.RazpisPozicijaID = (ASPxGridLookupPrevoznik.Value == null ? model.RazpisPozicijaID : CommonMethods.ParseInt(ASPxGridLookupPrevoznik.Value));
             model.CenaPrevozaSkupno = txtNovaCena.Text.Contains(".") ? CommonMethods.ParseDecimal(txtNovaCena.Text.Replace(".", ",")) : CommonMethods.ParseDecimal(txtNovaCena.Text);
             model.StevilkaNarocilnica = txtStNarocilnice.Text;
             model.OpisOdpoklicKupec = memOpis.Text;

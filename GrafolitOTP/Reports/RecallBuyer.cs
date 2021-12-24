@@ -64,6 +64,8 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
     private XRLine xrLine2;
     private XRLabel lblOpomba;
     private XRRichText lblOpomba1;
+    private XRLabel lblVrednostPrevoza;
+    private XRLabel lblVrednostVal;
 
     /// <summary>
     /// Required designer variable.
@@ -86,6 +88,7 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
         lblDatumIzpisa.Text = "Date : " + DateTime.Now.ToString("dd.MM.yyyy");
         if (model.OpisOdpoklicKupec == null) model.OpisOdpoklicKupec = "";
         lblOpomba1.Text =  model.OpisOdpoklicKupec.ToString();
+        lblVrednostVal.Text = model.CenaPrevozaSkupno.ToString("n2");
 
         iCnt = 0;
         foreach (var item in model.OdpoklicKupecPozicija)
@@ -196,7 +199,7 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             RecallPositionTable.Rows.Add(row);
         }
 
-        dAvgProcentPrevoza = dSumProcentTransporta / iCnt;
+        dAvgProcentPrevoza = iCnt > 0 ? dSumProcentTransporta / iCnt : 0;
 
         // add sum for količina
         #region Sum količina
@@ -249,7 +252,11 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
         cellSum.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
         rowSum.Cells.Add(cellSum);
 
-
+        if (model.OdpoklicKupecPozicija.Count == 0)
+        {
+            lblVrednostPrevoza.Visible = true;
+            lblVrednostVal.Visible = true;
+        }
         #endregion
 
         RecallPositionTable.Rows.Add(rowSum);
@@ -316,11 +323,13 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.lblOpomba1 = new DevExpress.XtraReports.UI.XRRichText();
             this.lblOpomba = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
-            this.lblOpomba1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.lblVrednostPrevoza = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblVrednostVal = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.session1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecallPositionTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -446,6 +455,8 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             // Detail1
             // 
             this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblVrednostPrevoza,
+            this.lblVrednostVal,
             this.RecallPositionTable,
             this.xrLine1,
             this.xrTable1});
@@ -775,6 +786,16 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             this.GroupFooter1.HeightF = 127.3319F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
+            // lblOpomba1
+            // 
+            this.lblOpomba1.Dpi = 254F;
+            this.lblOpomba1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.lblOpomba1.LocationFloat = new DevExpress.Utils.PointFloat(0.0002422333F, 61.06588F);
+            this.lblOpomba1.Name = "lblOpomba1";
+            this.lblOpomba1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblOpomba1.SerializableRtfString = resources.GetString("lblOpomba1.SerializableRtfString");
+            this.lblOpomba1.SizeF = new System.Drawing.SizeF(2722F, 58.41999F);
+            // 
             // lblOpomba
             // 
             this.lblOpomba.Dpi = 254F;
@@ -815,15 +836,35 @@ public class RecallBuyer : DevExpress.XtraReports.UI.XtraReport
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(603.25F, 5.291668F);
             // 
-            // lblOpomba1
+            // lblVrednostPrevoza
             // 
-            this.lblOpomba1.Dpi = 254F;
-            this.lblOpomba1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.lblOpomba1.LocationFloat = new DevExpress.Utils.PointFloat(0.0002422333F, 61.06588F);
-            this.lblOpomba1.Name = "lblOpomba1";
-            this.lblOpomba1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.lblOpomba1.SerializableRtfString = resources.GetString("lblOpomba1.SerializableRtfString");
-            this.lblOpomba1.SizeF = new System.Drawing.SizeF(2722F, 58.41999F);
+            this.lblVrednostPrevoza.Dpi = 254F;
+            this.lblVrednostPrevoza.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblVrednostPrevoza.LocationFloat = new DevExpress.Utils.PointFloat(2021.125F, 145.7325F);
+            this.lblVrednostPrevoza.Multiline = true;
+            this.lblVrednostPrevoza.Name = "lblVrednostPrevoza";
+            this.lblVrednostPrevoza.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblVrednostPrevoza.SizeF = new System.Drawing.SizeF(308.339F, 61.06586F);
+            this.lblVrednostPrevoza.StylePriority.UseFont = false;
+            this.lblVrednostPrevoza.StylePriority.UseTextAlignment = false;
+            this.lblVrednostPrevoza.Text = "Vrednost prevoza:";
+            this.lblVrednostPrevoza.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblVrednostPrevoza.Visible = false;
+            // 
+            // lblVrednostVal
+            // 
+            this.lblVrednostVal.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lblVrednostVal.Dpi = 254F;
+            this.lblVrednostVal.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblVrednostVal.LocationFloat = new DevExpress.Utils.PointFloat(2329.464F, 145.7325F);
+            this.lblVrednostVal.Name = "lblVrednostVal";
+            this.lblVrednostVal.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblVrednostVal.SizeF = new System.Drawing.SizeF(392.5358F, 61.06586F);
+            this.lblVrednostVal.StylePriority.UseBorders = false;
+            this.lblVrednostVal.StylePriority.UseFont = false;
+            this.lblVrednostVal.StylePriority.UseTextAlignment = false;
+            this.lblVrednostVal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblVrednostVal.Visible = false;
             // 
             // RecallBuyer
             // 
