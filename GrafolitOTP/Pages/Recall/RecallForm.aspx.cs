@@ -246,6 +246,13 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 txtNovaCena.ClientEnabled = true;
             }
 
+            if (model.StatusOdpoklica.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.PREVZET.ToString() && (PrincipalHelper.IsUserCarrierSpecialist() || PrincipalHelper.IsUserSuperAdmin()))
+            {
+                btnReopenRecall.ClientVisible = true;
+                ASPxGridLookupStranke.ClientEnabled = true;
+                txtNovaCena.ClientEnabled = true;
+            }
+
         }
 
         private bool AddOrEditEntityObject(bool add = false)
@@ -270,7 +277,14 @@ namespace OptimizacijaTransprotov.Pages.Recall
                 model = GetRecallDataProvider().GetRecallFullModel();
             }
 
-            CommonMethods.LogThis("0-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
+            if (model != null)
+            {
+                CommonMethods.LogThis("0-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
+            }
+            else
+            {
+                CommonMethods.LogThis("recall je NULL :");
+            }
 
             model.RelacijaID = CommonMethods.ParseInt(GetGridLookupValue(ASPxGridLookupRealacija));
 
@@ -340,14 +354,17 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
             CommonMethods.LogThis("1-model.TipPrevozaID :" + CommonMethods.Parse(model.TipPrevozaID.ToString()));
             CommonMethods.LogThis("1-model.ZbrirnikTonID :" + CommonMethods.ParseInt(model.ZbrirnikTonID.ToString()));
+
             CommonMethods.LogThis("1-model.Dobavitelj :" + model.DobaviteljNaziv == null ? "" : model.DobaviteljNaziv);
 
 
 
-            if (model.DobaviteljNaziv == null)
+            if (model.DobaviteljNaziv == null || model.DobaviteljNaziv.Length == 0)
             {
+                CommonMethods.LogThis("1 - dobavitelj ni izbran");
                 if (GetRecallDataProvider().GetSelectSupplier() != null)
                 {
+                    CommonMethods.LogThis("2 - dobavitelj se potegne iz RAMA");
                     SupplierModel suppmodel = GetRecallDataProvider().GetSelectSupplier();
 
                     model.DobaviteljNaziv = suppmodel.Dobavitelj.Trim();
@@ -355,8 +372,23 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     model.DobaviteljPosta = suppmodel.Posta.Trim();
                     model.DobaviteljKraj = suppmodel.Kraj.Trim();
                 }
+                else
+                {
+                    CommonMethods.LogThis("3 - dobavitelja ni v RAM-u");
+                    if (GetRecallDataProvider().GetSelectSupplierValue() != null)
+                    {
+                        CommonMethods.LogThis("4 - Samo vrednost : " + GetRecallDataProvider().GetSelectSupplierValue());
+                    }
+                    else
+                    {
+                        CommonMethods.LogThis("5 - Ni tudi te vrednosti GetSelectSupplierValue()");
+                    }
+                }
             }
-
+            else
+            {
+                CommonMethods.LogThis("4 - dobavitelja ni prazen");
+            }
 
 
 
@@ -1413,8 +1445,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
         protected void btnReopenRecall_Click(object sender, EventArgs e)
         {
             reopenRecall = true;
-            GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA);
-            AddOrEditEntityObject();
+            if (model.StatusOdpoklica.Koda == DatabaseWebService.Common.Enums.Enums.StatusOfRecall.PREVZET.ToString() && (PrincipalHelper.IsUserCarrierSpecialist() || PrincipalHelper.IsUserSuperAdmin()))
+            {
+                GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.PREVZET);
+            }
+            else
+            {
+                GetRecallDataProvider().SetRecallStatus(DatabaseWebService.Common.Enums.Enums.StatusOfRecall.DELOVNA);
+                AddOrEditEntityObject();
+            }
 
             List<Enums.RecallSession> list = Enum.GetValues(typeof(Enums.RecallSession)).Cast<Enums.RecallSession>().ToList();
             ClearAllSessions(list, Request.RawUrl);

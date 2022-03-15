@@ -640,7 +640,7 @@
             </dx:GridViewDataTextColumn>
 
             <dx:GridViewDataTextColumn Caption="Status prevzeto" FieldName="StatusPrevzeto" Width="100px"
-                ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False" Visible="false">
+                ReadOnly="true" ShowInCustomizationForm="True" EditFormSettings-Visible="False" Visible="true">
             </dx:GridViewDataTextColumn>
         </Columns>
 

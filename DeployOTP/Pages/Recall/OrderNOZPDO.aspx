@@ -68,6 +68,7 @@
             //e.processOnServer = !isBtnConfirmIntiated;
             //isBtnConfirmIntiated = true;
             LoadingPanel.Show();
+            clientBtnConfirm.SetEnabled(false);
             clientCallbackPanelRefreshSupplier.PerformCallback("ClickNaprej");
         }
 

@@ -30,7 +30,8 @@ namespace OptimizacijaTransprotov.Common
             Leader,
             Warehouse,
             User,
-            Logistics
+            Logistics,
+            CarrierSpecialist
         }
 
         public enum CommonSession
@@ -72,6 +73,7 @@ namespace OptimizacijaTransprotov.Common
         {
             Suppliers,
             SelectedSupplier,
+            SelectedSupplierValue,
             RecallPositions,
             SelectedPositionsRecall,
             RecallFulModel,
@@ -181,5 +183,7 @@ namespace OptimizacijaTransprotov.Common
             SystemMessageID,
             SystemMessageModel
         }
+
+        
     }
 }

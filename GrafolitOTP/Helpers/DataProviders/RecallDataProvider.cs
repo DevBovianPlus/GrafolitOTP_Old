@@ -185,6 +185,19 @@ namespace OptimizacijaTransprotov.Helpers.DataProviders
         }
 
 
+        public void SetSelectSupplierValue(string valDobavitelj)
+        {
+            AddValueToSession(Enums.RecallSession.SelectedSupplierValue, valDobavitelj);
+        }
+
+        public string GetSelectSupplierValue()
+        {
+            if (SessionHasValue(Enums.RecallSession.SelectedSupplierValue))
+                return (string)GetValueFromSession(Enums.RecallSession.SelectedSupplierValue);
+            return null;
+        }
+
+
         public void SetSelectSupplier(SupplierModel model)
         {
             AddValueToSession(Enums.RecallSession.SelectedSupplier, model);

@@ -83,19 +83,28 @@ namespace OptimizacijaTransprotov.Pages.Recall
 
                 if (GetRecallDataProvider().GetSuppliersList() != null)
                 {
+                    CommonMethods.LogThis("OrderNOZPDO - dobavitelj je poslan v RAM");
+
                     supplier = GetRecallDataProvider().GetSuppliersList().Where(su => su.Dobavitelj == ASPxGridLookupDobavitelj.Value.ToString()).FirstOrDefault();
                     if (supplier != null)
                     {
+                        CommonMethods.LogThis("OrderNOZPDO - dobavitelj vrednost je nastavljen v Session");
+
+                        GetRecallDataProvider().SetSelectSupplierValue(supplier.Dobavitelj);
 
                         recall.DobaviteljNaziv = supplier.Dobavitelj.Trim();
                         recall.DobaviteljNaslov = supplier.Naslov.Trim();
                         recall.DobaviteljPosta = supplier.Posta.Trim();
                         recall.DobaviteljKraj = supplier.Kraj.Trim();
 
-
+                        CommonMethods.LogThis("OrderNOZPDO - dobavitelj je nastavljen v Session");
                         GetRecallDataProvider().SetSelectSupplier(supplier);
 
                     }
+                }
+                else
+                {
+                    CommonMethods.LogThis("Dobavitelj ni izbran!");
                 }
 
                 List<object> selectedRows = ASPxGridViewOrdersPositions.GetSelectedFieldValues("tempID");
@@ -279,7 +288,15 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     if (cell.Column.ShowSelectCheckbox)
                     {
                         e.Row.BackColor = Color.LightGray;
-                    }
+                    }                   
+                }
+
+                if (e.GetValue("StatusPozicije") != null)
+                {
+                    if (e.GetValue("StatusPozicije").ToString() == DatabaseWebService.Common.Enums.Enums.StatusPozicijeOTP.D.ToString())
+                        e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#A3FBD4");
+                    if (e.GetValue("StatusPozicije").ToString() == DatabaseWebService.Common.Enums.Enums.StatusPozicijeOTP.O.ToString())
+                        e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#FCF8E3");
                 }
             }
 
@@ -298,7 +315,10 @@ namespace OptimizacijaTransprotov.Pages.Recall
                     {
                         e.Row.BackColor = Color.LightGray;
                     }
+
                 }
+
+
             }
 
         }

@@ -68,6 +68,7 @@
             //e.processOnServer = !isBtnConfirmIntiated;
             //isBtnConfirmIntiated = true;
             LoadingPanel.Show();
+            clientBtnConfirm.SetEnabled(false);
             clientCallbackPanelRefreshSupplier.PerformCallback("ClickNaprej");
         }
 
@@ -211,6 +212,9 @@
                     <SettingsEditing Mode="Batch" BatchEditSettings-StartEditAction="DblClick" BatchEditSettings-KeepChangesOnCallbacks="False" />
                     <Columns>
                         <dx:GridViewCommandColumn ShowSelectCheckbox="true" Width="80px" SelectAllCheckboxMode="None" Caption="Izberi" ShowClearFilterButton="true" />
+                        <dx:GridViewDataTextColumn Caption="Status" FieldName="StatusPozicije" Width="70px"
+                            ReadOnly="true" Visible="true" ShowInCustomizationForm="True">
+                        </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Apl" FieldName="TipAplikacije" Width="70px"
                             ReadOnly="true" Visible="true" ShowInCustomizationForm="True">
                         </dx:GridViewDataTextColumn>

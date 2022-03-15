@@ -48,5 +48,10 @@ namespace OptimizacijaTransprotov.Helpers
         {
             return GetUserPrincipal().IsInRole(Enums.UserRole.Logistics.ToString());
         }
+
+        public static bool IsUserCarrierSpecialist()
+        {
+            return GetUserPrincipal().IsInRole(Enums.UserRole.CarrierSpecialist.ToString());
+        }
     }
 }

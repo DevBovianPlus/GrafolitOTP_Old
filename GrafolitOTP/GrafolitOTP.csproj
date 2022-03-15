@@ -167,8 +167,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=6.13.4.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Z.EntityFramework.Extensions.EF5.6.13.4\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
+    <Reference Include="Z.EntityFramework.Extensions.EF5, Version=6.13.10.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Z.EntityFramework.Extensions.EF5.6.13.10\lib\net45\Z.EntityFramework.Extensions.EF5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
